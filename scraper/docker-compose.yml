@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  uc-wage-scraper:
+    build: .
+    container_name: uc-wage-scraper
+    volumes:
+      # Mount the local data directory to container's data directory
+      - ./data:/app/data
+    environment:
+      # Optional: Add environment variables if needed
+      - TZ=America/Los_Angeles
+    command: ["-data-dir=/app/data", "-workers=5", "-delay=1.0"]
+    # Optional: Limit resources
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 1G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+
+# Optional: Add network if needed for future services
+networks:
+  default:
+    name: uc-wages-network
