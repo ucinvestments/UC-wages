@@ -115,4 +115,4 @@ combined = pd.concat(dfs)
 
 ## License
 
-Data is public domain. Analysis code is GNU Affereo licensed.
+Data is public domain under the AGPL.
