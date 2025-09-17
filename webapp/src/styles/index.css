@@ -1,0 +1,77 @@
+/*
+ * Portable CSS Design System
+ * ===========================
+ * 
+ * A modular, UNIX-philosophy CSS system for Tailwind + SvelteKit projects.
+ * Each module is self-contained and can be used independently.
+ * 
+ * ## How to Use:
+ * 
+ * 1. Copy the entire `styles/` directory to your project
+ * 2. Import the main CSS file in your app:
+ *    @import './styles/index.css';
+ * 
+ * 3. Or import individual modules as needed:
+ *    @import './styles/variables.css';
+ *    @import './styles/components.css';
+ * 
+ * ## Modules:
+ * 
+ * - variables.css:   Design tokens (colors, spacing, etc.)
+ * - base.css:        Base styles and CSS reset
+ * - components.css:  Reusable component classes
+ * - animations.css:  Animation library
+ * - utilities.css:   Single-purpose utility classes
+ * - responsive.css:  Responsive design utilities
+ * 
+ * ## Design Philosophy:
+ * 
+ * 1. **Modularity**: Each file is independent and focused
+ * 2. **Composability**: Classes can be combined freely
+ * 3. **Portability**: Zero dependencies except Tailwind
+ * 4. **Clarity**: Self-documenting class names
+ * 5. **Performance**: Minimal CSS, no redundancy
+ * 
+ * ## Quick Start Examples:
+ * 
+ * Button:
+ * <button class="btn btn-primary">Click me</button>
+ * 
+ * Card:
+ * <div class="glass-card">
+ *   <h2 class="card-title">Title</h2>
+ *   <p>Content</p>
+ * </div>
+ * 
+ * Navigation:
+ * <nav class="navbar">
+ *   <div class="nav-container">
+ *     <a href="/" class="nav-link active">Home</a>
+ *   </div>
+ * </nav>
+ * 
+ * ## Color System:
+ * 
+ * Based on UC Berkeley's official color palette:
+ * - Primary: Berkeley Blue (#003262)
+ * - Secondary: California Gold (#FDB515)
+ * - Extended palette available as CSS variables
+ * 
+ * ## Responsive Breakpoints:
+ * 
+ * - Mobile: < 640px
+ * - Tablet: 640px - 1024px
+ * - Desktop: > 1024px
+ * 
+ * ## License:
+ * 
+ * Free to use and modify for any project.
+ */
+
+/* Import all modules in order */
+@import './variables.css';
+@import './base.css';
+@import './components.css';
+@import './animations.css';
+@import './utilities.css';
+@import './responsive.css';

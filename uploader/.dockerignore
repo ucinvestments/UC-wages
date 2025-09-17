@@ -1,0 +1,19 @@
+# Ignore everything except what we need
+*
+
+# Include what we need for the build
+!go.mod
+!go.sum
+!main.go
+
+# Ignore build artifacts
+uploader
+*.exe
+
+# Ignore test files
+test_*
+*.sh
+
+# Ignore documentation
+README.md
+Makefile

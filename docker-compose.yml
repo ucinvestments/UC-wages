@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  uploader:
+    build: ./uploader
+    environment:
+      - DATABASE_URL=postgresql://neondb_owner:npg_Bt1wbvdr8QIm@ep-patient-breeze-ads9ykd2-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
+    volumes:
+      - ./data:/data:ro
+    command: ["./uploader", "-data=/data"]

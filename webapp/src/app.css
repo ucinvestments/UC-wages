@@ -1,0 +1,16 @@
+/* Import Modular CSS System - must come before Tailwind directives */
+@import './styles/variables.css';
+/* Design tokens and CSS variables */
+@import './styles/base.css';
+/* Base styles and resets */
+@import './styles/components.css';
+/* Reusable component classes */
+@import './styles/animations.css';
+/* Animation library */
+@import './styles/utilities.css';
+/* Utility classes */
+@import './styles/responsive.css';
+/* Responsive design system */
+
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
