@@ -496,7 +496,7 @@ func (u *Uploader) run() error {
 
 func main() {
 	var (
-		workers  = flag.Int("workers", 5, "number of concurrent workers")
+		workers  = flag.Int("workers", 10, "number of concurrent workers")
 		dataDir  = flag.String("data", "../data", "data directory containing wage files")
 		batchSize = flag.Int("batch", 1000, "batch size for database inserts")
 		envFile  = flag.String("env", "", "path to .env file (optional)")

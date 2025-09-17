@@ -57,7 +57,7 @@
 				Methodology
 			</a>
 			<a
-				href="https://github.com/TheArctesian/UC-wages"
+				href="https://github.com/ucinvestments/UC-wages"
 				target="_blank"
 				rel="noopener noreferrer"
 				class="nav-link external"
@@ -105,9 +105,9 @@
 		<div class="footer-section">
 			<h4 class="footer-title">Contact</h4>
 			<div class="footer-links">
-				<a href="mailto:admin@ucwages.info" class="footer-link">Contact Us</a>
-				<a href="mailto:data@ucwages.info" class="footer-link">Data Issues</a>
-				<a href="mailto:dev@ucwages.info" class="footer-link">Development</a>
+				<a href="mailto:admin@ucinvestments.info" class="footer-link">Contact Us</a>
+				<a href="mailto:press@ucinvestments.info" class="footer-link">Press Inquiries</a>
+				<a href="mailto:dev@ucinvestments.info" class="footer-link">Development</a>
 			</div>
 		</div>
 
@@ -133,7 +133,7 @@
 						>
 					</div>
 					<p class="alt-contact">
-						Or contact <a href="mailto:support@ucwages.info">Support</a> for alternatives.
+						Or contact <a href="mailto:admin@ucinvestments.info">Admin</a> for alternatives.
 					</p>
 				</div>
 			</div>
