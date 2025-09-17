@@ -1,22 +1,14 @@
 <script lang="ts">
 	import '../app.css';
 	import { dev } from '$app/environment';
-	import { inject } from '@vercel/analytics';
 	import { fade } from 'svelte/transition';
 	import { page } from '$app/stores';
 	import Icon from '@iconify/svelte';
-	import { browser } from '$app/environment';
-	import { onMount } from 'svelte';
 	import favicon from '$lib/assets/favicon.svg';
 
+	import { injectAnalytics } from '@vercel/analytics/sveltekit';
+	injectAnalytics({ mode: dev ? 'development' : 'production' });
 	let { children } = $props();
-
-	onMount(() => {
-		if (browser) {
-			// Initialize Vercel Analytics
-			inject({ mode: dev ? 'development' : 'production' });
-		}
-	});
 
 	function toggleDonationInfo() {
 		const donationInfo = document.getElementById('donationInfo');
