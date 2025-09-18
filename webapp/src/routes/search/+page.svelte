@@ -2,11 +2,13 @@
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
+	import { navigating } from '$app/stores';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
 
 	$: ({ employees, pagination, searchParams, filters } = data);
+	$: isLoading = !!$navigating;
 
 	let searchForm = {
 		name: searchParams?.name || '',
@@ -132,8 +134,15 @@
 			</form>
 		</div>
 
-		<!-- Results Summary -->
-		{#if pagination?.totalItems > 0}
+		<!-- Loading Indicator -->
+		{#if isLoading}
+			<div class="loading-container">
+				<div class="loading-spinner"></div>
+				<p class="loading-text">Searching employee data...</p>
+			</div>
+		{:else}
+			<!-- Results Summary -->
+			{#if pagination?.totalItems > 0}
 			<div class="results-summary">
 				<p>
 					Showing {((pagination.currentPage - 1) * pagination.itemsPerPage) + 1}-{Math.min(pagination.currentPage * pagination.itemsPerPage, pagination.totalItems)}
@@ -221,6 +230,7 @@
 					</div>
 				</div>
 			{/if}
+		{/if}
 		{/if}
 	</div>
 </div>
@@ -413,6 +423,40 @@
 	.gross-pay {
 		font-weight: 600;
 		color: #059669;
+	}
+
+	.loading-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: 4rem 2rem;
+		background: white;
+		border-radius: 16px;
+		box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+		margin-bottom: 2rem;
+	}
+
+	.loading-spinner {
+		width: 40px;
+		height: 40px;
+		border: 4px solid #e5e7eb;
+		border-top: 4px solid #3b82f6;
+		border-radius: 50%;
+		animation: spin 1s linear infinite;
+		margin-bottom: 1rem;
+	}
+
+	.loading-text {
+		color: #6b7280;
+		font-size: 1rem;
+		font-weight: 500;
+		margin: 0;
+	}
+
+	@keyframes spin {
+		0% { transform: rotate(0deg); }
+		100% { transform: rotate(360deg); }
 	}
 
 	.pagination {

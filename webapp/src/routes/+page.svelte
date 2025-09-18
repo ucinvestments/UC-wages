@@ -26,14 +26,111 @@
 	// Filter and toggle states
 	let selectedCampus = 'All Campuses';
 	let showTotalLines = false;
+	let adjustForInflation = false;
 
 	// Get unique campuses for filter dropdown
 	$: campuses = [...new Set(wageData.map(d => d.location))];
 
+	// Inflation data (using US CPI, base year 2024)
+	const inflationData = {
+		2024: 1.0,      // Base year
+		2023: 1.041,    // 4.1% inflation from 2023 to 2024
+		2022: 1.122,    // 12.2% cumulative inflation from 2022 to 2024
+		2021: 1.192,    // 19.2% cumulative inflation from 2021 to 2024
+		2020: 1.217,    // 21.7% cumulative inflation from 2020 to 2024
+		2019: 1.238,    // 23.8% cumulative inflation from 2019 to 2024
+		2018: 1.265,    // 26.5% cumulative inflation from 2018 to 2024
+		2017: 1.284,    // 28.4% cumulative inflation from 2017 to 2024
+		2016: 1.298,    // 29.8% cumulative inflation from 2016 to 2024
+		2015: 1.298,    // Same as 2016 (low inflation year)
+		2014: 1.314,    // 31.4% cumulative inflation from 2014 to 2024
+		2013: 1.330,    // 33.0% cumulative inflation from 2013 to 2024
+		2012: 1.358,    // 35.8% cumulative inflation from 2012 to 2024
+		2011: 1.391,    // 39.1% cumulative inflation from 2011 to 2024
+		2010: 1.426     // 42.6% cumulative inflation from 2010 to 2024
+	};
+
+	// Function to adjust for inflation
+	function adjustForInflationValue(amount: number, year: number): number {
+		if (!adjustForInflation) return amount;
+		const multiplier = inflationData[year as keyof typeof inflationData] || 1;
+		return amount * multiplier;
+	}
+
 	// Filter data based on selected campus
-	$: filteredWageData = selectedCampus === 'All Campuses'
+	$: basePlottedData = selectedCampus === 'All Campuses'
 		? wageData
 		: wageData.filter(d => d.location === selectedCampus);
+
+	// Apply inflation adjustment if enabled
+	$: filteredWageData = basePlottedData.map(d => ({
+		...d,
+		totalWages: adjustForInflationValue(d.totalWages, d.year),
+		averageWage: adjustForInflationValue(d.averageWage, d.year),
+		medianWage: adjustForInflationValue(d.medianWage, d.year)
+	}));
+
+	// Apply inflation adjustment to pyramid data
+	$: filteredPyramidData = pyramidData.map(d => ({
+		...d,
+		totalPay: adjustForInflationValue(d.totalPay, d.year)
+	}));
+
+	// Standardized diverse color palette for chart readability
+	const CHART_COLORS = [
+		'#3b82f6', // Blue
+		'#ef4444', // Red
+		'#10b981', // Green
+		'#f59e0b', // Orange
+		'#8b5cf6', // Purple
+		'#06b6d4', // Cyan
+		'#f97316', // Deep Orange
+		'#84cc16', // Lime
+		'#ec4899', // Pink
+		'#6366f1', // Indigo
+		'#14b8a6', // Teal
+		'#f43f5e', // Rose
+		'#a855f7'  // Violet
+	];
+
+	// Standardized campus color scale with consistent mapping
+	function createCampusColorScale(campuses: string[]) {
+		return d3.scaleOrdinal<string, string>()
+			.domain(campuses.sort()) // Sort to ensure consistent color assignment
+			.range(CHART_COLORS);
+	}
+
+	// Tooltip system for chart interactions
+	function createTooltip() {
+		return d3.select('body')
+			.append('div')
+			.style('position', 'absolute')
+			.style('padding', '12px')
+			.style('background', 'rgba(0, 0, 0, 0.9)')
+			.style('color', 'white')
+			.style('border-radius', '8px')
+			.style('font-size', '14px')
+			.style('font-weight', '500')
+			.style('line-height', '1.4')
+			.style('box-shadow', '0 4px 12px rgba(0, 0, 0, 0.3)')
+			.style('pointer-events', 'none')
+			.style('opacity', 0)
+			.style('z-index', '1000')
+			.style('transition', 'opacity 0.2s ease');
+	}
+
+	function formatCurrency(value: number): string {
+		return new Intl.NumberFormat('en-US', {
+			style: 'currency',
+			currency: 'USD',
+			minimumFractionDigits: 0,
+			maximumFractionDigits: 0
+		}).format(value);
+	}
+
+	function formatNumber(value: number): string {
+		return new Intl.NumberFormat('en-US').format(value);
+	}
 
 	onMount(() => {
 		createHeroVisualization();
@@ -41,7 +138,7 @@
 	});
 
 	// Reactive updates when filters change
-	$: if (selectedCampus || showTotalLines !== undefined) {
+	$: if (selectedCampus || showTotalLines !== undefined || adjustForInflation !== undefined) {
 		updateCharts();
 	}
 
@@ -253,6 +350,9 @@
 		const height = 400;
 		const margin = { top: 60, right: 50, bottom: 60, left: 100 };
 
+		// Create tooltip
+		const tooltip = createTooltip();
+
 		const svg = d3.select(totalWagesContainer)
 			.append('svg')
 			.attr('width', width)
@@ -268,10 +368,8 @@
 			.domain(d3.extent(years) as [number, number])
 			.range([0, width - margin.left - margin.right]);
 
-		// Better color scheme
-		const colorScale = d3.scaleOrdinal()
-			.domain(activeCampuses)
-			.range(['#3b82f6', '#ef4444', '#10b981', '#f59e0b', '#8b5cf6', '#06b6d4', '#f97316', '#84cc16', '#ec4899', '#6366f1', '#14b8a6', '#f43f5e', '#8b5cf6']);
+		// Standardized campus color scheme
+		const colorScale = createCampusColorScale(activeCampuses);
 
 		// Calculate total line (sum of all campuses by year) - only if showing all campuses and toggle is on
 		let totalData = [];
@@ -344,7 +442,7 @@
 				.ease(d3.easeQuadInOut)
 				.attr('stroke-dashoffset', 0);
 
-			// Add dots
+			// Add dots with tooltip interactions
 			g.selectAll(`.total-dot-${campus.replace(/\s+/g, '-')}`)
 				.data(sortedValues)
 				.enter()
@@ -356,6 +454,39 @@
 				.attr('fill', colorScale(campus))
 				.attr('stroke', 'white')
 				.attr('stroke-width', 2)
+				.style('cursor', 'pointer')
+				.on('mouseover', function(event, d) {
+					// Highlight the dot
+					d3.select(this)
+						.transition()
+						.duration(100)
+						.attr('r', 8)
+						.attr('stroke-width', 3);
+
+					// Show tooltip
+					tooltip
+						.style('opacity', 1)
+						.html(`
+							<div style="font-weight: 600; margin-bottom: 4px;">${campus}</div>
+							<div><strong>Year:</strong> ${d.year}</div>
+							<div><strong>Total Wages:</strong> ${formatCurrency(d.totalWages)}</div>
+							<div><strong>Employees:</strong> ${formatNumber(d.employeeCount)}</div>
+							<div><strong>Avg per Employee:</strong> ${formatCurrency(d.totalWages / d.employeeCount)}</div>
+						`)
+						.style('left', (event.pageX + 10) + 'px')
+						.style('top', (event.pageY - 10) + 'px');
+				})
+				.on('mouseout', function() {
+					// Reset dot size
+					d3.select(this)
+						.transition()
+						.duration(100)
+						.attr('r', 5)
+						.attr('stroke-width', 2);
+
+					// Hide tooltip
+					tooltip.style('opacity', 0);
+				})
 				.transition()
 				.delay(campusIndex * 200 + 1500)
 				.duration(800)
@@ -382,6 +513,9 @@
 		const height = 400;
 		const margin = { top: 60, right: 50, bottom: 60, left: 100 };
 
+		// Create tooltip
+		const tooltip = createTooltip();
+
 		const svg = d3.select(averageWagesContainer)
 			.append('svg')
 			.attr('width', width)
@@ -397,10 +531,8 @@
 			.domain(d3.extent(years) as [number, number])
 			.range([0, width - margin.left - margin.right]);
 
-		// Better color scheme
-		const colorScale = d3.scaleOrdinal()
-			.domain(activeCampuses)
-			.range(['#3b82f6', '#ef4444', '#10b981', '#f59e0b', '#8b5cf6', '#06b6d4', '#f97316', '#84cc16', '#ec4899', '#6366f1', '#14b8a6', '#f43f5e', '#8b5cf6']);
+		// Standardized campus color scheme
+		const colorScale = createCampusColorScale(activeCampuses);
 
 		// Calculate total line (weighted average across all campuses) - only if showing all campuses and toggle is on
 		let totalData = [];
@@ -477,7 +609,7 @@
 				.ease(d3.easeQuadInOut)
 				.attr('stroke-dashoffset', 0);
 
-			// Add dots
+			// Add dots with tooltip interactions
 			g.selectAll(`.avg-dot-${campus.replace(/\s+/g, '-')}`)
 				.data(sortedValues)
 				.enter()
@@ -489,6 +621,39 @@
 				.attr('fill', colorScale(campus))
 				.attr('stroke', 'white')
 				.attr('stroke-width', 2)
+				.style('cursor', 'pointer')
+				.on('mouseover', function(event, d) {
+					// Highlight the dot
+					d3.select(this)
+						.transition()
+						.duration(100)
+						.attr('r', 8)
+						.attr('stroke-width', 3);
+
+					// Show tooltip
+					tooltip
+						.style('opacity', 1)
+						.html(`
+							<div style="font-weight: 600; margin-bottom: 4px;">${campus}</div>
+							<div><strong>Year:</strong> ${d.year}</div>
+							<div><strong>Average Wage:</strong> ${formatCurrency(d.averageWage)}</div>
+							<div><strong>Median Wage:</strong> ${formatCurrency(d.medianWage)}</div>
+							<div><strong>Employees:</strong> ${formatNumber(d.employeeCount)}</div>
+						`)
+						.style('left', (event.pageX + 10) + 'px')
+						.style('top', (event.pageY - 10) + 'px');
+				})
+				.on('mouseout', function() {
+					// Reset dot size
+					d3.select(this)
+						.transition()
+						.duration(100)
+						.attr('r', 5)
+						.attr('stroke-width', 2);
+
+					// Hide tooltip
+					tooltip.style('opacity', 0);
+				})
 				.transition()
 				.delay(campusIndex * 200 + 1500)
 				.duration(800)
@@ -515,6 +680,9 @@
 		const height = 400;
 		const margin = { top: 80, right: 50, bottom: 60, left: 100 };
 
+		// Create tooltip
+		const tooltip = createTooltip();
+
 		const svg = d3.select(employeeCountContainer)
 			.append('svg')
 			.attr('width', width)
@@ -530,10 +698,8 @@
 			.domain(d3.extent(years) as [number, number])
 			.range([0, width - margin.left - margin.right]);
 
-		// Better color scheme
-		const colorScale = d3.scaleOrdinal()
-			.domain(activeCampuses)
-			.range(['#3b82f6', '#ef4444', '#10b981', '#f59e0b', '#8b5cf6', '#06b6d4', '#f97316', '#84cc16', '#ec4899', '#6366f1', '#14b8a6', '#f43f5e', '#8b5cf6']);
+		// Standardized campus color scheme
+		const colorScale = createCampusColorScale(activeCampuses);
 
 		// Calculate total line (sum of all employees by year) - only if showing all campuses and toggle is on
 		let totalData = [];
@@ -606,7 +772,7 @@
 				.ease(d3.easeQuadInOut)
 				.attr('stroke-dashoffset', 0);
 
-			// Add dots
+			// Add dots with tooltip interactions
 			g.selectAll(`.emp-dot-${campus.replace(/\s+/g, '-')}`)
 				.data(sortedValues)
 				.enter()
@@ -618,6 +784,39 @@
 				.attr('fill', colorScale(campus))
 				.attr('stroke', 'white')
 				.attr('stroke-width', 2)
+				.style('cursor', 'pointer')
+				.on('mouseover', function(event, d) {
+					// Highlight the dot
+					d3.select(this)
+						.transition()
+						.duration(100)
+						.attr('r', 8)
+						.attr('stroke-width', 3);
+
+					// Show tooltip
+					tooltip
+						.style('opacity', 1)
+						.html(`
+							<div style="font-weight: 600; margin-bottom: 4px;">${campus}</div>
+							<div><strong>Year:</strong> ${d.year}</div>
+							<div><strong>Employee Count:</strong> ${formatNumber(d.employeeCount)}</div>
+							<div><strong>Total Wages:</strong> ${formatCurrency(d.totalWages)}</div>
+							<div><strong>Average Wage:</strong> ${formatCurrency(d.averageWage)}</div>
+						`)
+						.style('left', (event.pageX + 10) + 'px')
+						.style('top', (event.pageY - 10) + 'px');
+				})
+				.on('mouseout', function() {
+					// Reset dot size
+					d3.select(this)
+						.transition()
+						.duration(100)
+						.attr('r', 5)
+						.attr('stroke-width', 2);
+
+					// Hide tooltip
+					tooltip.style('opacity', 0);
+				})
 				.transition()
 				.delay(campusIndex * 200 + 1500)
 				.duration(800)
@@ -638,7 +837,7 @@
 	}
 
 	function createWagePyramidChart() {
-		if (!wagePyramidContainer || !pyramidData.length) return;
+		if (!wagePyramidContainer || !filteredPyramidData.length) return;
 
 		const width = wagePyramidContainer.clientWidth;
 		const height = 600;
@@ -653,17 +852,17 @@
 			.attr('transform', `translate(${width / 2},${margin.top})`);
 
 		// Use latest year data for pyramid visualization and apply campus filtering
-		let filteredPyramidData = pyramidData.filter(d => d.year === latestYear);
+		let pyramidDataForChart = filteredPyramidData.filter(d => d.year === latestYear);
 
 		if (selectedCampus !== 'All Campuses') {
-			filteredPyramidData = filteredPyramidData.filter(d => d.location === selectedCampus);
+			pyramidDataForChart = pyramidDataForChart.filter(d => d.location === selectedCampus);
 		}
 
-		if (filteredPyramidData.length === 0) return;
+		if (pyramidDataForChart.length === 0) return;
 
 		// Aggregate all brackets across filtered campuses for pyramid structure
 		const wageRanges = {};
-		filteredPyramidData.forEach(campus => {
+		pyramidDataForChart.forEach(campus => {
 			campus.brackets.forEach(bracket => {
 				if (!wageRanges[bracket.range]) {
 					wageRanges[bracket.range] = 0;
@@ -933,6 +1132,13 @@
 				<label class="toggle-label">
 					<input type="checkbox" bind:checked={showTotalLines} class="toggle-checkbox" />
 					<span class="toggle-text">Show Total Lines</span>
+				</label>
+			</div>
+
+			<div class="control-group">
+				<label class="toggle-label">
+					<input type="checkbox" bind:checked={adjustForInflation} class="toggle-checkbox" />
+					<span class="toggle-text">Adjust for Inflation</span>
 				</label>
 			</div>
 		</div>
