@@ -4,7 +4,6 @@
 	import { fade } from 'svelte/transition';
 	import { page } from '$app/stores';
 	import Icon from '@iconify/svelte';
-	import favicon from '$lib/assets/favicon.svg';
 
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
 	injectAnalytics({ mode: dev ? 'development' : 'production' });
@@ -18,9 +17,6 @@
 	}
 </script>
 
-<svelte:head>
-	<link rel="icon" href={favicon} />
-</svelte:head>
 
 <nav class="navbar">
 	<div class="nav-container">
