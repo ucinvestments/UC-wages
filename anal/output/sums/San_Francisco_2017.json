@@ -1,0 +1,28 @@
+{
+  "location": "San Francisco",
+  "year": 2017,
+  "generated_at": "2025-09-18T15:42:03.443841342Z",
+  "employee_count": 31342,
+  "total_gross_pay": 2824915793,
+  "avg_gross_pay": 90131.9568949014,
+  "median_gross_pay": 68282,
+  "std_dev": 88512.80119484277,
+  "min_pay": 9,
+  "max_pay": 2291104,
+  "percentiles": {
+    "p25": 37398.5,
+    "p50": 68281,
+    "p75": 120216,
+    "p90": 180177.5,
+    "p95": 229584,
+    "p99": 422535.5
+  },
+  "pay_components": {
+    "total_base": 2304106175,
+    "total_overtime": 40860245,
+    "total_adjustments": 479949373,
+    "avg_base": 73514.96952970455,
+    "avg_overtime": 1303.6897772956415,
+    "avg_adjustments": 15313.29758790122
+  }
+}

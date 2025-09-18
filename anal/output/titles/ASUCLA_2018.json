@@ -1,0 +1,318 @@
+{
+  "location": "ASUCLA",
+  "year": 2018,
+  "generated_at": "2025-09-18T15:42:06.639263078Z",
+  "unique_titles": 31,
+  "top_titles": [
+    {
+      "title": "STDT 1",
+      "count": 997,
+      "avg_pay": 3714.158475426279,
+      "median_pay": 2366,
+      "min_pay": 13,
+      "max_pay": 37198,
+      "std_dev": 4062.434233889197,
+      "total_pay": 3703016
+    },
+    {
+      "title": "STDT 2",
+      "count": 995,
+      "avg_pay": 3364.4884422110554,
+      "median_pay": 2288,
+      "min_pay": 23,
+      "max_pay": 27086,
+      "std_dev": 3430.6236945027217,
+      "total_pay": 3347666
+    },
+    {
+      "title": "STDT 4",
+      "count": 441,
+      "avg_pay": 1639.4467120181405,
+      "median_pay": 988,
+      "min_pay": 8,
+      "max_pay": 17773,
+      "std_dev": 2308.0573012089176,
+      "total_pay": 722996
+    },
+    {
+      "title": "STDT 3",
+      "count": 52,
+      "avg_pay": 2714.5576923076924,
+      "median_pay": 1818.5,
+      "min_pay": 233,
+      "max_pay": 12430,
+      "std_dev": 2690.241327561108,
+      "total_pay": 141157
+    },
+    {
+      "title": "ANL 4",
+      "count": 30,
+      "avg_pay": 65862.1,
+      "median_pay": 71327,
+      "min_pay": 6739,
+      "max_pay": 95788,
+      "std_dev": 24223.98946272063,
+      "total_pay": 1975863
+    },
+    {
+      "title": "ANL 1",
+      "count": 29,
+      "avg_pay": 46196.793103448275,
+      "median_pay": 50258,
+      "min_pay": 9333,
+      "max_pay": 73222,
+      "std_dev": 13341.91575288923,
+      "total_pay": 1339707
+    },
+    {
+      "title": "CUSTODIAN SR",
+      "count": 26,
+      "avg_pay": 33324.846153846156,
+      "median_pay": 38828.5,
+      "min_pay": 2020,
+      "max_pay": 65097,
+      "std_dev": 18434.88345645978,
+      "total_pay": 866446
+    },
+    {
+      "title": "ANL 2",
+      "count": 20,
+      "avg_pay": 47307.95,
+      "median_pay": 50234.5,
+      "min_pay": 11335,
+      "max_pay": 59503,
+      "std_dev": 9942.233996818823,
+      "total_pay": 946159
+    },
+    {
+      "title": "FOOD SVC WORKER",
+      "count": 19,
+      "avg_pay": 36995,
+      "median_pay": 41491,
+      "min_pay": 582,
+      "max_pay": 58921,
+      "std_dev": 13838.881423461637,
+      "total_pay": 702905
+    },
+    {
+      "title": "DIR",
+      "count": 17,
+      "avg_pay": 122463.11764705883,
+      "median_pay": 115856,
+      "min_pay": 21667,
+      "max_pay": 205893,
+      "std_dev": 48464.20260828344,
+      "total_pay": 2081873
+    },
+    {
+      "title": "ANL 3",
+      "count": 16,
+      "avg_pay": 58885.875,
+      "median_pay": 58245,
+      "min_pay": 43025,
+      "max_pay": 71367,
+      "std_dev": 7672.8572976027,
+      "total_pay": 942174
+    },
+    {
+      "title": "FOOD SVC WORKER SR",
+      "count": 13,
+      "avg_pay": 39033.153846153844,
+      "median_pay": 42512,
+      "min_pay": 745,
+      "max_pay": 66676,
+      "std_dev": 17493.265714581332,
+      "total_pay": 507431
+    },
+    {
+      "title": "ANL 5",
+      "count": 12,
+      "avg_pay": 69183.5,
+      "median_pay": 81463.5,
+      "min_pay": 22212,
+      "max_pay": 103931,
+      "std_dev": 25095.308739882043,
+      "total_pay": 830202
+    },
+    {
+      "title": "BLANK AST 2 SUPV",
+      "count": 8,
+      "avg_pay": 32949.125,
+      "median_pay": 35891,
+      "min_pay": 1309,
+      "max_pay": 57599,
+      "std_dev": 19114.747568549657,
+      "total_pay": 263593
+    },
+    {
+      "title": "ANL 6",
+      "count": 7,
+      "avg_pay": 86273.42857142857,
+      "median_pay": 93420,
+      "min_pay": 37333,
+      "max_pay": 108162,
+      "std_dev": 21433.251248983222,
+      "total_pay": 603914
+    },
+    {
+      "title": "COOK AST",
+      "count": 5,
+      "avg_pay": 48208.4,
+      "median_pay": 42877,
+      "min_pay": 38635,
+      "max_pay": 67103,
+      "std_dev": 10182.389259893771,
+      "total_pay": 241042
+    },
+    {
+      "title": "ADMIN ANL PRN 1",
+      "count": 4,
+      "avg_pay": 69133.75,
+      "median_pay": 69730.5,
+      "min_pay": 61442,
+      "max_pay": 75632,
+      "std_dev": 5061.708129426271,
+      "total_pay": 276535
+    },
+    {
+      "title": "COOK",
+      "count": 3,
+      "avg_pay": 48766.333333333336,
+      "median_pay": 42886,
+      "min_pay": 41304,
+      "max_pay": 62109,
+      "std_dev": 9456.76993246402,
+      "total_pay": 146299
+    },
+    {
+      "title": "DIR EXEC",
+      "count": 2,
+      "avg_pay": 149394,
+      "median_pay": 149394,
+      "min_pay": 105371,
+      "max_pay": 193417,
+      "std_dev": 44023,
+      "total_pay": 298788
+    },
+    {
+      "title": "FAC MECH",
+      "count": 2,
+      "avg_pay": 63814,
+      "median_pay": 63814,
+      "min_pay": 61672,
+      "max_pay": 65956,
+      "std_dev": 2142,
+      "total_pay": 127628
+    },
+    {
+      "title": "ELECTRN",
+      "count": 2,
+      "avg_pay": 50820.5,
+      "median_pay": 50820.5,
+      "min_pay": 50770,
+      "max_pay": 50871,
+      "std_dev": 50.5,
+      "total_pay": 101641
+    },
+    {
+      "title": "COOK SR",
+      "count": 2,
+      "avg_pay": 42070,
+      "median_pay": 42070,
+      "min_pay": 41631,
+      "max_pay": 42509,
+      "std_dev": 439,
+      "total_pay": 84140
+    },
+    {
+      "title": "SURVEY SUPV",
+      "count": 2,
+      "avg_pay": 31570.5,
+      "median_pay": 31570.5,
+      "min_pay": 13907,
+      "max_pay": 49234,
+      "std_dev": 17663.5,
+      "total_pay": 63141
+    },
+    {
+      "title": "PHOTOGRAPHER PRN SUPV",
+      "count": 2,
+      "avg_pay": 30830.5,
+      "median_pay": 30830.5,
+      "min_pay": 3734,
+      "max_pay": 57927,
+      "std_dev": 27096.5,
+      "total_pay": 61661
+    },
+    {
+      "title": "SCRTY GUARD",
+      "count": 2,
+      "avg_pay": 29758,
+      "median_pay": 29758,
+      "min_pay": 9488,
+      "max_pay": 50028,
+      "std_dev": 20270,
+      "total_pay": 59516
+    },
+    {
+      "title": "SVC ENGR",
+      "count": 1,
+      "avg_pay": 114516,
+      "median_pay": 114516,
+      "min_pay": 114516,
+      "max_pay": 114516,
+      "std_dev": 0,
+      "total_pay": 114516
+    },
+    {
+      "title": "FOOD SVC MECH",
+      "count": 1,
+      "avg_pay": 87050,
+      "median_pay": 87050,
+      "min_pay": 87050,
+      "max_pay": 87050,
+      "std_dev": 0,
+      "total_pay": 87050
+    },
+    {
+      "title": "PAINTER",
+      "count": 1,
+      "avg_pay": 81526,
+      "median_pay": 81526,
+      "min_pay": 81526,
+      "max_pay": 81526,
+      "std_dev": 0,
+      "total_pay": 81526
+    },
+    {
+      "title": "CARPENTER",
+      "count": 1,
+      "avg_pay": 75582,
+      "median_pay": 75582,
+      "min_pay": 75582,
+      "max_pay": 75582,
+      "std_dev": 0,
+      "total_pay": 75582
+    },
+    {
+      "title": "SCRTY GUARD SR",
+      "count": 1,
+      "avg_pay": 53135,
+      "median_pay": 53135,
+      "min_pay": 53135,
+      "max_pay": 53135,
+      "std_dev": 0,
+      "total_pay": 53135
+    },
+    {
+      "title": "AUTO EQUIP OPR",
+      "count": 1,
+      "avg_pay": 44595,
+      "median_pay": 44595,
+      "min_pay": 44595,
+      "max_pay": 44595,
+      "std_dev": 0,
+      "total_pay": 44595
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "location": "Riverside",
+  "year": 2022,
+  "generated_at": "2025-09-18T15:42:02.227517906Z",
+  "employee_count": 13795,
+  "total_gross_pay": 517638783,
+  "avg_gross_pay": 37523.65226531352,
+  "median_gross_pay": 14139,
+  "std_dev": 55030.20799274478,
+  "min_pay": 4,
+  "max_pay": 882023,
+  "percentiles": {
+    "p25": 2817,
+    "p50": 14135,
+    "p75": 54245,
+    "p90": 104738,
+    "p95": 142681.5,
+    "p99": 254158.5
+  },
+  "pay_components": {
+    "total_base": 470735824,
+    "total_overtime": 2559425,
+    "total_adjustments": 44343675,
+    "avg_base": 34123.655237404855,
+    "avg_overtime": 185.53280173976077,
+    "avg_adjustments": 3214.474447263501
+  }
+}

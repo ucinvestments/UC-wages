@@ -1,0 +1,629 @@
+{
+  "location": "San Francisco",
+  "year": 2021,
+  "generated_at": "2025-09-18T15:42:06.240819934Z",
+  "total_employees": 35323,
+  "total_pay": 3796976080,
+  "brackets": [
+    {
+      "range": "0-25k",
+      "min_value": 0,
+      "max_value": 25000,
+      "count": 4879,
+      "percentage": 13.812530079551566,
+      "avg_pay": 10476.24287763886,
+      "median_pay": 9815,
+      "total_pay": 51113589,
+      "top_titles": [
+        {
+          "title": "STDT AID OUTSIDE AGENCY",
+          "count": 294,
+          "avg_pay": 1863.7142857142858
+        },
+        {
+          "title": "POSTDOC-EMPLOYEE",
+          "count": 254,
+          "avg_pay": 13199.763779527559
+        },
+        {
+          "title": "STDT INTERN",
+          "count": 235,
+          "avg_pay": 5327.302127659575
+        },
+        {
+          "title": "CLIN RSCH CRD",
+          "count": 177,
+          "avg_pay": 13164.209039548023
+        },
+        {
+          "title": "GSR-FULL FEE REM",
+          "count": 174,
+          "avg_pay": 11462.78735632184
+        },
+        {
+          "title": "BLANK AST 3",
+          "count": 162,
+          "avg_pay": 9856.283950617284
+        },
+        {
+          "title": "CLIN NURSE 2",
+          "count": 137,
+          "avg_pay": 8956.087591240876
+        },
+        {
+          "title": "JR SPECIALIST",
+          "count": 133,
+          "avg_pay": 16464.90977443609
+        },
+        {
+          "title": "SRA 1",
+          "count": 132,
+          "avg_pay": 14965.84090909091
+        },
+        {
+          "title": "CLIN RSCH CRD AST",
+          "count": 103,
+          "avg_pay": 11849.233009708738
+        }
+      ]
+    },
+    {
+      "range": "25k-50k",
+      "min_value": 25000,
+      "max_value": 50000,
+      "count": 4380,
+      "percentage": 12.399852787135861,
+      "avg_pay": 37770.25570776256,
+      "median_pay": 37824,
+      "total_pay": 165433720,
+      "top_titles": [
+        {
+          "title": "POSTDOC-EMPLOYEE",
+          "count": 247,
+          "avg_pay": 37787.18623481781
+        },
+        {
+          "title": "GSR-FULL FEE REM",
+          "count": 233,
+          "avg_pay": 37611.055793991414
+        },
+        {
+          "title": "CLIN RSCH CRD",
+          "count": 222,
+          "avg_pay": 36751.085585585584
+        },
+        {
+          "title": "RESID PHYS I/REP",
+          "count": 222,
+          "avg_pay": 36889.30630630631
+        },
+        {
+          "title": "RESID PHYS/SUBSPEC 4-8/REP",
+          "count": 152,
+          "avg_pay": 37277.02631578947
+        },
+        {
+          "title": "JR SPECIALIST",
+          "count": 149,
+          "avg_pay": 41242.597315436244
+        },
+        {
+          "title": "SRA 1",
+          "count": 131,
+          "avg_pay": 38229.24427480916
+        },
+        {
+          "title": "OTH POST-MD TRAIN 2-8/REP",
+          "count": 105,
+          "avg_pay": 37900.13333333333
+        },
+        {
+          "title": "BLANK AST 3",
+          "count": 101,
+          "avg_pay": 37531.52475247525
+        },
+        {
+          "title": "CUSTODIAN SR",
+          "count": 100,
+          "avg_pay": 43352.26
+        }
+      ]
+    },
+    {
+      "range": "50k-75k",
+      "min_value": 50000,
+      "max_value": 75000,
+      "count": 6650,
+      "percentage": 18.826260510149197,
+      "avg_pay": 63028.95052631579,
+      "median_pay": 63103,
+      "total_pay": 419142521,
+      "top_titles": [
+        {
+          "title": "POSTDOC-EMPLOYEE",
+          "count": 671,
+          "avg_pay": 60853.913561847985
+        },
+        {
+          "title": "BLANK AST 3",
+          "count": 347,
+          "avg_pay": 64264.08933717579
+        },
+        {
+          "title": "CLIN RSCH CRD",
+          "count": 325,
+          "avg_pay": 65132.60615384615
+        },
+        {
+          "title": "PRACTICE CRD 3",
+          "count": 296,
+          "avg_pay": 65337.66554054054
+        },
+        {
+          "title": "PRACTICE CRD 2",
+          "count": 225,
+          "avg_pay": 61974.96
+        },
+        {
+          "title": "RESID PHYS II-VIII/NON REP",
+          "count": 200,
+          "avg_pay": 62566.05
+        },
+        {
+          "title": "HOSP BLANK AST 3",
+          "count": 188,
+          "avg_pay": 66137.1755319149
+        },
+        {
+          "title": "ASSOC SPECIALIST",
+          "count": 152,
+          "avg_pay": 66642.54605263157
+        },
+        {
+          "title": "ADMIN OFCR 2",
+          "count": 144,
+          "avg_pay": 68096.31944444444
+        },
+        {
+          "title": "PAT CARE AST",
+          "count": 130,
+          "avg_pay": 63437.161538461536
+        }
+      ]
+    },
+    {
+      "range": "75k-100k",
+      "min_value": 75000,
+      "max_value": 100000,
+      "count": 5601,
+      "percentage": 15.856524077796335,
+      "avg_pay": 85922.13711837171,
+      "median_pay": 85245,
+      "total_pay": 481249890,
+      "top_titles": [
+        {
+          "title": "RESID PHYS II-VIII/REP",
+          "count": 627,
+          "avg_pay": 84442.50398724082
+        },
+        {
+          "title": "ADMIN OFCR 3",
+          "count": 165,
+          "avg_pay": 88576.50303030304
+        },
+        {
+          "title": "CLIN NURSE 2",
+          "count": 150,
+          "avg_pay": 87489.94
+        },
+        {
+          "title": "PRACTICE CRD 3",
+          "count": 147,
+          "avg_pay": 82045.27210884354
+        },
+        {
+          "title": "RESID PHYS/SUBSPEC 4-8/REP",
+          "count": 140,
+          "avg_pay": 88668.39285714286
+        },
+        {
+          "title": "SPECIALIST",
+          "count": 127,
+          "avg_pay": 85529.46456692913
+        },
+        {
+          "title": "ADMIN OFCR 2",
+          "count": 126,
+          "avg_pay": 82087.57142857143
+        },
+        {
+          "title": "HOSP LAB TCHN 1",
+          "count": 120,
+          "avg_pay": 89192.3
+        },
+        {
+          "title": "PAT CARE AST",
+          "count": 112,
+          "avg_pay": 82579.78571428571
+        },
+        {
+          "title": "COLL REPR SR",
+          "count": 105,
+          "avg_pay": 81631.93333333333
+        }
+      ]
+    },
+    {
+      "range": "100k-150k",
+      "min_value": 100000,
+      "max_value": 150000,
+      "count": 5297,
+      "percentage": 14.995895025903803,
+      "avg_pay": 122545.83802152162,
+      "median_pay": 121500,
+      "total_pay": 649125304,
+      "top_titles": [
+        {
+          "title": "CLIN NURSE 2",
+          "count": 503,
+          "avg_pay": 127409.51888667991
+        },
+        {
+          "title": "CLIN LAB SCI",
+          "count": 154,
+          "avg_pay": 130777.23376623377
+        },
+        {
+          "title": "NURSE PD",
+          "count": 121,
+          "avg_pay": 125123.92561983471
+        },
+        {
+          "title": "ASST ADJ PROF-HCOMP",
+          "count": 114,
+          "avg_pay": 123461.79824561403
+        },
+        {
+          "title": "SPECIALIST",
+          "count": 101,
+          "avg_pay": 122726.69306930693
+        },
+        {
+          "title": "HS ASST CLIN PROF-HCOMP",
+          "count": 94,
+          "avg_pay": 122907.97872340426
+        },
+        {
+          "title": "CLIN SOCIAL WORKER 3",
+          "count": 89,
+          "avg_pay": 128368.79775280898
+        },
+        {
+          "title": "RSCH ADM 4",
+          "count": 87,
+          "avg_pay": 113994.31034482758
+        },
+        {
+          "title": "REG RESP THER 1",
+          "count": 87,
+          "avg_pay": 128861.2643678161
+        },
+        {
+          "title": "RESID PHYS II-VIII/REP",
+          "count": 62,
+          "avg_pay": 112160.53225806452
+        }
+      ]
+    },
+    {
+      "range": "150k-200k",
+      "min_value": 150000,
+      "max_value": 200000,
+      "count": 4004,
+      "percentage": 11.335390538742462,
+      "avg_pay": 174866.58016983018,
+      "median_pay": 175132,
+      "total_pay": 700165787,
+      "top_titles": [
+        {
+          "title": "CLIN NURSE 2",
+          "count": 1396,
+          "avg_pay": 177847.80945558738
+        },
+        {
+          "title": "CLIN NURSE 3",
+          "count": 167,
+          "avg_pay": 182002.27544910178
+        },
+        {
+          "title": "NURSE PD",
+          "count": 108,
+          "avg_pay": 175085.6851851852
+        },
+        {
+          "title": "NURSE PRACT 2",
+          "count": 104,
+          "avg_pay": 178016.0673076923
+        },
+        {
+          "title": "HS ASST CLIN PROF-HCOMP",
+          "count": 90,
+          "avg_pay": 175343.02222222224
+        },
+        {
+          "title": "RADLG TCHNO PRN",
+          "count": 63,
+          "avg_pay": 167697.2380952381
+        },
+        {
+          "title": "CLIN LAB SCI",
+          "count": 62,
+          "avg_pay": 163221.5806451613
+        },
+        {
+          "title": "ASST ADJ PROF-HCOMP",
+          "count": 54,
+          "avg_pay": 164593.92592592593
+        },
+        {
+          "title": "CLIN LAB SUPV 2",
+          "count": 43,
+          "avg_pay": 176292.44186046513
+        },
+        {
+          "title": "HS ASSOC CLIN PROF-HCOMP",
+          "count": 43,
+          "avg_pay": 175782.13953488372
+        }
+      ]
+    },
+    {
+      "range": "200k-300k",
+      "min_value": 200000,
+      "max_value": 300000,
+      "count": 3137,
+      "percentage": 8.880899130877898,
+      "avg_pay": 232924.87153331208,
+      "median_pay": 225818,
+      "total_pay": 730685322,
+      "top_titles": [
+        {
+          "title": "CLIN NURSE 2",
+          "count": 629,
+          "avg_pay": 222903.2877583466
+        },
+        {
+          "title": "NURSE PRACT 2",
+          "count": 217,
+          "avg_pay": 222483.41013824884
+        },
+        {
+          "title": "HS ASST CLIN PROF-HCOMP",
+          "count": 214,
+          "avg_pay": 239116.78504672897
+        },
+        {
+          "title": "CLIN NURSE 3",
+          "count": 162,
+          "avg_pay": 225940.87037037036
+        },
+        {
+          "title": "HS ASSOC CLIN PROF-HCOMP",
+          "count": 137,
+          "avg_pay": 246423.42335766423
+        },
+        {
+          "title": "PROF IN RES-HCOMP",
+          "count": 112,
+          "avg_pay": 248787.83035714287
+        },
+        {
+          "title": "HS CLIN PROF-HCOMP",
+          "count": 104,
+          "avg_pay": 248994.71153846153
+        },
+        {
+          "title": "STF PHARMACIST 2",
+          "count": 92,
+          "avg_pay": 217368.97826086957
+        },
+        {
+          "title": "PROF-HCOMP",
+          "count": 89,
+          "avg_pay": 245553.22471910113
+        },
+        {
+          "title": "PROF OF CLIN-HCOMP",
+          "count": 79,
+          "avg_pay": 255764.6329113924
+        }
+      ]
+    },
+    {
+      "range": "300k-500k",
+      "min_value": 300000,
+      "max_value": 500000,
+      "count": 1107,
+      "percentage": 3.133935396200776,
+      "avg_pay": 373629.10298102984,
+      "median_pay": 361056,
+      "total_pay": 413607417,
+      "top_titles": [
+        {
+          "title": "PROF OF CLIN-HCOMP",
+          "count": 175,
+          "avg_pay": 393412.6457142857
+        },
+        {
+          "title": "HS CLIN PROF-HCOMP",
+          "count": 142,
+          "avg_pay": 379381.1690140845
+        },
+        {
+          "title": "HS ASST CLIN PROF-HCOMP",
+          "count": 105,
+          "avg_pay": 359542
+        },
+        {
+          "title": "PROF-HCOMP",
+          "count": 103,
+          "avg_pay": 370289.3980582524
+        },
+        {
+          "title": "HS ASSOC CLIN PROF-HCOMP",
+          "count": 95,
+          "avg_pay": 366082.9157894737
+        },
+        {
+          "title": "ASSOC PROF OF CLIN-HCOMP",
+          "count": 95,
+          "avg_pay": 386059.7684210526
+        },
+        {
+          "title": "PROF IN RES-HCOMP",
+          "count": 85,
+          "avg_pay": 374239.1176470588
+        },
+        {
+          "title": "ASST PROF OF CLIN-HCOMP",
+          "count": 50,
+          "avg_pay": 388379.6
+        },
+        {
+          "title": "ASSOC PROF IN RES-HCOMP",
+          "count": 29,
+          "avg_pay": 381877.6551724138
+        },
+        {
+          "title": "ASST PROF IN RES-HCOMP",
+          "count": 26,
+          "avg_pay": 377493.46153846156
+        }
+      ]
+    },
+    {
+      "range": "500k-1M",
+      "min_value": 500000,
+      "max_value": 1000000,
+      "count": 240,
+      "percentage": 0.6794439883362116,
+      "avg_pay": 630551.7625,
+      "median_pay": 594291,
+      "total_pay": 151332423,
+      "top_titles": [
+        {
+          "title": "PROF OF CLIN-HCOMP",
+          "count": 65,
+          "avg_pay": 633611.3538461538
+        },
+        {
+          "title": "PROF-HCOMP",
+          "count": 38,
+          "avg_pay": 666218.7368421053
+        },
+        {
+          "title": "PROF IN RES-HCOMP",
+          "count": 29,
+          "avg_pay": 627465.0689655172
+        },
+        {
+          "title": "HS CLIN PROF-HCOMP",
+          "count": 24,
+          "avg_pay": 601377.0833333334
+        },
+        {
+          "title": "ASSOC PROF OF CLIN-HCOMP",
+          "count": 17,
+          "avg_pay": 624904.2352941176
+        },
+        {
+          "title": "HS ASST CLIN PROF-HCOMP",
+          "count": 14,
+          "avg_pay": 557422.3571428572
+        },
+        {
+          "title": "HS ASSOC CLIN PROF-HCOMP",
+          "count": 13,
+          "avg_pay": 611640.1538461539
+        },
+        {
+          "title": "UNCLASSIFIED SR MGR CT",
+          "count": 12,
+          "avg_pay": 662405.3333333334
+        },
+        {
+          "title": "ASST PROF OF CLIN-HCOMP",
+          "count": 6,
+          "avg_pay": 563323.8333333334
+        },
+        {
+          "title": "ASSOC PROF IN RES-HCOMP",
+          "count": 4,
+          "avg_pay": 666166.5
+        }
+      ]
+    },
+    {
+      "range": "1M+",
+      "min_value": 1000000,
+      "max_value": 999999999,
+      "count": 28,
+      "percentage": 0.07926846530589135,
+      "avg_pay": 1254289.5357142857,
+      "median_pay": 1192097.5,
+      "total_pay": 35120107,
+      "top_titles": [
+        {
+          "title": "PROF-HCOMP",
+          "count": 8,
+          "avg_pay": 1278844.75
+        },
+        {
+          "title": "PROF OF CLIN-HCOMP",
+          "count": 6,
+          "avg_pay": 1292350.6666666667
+        },
+        {
+          "title": "PROF IN RES-HCOMP",
+          "count": 5,
+          "avg_pay": 1190674
+        },
+        {
+          "title": "SVP CHILD SVC/PRES BENIOFF",
+          "count": 1,
+          "avg_pay": 1254726
+        },
+        {
+          "title": "CEO MED CTR",
+          "count": 1,
+          "avg_pay": 2085670
+        },
+        {
+          "title": "ASSOC PROF OF CLIN-HCOMP",
+          "count": 1,
+          "avg_pay": 1159329
+        },
+        {
+          "title": "CFO MED CTR",
+          "count": 1,
+          "avg_pay": 1018754
+        },
+        {
+          "title": "VC AND DEAN SOM",
+          "count": 1,
+          "avg_pay": 1089848
+        },
+        {
+          "title": "HS ASSOC CLIN PROF-HCOMP",
+          "count": 1,
+          "avg_pay": 1015521
+        },
+        {
+          "title": "HS CLIN PROF-HCOMP",
+          "count": 1,
+          "avg_pay": 1270865
+        }
+      ]
+    }
+  ]
+}

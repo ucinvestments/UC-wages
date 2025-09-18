@@ -1,0 +1,567 @@
+{
+  "location": "UCOP",
+  "year": 2013,
+  "generated_at": "2025-09-18T15:42:06.459579184Z",
+  "total_employees": 1996,
+  "total_pay": 158058188,
+  "brackets": [
+    {
+      "range": "0-25k",
+      "min_value": 0,
+      "max_value": 25000,
+      "count": 379,
+      "percentage": 18.987975951903806,
+      "avg_pay": 7583.282321899736,
+      "median_pay": 4949,
+      "total_pay": 2874064,
+      "top_titles": [
+        {
+          "title": "STDT 4",
+          "count": 79,
+          "avg_pay": 938.7594936708861
+        },
+        {
+          "title": "FAC WORKER",
+          "count": 26,
+          "avg_pay": 1206.8846153846155
+        },
+        {
+          "title": "STDT 2",
+          "count": 24,
+          "avg_pay": 3024.9166666666665
+        },
+        {
+          "title": "PROJECT POLICY ANL 2",
+          "count": 17,
+          "avg_pay": 8978.470588235294
+        },
+        {
+          "title": "CUSTOMER SVC REPR 1",
+          "count": 15,
+          "avg_pay": 11712.666666666666
+        },
+        {
+          "title": "ADMIN ANL",
+          "count": 13,
+          "avg_pay": 8256.307692307691
+        },
+        {
+          "title": "BLANK AST 3",
+          "count": 12,
+          "avg_pay": 13617.166666666666
+        },
+        {
+          "title": "BLANK AST 2",
+          "count": 9,
+          "avg_pay": 8300.222222222223
+        },
+        {
+          "title": "PAINTER",
+          "count": 9,
+          "avg_pay": 2871.5555555555557
+        },
+        {
+          "title": "CLERK",
+          "count": 8,
+          "avg_pay": 10.25
+        }
+      ]
+    },
+    {
+      "range": "25k-50k",
+      "min_value": 25000,
+      "max_value": 50000,
+      "count": 256,
+      "percentage": 12.825651302605209,
+      "avg_pay": 39976.82421875,
+      "median_pay": 41028,
+      "total_pay": 10234067,
+      "top_titles": [
+        {
+          "title": "BLANK AST 3",
+          "count": 53,
+          "avg_pay": 42268.339622641506
+        },
+        {
+          "title": "BLANK AST 2",
+          "count": 28,
+          "avg_pay": 39934.392857142855
+        },
+        {
+          "title": "ADMIN OFCR 2",
+          "count": 10,
+          "avg_pay": 41851.6
+        },
+        {
+          "title": "ADMIN SPEC",
+          "count": 6,
+          "avg_pay": 35251.833333333336
+        },
+        {
+          "title": "ADMIN AST 2",
+          "count": 6,
+          "avg_pay": 40427.333333333336
+        },
+        {
+          "title": "CUSTOMER SVC REPR 2",
+          "count": 6,
+          "avg_pay": 42052.833333333336
+        },
+        {
+          "title": "APPLICATIONS PROGR 3",
+          "count": 5,
+          "avg_pay": 40685.4
+        },
+        {
+          "title": "EXEC AST 3",
+          "count": 4,
+          "avg_pay": 39124.25
+        },
+        {
+          "title": "COUNSEL 4",
+          "count": 4,
+          "avg_pay": 36278.25
+        },
+        {
+          "title": "QA RELEASE MGT ANL 3",
+          "count": 3,
+          "avg_pay": 40833
+        }
+      ]
+    },
+    {
+      "range": "50k-75k",
+      "min_value": 50000,
+      "max_value": 75000,
+      "count": 451,
+      "percentage": 22.595190380761522,
+      "avg_pay": 61244.9844789357,
+      "median_pay": 59969,
+      "total_pay": 27621488,
+      "top_titles": [
+        {
+          "title": "BLANK AST 3",
+          "count": 32,
+          "avg_pay": 52859.5625
+        },
+        {
+          "title": "BENEFITS ANL 2",
+          "count": 20,
+          "avg_pay": 56627.2
+        },
+        {
+          "title": "EXEC AST 3",
+          "count": 17,
+          "avg_pay": 60128.17647058824
+        },
+        {
+          "title": "PROJECT POLICY ANL 3",
+          "count": 16,
+          "avg_pay": 68253.9375
+        },
+        {
+          "title": "ADMIN OFCR 2",
+          "count": 16,
+          "avg_pay": 58860.1875
+        },
+        {
+          "title": "BENEFITS ANL 3",
+          "count": 14,
+          "avg_pay": 66875.78571428571
+        },
+        {
+          "title": "ACCOUNTANT 2 NEX",
+          "count": 13,
+          "avg_pay": 61417.769230769234
+        },
+        {
+          "title": "ACCOUNTANT 3",
+          "count": 10,
+          "avg_pay": 64209.6
+        },
+        {
+          "title": "K to 14 ACAD PREP SPEC 3",
+          "count": 9,
+          "avg_pay": 54369.11111111111
+        },
+        {
+          "title": "BUS SYS ANL 2 NEX",
+          "count": 9,
+          "avg_pay": 62830.555555555555
+        }
+      ]
+    },
+    {
+      "range": "75k-100k",
+      "min_value": 75000,
+      "max_value": 100000,
+      "count": 400,
+      "percentage": 20.04008016032064,
+      "avg_pay": 87032.7775,
+      "median_pay": 86767,
+      "total_pay": 34813111,
+      "top_titles": [
+        {
+          "title": "APPLICATIONS PROGR 3",
+          "count": 47,
+          "avg_pay": 87305.8085106383
+        },
+        {
+          "title": "PROJECT POLICY ANL 4 OP",
+          "count": 25,
+          "avg_pay": 88166.96
+        },
+        {
+          "title": "ADM CRD OFCR",
+          "count": 17,
+          "avg_pay": 92338.17647058824
+        },
+        {
+          "title": "BUS SYS ANL 3",
+          "count": 14,
+          "avg_pay": 85563.85714285714
+        },
+        {
+          "title": "TECHNOLOGY SUPP ANL 2",
+          "count": 7,
+          "avg_pay": 78682.85714285714
+        },
+        {
+          "title": "EXEC AST 4",
+          "count": 7,
+          "avg_pay": 85700.71428571429
+        },
+        {
+          "title": "PROJECT POLICY ANL 3",
+          "count": 7,
+          "avg_pay": 77595
+        },
+        {
+          "title": "PROJECT POLICY ANL 4",
+          "count": 7,
+          "avg_pay": 81186.14285714286
+        },
+        {
+          "title": "BENEFITS PRG STRAT ANL 4",
+          "count": 7,
+          "avg_pay": 89355.14285714286
+        },
+        {
+          "title": "COMM SPEC 4 OP",
+          "count": 6,
+          "avg_pay": 88992.66666666667
+        }
+      ]
+    },
+    {
+      "range": "100k-150k",
+      "min_value": 100000,
+      "max_value": 150000,
+      "count": 312,
+      "percentage": 15.631262525050099,
+      "avg_pay": 117997.06730769231,
+      "median_pay": 113769,
+      "total_pay": 36815085,
+      "top_titles": [
+        {
+          "title": "APPLICATIONS PROGR 4",
+          "count": 20,
+          "avg_pay": 111302.25
+        },
+        {
+          "title": "SYS ADM 4",
+          "count": 13,
+          "avg_pay": 109637.23076923077
+        },
+        {
+          "title": "ADM CRD OFCR",
+          "count": 12,
+          "avg_pay": 118215.16666666667
+        },
+        {
+          "title": "INFO SYS ANL 4",
+          "count": 9,
+          "avg_pay": 113036.22222222222
+        },
+        {
+          "title": "TCHL PROJECT MGT PROFL 4",
+          "count": 8,
+          "avg_pay": 118487.375
+        },
+        {
+          "title": "PROJECT POLICY ANL MGR 2",
+          "count": 8,
+          "avg_pay": 123851.75
+        },
+        {
+          "title": "DIR",
+          "count": 8,
+          "avg_pay": 125304.125
+        },
+        {
+          "title": "APPLICATIONS PROGM MGR 1",
+          "count": 8,
+          "avg_pay": 115408.75
+        },
+        {
+          "title": "SYS ADMST SUPV 2",
+          "count": 5,
+          "avg_pay": 113643.6
+        },
+        {
+          "title": "ORGANIZATIONAL CNSLT 4",
+          "count": 5,
+          "avg_pay": 111414.4
+        }
+      ]
+    },
+    {
+      "range": "150k-200k",
+      "min_value": 150000,
+      "max_value": 200000,
+      "count": 116,
+      "percentage": 5.811623246492986,
+      "avg_pay": 168770,
+      "median_pay": 167063,
+      "total_pay": 19577320,
+      "top_titles": [
+        {
+          "title": "COUNSEL 4",
+          "count": 20,
+          "avg_pay": 179611.4
+        },
+        {
+          "title": "TCHL PROJECT MGR 2",
+          "count": 5,
+          "avg_pay": 168075.2
+        },
+        {
+          "title": "ORGANIZATIONAL CNSLT 5",
+          "count": 4,
+          "avg_pay": 157954.25
+        },
+        {
+          "title": "COUNSEL 3",
+          "count": 4,
+          "avg_pay": 160121
+        },
+        {
+          "title": "COMM MGR 2",
+          "count": 3,
+          "avg_pay": 152816.66666666666
+        },
+        {
+          "title": "DIR",
+          "count": 3,
+          "avg_pay": 162605.33333333334
+        },
+        {
+          "title": "PROJECT POLICY ANL MGR 3",
+          "count": 3,
+          "avg_pay": 154085.33333333334
+        },
+        {
+          "title": "APPLICATIONS PROGM MGR 2",
+          "count": 3,
+          "avg_pay": 157013
+        },
+        {
+          "title": "EXEC ADVISOR MGR 3",
+          "count": 2,
+          "avg_pay": 171052.5
+        },
+        {
+          "title": "ADMIN MGR 3",
+          "count": 2,
+          "avg_pay": 163768
+        }
+      ]
+    },
+    {
+      "range": "200k-300k",
+      "min_value": 200000,
+      "max_value": 300000,
+      "count": 49,
+      "percentage": 2.4549098196392785,
+      "avg_pay": 237188.10204081633,
+      "median_pay": 234637,
+      "total_pay": 11622217,
+      "top_titles": [
+        {
+          "title": "MGN COUNSEL 3",
+          "count": 5,
+          "avg_pay": 219869.2
+        },
+        {
+          "title": "COUNSEL 4",
+          "count": 4,
+          "avg_pay": 203117.25
+        },
+        {
+          "title": "DEPUTY GEN COUNSEL",
+          "count": 3,
+          "avg_pay": 262700.3333333333
+        },
+        {
+          "title": "INFO SYS MGR 4",
+          "count": 2,
+          "avg_pay": 237786
+        },
+        {
+          "title": "EXEC DIR EXEC",
+          "count": 2,
+          "avg_pay": 261047
+        },
+        {
+          "title": "ASC VP",
+          "count": 2,
+          "avg_pay": 249371
+        },
+        {
+          "title": "ADMIN MGR 4",
+          "count": 2,
+          "avg_pay": 229788
+        },
+        {
+          "title": "PUBL EQUITY INV OFCR",
+          "count": 2,
+          "avg_pay": 243420.5
+        },
+        {
+          "title": "AST VP FUNC AREA",
+          "count": 1,
+          "avg_pay": 237451
+        },
+        {
+          "title": "COMPENSATION MGR 4",
+          "count": 1,
+          "avg_pay": 250354
+        }
+      ]
+    },
+    {
+      "range": "300k-500k",
+      "min_value": 300000,
+      "max_value": 500000,
+      "count": 23,
+      "percentage": 1.1523046092184368,
+      "avg_pay": 363449,
+      "median_pay": 364474,
+      "total_pay": 8359327,
+      "top_titles": [
+        {
+          "title": "FIXED INCOME INV DIR",
+          "count": 3,
+          "avg_pay": 394452
+        },
+        {
+          "title": "PRIVATE EQUITY INV OFCR",
+          "count": 2,
+          "avg_pay": 331648
+        },
+        {
+          "title": "REAL ESTATE INV MGR 3",
+          "count": 1,
+          "avg_pay": 445824
+        },
+        {
+          "title": "EXEC AST OR SPC AST",
+          "count": 1,
+          "avg_pay": 328373
+        },
+        {
+          "title": "DEPUTY DIR",
+          "count": 1,
+          "avg_pay": 364474
+        },
+        {
+          "title": "ASC VP CPO",
+          "count": 1,
+          "avg_pay": 314695
+        },
+        {
+          "title": "PRIVATE EQUITY INV DIR",
+          "count": 1,
+          "avg_pay": 369602
+        },
+        {
+          "title": "GEN COUNSEL VP LEGAL AFFAIRS",
+          "count": 1,
+          "avg_pay": 424916
+        },
+        {
+          "title": "VP BUDGET AND CAPITAL RESC",
+          "count": 1,
+          "avg_pay": 312666
+        },
+        {
+          "title": "SVP CCAO",
+          "count": 1,
+          "avg_pay": 413916
+        }
+      ]
+    },
+    {
+      "range": "500k-1M",
+      "min_value": 500000,
+      "max_value": 1000000,
+      "count": 10,
+      "percentage": 0.501002004008016,
+      "avg_pay": 614150.9,
+      "median_pay": 514971,
+      "total_pay": 6141509,
+      "top_titles": [
+        {
+          "title": "PRIVATE EQUITY MGR 3",
+          "count": 1,
+          "avg_pay": 515261
+        },
+        {
+          "title": "AST TREASURER OF THE REGENTS",
+          "count": 1,
+          "avg_pay": 646360
+        },
+        {
+          "title": "PRESIDENT OF THE UNIV",
+          "count": 1,
+          "avg_pay": 510932
+        },
+        {
+          "title": "TREASURER OF THE REGENTS",
+          "count": 1,
+          "avg_pay": 934993
+        },
+        {
+          "title": "ABSOLUTE RETURNS INV MGR 3",
+          "count": 1,
+          "avg_pay": 514681
+        },
+        {
+          "title": "SR MGN DIR RISK MGT",
+          "count": 1,
+          "avg_pay": 505036
+        },
+        {
+          "title": "SR MGN DIR FIXED INCOME ASSETS",
+          "count": 1,
+          "avg_pay": 798017
+        },
+        {
+          "title": "SR MGN DIR PUBL EQUITY INV",
+          "count": 1,
+          "avg_pay": 505939
+        },
+        {
+          "title": "FIXED INCOME INV DIR",
+          "count": 1,
+          "avg_pay": 505386
+        },
+        {
+          "title": "SVP HS AND SVC",
+          "count": 1,
+          "avg_pay": 704904
+        }
+      ]
+    }
+  ]
+}

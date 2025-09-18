@@ -1,0 +1,28 @@
+{
+  "location": "ASUCLA",
+  "year": 2023,
+  "generated_at": "2025-09-18T15:42:01.667118234Z",
+  "employee_count": 3099,
+  "total_gross_pay": 25276041,
+  "avg_gross_pay": 8156.192642787996,
+  "median_gross_pay": 2308,
+  "std_dev": 20656.00770822076,
+  "min_pay": 4,
+  "max_pay": 355777,
+  "percentiles": {
+    "p25": 900,
+    "p50": 2307.5,
+    "p75": 5587,
+    "p90": 12395,
+    "p95": 54085.5,
+    "p99": 104086.5
+  },
+  "pay_components": {
+    "total_base": 23160613,
+    "total_overtime": 368116,
+    "total_adjustments": 1747291,
+    "avg_base": 7473.576314940304,
+    "avg_overtime": 118.78541464988706,
+    "avg_adjustments": 563.8241368183285
+  }
+}

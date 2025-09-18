@@ -1,0 +1,589 @@
+{
+  "location": "San Francisco",
+  "year": 2010,
+  "generated_at": "2025-09-18T15:42:05.90561533Z",
+  "total_employees": 26849,
+  "total_pay": 1758512761.7099962,
+  "brackets": [
+    {
+      "range": "0-25k",
+      "min_value": 0,
+      "max_value": 25000,
+      "count": 6040,
+      "percentage": 22.496182353160265,
+      "avg_pay": 9774.433213576141,
+      "median_pay": 8711.27,
+      "total_pay": 59037576.609999895,
+      "top_titles": [
+        {
+          "title": "POSTDOC-EMPLOYEE",
+          "count": 670,
+          "avg_pay": 9851.079119402977
+        },
+        {
+          "title": "_____ASSISTANT III",
+          "count": 373,
+          "avg_pay": 11389.8716621984
+        },
+        {
+          "title": "STAFF RESEARCH ASSOC I",
+          "count": 322,
+          "avg_pay": 12046.371366459625
+        },
+        {
+          "title": "_____ASSISTANT II",
+          "count": 289,
+          "avg_pay": 9654.957958477511
+        },
+        {
+          "title": "GRAD STDNT RES-FULL FEE REM",
+          "count": 206,
+          "avg_pay": 11511.496262135925
+        },
+        {
+          "title": "RECREATION PROGRAM INSTRUCTOR",
+          "count": 198,
+          "avg_pay": 5507.466565656567
+        },
+        {
+          "title": "ANALYST I",
+          "count": 182,
+          "avg_pay": 10791.906043956045
+        },
+        {
+          "title": "CLERK",
+          "count": 137,
+          "avg_pay": 4273.479051094892
+        },
+        {
+          "title": "STAFF RESEARCH ASSOC II",
+          "count": 128,
+          "avg_pay": 13787.896249999998
+        },
+        {
+          "title": "ANALYST II",
+          "count": 122,
+          "avg_pay": 12709.2431147541
+        }
+      ]
+    },
+    {
+      "range": "25k-50k",
+      "min_value": 25000,
+      "max_value": 50000,
+      "count": 7500,
+      "percentage": 27.93400126634139,
+      "avg_pay": 38987.98686533329,
+      "median_pay": 40185.35,
+      "total_pay": 292409901.48999965,
+      "top_titles": [
+        {
+          "title": "_____ASSISTANT III",
+          "count": 1004,
+          "avg_pay": 42322.56918326698
+        },
+        {
+          "title": "POSTDOC-EMPLOYEE",
+          "count": 556,
+          "avg_pay": 39434.611780575506
+        },
+        {
+          "title": "_____ASSISTANT II",
+          "count": 505,
+          "avg_pay": 38111.72110891085
+        },
+        {
+          "title": "RESIDENT PHYS II-VIII/NON-REP",
+          "count": 452,
+          "avg_pay": 39108.66201327431
+        },
+        {
+          "title": "ANALYST I",
+          "count": 289,
+          "avg_pay": 41381.10442906573
+        },
+        {
+          "title": "RESIDENT PHYSICIAN I/NON-REP",
+          "count": 286,
+          "avg_pay": 29796.216398601387
+        },
+        {
+          "title": "STAFF RESEARCH ASSOC II",
+          "count": 261,
+          "avg_pay": 39701.86118773949
+        },
+        {
+          "title": "RES PHYS/SUBSPE IV-VIII/NONREP",
+          "count": 175,
+          "avg_pay": 33276.702971428596
+        },
+        {
+          "title": "ANALYST II",
+          "count": 164,
+          "avg_pay": 40024.97420731705
+        },
+        {
+          "title": "STAFF RESEARCH ASSOC I",
+          "count": 152,
+          "avg_pay": 35245.55769736844
+        }
+      ]
+    },
+    {
+      "range": "50k-75k",
+      "min_value": 50000,
+      "max_value": 75000,
+      "count": 5301,
+      "percentage": 19.743752095050095,
+      "avg_pay": 60311.83242218449,
+      "median_pay": 59209.91,
+      "total_pay": 319713023.66999996,
+      "top_titles": [
+        {
+          "title": "RESIDENT PHYS II-VIII/NON-REP",
+          "count": 404,
+          "avg_pay": 55796.864653465316
+        },
+        {
+          "title": "ANALYST II",
+          "count": 362,
+          "avg_pay": 57562.1503314917
+        },
+        {
+          "title": "ANALYST III",
+          "count": 311,
+          "avg_pay": 61647.1428617363
+        },
+        {
+          "title": "ANALYST IV",
+          "count": 264,
+          "avg_pay": 66202.6325757576
+        },
+        {
+          "title": "_____ASSISTANT III",
+          "count": 239,
+          "avg_pay": 52964.5812552301
+        },
+        {
+          "title": "ANALYST I",
+          "count": 175,
+          "avg_pay": 54572.154685714275
+        },
+        {
+          "title": "NURSE, CLINICAL II",
+          "count": 155,
+          "avg_pay": 64886.8303225806
+        },
+        {
+          "title": "TECHNICIAN, HOSPITAL LAB, I",
+          "count": 131,
+          "avg_pay": 60586.6479389313
+        },
+        {
+          "title": "RES PHYS/SUBSPE IV-VIII/NONREP",
+          "count": 124,
+          "avg_pay": 61687.473387096754
+        },
+        {
+          "title": "SPECIALIST",
+          "count": 103,
+          "avg_pay": 64993.07135922328
+        }
+      ]
+    },
+    {
+      "range": "75k-100k",
+      "min_value": 75000,
+      "max_value": 100000,
+      "count": 2647,
+      "percentage": 9.858840180267421,
+      "avg_pay": 86505.75586701927,
+      "median_pay": 86300.54,
+      "total_pay": 228980735.78,
+      "top_titles": [
+        {
+          "title": "NURSE, CLINICAL II",
+          "count": 361,
+          "avg_pay": 88517.16426592799
+        },
+        {
+          "title": "ANALYST V",
+          "count": 155,
+          "avg_pay": 84451.05929032258
+        },
+        {
+          "title": "PROGRAMMER/ANALYST III",
+          "count": 141,
+          "avg_pay": 84502.27680851068
+        },
+        {
+          "title": "SPECIALIST",
+          "count": 105,
+          "avg_pay": 84716.2498095238
+        },
+        {
+          "title": "ANALYST V-SUPERVISOR",
+          "count": 104,
+          "avg_pay": 85869.53624999999
+        },
+        {
+          "title": "SCIENTIST, CLINICAL LAB",
+          "count": 102,
+          "avg_pay": 85932.38245098041
+        },
+        {
+          "title": "ANALYST IV",
+          "count": 74,
+          "avg_pay": 79584.3887837838
+        },
+        {
+          "title": "ASSISTANT ADJUNCT PROF-HCOMP",
+          "count": 71,
+          "avg_pay": 87192.26774647886
+        },
+        {
+          "title": "PROGRAMMER/ANALYST IV",
+          "count": 70,
+          "avg_pay": 92825.56728571426
+        },
+        {
+          "title": "MANAGER (FUNCTIONAL AREA)",
+          "count": 64,
+          "avg_pay": 89637.99546875001
+        }
+      ]
+    },
+    {
+      "range": "100k-150k",
+      "min_value": 100000,
+      "max_value": 150000,
+      "count": 3603,
+      "percentage": 13.419494208350406,
+      "avg_pay": 121813.43058562305,
+      "median_pay": 120553.05,
+      "total_pay": 438893790.39999986,
+      "top_titles": [
+        {
+          "title": "NURSE, CLINICAL II",
+          "count": 1060,
+          "avg_pay": 120016.36939622641
+        },
+        {
+          "title": "NURSE, CLINICAL III",
+          "count": 260,
+          "avg_pay": 125736.85053846148
+        },
+        {
+          "title": "MANAGER (FUNCTIONAL AREA)",
+          "count": 199,
+          "avg_pay": 120274.27753768837
+        },
+        {
+          "title": "NURSE PRACTITIONER II",
+          "count": 121,
+          "avg_pay": 126073.56074380165
+        },
+        {
+          "title": "DIRECTOR (FUNCTIONAL AREA)",
+          "count": 109,
+          "avg_pay": 124576.54495412837
+        },
+        {
+          "title": "PROGRAMMER/ANALYST IV",
+          "count": 98,
+          "avg_pay": 111069.01326530612
+        },
+        {
+          "title": "ASSISTANT ADJUNCT PROF-HCOMP",
+          "count": 96,
+          "avg_pay": 120335.95322916667
+        },
+        {
+          "title": "HS ASSISTANT CLIN PROF-HCOMP",
+          "count": 85,
+          "avg_pay": 128962.89129411764
+        },
+        {
+          "title": "ADMIN/COORD/OFFICER(FUNC AREA)",
+          "count": 82,
+          "avg_pay": 117867.07073170732
+        },
+        {
+          "title": "NURSE, PER DIEM",
+          "count": 67,
+          "avg_pay": 121664.2243283582
+        }
+      ]
+    },
+    {
+      "range": "150k-200k",
+      "min_value": 150000,
+      "max_value": 200000,
+      "count": 842,
+      "percentage": 3.1360572088345937,
+      "avg_pay": 169707.6570427553,
+      "median_pay": 167271.865,
+      "total_pay": 142893847.22999996,
+      "top_titles": [
+        {
+          "title": "DIRECTOR (FUNCTIONAL AREA)",
+          "count": 69,
+          "avg_pay": 169305.5727536232
+        },
+        {
+          "title": "HS ASSISTANT CLIN PROF-HCOMP",
+          "count": 57,
+          "avg_pay": 170747.28719298248
+        },
+        {
+          "title": "PROFESSOR IN RESIDENCE-HCOMP",
+          "count": 54,
+          "avg_pay": 178437.28481481483
+        },
+        {
+          "title": "NURSE, CLINICAL II",
+          "count": 53,
+          "avg_pay": 161412.2533962264
+        },
+        {
+          "title": "PROFESSOR-HCOMP",
+          "count": 48,
+          "avg_pay": 179304.29458333334
+        },
+        {
+          "title": "HS ASSOCIATE CLIN PROF-HCOMP",
+          "count": 47,
+          "avg_pay": 173127.41531914892
+        },
+        {
+          "title": "NURSE, CLINICAL III",
+          "count": 43,
+          "avg_pay": 159187.66906976738
+        },
+        {
+          "title": "PHARMACIST, STAFF II",
+          "count": 40,
+          "avg_pay": 158865.29675
+        },
+        {
+          "title": "HS CLINICAL PROFESSOR-HCOMP",
+          "count": 34,
+          "avg_pay": 174539.68470588236
+        },
+        {
+          "title": "ASSOCIATE PROF IN RES-HCOMP",
+          "count": 34,
+          "avg_pay": 173027.7417647059
+        }
+      ]
+    },
+    {
+      "range": "200k-300k",
+      "min_value": 200000,
+      "max_value": 300000,
+      "count": 582,
+      "percentage": 2.167678498268092,
+      "avg_pay": 240441.7526975943,
+      "median_pay": 235265.605,
+      "total_pay": 139937100.06999987,
+      "top_titles": [
+        {
+          "title": "PROFESSOR-HCOMP",
+          "count": 118,
+          "avg_pay": 244107.7257627119
+        },
+        {
+          "title": "PROFESSOR IN RESIDENCE-HCOMP",
+          "count": 80,
+          "avg_pay": 237082.68337500002
+        },
+        {
+          "title": "PROFESSOR OF CLINICAL___-HCOMP",
+          "count": 68,
+          "avg_pay": 248755.10352941175
+        },
+        {
+          "title": "HS ASSISTANT CLIN PROF-HCOMP",
+          "count": 47,
+          "avg_pay": 236156.41978723404
+        },
+        {
+          "title": "HS CLINICAL PROFESSOR-HCOMP",
+          "count": 45,
+          "avg_pay": 248506.0706666666
+        },
+        {
+          "title": "HS ASSOCIATE CLIN PROF-HCOMP",
+          "count": 42,
+          "avg_pay": 233564.3645238095
+        },
+        {
+          "title": "ASSOC PROF OF CLIN_____-HCOMP",
+          "count": 35,
+          "avg_pay": 246357.5802857143
+        },
+        {
+          "title": "ASSISTANT PROF IN RES-HCOMP",
+          "count": 26,
+          "avg_pay": 249336.83038461537
+        },
+        {
+          "title": "ASSOCIATE PROF IN RES-HCOMP",
+          "count": 26,
+          "avg_pay": 229031.7142307692
+        },
+        {
+          "title": "DIRECTOR (FUNCTIONAL AREA)",
+          "count": 16,
+          "avg_pay": 222272.695625
+        }
+      ]
+    },
+    {
+      "range": "300k-500k",
+      "min_value": 300000,
+      "max_value": 500000,
+      "count": 280,
+      "percentage": 1.0428693806100786,
+      "avg_pay": 360368.67474999995,
+      "median_pay": 345901.06,
+      "total_pay": 100903228.92999998,
+      "top_titles": [
+        {
+          "title": "PROFESSOR-HCOMP",
+          "count": 59,
+          "avg_pay": 356696.486440678
+        },
+        {
+          "title": "PROFESSOR OF CLINICAL___-HCOMP",
+          "count": 50,
+          "avg_pay": 365405.90140000003
+        },
+        {
+          "title": "PROFESSOR IN RESIDENCE-HCOMP",
+          "count": 40,
+          "avg_pay": 370426.48049999995
+        },
+        {
+          "title": "HS CLINICAL PROFESSOR-HCOMP",
+          "count": 25,
+          "avg_pay": 359708.76
+        },
+        {
+          "title": "ASSISTANT PROF IN RES-HCOMP",
+          "count": 19,
+          "avg_pay": 339533.70684210525
+        },
+        {
+          "title": "ASSOC PROF OF CLIN_____-HCOMP",
+          "count": 15,
+          "avg_pay": 364693.86799999996
+        },
+        {
+          "title": "HS ASSISTANT CLIN PROF-HCOMP",
+          "count": 14,
+          "avg_pay": 326606.102857143
+        },
+        {
+          "title": "ASSOCIATE PROF IN RES-HCOMP",
+          "count": 12,
+          "avg_pay": 401413.1341666668
+        },
+        {
+          "title": "ASST PROF OF CLIN_____-HCOMP",
+          "count": 9,
+          "avg_pay": 359950.02
+        },
+        {
+          "title": "HS ASSOCIATE CLIN PROF-HCOMP",
+          "count": 8,
+          "avg_pay": 388734.48250000004
+        }
+      ]
+    },
+    {
+      "range": "500k-1M",
+      "min_value": 500000,
+      "max_value": 1000000,
+      "count": 51,
+      "percentage": 0.18995120861112147,
+      "avg_pay": 612789.1521568627,
+      "median_pay": 584499.52,
+      "total_pay": 31252246.759999998,
+      "top_titles": [
+        {
+          "title": "PROFESSOR-HCOMP",
+          "count": 19,
+          "avg_pay": 640340.8363157893
+        },
+        {
+          "title": "PROFESSOR IN RESIDENCE-HCOMP",
+          "count": 6,
+          "avg_pay": 650085.0883333334
+        },
+        {
+          "title": "PROFESSOR OF CLINICAL___-HCOMP",
+          "count": 5,
+          "avg_pay": 543843.42
+        },
+        {
+          "title": "ASSOCIATE PROF IN RES-HCOMP",
+          "count": 5,
+          "avg_pay": 552805.816
+        },
+        {
+          "title": "ASSOC PROF OF CLIN_____-HCOMP",
+          "count": 5,
+          "avg_pay": 588915.648
+        },
+        {
+          "title": "HS CLINICAL PROFESSOR-HCOMP",
+          "count": 3,
+          "avg_pay": 526713.3766666666
+        },
+        {
+          "title": "HS ASSOCIATE CLIN PROF-HCOMP",
+          "count": 3,
+          "avg_pay": 682258.9333333332
+        },
+        {
+          "title": "HS ASSISTANT CLIN PROF-HCOMP",
+          "count": 1,
+          "avg_pay": 508884
+        },
+        {
+          "title": "DEAN (SCHOOL/COLLEGE)-EXEC",
+          "count": 1,
+          "avg_pay": 618474.96
+        },
+        {
+          "title": "ASST PROF OF CLIN_____-HCOMP",
+          "count": 1,
+          "avg_pay": 503069.08
+        }
+      ]
+    },
+    {
+      "range": "1M+",
+      "min_value": 1000000,
+      "max_value": 999999999,
+      "count": 3,
+      "percentage": 0.011173600506536556,
+      "avg_pay": 1497103.5899999999,
+      "median_pay": 1477050.58,
+      "total_pay": 4491310.77,
+      "top_titles": [
+        {
+          "title": "PROFESSOR OF CLINICAL___-HCOMP",
+          "count": 2,
+          "avg_pay": 1470924.755
+        },
+        {
+          "title": "ASSOCIATE PROF IN RES-HCOMP",
+          "count": 1,
+          "avg_pay": 1549461.26
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "location": "UCOP",
+  "year": 2015,
+  "generated_at": "2025-09-18T15:42:03.442107482Z",
+  "employee_count": 1968,
+  "total_gross_pay": 163230285,
+  "avg_gross_pay": 82942.21798780488,
+  "median_gross_pay": 71232,
+  "std_dev": 71841.23271866464,
+  "min_pay": 168,
+  "max_pay": 1053157,
+  "percentiles": {
+    "p25": 44740,
+    "p50": 71225,
+    "p75": 104926,
+    "p90": 148554,
+    "p95": 185646.5,
+    "p99": 376805
+  },
+  "pay_components": {
+    "total_base": 154194273,
+    "total_overtime": 140197,
+    "total_adjustments": 8895815,
+    "avg_base": 78350.74847560975,
+    "avg_overtime": 71.23831300813008,
+    "avg_adjustments": 4520.231199186992
+  }
+}

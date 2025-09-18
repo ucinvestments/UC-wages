@@ -1,0 +1,58 @@
+services:
+  uc-wages-analysis:
+    build: .
+    container_name: uc-wages-analyzer
+    volumes:
+      - ../data:/data:ro
+      - ./output:/app/output
+    environment:
+      - WORKERS=10
+    env_file:
+      - ../.env
+    command: ["/bin/run_all", "-data", "/data", "-output", "/app/output", "-workers", "10"]
+
+  # Individual analysis services
+  calculate-sums:
+    build: .
+    container_name: uc-wages-sums
+    volumes:
+      - ../data:/data:ro
+      - ./output:/app/output
+    env_file:
+      - ../.env
+    command: ["/bin/calculate_sums", "-data", "/data", "-output", "/app/output/sums", "-workers", "10"]
+    profiles: ["individual"]
+
+  generate-pyramid:
+    build: .
+    container_name: uc-wages-pyramid
+    volumes:
+      - ../data:/data:ro
+      - ./output:/app/output
+    env_file:
+      - ../.env
+    command: ["/bin/generate_pyramid", "-data", "/data", "-output", "/app/output/pyramid", "-workers", "10"]
+    profiles: ["individual"]
+
+  analyze-titles:
+    build: .
+    container_name: uc-wages-titles
+    volumes:
+      - ../data:/data:ro
+      - ./output:/app/output
+    env_file:
+      - ../.env
+    command: ["/bin/analyze_titles", "-data", "/data", "-output", "/app/output/titles", "-top", "100", "-workers", "10"]
+    profiles: ["individual"]
+
+  upload-analysis:
+    build: .
+    container_name: uc-wages-uploader
+    volumes:
+      - ./output:/app/output
+    env_file:
+      - ../.env
+    command: ["/bin/upload_analysis", "-output", "/app/output"]
+    profiles: ["upload"]
+    depends_on:
+      - uc-wages-analysis

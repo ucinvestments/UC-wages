@@ -1,0 +1,559 @@
+{
+  "location": "UCOP",
+  "year": 2012,
+  "generated_at": "2025-09-18T15:42:06.455221195Z",
+  "total_employees": 2093,
+  "total_pay": 155307209.39000002,
+  "brackets": [
+    {
+      "range": "0-25k",
+      "min_value": 0,
+      "max_value": 25000,
+      "count": 425,
+      "percentage": 20.305781175346393,
+      "avg_pay": 9078.128047058832,
+      "median_pay": 7591.82,
+      "total_pay": 3858204.420000003,
+      "top_titles": [
+        {
+          "title": "STDT 2",
+          "count": 59,
+          "avg_pay": 2070.2637288135593
+        },
+        {
+          "title": "ADMIN ANL",
+          "count": 41,
+          "avg_pay": 11733.942195121952
+        },
+        {
+          "title": "BLANK AST 3",
+          "count": 34,
+          "avg_pay": 12233.103235294115
+        },
+        {
+          "title": "CLERK SR OR SECR",
+          "count": 16,
+          "avg_pay": 1039.7762500000001
+        },
+        {
+          "title": "GSR-FULL FEE REM",
+          "count": 14,
+          "avg_pay": 5581.687142857144
+        },
+        {
+          "title": "ADMIN SPEC",
+          "count": 14,
+          "avg_pay": 8366.138571428572
+        },
+        {
+          "title": "BLANK AST 2",
+          "count": 13,
+          "avg_pay": 9658.546923076921
+        },
+        {
+          "title": "MGR",
+          "count": 11,
+          "avg_pay": 16080.51363636364
+        },
+        {
+          "title": "STDT 4",
+          "count": 11,
+          "avg_pay": 4142.098181818182
+        },
+        {
+          "title": "ADM CRD OFCR",
+          "count": 10,
+          "avg_pay": 13325.48
+        }
+      ]
+    },
+    {
+      "range": "25k-50k",
+      "min_value": 25000,
+      "max_value": 50000,
+      "count": 330,
+      "percentage": 15.766841853798375,
+      "avg_pay": 39823.839090909096,
+      "median_pay": 41162.479999999996,
+      "total_pay": 13141866.900000002,
+      "top_titles": [
+        {
+          "title": "BLANK AST 3",
+          "count": 77,
+          "avg_pay": 43252.43571428571
+        },
+        {
+          "title": "BLANK AST 2",
+          "count": 29,
+          "avg_pay": 41069.50275862069
+        },
+        {
+          "title": "ADMIN SPEC",
+          "count": 22,
+          "avg_pay": 42379.33681818182
+        },
+        {
+          "title": "ADM CRD OFCR",
+          "count": 21,
+          "avg_pay": 36664.345238095244
+        },
+        {
+          "title": "ADMIN ANL SR",
+          "count": 20,
+          "avg_pay": 36486.822
+        },
+        {
+          "title": "PROGR ANL 3 UCOP",
+          "count": 16,
+          "avg_pay": 39039.861875
+        },
+        {
+          "title": "MGR",
+          "count": 15,
+          "avg_pay": 35295.70733333333
+        },
+        {
+          "title": "ADMIN ANL",
+          "count": 13,
+          "avg_pay": 32803.596153846156
+        },
+        {
+          "title": "ADMIN ANL PRN 1",
+          "count": 7,
+          "avg_pay": 35914.184285714284
+        },
+        {
+          "title": "CUSTOMER SVC REPR 1",
+          "count": 6,
+          "avg_pay": 42657.225
+        }
+      ]
+    },
+    {
+      "range": "50k-75k",
+      "min_value": 50000,
+      "max_value": 75000,
+      "count": 513,
+      "percentage": 24.510272336359293,
+      "avg_pay": 61550.17335282658,
+      "median_pay": 61182,
+      "total_pay": 31575238.930000037,
+      "top_titles": [
+        {
+          "title": "ADMIN ANL SR",
+          "count": 70,
+          "avg_pay": 66009.23900000002
+        },
+        {
+          "title": "ADMIN ANL",
+          "count": 55,
+          "avg_pay": 58255.02145454546
+        },
+        {
+          "title": "BLANK AST 3",
+          "count": 34,
+          "avg_pay": 53609.161470588246
+        },
+        {
+          "title": "ADMIN SPEC",
+          "count": 31,
+          "avg_pay": 54958.34516129032
+        },
+        {
+          "title": "ADMIN ANL PRN 1",
+          "count": 26,
+          "avg_pay": 67234.04153846155
+        },
+        {
+          "title": "ANL 3",
+          "count": 25,
+          "avg_pay": 63980.113999999994
+        },
+        {
+          "title": "ADM CRD OFCR",
+          "count": 15,
+          "avg_pay": 63521.78133333333
+        },
+        {
+          "title": "EXEC SECR",
+          "count": 14,
+          "avg_pay": 60831.63500000001
+        },
+        {
+          "title": "PROGR ANL 3 UCOP",
+          "count": 13,
+          "avg_pay": 65734.5823076923
+        },
+        {
+          "title": "MGR",
+          "count": 13,
+          "avg_pay": 63655.100769230776
+        }
+      ]
+    },
+    {
+      "range": "75k-100k",
+      "min_value": 75000,
+      "max_value": 100000,
+      "count": 371,
+      "percentage": 17.725752508361204,
+      "avg_pay": 86765.27342318058,
+      "median_pay": 86416.64,
+      "total_pay": 32189916.439999998,
+      "top_titles": [
+        {
+          "title": "ADM CRD OFCR",
+          "count": 93,
+          "avg_pay": 90421.66526881719
+        },
+        {
+          "title": "PROGR ANL 3 UCOP",
+          "count": 53,
+          "avg_pay": 86295.3866037736
+        },
+        {
+          "title": "ADMIN ANL PRN 1",
+          "count": 39,
+          "avg_pay": 80799.19358974359
+        },
+        {
+          "title": "MGR",
+          "count": 23,
+          "avg_pay": 88657.38695652173
+        },
+        {
+          "title": "SPEC",
+          "count": 20,
+          "avg_pay": 88745.45799999998
+        },
+        {
+          "title": "ADMIN ANL PRN 2",
+          "count": 19,
+          "avg_pay": 86611.43736842104
+        },
+        {
+          "title": "PROGR ANL 4 UCOP",
+          "count": 11,
+          "avg_pay": 91996.0309090909
+        },
+        {
+          "title": "DIR",
+          "count": 8,
+          "avg_pay": 89775.29125
+        },
+        {
+          "title": "ADMIN ANL SR",
+          "count": 8,
+          "avg_pay": 80547.44625
+        },
+        {
+          "title": "IT RESC MGR 1",
+          "count": 7,
+          "avg_pay": 84023.98142857142
+        }
+      ]
+    },
+    {
+      "range": "100k-150k",
+      "min_value": 100000,
+      "max_value": 150000,
+      "count": 275,
+      "percentage": 13.139034878165312,
+      "avg_pay": 118471.0866909091,
+      "median_pay": 114270,
+      "total_pay": 32579548.840000004,
+      "top_titles": [
+        {
+          "title": "DIR",
+          "count": 66,
+          "avg_pay": 127912.2596969697
+        },
+        {
+          "title": "ADM CRD OFCR",
+          "count": 52,
+          "avg_pay": 113563.82346153844
+        },
+        {
+          "title": "MGR",
+          "count": 30,
+          "avg_pay": 115838.27200000001
+        },
+        {
+          "title": "PROGR ANL 4 UCOP",
+          "count": 29,
+          "avg_pay": 109352.99517241382
+        },
+        {
+          "title": "SPEC",
+          "count": 18,
+          "avg_pay": 117790.50333333334
+        },
+        {
+          "title": "SYS PROGR 4",
+          "count": 8,
+          "avg_pay": 108883.49375000001
+        },
+        {
+          "title": "DIR ASC",
+          "count": 7,
+          "avg_pay": 117888.60428571429
+        },
+        {
+          "title": "DIR AST",
+          "count": 7,
+          "avg_pay": 120199.0157142857
+        },
+        {
+          "title": "ASTRONOMER",
+          "count": 7,
+          "avg_pay": 121591.38
+        },
+        {
+          "title": "IT RESOURCE MGR 3",
+          "count": 7,
+          "avg_pay": 120720.98999999999
+        }
+      ]
+    },
+    {
+      "range": "150k-200k",
+      "min_value": 150000,
+      "max_value": 200000,
+      "count": 108,
+      "percentage": 5.160057333970378,
+      "avg_pay": 169871.98314814814,
+      "median_pay": 166832.285,
+      "total_pay": 18346174.18,
+      "top_titles": [
+        {
+          "title": "DIR",
+          "count": 36,
+          "avg_pay": 166071.01250000004
+        },
+        {
+          "title": "COUNSEL SR",
+          "count": 22,
+          "avg_pay": 181225.18636363634
+        },
+        {
+          "title": "MGR",
+          "count": 10,
+          "avg_pay": 162613.976
+        },
+        {
+          "title": "ADM CRD OFCR",
+          "count": 6,
+          "avg_pay": 167585.275
+        },
+        {
+          "title": "SPEC",
+          "count": 6,
+          "avg_pay": 161962.68333333332
+        },
+        {
+          "title": "COUNSEL",
+          "count": 6,
+          "avg_pay": 157226.5
+        },
+        {
+          "title": "DIR ASC",
+          "count": 4,
+          "avg_pay": 158669.0925
+        },
+        {
+          "title": "ASC VP",
+          "count": 3,
+          "avg_pay": 193103.97333333336
+        },
+        {
+          "title": "ASTRONOMER",
+          "count": 3,
+          "avg_pay": 170565.56000000003
+        },
+        {
+          "title": "EXEC DIR EXEC",
+          "count": 2,
+          "avg_pay": 177939.69
+        }
+      ]
+    },
+    {
+      "range": "200k-300k",
+      "min_value": 200000,
+      "max_value": 300000,
+      "count": 41,
+      "percentage": 1.9589106545628283,
+      "avg_pay": 234307.533902439,
+      "median_pay": 229166.64,
+      "total_pay": 9606608.889999999,
+      "top_titles": [
+        {
+          "title": "ASC VP",
+          "count": 6,
+          "avg_pay": 252869.36000000002
+        },
+        {
+          "title": "DIR",
+          "count": 6,
+          "avg_pay": 217548.15666666665
+        },
+        {
+          "title": "ADM CRD OFCR",
+          "count": 5,
+          "avg_pay": 231002.18
+        },
+        {
+          "title": "COUNSEL PRN",
+          "count": 5,
+          "avg_pay": 213624.01200000002
+        },
+        {
+          "title": "MGN COUNSEL",
+          "count": 3,
+          "avg_pay": 217290.67333333334
+        },
+        {
+          "title": "VP FUNC AREA",
+          "count": 3,
+          "avg_pay": 257753.69999999998
+        },
+        {
+          "title": "EXEC DIR EXEC",
+          "count": 2,
+          "avg_pay": 251749.97999999998
+        },
+        {
+          "title": "EXEC DIR FUNC AREA",
+          "count": 2,
+          "avg_pay": 246189.22999999998
+        },
+        {
+          "title": "DEPUTY GEN COUNSEL",
+          "count": 2,
+          "avg_pay": 269999.94
+        },
+        {
+          "title": "AST VP FUNC AREA",
+          "count": 1,
+          "avg_pay": 234519.96
+        }
+      ]
+    },
+    {
+      "range": "300k-500k",
+      "min_value": 300000,
+      "max_value": 500000,
+      "count": 20,
+      "percentage": 0.9555661729574774,
+      "avg_pay": 359406.2765,
+      "median_pay": 342154.54000000004,
+      "total_pay": 7188125.529999999,
+      "top_titles": [
+        {
+          "title": "DEPUTY DIR",
+          "count": 6,
+          "avg_pay": 362483.5533333333
+        },
+        {
+          "title": "VP FUNC AREA",
+          "count": 3,
+          "avg_pay": 315582.68
+        },
+        {
+          "title": "ADM CRD OFCR",
+          "count": 3,
+          "avg_pay": 333142.23333333334
+        },
+        {
+          "title": "SVP DESIGNATE",
+          "count": 2,
+          "avg_pay": 396416.04000000004
+        },
+        {
+          "title": "EXEC VP",
+          "count": 2,
+          "avg_pay": 391957.92000000004
+        },
+        {
+          "title": "DIR",
+          "count": 1,
+          "avg_pay": 430941.16
+        },
+        {
+          "title": "GEN COUNSEL VP LEGAL AFFAIRS",
+          "count": 1,
+          "avg_pay": 424916.04
+        },
+        {
+          "title": "ASC VP",
+          "count": 1,
+          "avg_pay": 330528.39
+        },
+        {
+          "title": "SECR OF THE REGENTS",
+          "count": 1,
+          "avg_pay": 303915.96
+        }
+      ]
+    },
+    {
+      "range": "500k-1M",
+      "min_value": 500000,
+      "max_value": 1000000,
+      "count": 9,
+      "percentage": 0.43000477783086477,
+      "avg_pay": 614915.5577777778,
+      "median_pay": 600599,
+      "total_pay": 5534240.0200000005,
+      "top_titles": [
+        {
+          "title": "EXEC DIR FUNC AREA",
+          "count": 3,
+          "avg_pay": 662476.0533333333
+        },
+        {
+          "title": "DIR",
+          "count": 2,
+          "avg_pay": 530097.24
+        },
+        {
+          "title": "DEPUTY DIR",
+          "count": 1,
+          "avg_pay": 502871.14
+        },
+        {
+          "title": "AST TREASURER OF THE REGENTS",
+          "count": 1,
+          "avg_pay": 663731.16
+        },
+        {
+          "title": "SVP DESIGNATE",
+          "count": 1,
+          "avg_pay": 719416.08
+        },
+        {
+          "title": "PRESIDENT OF THE UNIV",
+          "count": 1,
+          "avg_pay": 600599
+        }
+      ]
+    },
+    {
+      "range": "1M+",
+      "min_value": 1000000,
+      "max_value": 999999999,
+      "count": 1,
+      "percentage": 0.047778308647873864,
+      "avg_pay": 1287285.24,
+      "median_pay": 1287285.24,
+      "total_pay": 1287285.24,
+      "top_titles": [
+        {
+          "title": "TREASURER OF THE REGENTS",
+          "count": 1,
+          "avg_pay": 1287285.24
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1008 @@
+{
+  "location": "San Francisco",
+  "year": 2012,
+  "generated_at": "2025-09-18T15:42:08.076968897Z",
+  "unique_titles": 737,
+  "top_titles": [
+    {
+      "title": "CLIN NURSE 2",
+      "count": 1796,
+      "avg_pay": 113832.8816536747,
+      "median_pay": 121577.39499999999,
+      "min_pay": 390.28,
+      "max_pay": 232430.81,
+      "std_dev": 36512.86276820732,
+      "total_pay": 204443855.44999978
+    },
+    {
+      "title": "BLANK AST 3",
+      "count": 1449,
+      "avg_pay": 41673.93670117327,
+      "median_pay": 47319.05,
+      "min_pay": 79.8,
+      "max_pay": 90660.14,
+      "std_dev": 16450.119457088153,
+      "total_pay": 60385534.28000007
+    },
+    {
+      "title": "POSTDOC-EMPLOYEE",
+      "count": 1119,
+      "avg_pay": 29706.913717604966,
+      "median_pay": 32683,
+      "min_pay": 20.56,
+      "max_pay": 89000.04,
+      "std_dev": 16729.801610266495,
+      "total_pay": 33242036.44999996
+    },
+    {
+      "title": "RESID PHYS II-VIII/NON REP",
+      "count": 966,
+      "avg_pay": 53935.1987267081,
+      "median_pay": 58407.01,
+      "min_pay": 8293.71,
+      "max_pay": 102519.34,
+      "std_dev": 14140.398938580092,
+      "total_pay": 52101401.97000002
+    },
+    {
+      "title": "ANL 1",
+      "count": 754,
+      "avg_pay": 37702.68640583556,
+      "median_pay": 45647.31,
+      "min_pay": 29.3,
+      "max_pay": 75795.42,
+      "std_dev": 19017.864500169268,
+      "total_pay": 28427825.550000012
+    },
+    {
+      "title": "ANL 2",
+      "count": 656,
+      "avg_pay": 47303.010076219536,
+      "median_pay": 53999.34,
+      "min_pay": 61.35,
+      "max_pay": 96122.2,
+      "std_dev": 19683.212068792003,
+      "total_pay": 31030774.610000018
+    },
+    {
+      "title": "BLANK AST 2",
+      "count": 614,
+      "avg_pay": 31125.264723127035,
+      "median_pay": 38869.990000000005,
+      "min_pay": 93.6,
+      "max_pay": 67823.6,
+      "std_dev": 17059.873684052534,
+      "total_pay": 19110912.54
+    },
+    {
+      "title": "SRA 1",
+      "count": 495,
+      "avg_pay": 20204.418424242416,
+      "median_pay": 19028.56,
+      "min_pay": 53.67,
+      "max_pay": 45016.73,
+      "std_dev": 13824.732993927862,
+      "total_pay": 10001187.119999995
+    },
+    {
+      "title": "ANL 3",
+      "count": 484,
+      "avg_pay": 54711.33272727273,
+      "median_pay": 61666.244999999995,
+      "min_pay": 112.5,
+      "max_pay": 111224.2,
+      "std_dev": 20400.204223419627,
+      "total_pay": 26480285.040000003
+    },
+    {
+      "title": "CLIN NURSE 3",
+      "count": 420,
+      "avg_pay": 130633.09857142864,
+      "median_pay": 133736.74,
+      "min_pay": 281,
+      "max_pay": 365985.78,
+      "std_dev": 37236.03012755572,
+      "total_pay": 54865901.40000003
+    },
+    {
+      "title": "ANL 4",
+      "count": 413,
+      "avg_pay": 59930.21542372885,
+      "median_pay": 68250,
+      "min_pay": 208,
+      "max_pay": 98044.36,
+      "std_dev": 23757.781199326622,
+      "total_pay": 24751178.970000014
+    },
+    {
+      "title": "SRA 2",
+      "count": 391,
+      "avg_pay": 33366.08685421994,
+      "median_pay": 39304.28,
+      "min_pay": 30.08,
+      "max_pay": 65314,
+      "std_dev": 15852.957627062444,
+      "total_pay": 13046139.959999997
+    },
+    {
+      "title": "NURSE PD",
+      "count": 386,
+      "avg_pay": 66884.59230569948,
+      "median_pay": 61064.91,
+      "min_pay": 1141.94,
+      "max_pay": 202110.74,
+      "std_dev": 43898.20977658675,
+      "total_pay": 25817452.63
+    },
+    {
+      "title": "RESID PHYS/SUBSPEC 4-8/NON REP",
+      "count": 382,
+      "avg_pay": 47855.32526178016,
+      "median_pay": 40633.45,
+      "min_pay": 450,
+      "max_pay": 150000.98,
+      "std_dev": 23120.34236607747,
+      "total_pay": 18280734.250000022
+    },
+    {
+      "title": "MGR",
+      "count": 372,
+      "avg_pay": 116580.2319354839,
+      "median_pay": 119340.405,
+      "min_pay": 1137.89,
+      "max_pay": 239912.18,
+      "std_dev": 41487.62021060163,
+      "total_pay": 43367846.28000001
+    },
+    {
+      "title": "RESID PHYS I/NON REP",
+      "count": 354,
+      "avg_pay": 31217.868870056413,
+      "median_pay": 30832.1,
+      "min_pay": 6892.15,
+      "max_pay": 61827,
+      "std_dev": 7152.653575316192,
+      "total_pay": 11051125.57999997
+    },
+    {
+      "title": "HS ASST CLIN PROF-HCOMP",
+      "count": 313,
+      "avg_pay": 160338.36482428113,
+      "median_pay": 157625.04,
+      "min_pay": 400,
+      "max_pay": 414113.7,
+      "std_dev": 76750.10997953433,
+      "total_pay": 50185908.19
+    },
+    {
+      "title": "SPECIALIST",
+      "count": 276,
+      "avg_pay": 66116.06898550726,
+      "median_pay": 70812,
+      "min_pay": 590.1,
+      "max_pay": 101052.06,
+      "std_dev": 26183.104404377573,
+      "total_pay": 18248035.040000003
+    },
+    {
+      "title": "ANL 5",
+      "count": 274,
+      "avg_pay": 68175.2740510949,
+      "median_pay": 77959.945,
+      "min_pay": 1034,
+      "max_pay": 123973.12,
+      "std_dev": 29384.646781777978,
+      "total_pay": 18680025.09
+    },
+    {
+      "title": "GSR-FULL FEE REM",
+      "count": 272,
+      "avg_pay": 20354.87882352939,
+      "median_pay": 20672.91,
+      "min_pay": 1117.19,
+      "max_pay": 39637.67,
+      "std_dev": 9615.845625725966,
+      "total_pay": 5536527.039999994
+    },
+    {
+      "title": "PROF-HCOMP",
+      "count": 269,
+      "avg_pay": 287723.6739405203,
+      "median_pay": 257191.64,
+      "min_pay": 68061.92,
+      "max_pay": 895572.96,
+      "std_dev": 139826.53833782725,
+      "total_pay": 77397668.28999996
+    },
+    {
+      "title": "OTH POST-MD TRAIN 2-8/NON REP",
+      "count": 254,
+      "avg_pay": 42083.64196850395,
+      "median_pay": 35617.53,
+      "min_pay": 4268.94,
+      "max_pay": 130692.56,
+      "std_dev": 22413.16769863813,
+      "total_pay": 10689245.060000004
+    },
+    {
+      "title": "ASSOC SPECIALIST",
+      "count": 251,
+      "avg_pay": 43613.90243027889,
+      "median_pay": 49824,
+      "min_pay": 918.36,
+      "max_pay": 60668.82,
+      "std_dev": 15171.097394975168,
+      "total_pay": 10947089.510000002
+    },
+    {
+      "title": "PROGR ANL 3",
+      "count": 245,
+      "avg_pay": 79719.77706122452,
+      "median_pay": 82609.68,
+      "min_pay": 866.14,
+      "max_pay": 125013.88,
+      "std_dev": 23874.698249410376,
+      "total_pay": 19531345.380000006
+    },
+    {
+      "title": "PROF IN RES-HCOMP",
+      "count": 237,
+      "avg_pay": 239439.42831223615,
+      "median_pay": 214585.32,
+      "min_pay": 1186.82,
+      "max_pay": 874600.08,
+      "std_dev": 123313.38028781881,
+      "total_pay": 56747144.50999997
+    },
+    {
+      "title": "DIR",
+      "count": 236,
+      "avg_pay": 157957.9998305085,
+      "median_pay": 157253.255,
+      "min_pay": 3556.39,
+      "max_pay": 279451.72,
+      "std_dev": 51240.4572660235,
+      "total_pay": 37278087.96
+    },
+    {
+      "title": "ASST ADJ PROF-HCOMP",
+      "count": 233,
+      "avg_pay": 103688.95626609436,
+      "median_pay": 96022.7,
+      "min_pay": 11394.05,
+      "max_pay": 364999.9,
+      "std_dev": 45307.54139182323,
+      "total_pay": 24159526.809999987
+    },
+    {
+      "title": "PATIENT CARE AST",
+      "count": 232,
+      "avg_pay": 47228.87146551725,
+      "median_pay": 50378.155,
+      "min_pay": 480,
+      "max_pay": 90437.06,
+      "std_dev": 15357.247452475021,
+      "total_pay": 10957098.180000002
+    },
+    {
+      "title": "CLIN LAB SCI",
+      "count": 230,
+      "avg_pay": 82851.34465217388,
+      "median_pay": 87494.505,
+      "min_pay": 480,
+      "max_pay": 146723.28,
+      "std_dev": 29403.994835478996,
+      "total_pay": 19055809.269999992
+    },
+    {
+      "title": "PROF OF CLIN-HCOMP",
+      "count": 201,
+      "avg_pay": 295657.8915422885,
+      "median_pay": 269540.1,
+      "min_pay": 13137.18,
+      "max_pay": 1465269.98,
+      "std_dev": 170840.26328379218,
+      "total_pay": 59427236.19999999
+    },
+    {
+      "title": "ADM CRD OFCR",
+      "count": 196,
+      "avg_pay": 110408.14051020412,
+      "median_pay": 114722.375,
+      "min_pay": 407.11,
+      "max_pay": 205740.19,
+      "std_dev": 44388.89205598693,
+      "total_pay": 21639995.540000007
+    },
+    {
+      "title": "PROGR ANL 4",
+      "count": 195,
+      "avg_pay": 104016.3827692308,
+      "median_pay": 108722.29,
+      "min_pay": 1818.07,
+      "max_pay": 205716.95,
+      "std_dev": 32449.04752726135,
+      "total_pay": 20283194.640000004
+    },
+    {
+      "title": "NURSE PRACTITIONER 2",
+      "count": 192,
+      "avg_pay": 117791.84375000006,
+      "median_pay": 131067.04500000001,
+      "min_pay": 4017.23,
+      "max_pay": 196255.77,
+      "std_dev": 40421.61481564005,
+      "total_pay": 22616034.00000001
+    },
+    {
+      "title": "CUSTODIAN SR",
+      "count": 181,
+      "avg_pay": 34501.04116022099,
+      "median_pay": 42868.08,
+      "min_pay": 47.64,
+      "max_pay": 55375.07,
+      "std_dev": 15379.87985320763,
+      "total_pay": 6244688.45
+    },
+    {
+      "title": "HOSP LAB TCHN 1",
+      "count": 180,
+      "avg_pay": 60447.971111111125,
+      "median_pay": 66056.825,
+      "min_pay": 3331.29,
+      "max_pay": 105136.32,
+      "std_dev": 19140.85508143184,
+      "total_pay": 10880634.800000003
+    },
+    {
+      "title": "HS CLIN PROF-HCOMP",
+      "count": 178,
+      "avg_pay": 218568.4699438202,
+      "median_pay": 196837.28,
+      "min_pay": 10827.09,
+      "max_pay": 650918.96,
+      "std_dev": 106946.98894675678,
+      "total_pay": 38905187.65
+    },
+    {
+      "title": "RECREATION PRG INSTR",
+      "count": 174,
+      "avg_pay": 6767.584942528736,
+      "median_pay": 3845,
+      "min_pay": 22.5,
+      "max_pay": 46152.2,
+      "std_dev": 8437.447166061418,
+      "total_pay": 1177559.78
+    },
+    {
+      "title": "HS ASSOC CLIN PROF-HCOMP",
+      "count": 171,
+      "avg_pay": 190840.9238011696,
+      "median_pay": 176949.64,
+      "min_pay": 7641,
+      "max_pay": 858401.93,
+      "std_dev": 109824.62656201661,
+      "total_pay": 32633797.970000003
+    },
+    {
+      "title": "SRA 3",
+      "count": 171,
+      "avg_pay": 46873.152865497075,
+      "median_pay": 51457,
+      "min_pay": 813.7,
+      "max_pay": 87504.82,
+      "std_dev": 18623.968358983864,
+      "total_pay": 8015309.14
+    },
+    {
+      "title": "BLANK AST 1",
+      "count": 169,
+      "avg_pay": 19668.33112426035,
+      "median_pay": 13378.73,
+      "min_pay": 23.04,
+      "max_pay": 57237.08,
+      "std_dev": 18125.67716104707,
+      "total_pay": 3323947.959999999
+    },
+    {
+      "title": "PROGR ANL 2",
+      "count": 161,
+      "avg_pay": 60937.60596273293,
+      "median_pay": 68006.16,
+      "min_pay": 327.39,
+      "max_pay": 124949.82,
+      "std_dev": 24664.78362119841,
+      "total_pay": 9810954.560000002
+    },
+    {
+      "title": "JR SPECIALIST",
+      "count": 150,
+      "avg_pay": 17807.50533333333,
+      "median_pay": 16969.5,
+      "min_pay": 300,
+      "max_pay": 68892.5,
+      "std_dev": 11814.571060224158,
+      "total_pay": 2671125.7999999993
+    },
+    {
+      "title": "ANL 4 SUPV",
+      "count": 149,
+      "avg_pay": 71828.1534899329,
+      "median_pay": 77250.96,
+      "min_pay": 1310,
+      "max_pay": 110299.28,
+      "std_dev": 18938.550062600425,
+      "total_pay": 10702394.870000001
+    },
+    {
+      "title": "ANL 5 SUPV",
+      "count": 148,
+      "avg_pay": 84215.16695945947,
+      "median_pay": 88982.31,
+      "min_pay": 19114.56,
+      "max_pay": 113467.52,
+      "std_dev": 16671.28786947964,
+      "total_pay": 12463844.71
+    },
+    {
+      "title": "COLLECTIONS REPR SR",
+      "count": 148,
+      "avg_pay": 57558.85121621621,
+      "median_pay": 61009.955,
+      "min_pay": 2988.05,
+      "max_pay": 83383.15,
+      "std_dev": 13568.445382364333,
+      "total_pay": 8518709.979999999
+    },
+    {
+      "title": "HOSP BLANK AST 3",
+      "count": 141,
+      "avg_pay": 43756.68070921986,
+      "median_pay": 49653.58,
+      "min_pay": 325.73,
+      "max_pay": 87390.28,
+      "std_dev": 17780.59579525347,
+      "total_pay": 6169691.9799999995
+    },
+    {
+      "title": "HOSP BLANK AST 2",
+      "count": 140,
+      "avg_pay": 43955.14749999998,
+      "median_pay": 49317.509999999995,
+      "min_pay": 33.59,
+      "max_pay": 77624.72,
+      "std_dev": 18289.5456459086,
+      "total_pay": 6153720.649999997
+    },
+    {
+      "title": "STDT INTERN",
+      "count": 138,
+      "avg_pay": 6848.6600724637665,
+      "median_pay": 2500,
+      "min_pay": 145,
+      "max_pay": 51276.11,
+      "std_dev": 9373.221925004638,
+      "total_pay": 945115.0899999997
+    },
+    {
+      "title": "ASST SPECIALIST",
+      "count": 129,
+      "avg_pay": 30794.830077519382,
+      "median_pay": 38010,
+      "min_pay": 2069.32,
+      "max_pay": 47067.25,
+      "std_dev": 13318.178062691859,
+      "total_pay": 3972533.08
+    },
+    {
+      "title": "ASSOC PROF OF CLIN-HCOMP",
+      "count": 123,
+      "avg_pay": 256468.87365853656,
+      "median_pay": 232500.12,
+      "min_pay": 16983.88,
+      "max_pay": 719639.56,
+      "std_dev": 120217.91257172065,
+      "total_pay": 31545671.459999997
+    },
+    {
+      "title": "HOSP UNIT SVC CRD 3",
+      "count": 120,
+      "avg_pay": 44317.26608333332,
+      "median_pay": 50384.115000000005,
+      "min_pay": 2637.29,
+      "max_pay": 79930.82,
+      "std_dev": 19040.06257060243,
+      "total_pay": 5318071.929999999
+    },
+    {
+      "title": "SRA 2 NEX",
+      "count": 120,
+      "avg_pay": 27519.57908333335,
+      "median_pay": 26991.055,
+      "min_pay": 83.48,
+      "max_pay": 65311.06,
+      "std_dev": 19177.847348807816,
+      "total_pay": 3302349.4900000016
+    },
+    {
+      "title": "PATIENT SUPP AST",
+      "count": 119,
+      "avg_pay": 50921.93999999999,
+      "median_pay": 53947.32,
+      "min_pay": 4483.3,
+      "max_pay": 67207.58,
+      "std_dev": 10405.201211696845,
+      "total_pay": 6059710.8599999985
+    },
+    {
+      "title": "MED CTR CUSTODIAN SR",
+      "count": 119,
+      "avg_pay": 47518.88092436973,
+      "median_pay": 48570.84,
+      "min_pay": 6814.03,
+      "max_pay": 61281.96,
+      "std_dev": 9688.971202498942,
+      "total_pay": 5654746.829999998
+    },
+    {
+      "title": "ASSOC PROF IN RES-HCOMP",
+      "count": 114,
+      "avg_pay": 197185.21254385964,
+      "median_pay": 175450.11,
+      "min_pay": 861,
+      "max_pay": 652563,
+      "std_dev": 101505.9634719653,
+      "total_pay": 22479114.23
+    },
+    {
+      "title": "ASST PROF IN RES-HCOMP",
+      "count": 113,
+      "avg_pay": 185134.4495575221,
+      "median_pay": 162100.02,
+      "min_pay": 29924.44,
+      "max_pay": 545174,
+      "std_dev": 93664.8954542758,
+      "total_pay": 20920192.799999997
+    },
+    {
+      "title": "CLIN SOCIAL WORKER 2",
+      "count": 108,
+      "avg_pay": 60782.53842592592,
+      "median_pay": 66314.88,
+      "min_pay": 495,
+      "max_pay": 98315.88,
+      "std_dev": 21206.293937270177,
+      "total_pay": 6564514.149999999
+    },
+    {
+      "title": "ASST RES-FY",
+      "count": 107,
+      "avg_pay": 58504.14457943925,
+      "median_pay": 64030,
+      "min_pay": 1635,
+      "max_pay": 86343.05,
+      "std_dev": 17771.86523955116,
+      "total_pay": 6259943.47
+    },
+    {
+      "title": "HS CLIN INSTR-HCOMP",
+      "count": 106,
+      "avg_pay": 120920.23009433961,
+      "median_pay": 87340.51999999999,
+      "min_pay": 300,
+      "max_pay": 875000.02,
+      "std_dev": 122210.19035879348,
+      "total_pay": 12817544.389999999
+    },
+    {
+      "title": "ASC PHYSCN DIPLOMATE",
+      "count": 106,
+      "avg_pay": 52840.71801886793,
+      "median_pay": 28720,
+      "min_pay": 300,
+      "max_pay": 217903.92,
+      "std_dev": 52960.50608002179,
+      "total_pay": 5601116.11
+    },
+    {
+      "title": "TUT-NON GSHIP/NON REP",
+      "count": 104,
+      "avg_pay": 1194.6163461538463,
+      "median_pay": 436.8,
+      "min_pay": 23.85,
+      "max_pay": 22295.56,
+      "std_dev": 2501.7597048304965,
+      "total_pay": 124240.1
+    },
+    {
+      "title": "ASC PHYSCN",
+      "count": 101,
+      "avg_pay": 34354.6694059406,
+      "median_pay": 21938.62,
+      "min_pay": 228,
+      "max_pay": 208889,
+      "std_dev": 33399.36473418429,
+      "total_pay": 3469821.6100000003
+    },
+    {
+      "title": "ADMITTING WORKER SR",
+      "count": 97,
+      "avg_pay": 54973.42051546392,
+      "median_pay": 59181.7,
+      "min_pay": 3088,
+      "max_pay": 83262.34,
+      "std_dev": 14666.549347950973,
+      "total_pay": 5332421.79
+    },
+    {
+      "title": "LAB AST 1",
+      "count": 97,
+      "avg_pay": 8506.469072164948,
+      "median_pay": 4195.24,
+      "min_pay": 26.7,
+      "max_pay": 33831.93,
+      "std_dev": 10554.390234961158,
+      "total_pay": 825127.4999999999
+    },
+    {
+      "title": "STAFF PHARMACIST 2",
+      "count": 93,
+      "avg_pay": 148324.59021505382,
+      "median_pay": 157681.53,
+      "min_pay": 9054.72,
+      "max_pay": 235652.64,
+      "std_dev": 42909.81003626052,
+      "total_pay": 13794186.890000006
+    },
+    {
+      "title": "PHARMACY TCHN 2",
+      "count": 93,
+      "avg_pay": 61457.48655913978,
+      "median_pay": 63473.33,
+      "min_pay": 877.81,
+      "max_pay": 150176.62,
+      "std_dev": 22465.495835376896,
+      "total_pay": 5715546.25
+    },
+    {
+      "title": "CLIN NURSE 5",
+      "count": 90,
+      "avg_pay": 133491.2721111111,
+      "median_pay": 145900.26,
+      "min_pay": 8704.74,
+      "max_pay": 176003.66,
+      "std_dev": 32559.60496385355,
+      "total_pay": 12014214.489999998
+    },
+    {
+      "title": "ANL 2 SUPV",
+      "count": 89,
+      "avg_pay": 54653.37359550564,
+      "median_pay": 58860.72,
+      "min_pay": 317.66,
+      "max_pay": 94710.62,
+      "std_dev": 17864.687823542117,
+      "total_pay": 4864150.250000002
+    },
+    {
+      "title": "LIFEGUARD",
+      "count": 89,
+      "avg_pay": 5734.660898876405,
+      "median_pay": 3280.94,
+      "min_pay": 7.13,
+      "max_pay": 35177.39,
+      "std_dev": 6787.794720086406,
+      "total_pay": 510384.82
+    },
+    {
+      "title": "AUTO EQUIP OPR PRN",
+      "count": 87,
+      "avg_pay": 37015.32827586205,
+      "median_pay": 45325.53,
+      "min_pay": 4.16,
+      "max_pay": 53253.63,
+      "std_dev": 16768.777802996196,
+      "total_pay": 3220333.559999998
+    },
+    {
+      "title": "MED CTR FOOD SVC WORKER SR",
+      "count": 86,
+      "avg_pay": 46549.80127906976,
+      "median_pay": 48093.655,
+      "min_pay": 13537.63,
+      "max_pay": 62876.37,
+      "std_dev": 9583.260676663655,
+      "total_pay": 4003282.909999999
+    },
+    {
+      "title": "CLERK",
+      "count": 83,
+      "avg_pay": 7032.695421686747,
+      "median_pay": 5432.32,
+      "min_pay": 39.59,
+      "max_pay": 38685.94,
+      "std_dev": 7086.660773235614,
+      "total_pay": 583713.72
+    },
+    {
+      "title": "REG RESP THER 1",
+      "count": 82,
+      "avg_pay": 94648.78048780488,
+      "median_pay": 97097.01500000001,
+      "min_pay": 40091.61,
+      "max_pay": 164086.82,
+      "std_dev": 22786.913704685794,
+      "total_pay": 7761200
+    },
+    {
+      "title": "LAB AST 2",
+      "count": 82,
+      "avg_pay": 18846.264756097557,
+      "median_pay": 16398.585,
+      "min_pay": 548.16,
+      "max_pay": 36664,
+      "std_dev": 13386.12275087172,
+      "total_pay": 1545393.7099999997
+    },
+    {
+      "title": "ANL 3 SUPV",
+      "count": 81,
+      "avg_pay": 62500.090617283946,
+      "median_pay": 66000,
+      "min_pay": 4255.97,
+      "max_pay": 86453.88,
+      "std_dev": 14153.579288640396,
+      "total_pay": 5062507.34
+    },
+    {
+      "title": "PATIENT CARE AST PD",
+      "count": 79,
+      "avg_pay": 21746.38556962025,
+      "median_pay": 18323.9,
+      "min_pay": 443.68,
+      "max_pay": 65139.52,
+      "std_dev": 15734.711175252858,
+      "total_pay": 1717964.46
+    },
+    {
+      "title": "GSR-NO REM",
+      "count": 78,
+      "avg_pay": 8084.360769230768,
+      "median_pay": 5290.605,
+      "min_pay": 250,
+      "max_pay": 29668.68,
+      "std_dev": 7013.242440891186,
+      "total_pay": 630580.1399999999
+    },
+    {
+      "title": "ASST PROF OF CLIN-HCOMP",
+      "count": 75,
+      "avg_pay": 205904.1898666666,
+      "median_pay": 189999.96,
+      "min_pay": 26873.59,
+      "max_pay": 476345.04,
+      "std_dev": 94212.15825106198,
+      "total_pay": 15442814.239999995
+    },
+    {
+      "title": "TECHNICIAN",
+      "count": 75,
+      "avg_pay": 33066.36266666666,
+      "median_pay": 37485.83,
+      "min_pay": 11.54,
+      "max_pay": 54967.34,
+      "std_dev": 12437.826276775142,
+      "total_pay": 2479977.1999999997
+    },
+    {
+      "title": "ASSOC ADJ PROF-HCOMP",
+      "count": 74,
+      "avg_pay": 123329.57824324323,
+      "median_pay": 127950,
+      "min_pay": 16126.43,
+      "max_pay": 307047.81,
+      "std_dev": 45199.99308481699,
+      "total_pay": 9126388.79
+    },
+    {
+      "title": "CLERK SR OR SECR",
+      "count": 74,
+      "avg_pay": 7229.549189189191,
+      "median_pay": 3518.82,
+      "min_pay": 15.56,
+      "max_pay": 40115.37,
+      "std_dev": 8106.327506932847,
+      "total_pay": 534986.6400000001
+    },
+    {
+      "title": "HS ASST CLIN PROF-FY",
+      "count": 72,
+      "avg_pay": 17124.808888888892,
+      "median_pay": 13479.96,
+      "min_pay": 459.45,
+      "max_pay": 75192.02,
+      "std_dev": 16569.74452037764,
+      "total_pay": 1232986.2400000002
+    },
+    {
+      "title": "ANL 6 MSP",
+      "count": 69,
+      "avg_pay": 95237.194057971,
+      "median_pay": 99262.4,
+      "min_pay": 7980.67,
+      "max_pay": 135008.04,
+      "std_dev": 25049.525465554754,
+      "total_pay": 6571366.39
+    },
+    {
+      "title": "RADLG TCHNO SR",
+      "count": 68,
+      "avg_pay": 103328.95044117646,
+      "median_pay": 105743.03,
+      "min_pay": 5952.06,
+      "max_pay": 171067.96,
+      "std_dev": 28645.915480078715,
+      "total_pay": 7026368.63
+    },
+    {
+      "title": "CLIN LAB SCI SPEC",
+      "count": 63,
+      "avg_pay": 94608.78253968252,
+      "median_pay": 103804.22,
+      "min_pay": 1099.14,
+      "max_pay": 136851.58,
+      "std_dev": 25560.430847404776,
+      "total_pay": 5960353.299999999
+    },
+    {
+      "title": "ADMIN NURSE SUPV 1 NEX",
+      "count": 62,
+      "avg_pay": 152493.57596774187,
+      "median_pay": 153870.035,
+      "min_pay": 120837.27,
+      "max_pay": 184964.04,
+      "std_dev": 13770.72485150168,
+      "total_pay": 9454601.709999995
+    },
+    {
+      "title": "RSCH ADM 3",
+      "count": 62,
+      "avg_pay": 62655.84822580645,
+      "median_pay": 64581.34,
+      "min_pay": 5079.34,
+      "max_pay": 101180.04,
+      "std_dev": 17479.008310538466,
+      "total_pay": 3884662.59
+    },
+    {
+      "title": "CLIN SOCIAL WORKER 3",
+      "count": 60,
+      "avg_pay": 70979.171,
+      "median_pay": 75752.64,
+      "min_pay": 1796.52,
+      "max_pay": 109320,
+      "std_dev": 25821.730240553254,
+      "total_pay": 4258750.26
+    },
+    {
+      "title": "STDT AID OUTSIDE AGENCY",
+      "count": 60,
+      "avg_pay": 4385.747833333333,
+      "median_pay": 2748,
+      "min_pay": 63.68,
+      "max_pay": 16968,
+      "std_dev": 4067.681318477433,
+      "total_pay": 263144.87
+    },
+    {
+      "title": "SPEC",
+      "count": 59,
+      "avg_pay": 75662.49694915253,
+      "median_pay": 86499.96,
+      "min_pay": 275,
+      "max_pay": 149549.66,
+      "std_dev": 48522.703183242185,
+      "total_pay": 4464087.319999999
+    },
+    {
+      "title": "DENTAL EXTERN",
+      "count": 59,
+      "avg_pay": 618.400847457627,
+      "median_pay": 444.99,
+      "min_pay": 74.9,
+      "max_pay": 5119.57,
+      "std_dev": 726.1126662736374,
+      "total_pay": 36485.649999999994
+    },
+    {
+      "title": "SOCIAL WORK ASC",
+      "count": 58,
+      "avg_pay": 36531.66775862068,
+      "median_pay": 43352.19,
+      "min_pay": 447.98,
+      "max_pay": 57294.72,
+      "std_dev": 17888.522688048837,
+      "total_pay": 2118836.7299999995
+    },
+    {
+      "title": "ADJ PROF-HCOMP",
+      "count": 56,
+      "avg_pay": 139697.37535714285,
+      "median_pay": 139600.015,
+      "min_pay": 44074.02,
+      "max_pay": 250479.31,
+      "std_dev": 44032.30846089096,
+      "total_pay": 7823053.0200000005
+    },
+    {
+      "title": "RECALL NON-SENATE ACAD",
+      "count": 55,
+      "avg_pay": 47678.22763636363,
+      "median_pay": 33525.36,
+      "min_pay": 1233.96,
+      "max_pay": 165530.39,
+      "std_dev": 35979.73219943832,
+      "total_pay": 2622302.5199999996
+    },
+    {
+      "title": "RECALL HCOMP",
+      "count": 53,
+      "avg_pay": 120987.73377358491,
+      "median_pay": 101040,
+      "min_pay": 1555.4,
+      "max_pay": 382168.9,
+      "std_dev": 91782.49303912089,
+      "total_pay": 6412349.890000001
+    },
+    {
+      "title": "HOSP LAB TCHN 2",
+      "count": 51,
+      "avg_pay": 70329.62901960785,
+      "median_pay": 74192.69,
+      "min_pay": 7643.34,
+      "max_pay": 97317.58,
+      "std_dev": 17169.113526490833,
+      "total_pay": 3586811.08
+    },
+    {
+      "title": "VOC NURSE SR",
+      "count": 51,
+      "avg_pay": 66786.62411764704,
+      "median_pay": 72656.34,
+      "min_pay": 4262.2,
+      "max_pay": 93629.96,
+      "std_dev": 22892.93907012671,
+      "total_pay": 3406117.829999999
+    },
+    {
+      "title": "CLIN NURSE 1",
+      "count": 51,
+      "avg_pay": 38844.92235294118,
+      "median_pay": 34754.22,
+      "min_pay": 1285.75,
+      "max_pay": 106989.84,
+      "std_dev": 18363.80088292412,
+      "total_pay": 1981091.0400000005
+    },
+    {
+      "title": "PSYCHOLOGIST 2",
+      "count": 50,
+      "avg_pay": 51974.271400000005,
+      "median_pay": 55589.28999999999,
+      "min_pay": 1417.39,
+      "max_pay": 103460.4,
+      "std_dev": 32154.914033912577,
+      "total_pay": 2598713.5700000003
+    },
+    {
+      "title": "LAB AST 3",
+      "count": 49,
+      "avg_pay": 23713.215510204078,
+      "median_pay": 30370.72,
+      "min_pay": 25.55,
+      "max_pay": 43974.67,
+      "std_dev": 16919.22878463063,
+      "total_pay": 1161947.5599999998
+    }
+  ]
+}

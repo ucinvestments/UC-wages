@@ -1,0 +1,28 @@
+{
+  "location": "Berkeley",
+  "year": 2015,
+  "generated_at": "2025-09-18T15:33:48.802282992Z",
+  "employee_count": 35373,
+  "total_gross_pay": 1184953439,
+  "avg_gross_pay": 33498.810929239815,
+  "median_gross_pay": 11123,
+  "std_dev": 52317.88472759404,
+  "min_pay": 1,
+  "max_pay": 2038733,
+  "percentiles": {
+    "p25": 2672.5,
+    "p50": 11123,
+    "p75": 48638.5,
+    "p90": 90325,
+    "p95": 126506,
+    "p99": 236345.5
+  },
+  "pay_components": {
+    "total_base": 1082474437,
+    "total_overtime": 5258766,
+    "total_adjustments": 97220236,
+    "avg_base": 30601.71421705821,
+    "avg_overtime": 148.66610126367567,
+    "avg_adjustments": 2748.430610917932
+  }
+}

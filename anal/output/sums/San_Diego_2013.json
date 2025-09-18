@@ -1,0 +1,28 @@
+{
+  "location": "San Diego",
+  "year": 2013,
+  "generated_at": "2025-09-18T15:42:02.418518818Z",
+  "employee_count": 37580,
+  "total_gross_pay": 1665739036,
+  "avg_gross_pay": 44325.147312400215,
+  "median_gross_pay": 28091.5,
+  "std_dev": 60666.95663827332,
+  "min_pay": 5,
+  "max_pay": 1378386,
+  "percentiles": {
+    "p25": 4908,
+    "p50": 28091,
+    "p75": 59124,
+    "p90": 102751,
+    "p95": 140151,
+    "p99": 287239
+  },
+  "pay_components": {
+    "total_base": 1415270348,
+    "total_overtime": 24133300,
+    "total_adjustments": 226335388,
+    "avg_base": 37660.20085151676,
+    "avg_overtime": 642.1846726982437,
+    "avg_adjustments": 6022.761788185205
+  }
+}

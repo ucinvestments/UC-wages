@@ -1,37 +1,82 @@
 import { db } from '$lib/server/db';
-import { ucWages } from '$lib/server/db/schema';
+import { wageSummaries, wagePyramids, titleAnalysis } from '$lib/server/db/schema';
 import { sql } from 'drizzle-orm';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {
 	try {
-		// Get aggregated wage data for visualization
-		const aggregatedData = await db
+		// Get precalculated wage summaries for fast visualization
+		const summaryData = await db
 			.select({
-				location: ucWages.location,
-				year: ucWages.year,
-				totalWages: sql<number>`SUM(${ucWages.grosspay})::numeric`,
-				averageWage: sql<number>`AVG(${ucWages.grosspay})::numeric`,
-				employeeCount: sql<number>`COUNT(*)::integer`,
-				maxWage: sql<number>`MAX(${ucWages.grosspay})::numeric`,
-				minWage: sql<number>`MIN(${ucWages.grosspay})::numeric`
+				location: wageSummaries.location,
+				year: wageSummaries.year,
+				employeeCount: wageSummaries.employeeCount,
+				totalGrossPay: wageSummaries.totalGrossPay,
+				avgGrossPay: wageSummaries.avgGrossPay,
+				medianPay: wageSummaries.medianPay,
+				stdDev: wageSummaries.stdDev,
+				minPay: wageSummaries.minPay,
+				maxPay: wageSummaries.maxPay,
+				percentiles: wageSummaries.percentiles
 			})
-			.from(ucWages)
-			.groupBy(ucWages.location, ucWages.year)
-			.orderBy(ucWages.location, ucWages.year);
+			.from(wageSummaries)
+			.orderBy(wageSummaries.location, wageSummaries.year);
 
-		// Convert decimal strings to numbers for frontend
-		const processedData = aggregatedData.map(row => ({
-			...row,
-			totalWages: parseFloat(row.totalWages.toString()),
-			averageWage: parseFloat(row.averageWage.toString()),
-			maxWage: parseFloat(row.maxWage.toString()),
-			minWage: parseFloat(row.minWage.toString())
+		// Get precalculated wage pyramids for pyramid visualizations
+		const pyramidData = await db
+			.select({
+				location: wagePyramids.location,
+				year: wagePyramids.year,
+				totalEmployees: wagePyramids.totalEmployees,
+				totalPay: wagePyramids.totalPay,
+				brackets: wagePyramids.brackets
+			})
+			.from(wagePyramids)
+			.orderBy(wagePyramids.location, wagePyramids.year);
+
+		// Get title analysis data for additional insights
+		const titleData = await db
+			.select({
+				location: titleAnalysis.location,
+				year: titleAnalysis.year,
+				uniqueTitles: titleAnalysis.uniqueTitles,
+				topTitles: titleAnalysis.topTitles
+			})
+			.from(titleAnalysis)
+			.orderBy(titleAnalysis.location, titleAnalysis.year);
+
+		// Convert data for frontend compatibility
+		const processedSummaries = summaryData.map(row => ({
+			location: row.location,
+			year: row.year,
+			employeeCount: row.employeeCount,
+			totalWages: parseFloat(row.totalGrossPay.toString()),
+			averageWage: parseFloat(row.avgGrossPay.toString()),
+			medianWage: parseFloat(row.medianPay.toString()),
+			stdDev: parseFloat(row.stdDev.toString()),
+			minWage: parseFloat(row.minPay.toString()),
+			maxWage: parseFloat(row.maxPay.toString()),
+			percentiles: typeof row.percentiles === 'string' ? JSON.parse(row.percentiles) : row.percentiles
 		}));
 
-		// Get summary statistics
-		const latestYear = processedData.length > 0 ? Math.max(...processedData.map(d => d.year)) : new Date().getFullYear();
-		const latestData = processedData.filter(d => d.year === latestYear);
+		const processedPyramids = pyramidData.map(row => ({
+			location: row.location,
+			year: row.year,
+			totalEmployees: row.totalEmployees,
+			totalPay: parseFloat(row.totalPay.toString()),
+			brackets: typeof row.brackets === 'string' ? JSON.parse(row.brackets) : row.brackets
+		}));
+
+		const processedTitles = titleData.map(row => ({
+			location: row.location,
+			year: row.year,
+			uniqueTitles: row.uniqueTitles,
+			topTitles: typeof row.topTitles === 'string' ? JSON.parse(row.topTitles) : row.topTitles
+		}));
+
+		// Get summary statistics from precalculated data
+		const latestYear = processedSummaries.length > 0 ? Math.max(...processedSummaries.map(d => d.year)) : new Date().getFullYear();
+		const latestData = processedSummaries.filter(d => d.year === latestYear);
 
 		const totalEmployees = latestData.reduce((sum, d) => sum + d.employeeCount, 0);
 		const totalWages = latestData.reduce((sum, d) => sum + d.totalWages, 0);
@@ -41,7 +86,9 @@ export const load: PageServerLoad = async () => {
 			: null;
 
 		return {
-			wageData: processedData,
+			wageData: processedSummaries,
+			pyramidData: processedPyramids,
+			titleData: processedTitles,
 			summary: {
 				latestYear,
 				totalEmployees,
@@ -51,11 +98,13 @@ export const load: PageServerLoad = async () => {
 			}
 		};
 	} catch (error) {
-		console.error('Error loading wage data:', error);
+		console.error('Error loading precalculated wage data:', error);
 
 		// Return empty data if database query fails
 		return {
 			wageData: [],
+			pyramidData: [],
+			titleData: [],
 			summary: {
 				latestYear: new Date().getFullYear(),
 				totalEmployees: 0,

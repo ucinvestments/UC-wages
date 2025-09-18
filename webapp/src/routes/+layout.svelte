@@ -36,6 +36,10 @@
 				<Icon icon="mdi:chart-line" class="nav-icon" />
 				Explorer
 			</a>
+			<a href="/search" class="nav-link" class:active={$page.url.pathname === '/search'}>
+				<Icon icon="mdi:account-search" class="nav-icon" />
+				Search
+			</a>
 			<a href="/about" class="nav-link" class:active={$page.url.pathname === '/about'}>
 				<Icon icon="mdi:information" class="nav-icon" />
 				About
@@ -79,6 +83,7 @@
 			<h4 class="footer-title">Quick Links</h4>
 			<div class="footer-links">
 				<a href="/" class="footer-link">Explorer</a>
+				<a href="/search" class="footer-link">Search</a>
 				<a href="/about" class="footer-link">About</a>
 				<a href="/data" class="footer-link">Data</a>
 				<a href="/methodology" class="footer-link">Methodology</a>
@@ -109,7 +114,7 @@
 				This project is self-funded. Donations help cover hosting and development costs.
 			</p>
 			<div class="donation-links">
-				<button class="donate-button" on:click={toggleDonationInfo}>
+				<button class="donate-button" onclick={toggleDonationInfo}>
 					<Icon icon="mdi:heart" class="donate-icon" />
 					Donate
 				</button>

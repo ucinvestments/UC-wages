@@ -1,0 +1,28 @@
+{
+  "location": "Davis",
+  "year": 2011,
+  "generated_at": "2025-09-18T15:42:01.417097736Z",
+  "employee_count": 37581,
+  "total_gross_pay": 1605517406.0199974,
+  "avg_gross_pay": 42721.51901279895,
+  "median_gross_pay": 28496.21,
+  "std_dev": 52583.82988333773,
+  "min_pay": 2.25,
+  "max_pay": 1169355.27,
+  "percentiles": {
+    "p25": 4910,
+    "p50": 28496.14,
+    "p75": 58405.395000000004,
+    "p90": 103167.64,
+    "p95": 133990.065,
+    "p99": 246404.07
+  },
+  "pay_components": {
+    "total_base": 1433716527.4699957,
+    "total_overtime": 26208080.52999999,
+    "total_adjustments": 145592798.01999915,
+    "avg_base": 38150.03665336196,
+    "avg_overtime": 697.3758157047441,
+    "avg_adjustments": 3874.106543732182
+  }
+}

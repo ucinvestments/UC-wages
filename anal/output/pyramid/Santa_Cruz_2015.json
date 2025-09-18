@@ -1,0 +1,485 @@
+{
+  "location": "Santa Cruz",
+  "year": 2015,
+  "generated_at": "2025-09-18T15:42:06.408240355Z",
+  "total_employees": 11854,
+  "total_pay": 316482463,
+  "brackets": [
+    {
+      "range": "0-25k",
+      "min_value": 0,
+      "max_value": 25000,
+      "count": 8033,
+      "percentage": 67.7661548844272,
+      "avg_pay": 5345.4146645089,
+      "median_pay": 2697,
+      "total_pay": 42939716,
+      "top_titles": [
+        {
+          "title": "STDT 4",
+          "count": 4372,
+          "avg_pay": 2565.7234675205855
+        },
+        {
+          "title": "TEACHG ASST-GSHIP",
+          "count": 777,
+          "avg_pay": 13699.346203346204
+        },
+        {
+          "title": "REMD TUT I-NON GSHIP",
+          "count": 460,
+          "avg_pay": 1882.4195652173912
+        },
+        {
+          "title": "GSR-PARTIAL FEE REM",
+          "count": 292,
+          "avg_pay": 14329.914383561643
+        },
+        {
+          "title": "STDT ACTIVITIES APPT OFFICIAL",
+          "count": 200,
+          "avg_pay": 1065.965
+        },
+        {
+          "title": "READER-NON GSHIP",
+          "count": 197,
+          "avg_pay": 1581.761421319797
+        },
+        {
+          "title": "LECT-AY-1/9",
+          "count": 178,
+          "avg_pay": 8625.022471910112
+        },
+        {
+          "title": "TEACHER-UNEX-CONTRACT YR",
+          "count": 164,
+          "avg_pay": 6062.780487804878
+        },
+        {
+          "title": "STDT AID OUTSIDE AGENCY",
+          "count": 111,
+          "avg_pay": 2117.6306306306305
+        },
+        {
+          "title": "JR SPECIALIST",
+          "count": 80,
+          "avg_pay": 11527.75
+        }
+      ]
+    },
+    {
+      "range": "25k-50k",
+      "min_value": 25000,
+      "max_value": 50000,
+      "count": 1544,
+      "percentage": 13.025139193521174,
+      "avg_pay": 37723.66062176166,
+      "median_pay": 38297,
+      "total_pay": 58245332,
+      "top_titles": [
+        {
+          "title": "GSR-PARTIAL FEE REM",
+          "count": 141,
+          "avg_pay": 29377.262411347518
+        },
+        {
+          "title": "BLANK AST 3",
+          "count": 119,
+          "avg_pay": 41422.16806722689
+        },
+        {
+          "title": "CUSTODIAN SR",
+          "count": 107,
+          "avg_pay": 43866.64485981308
+        },
+        {
+          "title": "POSTDOC-EMPLOYEE",
+          "count": 71,
+          "avg_pay": 39233.59154929577
+        },
+        {
+          "title": "FOOD SVC WORKER SR",
+          "count": 70,
+          "avg_pay": 36293.31428571429
+        },
+        {
+          "title": "TEACHG ASST-GSHIP",
+          "count": 65,
+          "avg_pay": 27914.876923076925
+        },
+        {
+          "title": "STDT AFFAIRS OFCR 2",
+          "count": 63,
+          "avg_pay": 40463.46031746032
+        },
+        {
+          "title": "BLANK AST 2",
+          "count": 58,
+          "avg_pay": 36974.34482758621
+        },
+        {
+          "title": "LECT-AY",
+          "count": 37,
+          "avg_pay": 38739.81081081081
+        },
+        {
+          "title": "AUTO EQUIP OPR SR",
+          "count": 29,
+          "avg_pay": 37320.31034482759
+        }
+      ]
+    },
+    {
+      "range": "50k-75k",
+      "min_value": 50000,
+      "max_value": 75000,
+      "count": 952,
+      "percentage": 8.031044373207356,
+      "avg_pay": 60935.67331932773,
+      "median_pay": 59776.5,
+      "total_pay": 58010761,
+      "top_titles": [
+        {
+          "title": "ADMIN ANL SR",
+          "count": 46,
+          "avg_pay": 63822.260869565216
+        },
+        {
+          "title": "ADMIN ANL",
+          "count": 45,
+          "avg_pay": 57608.86666666667
+        },
+        {
+          "title": "BLANK AST 3",
+          "count": 38,
+          "avg_pay": 54963.36842105263
+        },
+        {
+          "title": "STDT AFFAIRS OFCR 3 EX",
+          "count": 30,
+          "avg_pay": 56545.36666666667
+        },
+        {
+          "title": "STDT AFFAIRS OFCR 2",
+          "count": 30,
+          "avg_pay": 55865.933333333334
+        },
+        {
+          "title": "ADMIN SPEC",
+          "count": 28,
+          "avg_pay": 57443.357142857145
+        },
+        {
+          "title": "LECT-AY-CONTINUING",
+          "count": 25,
+          "avg_pay": 61622.68
+        },
+        {
+          "title": "ASSOC SPECIALIST",
+          "count": 24,
+          "avg_pay": 59698.625
+        },
+        {
+          "title": "POSTDOC-EMPLOYEE",
+          "count": 22,
+          "avg_pay": 56019.77272727273
+        },
+        {
+          "title": "BUDGET ANL",
+          "count": 21,
+          "avg_pay": 60041.19047619047
+        }
+      ]
+    },
+    {
+      "range": "75k-100k",
+      "min_value": 75000,
+      "max_value": 100000,
+      "count": 571,
+      "percentage": 4.816939429728362,
+      "avg_pay": 86776.63397548161,
+      "median_pay": 86117,
+      "total_pay": 49549458,
+      "top_titles": [
+        {
+          "title": "ASSOC PROF-AY",
+          "count": 72,
+          "avg_pay": 90026.27777777778
+        },
+        {
+          "title": "PHYS PLT MECH",
+          "count": 34,
+          "avg_pay": 87743.41176470589
+        },
+        {
+          "title": "ASST PROF-AY",
+          "count": 34,
+          "avg_pay": 83861.67647058824
+        },
+        {
+          "title": "ADMIN ANL SR",
+          "count": 21,
+          "avg_pay": 83356.80952380953
+        },
+        {
+          "title": "LECT-AY-CONTINUING",
+          "count": 19,
+          "avg_pay": 83827.15789473684
+        },
+        {
+          "title": "SYS ADM 3",
+          "count": 17,
+          "avg_pay": 83723.17647058824
+        },
+        {
+          "title": "ADMIN ANL PRN 1",
+          "count": 17,
+          "avg_pay": 87542.94117647059
+        },
+        {
+          "title": "INFO SYS ANL 3",
+          "count": 17,
+          "avg_pay": 84727.29411764706
+        },
+        {
+          "title": "APPLICATIONS PROGR 3",
+          "count": 17,
+          "avg_pay": 86455.29411764706
+        },
+        {
+          "title": "PROF-AY",
+          "count": 15,
+          "avg_pay": 94990.53333333334
+        }
+      ]
+    },
+    {
+      "range": "100k-150k",
+      "min_value": 100000,
+      "max_value": 150000,
+      "count": 515,
+      "percentage": 4.344525054833811,
+      "avg_pay": 120450.04077669902,
+      "median_pay": 118234,
+      "total_pay": 62031771,
+      "top_titles": [
+        {
+          "title": "PROF-AY",
+          "count": 111,
+          "avg_pay": 125054.83783783784
+        },
+        {
+          "title": "ASSOC PROF-AY",
+          "count": 44,
+          "avg_pay": 118255.97727272728
+        },
+        {
+          "title": "DIR",
+          "count": 36,
+          "avg_pay": 121166.08333333333
+        },
+        {
+          "title": "PROGR ANL 4",
+          "count": 28,
+          "avg_pay": 122606.42857142857
+        },
+        {
+          "title": "PROF-AY-B/E/E",
+          "count": 23,
+          "avg_pay": 132185.34782608695
+        },
+        {
+          "title": "DIR AST",
+          "count": 19,
+          "avg_pay": 114828.31578947368
+        },
+        {
+          "title": "ASST PROF-AY",
+          "count": 17,
+          "avg_pay": 109727.88235294117
+        },
+        {
+          "title": "MGR",
+          "count": 13,
+          "avg_pay": 117585.30769230769
+        },
+        {
+          "title": "ASST PROF-AY-B/E/E",
+          "count": 11,
+          "avg_pay": 128803
+        },
+        {
+          "title": "DEAN AST",
+          "count": 8,
+          "avg_pay": 121988.375
+        }
+      ]
+    },
+    {
+      "range": "150k-200k",
+      "min_value": 150000,
+      "max_value": 200000,
+      "count": 170,
+      "percentage": 1.4341150666441709,
+      "avg_pay": 170748.38235294117,
+      "median_pay": 169540.5,
+      "total_pay": 29027225,
+      "top_titles": [
+        {
+          "title": "PROF-AY",
+          "count": 66,
+          "avg_pay": 171066.12121212122
+        },
+        {
+          "title": "PROF-AY-B/E/E",
+          "count": 29,
+          "avg_pay": 172907.0344827586
+        },
+        {
+          "title": "DIR",
+          "count": 11,
+          "avg_pay": 166363.63636363635
+        },
+        {
+          "title": "PROGR ANL 5",
+          "count": 9,
+          "avg_pay": 160382.44444444444
+        },
+        {
+          "title": "VICE CHAN ASC",
+          "count": 5,
+          "avg_pay": 176895.4
+        },
+        {
+          "title": "SPEC",
+          "count": 5,
+          "avg_pay": 178578.4
+        },
+        {
+          "title": "VICE CHAN AST",
+          "count": 4,
+          "avg_pay": 161613.75
+        },
+        {
+          "title": "RES-FY",
+          "count": 3,
+          "avg_pay": 178938.66666666666
+        },
+        {
+          "title": "ASTRONOMER",
+          "count": 3,
+          "avg_pay": 172841.66666666666
+        },
+        {
+          "title": "ASST PROF-AY-B/E/E",
+          "count": 3,
+          "avg_pay": 176306
+        }
+      ]
+    },
+    {
+      "range": "200k-300k",
+      "min_value": 200000,
+      "max_value": 300000,
+      "count": 62,
+      "percentage": 0.5230302007761093,
+      "avg_pay": 231764.01612903227,
+      "median_pay": 228908.5,
+      "total_pay": 14369369,
+      "top_titles": [
+        {
+          "title": "PROF-AY",
+          "count": 29,
+          "avg_pay": 230391.5172413793
+        },
+        {
+          "title": "PROF-AY-B/E/E",
+          "count": 9,
+          "avg_pay": 241445.66666666666
+        },
+        {
+          "title": "DEAN",
+          "count": 4,
+          "avg_pay": 221606
+        },
+        {
+          "title": "ASTRONOMER",
+          "count": 3,
+          "avg_pay": 219159
+        },
+        {
+          "title": "DIR",
+          "count": 2,
+          "avg_pay": 216655.5
+        },
+        {
+          "title": "PROF-FY",
+          "count": 1,
+          "avg_pay": 263812
+        },
+        {
+          "title": "RES-FY",
+          "count": 1,
+          "avg_pay": 214333
+        },
+        {
+          "title": "PROF-FY-B/E/E",
+          "count": 1,
+          "avg_pay": 233956
+        },
+        {
+          "title": "ASSOC VICE CHANC",
+          "count": 1,
+          "avg_pay": 233065
+        },
+        {
+          "title": "MGR",
+          "count": 1,
+          "avg_pay": 210517
+        }
+      ]
+    },
+    {
+      "range": "300k-500k",
+      "min_value": 300000,
+      "max_value": 500000,
+      "count": 7,
+      "percentage": 0.0590517968618188,
+      "avg_pay": 329833,
+      "median_pay": 321921,
+      "total_pay": 2308831,
+      "top_titles": [
+        {
+          "title": "PROF-AY",
+          "count": 2,
+          "avg_pay": 320973.5
+        },
+        {
+          "title": "CHAN",
+          "count": 1,
+          "avg_pay": 392076
+        },
+        {
+          "title": "VC RSCH",
+          "count": 1,
+          "avg_pay": 302434
+        },
+        {
+          "title": "VC DEV AND UNIV REL",
+          "count": 1,
+          "avg_pay": 321921
+        },
+        {
+          "title": "EXEC VC AND PROVOST",
+          "count": 1,
+          "avg_pay": 344756
+        },
+        {
+          "title": "DEAN",
+          "count": 1,
+          "avg_pay": 305697
+        }
+      ]
+    }
+  ]
+}

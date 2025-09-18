@@ -1,0 +1,28 @@
+{
+  "location": "Los Angeles",
+  "year": 2018,
+  "generated_at": "2025-09-18T15:42:02.791660544Z",
+  "employee_count": 66235,
+  "total_gross_pay": 3762549901,
+  "avg_gross_pay": 56806.0678040311,
+  "median_gross_pay": 36680,
+  "std_dev": 83913.13876148201,
+  "min_pay": 2,
+  "max_pay": 3341707,
+  "percentiles": {
+    "p25": 6013.5,
+    "p50": 36677.5,
+    "p75": 71777,
+    "p90": 131944.5,
+    "p95": 182702.5,
+    "p99": 391074
+  },
+  "pay_components": {
+    "total_base": 3132224055,
+    "total_overtime": 59395955,
+    "total_adjustments": 570929891,
+    "avg_base": 47289.560730731486,
+    "avg_overtime": 896.7457537555673,
+    "avg_adjustments": 8619.761319544048
+  }
+}

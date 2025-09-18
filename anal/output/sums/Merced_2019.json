@@ -1,0 +1,28 @@
+{
+  "location": "Merced",
+  "year": 2019,
+  "generated_at": "2025-09-18T15:42:02.046154949Z",
+  "employee_count": 5154,
+  "total_gross_pay": 157879575,
+  "avg_gross_pay": 30632.435972060535,
+  "median_gross_pay": 9950,
+  "std_dev": 43150.92592878756,
+  "min_pay": 2,
+  "max_pay": 424972,
+  "percentiles": {
+    "p25": 3223,
+    "p50": 9946,
+    "p75": 43708.5,
+    "p90": 86817,
+    "p95": 119159,
+    "p99": 196841
+  },
+  "pay_components": {
+    "total_base": 148168797,
+    "total_overtime": 711019,
+    "total_adjustments": 8999759,
+    "avg_base": 28748.311408614667,
+    "avg_overtime": 137.95479239425688,
+    "avg_adjustments": 1746.1697710516105
+  }
+}

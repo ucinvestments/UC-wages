@@ -1,0 +1,482 @@
+{
+  "location": "Riverside",
+  "year": 2010,
+  "generated_at": "2025-09-18T15:42:05.399766888Z",
+  "total_employees": 11641,
+  "total_pay": 283911996.83,
+  "brackets": [
+    {
+      "range": "0-25k",
+      "min_value": 0,
+      "max_value": 25000,
+      "count": 7923,
+      "percentage": 68.06116313031526,
+      "avg_pay": 6420.5790786318175,
+      "median_pay": 3286.96,
+      "total_pay": 50870248.03999989,
+      "top_titles": [
+        {
+          "title": "ASSISTANT I",
+          "count": 2240,
+          "avg_pay": 2350.102374999995
+        },
+        {
+          "title": "TEACHING ASSISTANT - GSHIP",
+          "count": 1124,
+          "avg_pay": 13776.04912811384
+        },
+        {
+          "title": "ASSISTANT II",
+          "count": 848,
+          "avg_pay": 3695.2866391509456
+        },
+        {
+          "title": "STUDENT AID, OUTSIDE AGENCY",
+          "count": 537,
+          "avg_pay": 1275.3481005586593
+        },
+        {
+          "title": "GRAD STDNT RES-PARTIAL FEE REM",
+          "count": 498,
+          "avg_pay": 15873.489497991983
+        },
+        {
+          "title": "TEACHER-UNIV.EXT.-CONTRACT YR.",
+          "count": 425,
+          "avg_pay": 3203.447247058824
+        },
+        {
+          "title": "TUTOR - NON-GSHIP",
+          "count": 276,
+          "avg_pay": 2645.3563043478257
+        },
+        {
+          "title": "APPOINTED OFFICIAL,STU ACTVS",
+          "count": 249,
+          "avg_pay": 1751.979959839357
+        },
+        {
+          "title": "COMMUNITY SERVICE MENTOR",
+          "count": 181,
+          "avg_pay": 3409.405414364641
+        },
+        {
+          "title": "GRAD STDNT RES- NO REMISSION",
+          "count": 118,
+          "avg_pay": 12940.465677966102
+        }
+      ]
+    },
+    {
+      "range": "25k-50k",
+      "min_value": 25000,
+      "max_value": 50000,
+      "count": 1879,
+      "percentage": 16.141224980671765,
+      "avg_pay": 36406.13497072917,
+      "median_pay": 36632.64,
+      "total_pay": 68407127.6100001,
+      "top_titles": [
+        {
+          "title": "POSTDOC-EMPLOYEE",
+          "count": 172,
+          "avg_pay": 36489.25145348839
+        },
+        {
+          "title": "_____ASSISTANT III",
+          "count": 159,
+          "avg_pay": 37152.26006289306
+        },
+        {
+          "title": "_____ASSISTANT II",
+          "count": 134,
+          "avg_pay": 33127.301865671645
+        },
+        {
+          "title": "CUSTODIAN, SR",
+          "count": 130,
+          "avg_pay": 28649.403230769232
+        },
+        {
+          "title": "STUDENT AFFAIRS OFFICER II",
+          "count": 65,
+          "avg_pay": 40986.26892307694
+        },
+        {
+          "title": "ANALYST II",
+          "count": 46,
+          "avg_pay": 43291.934565217394
+        },
+        {
+          "title": "ASSISTANT SPECIALIST",
+          "count": 39,
+          "avg_pay": 38685.41897435897
+        },
+        {
+          "title": "ADMIN. SPECIALIST",
+          "count": 33,
+          "avg_pay": 42634.77303030303
+        },
+        {
+          "title": "FOOD SERVICE WORKER, SR",
+          "count": 30,
+          "avg_pay": 26151.828999999994
+        },
+        {
+          "title": "STAFF RES ASSOC II-NONEXEMPT",
+          "count": 30,
+          "avg_pay": 41381.570333333344
+        }
+      ]
+    },
+    {
+      "range": "50k-75k",
+      "min_value": 50000,
+      "max_value": 75000,
+      "count": 915,
+      "percentage": 7.860149471694871,
+      "avg_pay": 61755.69225136612,
+      "median_pay": 60825.46,
+      "total_pay": 56506458.41,
+      "top_titles": [
+        {
+          "title": "ASSISTANT PROFESSOR-ACAD YR",
+          "count": 77,
+          "avg_pay": 64490.33727272728
+        },
+        {
+          "title": "PROGRAMMER/ANALYST III",
+          "count": 58,
+          "avg_pay": 66334.20706896552
+        },
+        {
+          "title": "ASSOCIATE PROFESSOR-ACAD YR",
+          "count": 53,
+          "avg_pay": 70284.18490566037
+        },
+        {
+          "title": "LECTURER-AY-CONTINUING APPT.",
+          "count": 49,
+          "avg_pay": 62301.608163265315
+        },
+        {
+          "title": "ANALYST III",
+          "count": 41,
+          "avg_pay": 62152.26878048781
+        },
+        {
+          "title": "MAINTENANCE_(B)",
+          "count": 40,
+          "avg_pay": 60056.90074999999
+        },
+        {
+          "title": "MAINTENANCE_(A)",
+          "count": 38,
+          "avg_pay": 55984.463947368415
+        },
+        {
+          "title": "PROGRAMMER/ANALYST II",
+          "count": 32,
+          "avg_pay": 56261.15968749999
+        },
+        {
+          "title": "ANALYST II",
+          "count": 26,
+          "avg_pay": 55176.79307692308
+        },
+        {
+          "title": "ANALYST III-SUPERVISOR",
+          "count": 18,
+          "avg_pay": 62947.708888888905
+        }
+      ]
+    },
+    {
+      "range": "75k-100k",
+      "min_value": 75000,
+      "max_value": 100000,
+      "count": 424,
+      "percentage": 3.6422987715831976,
+      "avg_pay": 86158.19021226418,
+      "median_pay": 85704.68,
+      "total_pay": 36531072.65000001,
+      "top_titles": [
+        {
+          "title": "ASSOCIATE PROFESSOR-ACAD YR",
+          "count": 57,
+          "avg_pay": 85464.94456140352
+        },
+        {
+          "title": "ASSISTANT PROFESSOR-ACAD YR",
+          "count": 34,
+          "avg_pay": 86549.37205882352
+        },
+        {
+          "title": "PROFESSOR - ACADEMIC YEAR",
+          "count": 31,
+          "avg_pay": 89680.27483870971
+        },
+        {
+          "title": "DIRECTOR (FUNCTIONAL AREA)",
+          "count": 29,
+          "avg_pay": 88560.01310344826
+        },
+        {
+          "title": "LIBRARIAN - CAREER STATUS",
+          "count": 16,
+          "avg_pay": 84119.459375
+        },
+        {
+          "title": "POLICE OFFICER",
+          "count": 15,
+          "avg_pay": 85307.15266666668
+        },
+        {
+          "title": "PROGRAMMER/ANALYST III",
+          "count": 12,
+          "avg_pay": 81995.70583333333
+        },
+        {
+          "title": "PROGRAMMER/ANALYST IV",
+          "count": 11,
+          "avg_pay": 89010.89090909089
+        },
+        {
+          "title": "MANAGER (FUNCTIONAL AREA)",
+          "count": 11,
+          "avg_pay": 88438.14545454545
+        },
+        {
+          "title": "ANALYST IV",
+          "count": 10,
+          "avg_pay": 79411.974
+        }
+      ]
+    },
+    {
+      "range": "100k-150k",
+      "min_value": 100000,
+      "max_value": 150000,
+      "count": 346,
+      "percentage": 2.9722532428485526,
+      "avg_pay": 119787.37028901729,
+      "median_pay": 117713.29999999999,
+      "total_pay": 41446430.11999998,
+      "top_titles": [
+        {
+          "title": "PROFESSOR - ACADEMIC YEAR",
+          "count": 115,
+          "avg_pay": 121938.04469565219
+        },
+        {
+          "title": "----- IN THE A.E.S.",
+          "count": 41,
+          "avg_pay": 121501.07682926828
+        },
+        {
+          "title": "PROFESSOR-ACAD YR-BUS/ECON/ENG",
+          "count": 30,
+          "avg_pay": 128404.47766666667
+        },
+        {
+          "title": "DIRECTOR (FUNCTIONAL AREA)",
+          "count": 25,
+          "avg_pay": 115242.95120000001
+        },
+        {
+          "title": "ASSOCIATE PROFESSOR-ACAD YR",
+          "count": 16,
+          "avg_pay": 110326.41249999999
+        },
+        {
+          "title": "ASST PROF-ACAD YR-BUS/ECON/ENG",
+          "count": 14,
+          "avg_pay": 112316.1335714286
+        },
+        {
+          "title": "ASSOC PROF-AY-BUS/ECON/ENG",
+          "count": 12,
+          "avg_pay": 119731.52166666665
+        },
+        {
+          "title": "ASST VICE CHAN (FUNCTL AREA)",
+          "count": 10,
+          "avg_pay": 133327.948
+        },
+        {
+          "title": "SPECIALIST IN COOP EXT",
+          "count": 9,
+          "avg_pay": 117180.43
+        },
+        {
+          "title": "ASST DEAN (FUNCTIONAL AREA)",
+          "count": 6,
+          "avg_pay": 125561.62666666666
+        }
+      ]
+    },
+    {
+      "range": "150k-200k",
+      "min_value": 150000,
+      "max_value": 200000,
+      "count": 101,
+      "percentage": 0.8676230564384503,
+      "avg_pay": 170172.90940594062,
+      "median_pay": 167866.68,
+      "total_pay": 17187463.85,
+      "top_titles": [
+        {
+          "title": "PROFESSOR - ACADEMIC YEAR",
+          "count": 35,
+          "avg_pay": 170434.55628571426
+        },
+        {
+          "title": "PROFESSOR-ACAD YR-BUS/ECON/ENG",
+          "count": 16,
+          "avg_pay": 165665.14187500003
+        },
+        {
+          "title": "----- IN THE A.E.S.",
+          "count": 11,
+          "avg_pay": 168128.1318181818
+        },
+        {
+          "title": "ASSOC. VICE CHAN.(FTL. AREA)",
+          "count": 9,
+          "avg_pay": 173228.55444444448
+        },
+        {
+          "title": "PROFESSOR-HCOMP",
+          "count": 3,
+          "avg_pay": 170445.1466666667
+        },
+        {
+          "title": "DIRECTOR (FUNCTIONAL AREA)",
+          "count": 3,
+          "avg_pay": 156010.80000000002
+        },
+        {
+          "title": "ASSOCIATE DEAN",
+          "count": 2,
+          "avg_pay": 173248.10499999998
+        },
+        {
+          "title": "ASST VICE CHAN (FUNCTL AREA)",
+          "count": 2,
+          "avg_pay": 164065.7
+        },
+        {
+          "title": "HEAD COACH-INTERCOLG ATHLETICS",
+          "count": 2,
+          "avg_pay": 182191.65
+        },
+        {
+          "title": "ASST PROF-ACAD YR-BUS/ECON/ENG",
+          "count": 2,
+          "avg_pay": 165313.5
+        }
+      ]
+    },
+    {
+      "range": "200k-300k",
+      "min_value": 200000,
+      "max_value": 300000,
+      "count": 50,
+      "percentage": 0.42951636457349024,
+      "avg_pay": 232639.75020000004,
+      "median_pay": 230478.96,
+      "total_pay": 11631987.510000002,
+      "top_titles": [
+        {
+          "title": "PROFESSOR-ACAD YR-BUS/ECON/ENG",
+          "count": 18,
+          "avg_pay": 233716.78166666668
+        },
+        {
+          "title": "PROFESSOR - ACADEMIC YEAR",
+          "count": 12,
+          "avg_pay": 234020.3158333333
+        },
+        {
+          "title": "ASSOCIATE DEAN",
+          "count": 4,
+          "avg_pay": 228835.00000000003
+        },
+        {
+          "title": "VICE CHAN (FUNCTIONAL AREA)",
+          "count": 3,
+          "avg_pay": 235496.68000000002
+        },
+        {
+          "title": "----- IN THE A.E.S.",
+          "count": 2,
+          "avg_pay": 241563.12
+        },
+        {
+          "title": "ASST PROF-ACAD YR-BUS/ECON/ENG",
+          "count": 2,
+          "avg_pay": 207777.82
+        },
+        {
+          "title": "DEAN",
+          "count": 2,
+          "avg_pay": 236575.06
+        },
+        {
+          "title": "VICE CHAN (RESTRICTED USE)",
+          "count": 1,
+          "avg_pay": 240114.63
+        },
+        {
+          "title": "ASST. PROVOST",
+          "count": 1,
+          "avg_pay": 239408.83
+        },
+        {
+          "title": "PROFESSOR - FY -BUS/ECON/ENG",
+          "count": 1,
+          "avg_pay": 251109.13
+        }
+      ]
+    },
+    {
+      "range": "300k-500k",
+      "min_value": 300000,
+      "max_value": 500000,
+      "count": 2,
+      "percentage": 0.01718065458293961,
+      "avg_pay": 324333.32,
+      "median_pay": 324333.32,
+      "total_pay": 648666.64,
+      "top_titles": [
+        {
+          "title": "DEAN",
+          "count": 1,
+          "avg_pay": 345333.32
+        },
+        {
+          "title": "CHANCELLOR",
+          "count": 1,
+          "avg_pay": 303333.32
+        }
+      ]
+    },
+    {
+      "range": "500k-1M",
+      "min_value": 500000,
+      "max_value": 1000000,
+      "count": 1,
+      "percentage": 0.008590327291469805,
+      "avg_pay": 682542,
+      "median_pay": 682542,
+      "total_pay": 682542,
+      "top_titles": [
+        {
+          "title": "VICE CHAN (FUNCTIONAL AREA)",
+          "count": 1,
+          "avg_pay": 682542
+        }
+      ]
+    }
+  ]
+}

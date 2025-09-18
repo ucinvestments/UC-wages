@@ -1,0 +1,477 @@
+{
+  "location": "UC SF Law",
+  "year": 2024,
+  "generated_at": "2025-09-18T15:42:03.924831551Z",
+  "total_employees": 1102,
+  "total_pay": 38250143,
+  "brackets": [
+    {
+      "range": "0-25k",
+      "min_value": 0,
+      "max_value": 25000,
+      "count": 780,
+      "percentage": 70.78039927404718,
+      "avg_pay": 3853.7,
+      "median_pay": 1990,
+      "total_pay": 3005886,
+      "top_titles": [
+        {
+          "title": "TEACHING ASSISTANT - STIPEND",
+          "count": 161,
+          "avg_pay": 1361.0310559006211
+        },
+        {
+          "title": "ADJUNCT PROFESSOR",
+          "count": 120,
+          "avg_pay": 5062.125
+        },
+        {
+          "title": "STUDENT (MISCELLANEOUS)",
+          "count": 66,
+          "avg_pay": 3814.1060606060605
+        },
+        {
+          "title": "LW\u0026R INTRUCTOR I",
+          "count": 58,
+          "avg_pay": 9044.448275862069
+        },
+        {
+          "title": "CWSP-ON CAMPUS",
+          "count": 53,
+          "avg_pay": 3026.5471698113206
+        },
+        {
+          "title": "TEMPORARY HELP",
+          "count": 48,
+          "avg_pay": 3725.6666666666665
+        },
+        {
+          "title": "STUDENT RESEARCH ASSISTANT II",
+          "count": 40,
+          "avg_pay": 1908.75
+        },
+        {
+          "title": "NOTETAKER I - DISABLED STDNTS",
+          "count": 24,
+          "avg_pay": 609.7916666666666
+        },
+        {
+          "title": "STUDENT LIBRARY ASSISTANT",
+          "count": 24,
+          "avg_pay": 5085.416666666667
+        },
+        {
+          "title": "PROCTOR",
+          "count": 20,
+          "avg_pay": 916.85
+        }
+      ]
+    },
+    {
+      "range": "25k-50k",
+      "min_value": 25000,
+      "max_value": 50000,
+      "count": 52,
+      "percentage": 4.71869328493648,
+      "avg_pay": 36091.92307692308,
+      "median_pay": 35629,
+      "total_pay": 1876780,
+      "top_titles": [
+        {
+          "title": "VISITING PROFESSOR OF LAW",
+          "count": 8,
+          "avg_pay": 33918.75
+        },
+        {
+          "title": "SULLIVAN PROFESSOR OF LAW",
+          "count": 8,
+          "avg_pay": 36302.125
+        },
+        {
+          "title": "SR ADMINISTRATIVE ASSISTANT",
+          "count": 4,
+          "avg_pay": 37636
+        },
+        {
+          "title": "LECTURER - 12 MONTH",
+          "count": 4,
+          "avg_pay": 43287.25
+        },
+        {
+          "title": "GRADUATE FELLOW",
+          "count": 3,
+          "avg_pay": 41208
+        },
+        {
+          "title": "ADJUNCT PROFESSOR",
+          "count": 3,
+          "avg_pay": 36603.666666666664
+        },
+        {
+          "title": "DIRECTOR I",
+          "count": 3,
+          "avg_pay": 34255.666666666664
+        },
+        {
+          "title": "ADMINISTRATIVE ASSISTANT",
+          "count": 2,
+          "avg_pay": 33880
+        },
+        {
+          "title": "PARKING CASHIER/ATTENDANT",
+          "count": 2,
+          "avg_pay": 42542
+        },
+        {
+          "title": "GRADUATE RESEARCH FELLOW",
+          "count": 2,
+          "avg_pay": 27664
+        }
+      ]
+    },
+    {
+      "range": "50k-75k",
+      "min_value": 50000,
+      "max_value": 75000,
+      "count": 60,
+      "percentage": 5.44464609800363,
+      "avg_pay": 64308.61666666667,
+      "median_pay": 65982.5,
+      "total_pay": 3858517,
+      "top_titles": [
+        {
+          "title": "ADMINISTRATOR",
+          "count": 5,
+          "avg_pay": 66462.2
+        },
+        {
+          "title": "SR ADMINISTRATIVE ASSISTANT",
+          "count": 4,
+          "avg_pay": 63666
+        },
+        {
+          "title": "DIRECTOR I",
+          "count": 3,
+          "avg_pay": 56129.333333333336
+        },
+        {
+          "title": "GRADUATE FELLOW",
+          "count": 3,
+          "avg_pay": 63148
+        },
+        {
+          "title": "COMPUTER SUPPORT SPECIALIST",
+          "count": 3,
+          "avg_pay": 69251.66666666667
+        },
+        {
+          "title": "LECTURER - 9 MONTH",
+          "count": 3,
+          "avg_pay": 53503.333333333336
+        },
+        {
+          "title": "LECTURER - 12 MONTH",
+          "count": 3,
+          "avg_pay": 57965.333333333336
+        },
+        {
+          "title": "SENIOR RECORDS TECHNICIAN",
+          "count": 2,
+          "avg_pay": 74146
+        },
+        {
+          "title": "COORDINATOR",
+          "count": 2,
+          "avg_pay": 66293
+        },
+        {
+          "title": "VISITING PROFESSOR OF LAW",
+          "count": 2,
+          "avg_pay": 58733.5
+        }
+      ]
+    },
+    {
+      "range": "75k-100k",
+      "min_value": 75000,
+      "max_value": 100000,
+      "count": 79,
+      "percentage": 7.168784029038113,
+      "avg_pay": 86679.89873417722,
+      "median_pay": 86750,
+      "total_pay": 6847712,
+      "top_titles": [
+        {
+          "title": "CENTER ASSOCIATE",
+          "count": 9,
+          "avg_pay": 87551.22222222222
+        },
+        {
+          "title": "ASSOCIATE DIRECTOR (PROF)",
+          "count": 9,
+          "avg_pay": 84535.66666666667
+        },
+        {
+          "title": "DIRECTOR I",
+          "count": 6,
+          "avg_pay": 95311.33333333333
+        },
+        {
+          "title": "SENIOR ADMINSTRATIVE ANALYST",
+          "count": 6,
+          "avg_pay": 83917.83333333333
+        },
+        {
+          "title": "ASSISTANT DIRECTOR",
+          "count": 6,
+          "avg_pay": 86803.66666666667
+        },
+        {
+          "title": "ADMINISTRATIVE SUPPORT COORD",
+          "count": 4,
+          "avg_pay": 80467.25
+        },
+        {
+          "title": "GRADUATE FELLOW",
+          "count": 3,
+          "avg_pay": 77621
+        },
+        {
+          "title": "MANAGER",
+          "count": 3,
+          "avg_pay": 94901.33333333333
+        },
+        {
+          "title": "ASSOC. LIBRARIAN",
+          "count": 3,
+          "avg_pay": 92032.33333333333
+        },
+        {
+          "title": "ASSOCIATE PROFESSOR OF LAW",
+          "count": 3,
+          "avg_pay": 92507.33333333333
+        }
+      ]
+    },
+    {
+      "range": "100k-150k",
+      "min_value": 100000,
+      "max_value": 150000,
+      "count": 58,
+      "percentage": 5.263157894736842,
+      "avg_pay": 121280.8275862069,
+      "median_pay": 117923.5,
+      "total_pay": 7034288,
+      "top_titles": [
+        {
+          "title": "DIRECTOR I",
+          "count": 12,
+          "avg_pay": 126339.91666666667
+        },
+        {
+          "title": "DIRECTOR II",
+          "count": 7,
+          "avg_pay": 127775.14285714286
+        },
+        {
+          "title": "ASSOCIATE DIRECTOR (MGMT)",
+          "count": 6,
+          "avg_pay": 118770.33333333333
+        },
+        {
+          "title": "LECTURER - 9 MONTH",
+          "count": 5,
+          "avg_pay": 131854.4
+        },
+        {
+          "title": "LECTURER - 12 MONTH",
+          "count": 3,
+          "avg_pay": 113935.33333333333
+        },
+        {
+          "title": "LIBRARIAN",
+          "count": 2,
+          "avg_pay": 114070
+        },
+        {
+          "title": "CENTER SENIOR ASSOCIATE",
+          "count": 2,
+          "avg_pay": 112507
+        },
+        {
+          "title": "NETWORK \u0026 SYSTEMS ENGINEER",
+          "count": 2,
+          "avg_pay": 103835
+        },
+        {
+          "title": "PROFESSOR OF LAW",
+          "count": 2,
+          "avg_pay": 130984
+        },
+        {
+          "title": "DIRECTOR OF DRP",
+          "count": 1,
+          "avg_pay": 119337
+        }
+      ]
+    },
+    {
+      "range": "150k-200k",
+      "min_value": 150000,
+      "max_value": 200000,
+      "count": 34,
+      "percentage": 3.0852994555353903,
+      "avg_pay": 169650.35294117648,
+      "median_pay": 164379,
+      "total_pay": 5768112,
+      "top_titles": [
+        {
+          "title": "CLINICAL PROFESSOR OF LAW",
+          "count": 5,
+          "avg_pay": 169470.8
+        },
+        {
+          "title": "LECTURER - 9 MONTH",
+          "count": 5,
+          "avg_pay": 169580.2
+        },
+        {
+          "title": "ASSOCIATE PROFESSOR OF LAW",
+          "count": 4,
+          "avg_pay": 184642
+        },
+        {
+          "title": "DIRECTOR I",
+          "count": 4,
+          "avg_pay": 158499
+        },
+        {
+          "title": "ASSISTANT DEAN (STAFF)",
+          "count": 2,
+          "avg_pay": 166019
+        },
+        {
+          "title": "DIRECTOR III",
+          "count": 2,
+          "avg_pay": 185704
+        },
+        {
+          "title": "DIRECTOR II",
+          "count": 2,
+          "avg_pay": 157628.5
+        },
+        {
+          "title": "CENTER SENIOR ASSOCIATE",
+          "count": 2,
+          "avg_pay": 156926.5
+        },
+        {
+          "title": "DIRECTOR OF ACAD SUPPORT PGM",
+          "count": 1,
+          "avg_pay": 181345
+        },
+        {
+          "title": "VISITING PROFESSOR OF LAW",
+          "count": 1,
+          "avg_pay": 159409
+        }
+      ]
+    },
+    {
+      "range": "200k-300k",
+      "min_value": 200000,
+      "max_value": 300000,
+      "count": 35,
+      "percentage": 3.176043557168784,
+      "avg_pay": 238011.45714285714,
+      "median_pay": 231448,
+      "total_pay": 8330401,
+      "top_titles": [
+        {
+          "title": "PROFESSOR OF LAW",
+          "count": 27,
+          "avg_pay": 241262.8148148148
+        },
+        {
+          "title": "DIRECTOR III",
+          "count": 2,
+          "avg_pay": 202176
+        },
+        {
+          "title": "CONTROLLER",
+          "count": 1,
+          "avg_pay": 219044
+        },
+        {
+          "title": "CLINICAL PROFESSOR OF LAW",
+          "count": 1,
+          "avg_pay": 231448
+        },
+        {
+          "title": "LAW LIBRARIAN",
+          "count": 1,
+          "avg_pay": 225653
+        },
+        {
+          "title": "EXECUTIVE DIRECTOR, OPERATIONS",
+          "count": 1,
+          "avg_pay": 247242
+        },
+        {
+          "title": "GENERAL COUNSEL/BOARD SCRTRY",
+          "count": 1,
+          "avg_pay": 278250
+        },
+        {
+          "title": "LECTURER - 9 MONTH",
+          "count": 1,
+          "avg_pay": 210316
+        }
+      ]
+    },
+    {
+      "range": "300k-500k",
+      "min_value": 300000,
+      "max_value": 500000,
+      "count": 3,
+      "percentage": 0.27223230490018147,
+      "avg_pay": 338615.6666666667,
+      "median_pay": 332561,
+      "total_pay": 1015847,
+      "top_titles": [
+        {
+          "title": "CHIEF FINANCIAL OFFICER",
+          "count": 1,
+          "avg_pay": 361902
+        },
+        {
+          "title": "PROFESSOR OF LAW",
+          "count": 1,
+          "avg_pay": 321384
+        },
+        {
+          "title": "ACADEMIC DEAN",
+          "count": 1,
+          "avg_pay": 332561
+        }
+      ]
+    },
+    {
+      "range": "500k-1M",
+      "min_value": 500000,
+      "max_value": 1000000,
+      "count": 1,
+      "percentage": 0.09074410163339383,
+      "avg_pay": 512600,
+      "median_pay": 512600,
+      "total_pay": 512600,
+      "top_titles": [
+        {
+          "title": "CHANCELLOR AND DEAN",
+          "count": 1,
+          "avg_pay": 512600
+        }
+      ]
+    }
+  ]
+}

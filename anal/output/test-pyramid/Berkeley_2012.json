@@ -1,0 +1,544 @@
+{
+  "location": "Berkeley",
+  "year": 2012,
+  "generated_at": "2025-09-18T15:34:02.85932807Z",
+  "total_employees": 32513,
+  "total_pay": 1027338667.6399996,
+  "brackets": [
+    {
+      "range": "0-25k",
+      "min_value": 0,
+      "max_value": 25000,
+      "count": 20382,
+      "percentage": 62.68877064558792,
+      "avg_pay": 6753.922482092004,
+      "median_pay": 4363.205,
+      "total_pay": 137658448.02999923,
+      "top_titles": [
+        {
+          "title": "STDT 2",
+          "count": 4075,
+          "avg_pay": 2988.765057668705
+        },
+        {
+          "title": "STDT 1",
+          "count": 2721,
+          "avg_pay": 2404.2642962146283
+        },
+        {
+          "title": "TEACHG ASST-GSHIP",
+          "count": 2046,
+          "avg_pay": 10075.901578690191
+        },
+        {
+          "title": "STDT 3",
+          "count": 894,
+          "avg_pay": 4243.442785234898
+        },
+        {
+          "title": "GSR-FULL FEE REM",
+          "count": 809,
+          "avg_pay": 14345.570506798496
+        },
+        {
+          "title": "TEACHER-UNEX",
+          "count": 670,
+          "avg_pay": 5969.031029850746
+        },
+        {
+          "title": "ASSOC IN __ -AY-1/9-GSHIP",
+          "count": 655,
+          "avg_pay": 13930.85297709926
+        },
+        {
+          "title": "GSR-NO REM",
+          "count": 578,
+          "avg_pay": 7751.952958477513
+        },
+        {
+          "title": "POSTDOC-EMPLOYEE",
+          "count": 452,
+          "avg_pay": 13128.231880530973
+        },
+        {
+          "title": "TUT-NON GSHIP",
+          "count": 434,
+          "avg_pay": 1918.6081797235024
+        }
+      ]
+    },
+    {
+      "range": "25k-50k",
+      "min_value": 25000,
+      "max_value": 50000,
+      "count": 4842,
+      "percentage": 14.89250453664688,
+      "avg_pay": 37198.50911813297,
+      "median_pay": 37186.045,
+      "total_pay": 180115181.14999986,
+      "top_titles": [
+        {
+          "title": "POSTDOC-EMPLOYEE",
+          "count": 579,
+          "avg_pay": 38834.05780656301
+        },
+        {
+          "title": "GSR-FULL FEE REM",
+          "count": 499,
+          "avg_pay": 30140.81689378762
+        },
+        {
+          "title": "BLANK AST 3",
+          "count": 342,
+          "avg_pay": 42456.76304093567
+        },
+        {
+          "title": "BLANK AST 2",
+          "count": 217,
+          "avg_pay": 40206.51069124421
+        },
+        {
+          "title": "CUSTODIAN SR",
+          "count": 141,
+          "avg_pay": 38084.65304964538
+        },
+        {
+          "title": "TEACHG ASST-GSHIP",
+          "count": 135,
+          "avg_pay": 29962.886444444448
+        },
+        {
+          "title": "CUSTODIAN",
+          "count": 134,
+          "avg_pay": 39574.317388059695
+        },
+        {
+          "title": "ASSOC SPECIALIST",
+          "count": 103,
+          "avg_pay": 40872.84514563106
+        },
+        {
+          "title": "GSR-TUIT \u0026 FEE REM",
+          "count": 78,
+          "avg_pay": 31438.957820512813
+        },
+        {
+          "title": "LECT-AY",
+          "count": 68,
+          "avg_pay": 35974.78852941176
+        }
+      ]
+    },
+    {
+      "range": "50k-75k",
+      "min_value": 50000,
+      "max_value": 75000,
+      "count": 3356,
+      "percentage": 10.32202503613939,
+      "avg_pay": 60869.37141537547,
+      "median_pay": 59976,
+      "total_pay": 204277610.4700001,
+      "top_titles": [
+        {
+          "title": "BLANK AST 3",
+          "count": 158,
+          "avg_pay": 53908.569746835456
+        },
+        {
+          "title": "POSTDOC-EMPLOYEE",
+          "count": 119,
+          "avg_pay": 56822.356974789946
+        },
+        {
+          "title": "ASSOC SPECIALIST",
+          "count": 93,
+          "avg_pay": 55750.3294623656
+        },
+        {
+          "title": "RSCH ADM 3",
+          "count": 77,
+          "avg_pay": 59622.997012987005
+        },
+        {
+          "title": "SPECIALIST",
+          "count": 62,
+          "avg_pay": 65300.1170967742
+        },
+        {
+          "title": "ADMIN OFCR 2",
+          "count": 60,
+          "avg_pay": 57635.71483333335
+        },
+        {
+          "title": "LECT-AY-CONTINUING",
+          "count": 55,
+          "avg_pay": 63456.12745454545
+        },
+        {
+          "title": "STDT SVC ADVISOR 3",
+          "count": 53,
+          "avg_pay": 56602.998113207555
+        },
+        {
+          "title": "STDT ACAD ADVISOR 3",
+          "count": 47,
+          "avg_pay": 56458.98191489361
+        },
+        {
+          "title": "FINANCIAL SVC ANL 2",
+          "count": 46,
+          "avg_pay": 56541.57869565217
+        }
+      ]
+    },
+    {
+      "range": "75k-100k",
+      "min_value": 75000,
+      "max_value": 100000,
+      "count": 1716,
+      "percentage": 5.277888844462216,
+      "avg_pay": 86338.15597319334,
+      "median_pay": 85582.095,
+      "total_pay": 148156275.64999977,
+      "top_titles": [
+        {
+          "title": "ASSOC PROF-AY",
+          "count": 99,
+          "avg_pay": 91097.53676767678
+        },
+        {
+          "title": "APPLICATIONS PROGR 3",
+          "count": 73,
+          "avg_pay": 86423.22027397258
+        },
+        {
+          "title": "SPECIALIST",
+          "count": 50,
+          "avg_pay": 87055.5398
+        },
+        {
+          "title": "SYS ADM 3",
+          "count": 44,
+          "avg_pay": 85365.90204545454
+        },
+        {
+          "title": "ASST PROF-AY",
+          "count": 42,
+          "avg_pay": 88508.18595238095
+        },
+        {
+          "title": "ASST RES-FY",
+          "count": 37,
+          "avg_pay": 81532.87324324323
+        },
+        {
+          "title": "PROF-AY",
+          "count": 36,
+          "avg_pay": 91361.95694444445
+        },
+        {
+          "title": "LIBRARIAN-CAREER STATUS",
+          "count": 33,
+          "avg_pay": 85887.15515151515
+        },
+        {
+          "title": "ADMIN MGR 1",
+          "count": 30,
+          "avg_pay": 88168.08633333333
+        },
+        {
+          "title": "ACADEMIC COORD II-FY",
+          "count": 26,
+          "avg_pay": 89092.31384615385
+        }
+      ]
+    },
+    {
+      "range": "100k-150k",
+      "min_value": 100000,
+      "max_value": 150000,
+      "count": 1304,
+      "percentage": 4.010703410943315,
+      "avg_pay": 120393.93494631899,
+      "median_pay": 118128.70999999999,
+      "total_pay": 156993691.16999996,
+      "top_titles": [
+        {
+          "title": "PROF-AY",
+          "count": 197,
+          "avg_pay": 126908.21730964465
+        },
+        {
+          "title": "ASSOC PROF-AY",
+          "count": 100,
+          "avg_pay": 119215.01370000001
+        },
+        {
+          "title": "ASST PROF-AY",
+          "count": 46,
+          "avg_pay": 114751.35739130438
+        },
+        {
+          "title": "PROF-AY-B/E/E",
+          "count": 46,
+          "avg_pay": 130028.31326086959
+        },
+        {
+          "title": "ASSOC PROF-AY-B/E/E",
+          "count": 29,
+          "avg_pay": 133979.23965517242
+        },
+        {
+          "title": "RES-FY",
+          "count": 28,
+          "avg_pay": 124601.32392857144
+        },
+        {
+          "title": "APPLICATIONS PROGR 4",
+          "count": 23,
+          "avg_pay": 108659.56782608693
+        },
+        {
+          "title": "POLICE OFCR",
+          "count": 23,
+          "avg_pay": 108584.22652173913
+        },
+        {
+          "title": "ACADEMIC COORD II-FY",
+          "count": 21,
+          "avg_pay": 117190.72047619047
+        },
+        {
+          "title": "ASST PROF-AY-B/E/E",
+          "count": 19,
+          "avg_pay": 124740.37894736843
+        }
+      ]
+    },
+    {
+      "range": "150k-200k",
+      "min_value": 150000,
+      "max_value": 200000,
+      "count": 483,
+      "percentage": 1.4855596223049243,
+      "avg_pay": 173813.0164389233,
+      "median_pay": 172800,
+      "total_pay": 83951686.93999995,
+      "top_titles": [
+        {
+          "title": "PROF-AY",
+          "count": 184,
+          "avg_pay": 173560.72972826083
+        },
+        {
+          "title": "PROF-AY-B/E/E",
+          "count": 67,
+          "avg_pay": 173529.39716417916
+        },
+        {
+          "title": "ASST PROF-AY-B/E/E",
+          "count": 12,
+          "avg_pay": 187804.02166666664
+        },
+        {
+          "title": "AGRON AES",
+          "count": 11,
+          "avg_pay": 176931.95545454544
+        },
+        {
+          "title": "AGRON AES-AY",
+          "count": 10,
+          "avg_pay": 179458.12900000002
+        },
+        {
+          "title": "ADMIN MGR 3",
+          "count": 8,
+          "avg_pay": 169494.61875000002
+        },
+        {
+          "title": "ASST PROF-AY",
+          "count": 8,
+          "avg_pay": 177944.74125
+        },
+        {
+          "title": "ASSOC PROF-AY",
+          "count": 8,
+          "avg_pay": 173748.29750000002
+        },
+        {
+          "title": "PROF-AY-LAW",
+          "count": 7,
+          "avg_pay": 173531.91142857142
+        },
+        {
+          "title": "ACT PROF-AY-LAW",
+          "count": 7,
+          "avg_pay": 192544.2857142857
+        }
+      ]
+    },
+    {
+      "range": "200k-300k",
+      "min_value": 200000,
+      "max_value": 300000,
+      "count": 341,
+      "percentage": 1.0488112447328761,
+      "avg_pay": 235329.70375366585,
+      "median_pay": 229260.09,
+      "total_pay": 80247428.98000005,
+      "top_titles": [
+        {
+          "title": "PROF-AY",
+          "count": 124,
+          "avg_pay": 234454.66475806443
+        },
+        {
+          "title": "PROF-AY-B/E/E",
+          "count": 74,
+          "avg_pay": 236395.37864864868
+        },
+        {
+          "title": "PROF-AY-LAW",
+          "count": 21,
+          "avg_pay": 253633.78571428577
+        },
+        {
+          "title": "ASSOC PROF-AY-B/E/E",
+          "count": 12,
+          "avg_pay": 258298.63083333336
+        },
+        {
+          "title": "ASST PROF-AY-B/E/E",
+          "count": 12,
+          "avg_pay": 239492.2775
+        },
+        {
+          "title": "AGRON AES",
+          "count": 11,
+          "avg_pay": 218692.92909090908
+        },
+        {
+          "title": "DEAN",
+          "count": 10,
+          "avg_pay": 245084.98799999998
+        },
+        {
+          "title": "DIRECTOR",
+          "count": 10,
+          "avg_pay": 238007.98699999996
+        },
+        {
+          "title": "COACH AST 3",
+          "count": 6,
+          "avg_pay": 242776.65333333335
+        },
+        {
+          "title": "ASSOC DEAN",
+          "count": 5,
+          "avg_pay": 233916.72199999998
+        }
+      ]
+    },
+    {
+      "range": "300k-500k",
+      "min_value": 300000,
+      "max_value": 500000,
+      "count": 85,
+      "percentage": 0.2614338879832682,
+      "avg_pay": 356901.51070588245,
+      "median_pay": 342300,
+      "total_pay": 30336628.410000008,
+      "top_titles": [
+        {
+          "title": "PROF-AY-B/E/E",
+          "count": 28,
+          "avg_pay": 357705.25035714294
+        },
+        {
+          "title": "PROF-AY-LAW",
+          "count": 21,
+          "avg_pay": 350546.1938095239
+        },
+        {
+          "title": "ASSOC PROF-AY-B/E/E",
+          "count": 8,
+          "avg_pay": 353429.985
+        },
+        {
+          "title": "DEAN",
+          "count": 5,
+          "avg_pay": 343816.532
+        },
+        {
+          "title": "PROF-AY",
+          "count": 3,
+          "avg_pay": 323797.80333333334
+        },
+        {
+          "title": "VC FUNC AREA",
+          "count": 3,
+          "avg_pay": 346416.4666666667
+        },
+        {
+          "title": "ASSOC DEAN",
+          "count": 3,
+          "avg_pay": 393417.18
+        },
+        {
+          "title": "SR LECT-AY-CONTINUING",
+          "count": 2,
+          "avg_pay": 382390.31
+        },
+        {
+          "title": "DIRECTOR",
+          "count": 2,
+          "avg_pay": 382328.70999999996
+        },
+        {
+          "title": "HEAD COACH 5",
+          "count": 2,
+          "avg_pay": 401209.39
+        }
+      ]
+    },
+    {
+      "range": "500k-1M",
+      "min_value": 500000,
+      "max_value": 1000000,
+      "count": 2,
+      "percentage": 0.006151385599606311,
+      "avg_pay": 766215.49,
+      "median_pay": 766215.49,
+      "total_pay": 1532430.98,
+      "top_titles": [
+        {
+          "title": "PROF-AY-B/E/E",
+          "count": 1,
+          "avg_pay": 812489.81
+        },
+        {
+          "title": "LECT-AY",
+          "count": 1,
+          "avg_pay": 719941.17
+        }
+      ]
+    },
+    {
+      "range": "1M+",
+      "min_value": 1000000,
+      "max_value": 999999999,
+      "count": 2,
+      "percentage": 0.006151385599606311,
+      "avg_pay": 2034642.9300000002,
+      "median_pay": 2034642.9300000002,
+      "total_pay": 4069285.8600000003,
+      "top_titles": [
+        {
+          "title": "HEAD COACH 5",
+          "count": 2,
+          "avg_pay": 2034642.9300000002
+        }
+      ]
+    }
+  ]
+}

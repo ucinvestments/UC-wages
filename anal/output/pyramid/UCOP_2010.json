@@ -1,0 +1,542 @@
+{
+  "location": "UCOP",
+  "year": 2010,
+  "generated_at": "2025-09-18T15:42:06.447608897Z",
+  "total_employees": 1717,
+  "total_pay": 122674258.75000012,
+  "brackets": [
+    {
+      "range": "0-25k",
+      "min_value": 0,
+      "max_value": 25000,
+      "count": 265,
+      "percentage": 15.433896330809551,
+      "avg_pay": 9433.704452830189,
+      "median_pay": 7790.14,
+      "total_pay": 2499931.68,
+      "top_titles": [
+        {
+          "title": "ASSISTANT II",
+          "count": 36,
+          "avg_pay": 2343.519166666667
+        },
+        {
+          "title": "ANALYST, ADMINISTRATIVE",
+          "count": 34,
+          "avg_pay": 7264.397941176471
+        },
+        {
+          "title": "_____ASSISTANT III",
+          "count": 34,
+          "avg_pay": 11677.636764705883
+        },
+        {
+          "title": "_____ASSISTANT II",
+          "count": 20,
+          "avg_pay": 12136.219500000001
+        },
+        {
+          "title": "ANALYST, ADMINISTRATIVE, SR",
+          "count": 14,
+          "avg_pay": 13800.27
+        },
+        {
+          "title": "ADMIN/COORD/OFFICER(FUNC AREA)",
+          "count": 14,
+          "avg_pay": 12318.894999999999
+        },
+        {
+          "title": "ADMIN. SPECIALIST",
+          "count": 10,
+          "avg_pay": 10707.306
+        },
+        {
+          "title": "PROG. ANALYST III-UCOP",
+          "count": 9,
+          "avg_pay": 11132.825555555557
+        },
+        {
+          "title": "CLERK, SR/SECRETARY",
+          "count": 8,
+          "avg_pay": 1322.97625
+        },
+        {
+          "title": "ASSISTANT III",
+          "count": 7,
+          "avg_pay": 3692.6071428571427
+        }
+      ]
+    },
+    {
+      "range": "25k-50k",
+      "min_value": 25000,
+      "max_value": 50000,
+      "count": 403,
+      "percentage": 23.471170646476413,
+      "avg_pay": 40668.145012406974,
+      "median_pay": 41477.76,
+      "total_pay": 16389262.44000001,
+      "top_titles": [
+        {
+          "title": "_____ASSISTANT III",
+          "count": 109,
+          "avg_pay": 41415.61357798167
+        },
+        {
+          "title": "_____ASSISTANT II",
+          "count": 38,
+          "avg_pay": 36109.57657894739
+        },
+        {
+          "title": "ADMIN. SPECIALIST",
+          "count": 37,
+          "avg_pay": 44998.73243243243
+        },
+        {
+          "title": "ANALYST, ADMINISTRATIVE",
+          "count": 28,
+          "avg_pay": 41131.509285714295
+        },
+        {
+          "title": "ANALYST, ADMINISTRATIVE,PRIN I",
+          "count": 11,
+          "avg_pay": 37473.68363636364
+        },
+        {
+          "title": "PROG. ANALYST III-UCOP",
+          "count": 10,
+          "avg_pay": 38913.028000000006
+        },
+        {
+          "title": "ADMIN/COORD/OFFICER(FUNC AREA)",
+          "count": 10,
+          "avg_pay": 38646.101
+        },
+        {
+          "title": "STUDENT AFF. OFFICER III",
+          "count": 10,
+          "avg_pay": 40631.349
+        },
+        {
+          "title": "ANALYST, ADMINISTRATIVE, SR",
+          "count": 9,
+          "avg_pay": 33854.12333333333
+        },
+        {
+          "title": "ACCOUNTANT I",
+          "count": 9,
+          "avg_pay": 43526.11
+        }
+      ]
+    },
+    {
+      "range": "50k-75k",
+      "min_value": 50000,
+      "max_value": 75000,
+      "count": 450,
+      "percentage": 26.2085032032615,
+      "avg_pay": 61752.803466666715,
+      "median_pay": 61557.54,
+      "total_pay": 27788761.56000002,
+      "top_titles": [
+        {
+          "title": "ANALYST, ADMINISTRATIVE, SR",
+          "count": 76,
+          "avg_pay": 61190.435263157895
+        },
+        {
+          "title": "ANALYST, ADMINISTRATIVE",
+          "count": 48,
+          "avg_pay": 54857.646874999984
+        },
+        {
+          "title": "ANALYST, ADMINISTRATIVE,PRIN I",
+          "count": 46,
+          "avg_pay": 68441.59804347827
+        },
+        {
+          "title": "ADMIN/COORD/OFFICER(FUNC AREA)",
+          "count": 24,
+          "avg_pay": 66056.11291666668
+        },
+        {
+          "title": "PROG. ANALYST III-UCOP",
+          "count": 21,
+          "avg_pay": 67227.12095238095
+        },
+        {
+          "title": "ANALYST III",
+          "count": 19,
+          "avg_pay": 61996.033684210524
+        },
+        {
+          "title": "PROG. ANALYST II-UCOP",
+          "count": 16,
+          "avg_pay": 62289.057499999995
+        },
+        {
+          "title": "ADMIN. SPECIALIST",
+          "count": 13,
+          "avg_pay": 53810.983846153846
+        },
+        {
+          "title": "SECRETARY, EXECUTIVE TT OP",
+          "count": 9,
+          "avg_pay": 57325.79666666666
+        },
+        {
+          "title": "EDITOR, PRIN",
+          "count": 8,
+          "avg_pay": 62382.02250000001
+        }
+      ]
+    },
+    {
+      "range": "75k-100k",
+      "min_value": 75000,
+      "max_value": 100000,
+      "count": 297,
+      "percentage": 17.297612114152592,
+      "avg_pay": 86457.01447811443,
+      "median_pay": 86036.14,
+      "total_pay": 25677733.299999986,
+      "top_titles": [
+        {
+          "title": "ADMIN/COORD/OFFICER(FUNC AREA)",
+          "count": 83,
+          "avg_pay": 87913.70638554213
+        },
+        {
+          "title": "PROG. ANALYST III-UCOP",
+          "count": 34,
+          "avg_pay": 81707.58235294116
+        },
+        {
+          "title": "MANAGER (FUNCTIONAL AREA)",
+          "count": 27,
+          "avg_pay": 88748.35518518518
+        },
+        {
+          "title": "PROGRAMMER ANALYST IV - UCOP",
+          "count": 20,
+          "avg_pay": 91245.62400000003
+        },
+        {
+          "title": "PR ADMINISTRATIVE ANALYST II",
+          "count": 19,
+          "avg_pay": 82400.11684210527
+        },
+        {
+          "title": "SPECIALIST (FUNCTIONAL AREA)",
+          "count": 19,
+          "avg_pay": 85485.72000000002
+        },
+        {
+          "title": "DIRECTOR (FUNCTIONAL AREA)",
+          "count": 10,
+          "avg_pay": 92355.80999999998
+        },
+        {
+          "title": "ANALYST, ADMINISTRATIVE,PRIN I",
+          "count": 9,
+          "avg_pay": 83736.69333333333
+        },
+        {
+          "title": "ASSOC DIR (FUNCTIONAL AREA)",
+          "count": 6,
+          "avg_pay": 89917.23999999999
+        },
+        {
+          "title": "ENGINEER, DEVELOPMENT, SR",
+          "count": 5,
+          "avg_pay": 93281.106
+        }
+      ]
+    },
+    {
+      "range": "100k-150k",
+      "min_value": 100000,
+      "max_value": 150000,
+      "count": 192,
+      "percentage": 11.182294700058241,
+      "avg_pay": 121790.75541666664,
+      "median_pay": 122164.44,
+      "total_pay": 23383825.039999995,
+      "top_titles": [
+        {
+          "title": "DIRECTOR (FUNCTIONAL AREA)",
+          "count": 67,
+          "avg_pay": 123820.75208955225
+        },
+        {
+          "title": "ADMIN/COORD/OFFICER(FUNC AREA)",
+          "count": 25,
+          "avg_pay": 119500.43280000002
+        },
+        {
+          "title": "SENIOR COUNSEL",
+          "count": 13,
+          "avg_pay": 142087.47692307693
+        },
+        {
+          "title": "IT RESOURCE MANAGER III",
+          "count": 13,
+          "avg_pay": 119134.53307692308
+        },
+        {
+          "title": "SPECIALIST (FUNCTIONAL AREA)",
+          "count": 11,
+          "avg_pay": 118789.73181818183
+        },
+        {
+          "title": "MANAGER (FUNCTIONAL AREA)",
+          "count": 11,
+          "avg_pay": 115427.73818181819
+        },
+        {
+          "title": "ASSOC DIR (FUNCTIONAL AREA)",
+          "count": 9,
+          "avg_pay": 116467.40222222223
+        },
+        {
+          "title": "ASST DIR (FUNCTIONAL AREA)",
+          "count": 6,
+          "avg_pay": 116403.62666666666
+        },
+        {
+          "title": "PROGRAMMER ANALYST IV - UCOP",
+          "count": 6,
+          "avg_pay": 107482.09999999999
+        },
+        {
+          "title": "SYSTEMS PROGRAMMER IV",
+          "count": 4,
+          "avg_pay": 104151.1
+        }
+      ]
+    },
+    {
+      "range": "150k-200k",
+      "min_value": 150000,
+      "max_value": 200000,
+      "count": 49,
+      "percentage": 2.8538147932440303,
+      "avg_pay": 165255.25938775513,
+      "median_pay": 161815.86,
+      "total_pay": 8097507.710000001,
+      "top_titles": [
+        {
+          "title": "DIRECTOR (FUNCTIONAL AREA)",
+          "count": 12,
+          "avg_pay": 165521.7808333333
+        },
+        {
+          "title": "SENIOR COUNSEL",
+          "count": 11,
+          "avg_pay": 157424.62363636363
+        },
+        {
+          "title": "MANAGING COUNSEL",
+          "count": 4,
+          "avg_pay": 165980.14
+        },
+        {
+          "title": "ADMIN/COORD/OFFICER(FUNC AREA)",
+          "count": 3,
+          "avg_pay": 174950.49666666667
+        },
+        {
+          "title": "SPECIALIST (FUNCTIONAL AREA)",
+          "count": 3,
+          "avg_pay": 157584.93666666665
+        },
+        {
+          "title": "MANAGER (FUNCTIONAL AREA)",
+          "count": 3,
+          "avg_pay": 156566.23666666666
+        },
+        {
+          "title": "PRINCIPAL COUNSEL",
+          "count": 3,
+          "avg_pay": 177205.01333333334
+        },
+        {
+          "title": "ASSOCIATE VICE PRESIDENT",
+          "count": 2,
+          "avg_pay": 180151.04
+        },
+        {
+          "title": "DEPUTY TO THE SENIOR VP",
+          "count": 2,
+          "avg_pay": 168073.965
+        },
+        {
+          "title": "ASSOC DIR (FUNCTIONAL AREA)",
+          "count": 1,
+          "avg_pay": 151466.8
+        }
+      ]
+    },
+    {
+      "range": "200k-300k",
+      "min_value": 200000,
+      "max_value": 300000,
+      "count": 37,
+      "percentage": 2.1549213744903906,
+      "avg_pay": 233639.6348648648,
+      "median_pay": 228386.88,
+      "total_pay": 8644666.489999998,
+      "top_titles": [
+        {
+          "title": "ASSOCIATE VICE PRESIDENT",
+          "count": 9,
+          "avg_pay": 244983.30444444448
+        },
+        {
+          "title": "ADMIN/COORD/OFFICER(FUNC AREA)",
+          "count": 7,
+          "avg_pay": 251916.3714285714
+        },
+        {
+          "title": "DIRECTOR (FUNCTIONAL AREA)",
+          "count": 5,
+          "avg_pay": 208900.918
+        },
+        {
+          "title": "VICE PRES (FUNCTIONAL AREA)",
+          "count": 3,
+          "avg_pay": 236038.94000000003
+        },
+        {
+          "title": "DEPUTY GENERAL COUNSEL",
+          "count": 3,
+          "avg_pay": 232510.69333333333
+        },
+        {
+          "title": "PRINCIPAL COUNSEL",
+          "count": 2,
+          "avg_pay": 205523.925
+        },
+        {
+          "title": "DIRECTOR (FUNCTL AREA)-EXEC",
+          "count": 2,
+          "avg_pay": 214187.45500000002
+        },
+        {
+          "title": "VICE CHAN (FUNCTIONAL AREA)",
+          "count": 1,
+          "avg_pay": 222672.46
+        },
+        {
+          "title": "EXECUTIVE DIRECTOR-EXECUTIVE",
+          "count": 1,
+          "avg_pay": 211500
+        },
+        {
+          "title": "DEPUTY DIR (FUNCTIONAL AREA)",
+          "count": 1,
+          "avg_pay": 239609.16
+        }
+      ]
+    },
+    {
+      "range": "300k-500k",
+      "min_value": 300000,
+      "max_value": 500000,
+      "count": 19,
+      "percentage": 1.10658124635993,
+      "avg_pay": 376769.91631578945,
+      "median_pay": 377075.96,
+      "total_pay": 7158628.409999999,
+      "top_titles": [
+        {
+          "title": "DEPUTY DIR (FUNCTIONAL AREA)",
+          "count": 5,
+          "avg_pay": 374338.908
+        },
+        {
+          "title": "EXECUTIVE VICE PRESIDENT",
+          "count": 3,
+          "avg_pay": 380782.32666666666
+        },
+        {
+          "title": "VICE PRES (FUNCTIONAL AREA)",
+          "count": 2,
+          "avg_pay": 312844.16000000003
+        },
+        {
+          "title": "DIRECTOR (FUNCTIONAL AREA)",
+          "count": 2,
+          "avg_pay": 386388.5
+        },
+        {
+          "title": "DIRECTOR (FUNCTL AREA)-EXEC",
+          "count": 2,
+          "avg_pay": 431512.66500000004
+        },
+        {
+          "title": "GENERAL COUNSEL \u0026 VP-LEGAL AFF",
+          "count": 1,
+          "avg_pay": 397182.88
+        },
+        {
+          "title": "ADMIN/COORD/OFFICER(FUNC AREA)",
+          "count": 1,
+          "avg_pay": 325627.71
+        },
+        {
+          "title": "SR. VICE PRES--DESIGNATE",
+          "count": 1,
+          "avg_pay": 386916
+        },
+        {
+          "title": "PROVOST AND SR VP--ACAD AFF",
+          "count": 1,
+          "avg_pay": 326666.64
+        },
+        {
+          "title": "ASST TREASURER OF THE REGENTS",
+          "count": 1,
+          "avg_pay": 446703.01
+        }
+      ]
+    },
+    {
+      "range": "500k-1M",
+      "min_value": 500000,
+      "max_value": 1000000,
+      "count": 5,
+      "percentage": 0.29120559114735,
+      "avg_pay": 606788.424,
+      "median_pay": 560594.4,
+      "total_pay": 3033942.12,
+      "top_titles": [
+        {
+          "title": "TREASURER OF THE REGENTS",
+          "count": 1,
+          "avg_pay": 686674.68
+        },
+        {
+          "title": "DIRECTOR (FUNCTL AREA)-EXEC",
+          "count": 1,
+          "avg_pay": 502672.68
+        },
+        {
+          "title": "DIRECTOR (FUNCTIONAL AREA)",
+          "count": 1,
+          "avg_pay": 527126
+        },
+        {
+          "title": "SR. VICE PRES--DESIGNATE",
+          "count": 1,
+          "avg_pay": 756874.36
+        },
+        {
+          "title": "PRESIDENT OF THE UNIVERSITY",
+          "count": 1,
+          "avg_pay": 560594.4
+        }
+      ]
+    }
+  ]
+}

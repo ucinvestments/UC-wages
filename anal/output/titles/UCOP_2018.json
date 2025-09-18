@@ -1,0 +1,1008 @@
+{
+  "location": "UCOP",
+  "year": 2018,
+  "generated_at": "2025-09-18T15:42:08.526329403Z",
+  "unique_titles": 478,
+  "top_titles": [
+    {
+      "title": "BLANK AST 3",
+      "count": 138,
+      "avg_pay": 44104.81884057971,
+      "median_pay": 50553.5,
+      "min_pay": 304,
+      "max_pay": 75062,
+      "std_dev": 19699.833536498023,
+      "total_pay": 6086465
+    },
+    {
+      "title": "COUNSEL 4",
+      "count": 54,
+      "avg_pay": 183799.33333333334,
+      "median_pay": 196795.5,
+      "min_pay": 10560,
+      "max_pay": 280565,
+      "std_dev": 53595.2465826892,
+      "total_pay": 9925164
+    },
+    {
+      "title": "BENEFITS ANL 2",
+      "count": 51,
+      "avg_pay": 53845.96078431373,
+      "median_pay": 60576,
+      "min_pay": 8876,
+      "max_pay": 77747,
+      "std_dev": 19311.57528729579,
+      "total_pay": 2746144
+    },
+    {
+      "title": "APPLICATIONS PROGR 3",
+      "count": 47,
+      "avg_pay": 86633.53191489361,
+      "median_pay": 97589,
+      "min_pay": 8111,
+      "max_pay": 124252,
+      "std_dev": 29832.785578208484,
+      "total_pay": 4071776
+    },
+    {
+      "title": "BENEFITS ANL 3",
+      "count": 45,
+      "avg_pay": 65977.04444444444,
+      "median_pay": 72101,
+      "min_pay": 2744,
+      "max_pay": 91308,
+      "std_dev": 22643.39261384414,
+      "total_pay": 2968967
+    },
+    {
+      "title": "APPLICATIONS PROGR 4",
+      "count": 42,
+      "avg_pay": 118378.09523809524,
+      "median_pay": 122883,
+      "min_pay": 46409,
+      "max_pay": 160925,
+      "std_dev": 20683.24349484674,
+      "total_pay": 4971880
+    },
+    {
+      "title": "BUS SYS ANL 3",
+      "count": 42,
+      "avg_pay": 81224.80952380953,
+      "median_pay": 85186.5,
+      "min_pay": 17708,
+      "max_pay": 125864,
+      "std_dev": 25347.01543174368,
+      "total_pay": 3411442
+    },
+    {
+      "title": "PROJECT POLICY ANL 3",
+      "count": 41,
+      "avg_pay": 69012.56097560975,
+      "median_pay": 77463,
+      "min_pay": 7346,
+      "max_pay": 94042,
+      "std_dev": 21084.26340471615,
+      "total_pay": 2829515
+    },
+    {
+      "title": "PAYROLL ANL 2",
+      "count": 36,
+      "avg_pay": 53362.27777777778,
+      "median_pay": 55630,
+      "min_pay": 4337,
+      "max_pay": 67763,
+      "std_dev": 13320.101079052398,
+      "total_pay": 1921042
+    },
+    {
+      "title": "BUS SYS ANL 4",
+      "count": 33,
+      "avg_pay": 105676.33333333333,
+      "median_pay": 113236,
+      "min_pay": 21268,
+      "max_pay": 150209,
+      "std_dev": 30880.566029184574,
+      "total_pay": 3487319
+    },
+    {
+      "title": "PROJECT POLICY ANL 4",
+      "count": 32,
+      "avg_pay": 86452.0625,
+      "median_pay": 92156.5,
+      "min_pay": 1172,
+      "max_pay": 129301,
+      "std_dev": 28277.337955880743,
+      "total_pay": 2766466
+    },
+    {
+      "title": "INFO SYS ANL 4",
+      "count": 27,
+      "avg_pay": 126303.92592592593,
+      "median_pay": 132708,
+      "min_pay": 25144,
+      "max_pay": 164918,
+      "std_dev": 28844.44555546043,
+      "total_pay": 3410206
+    },
+    {
+      "title": "ADMIN OFCR 2",
+      "count": 27,
+      "avg_pay": 60376.333333333336,
+      "median_pay": 67433,
+      "min_pay": 3147,
+      "max_pay": 82713,
+      "std_dev": 19670.22933455719,
+      "total_pay": 1630161
+    },
+    {
+      "title": "EXEC AST 3",
+      "count": 25,
+      "avg_pay": 69492.36,
+      "median_pay": 73910,
+      "min_pay": 11129,
+      "max_pay": 89079,
+      "std_dev": 16691.34066725618,
+      "total_pay": 1737309
+    },
+    {
+      "title": "SYS ADM 4",
+      "count": 24,
+      "avg_pay": 122121.95833333333,
+      "median_pay": 125831,
+      "min_pay": 30045,
+      "max_pay": 143835,
+      "std_dev": 21122.263381874214,
+      "total_pay": 2930927
+    },
+    {
+      "title": "CUSTOMER SVC REPR 2",
+      "count": 24,
+      "avg_pay": 43810.25,
+      "median_pay": 51473,
+      "min_pay": 6296,
+      "max_pay": 54397,
+      "std_dev": 14920.323357895655,
+      "total_pay": 1051446
+    },
+    {
+      "title": "STDT 3",
+      "count": 24,
+      "avg_pay": 6454.583333333333,
+      "median_pay": 5661,
+      "min_pay": 180,
+      "max_pay": 26083,
+      "std_dev": 4614.162617390313,
+      "total_pay": 154910
+    },
+    {
+      "title": "BLANK AST 2",
+      "count": 23,
+      "avg_pay": 33160,
+      "median_pay": 34630,
+      "min_pay": 678,
+      "max_pay": 59417,
+      "std_dev": 20078.098301166483,
+      "total_pay": 762680
+    },
+    {
+      "title": "GEN ACCOUNTANT 3",
+      "count": 20,
+      "avg_pay": 64945.7,
+      "median_pay": 71415,
+      "min_pay": 19780,
+      "max_pay": 91070,
+      "std_dev": 20048.9674823917,
+      "total_pay": 1298914
+    },
+    {
+      "title": "PROJECT POLICY ANL 2",
+      "count": 20,
+      "avg_pay": 30932.4,
+      "median_pay": 15714.5,
+      "min_pay": 2812,
+      "max_pay": 75663,
+      "std_dev": 26934.970401691553,
+      "total_pay": 618648
+    },
+    {
+      "title": "BUS SYS ANL 2 NEX",
+      "count": 19,
+      "avg_pay": 66521.94736842105,
+      "median_pay": 69638,
+      "min_pay": 16388,
+      "max_pay": 90813,
+      "std_dev": 16892.254533002877,
+      "total_pay": 1263917
+    },
+    {
+      "title": "FINANCIAL ANL 3",
+      "count": 18,
+      "avg_pay": 63241.055555555555,
+      "median_pay": 71123.5,
+      "min_pay": 4985,
+      "max_pay": 116220,
+      "std_dev": 37039.41379196584,
+      "total_pay": 1138339
+    },
+    {
+      "title": "STRAT SOURCING PROFL 4",
+      "count": 16,
+      "avg_pay": 109890.1875,
+      "median_pay": 106744,
+      "min_pay": 81551,
+      "max_pay": 143911,
+      "std_dev": 15513.185348352663,
+      "total_pay": 1758243
+    },
+    {
+      "title": "RSCH GNT PRG OFCR 4",
+      "count": 16,
+      "avg_pay": 95763.4375,
+      "median_pay": 114425.5,
+      "min_pay": 814,
+      "max_pay": 131584,
+      "std_dev": 39552.14857306862,
+      "total_pay": 1532215
+    },
+    {
+      "title": "EXEC AST 4",
+      "count": 15,
+      "avg_pay": 93170.86666666667,
+      "median_pay": 95307,
+      "min_pay": 38136,
+      "max_pay": 123034,
+      "std_dev": 18542.765258959862,
+      "total_pay": 1397563
+    },
+    {
+      "title": "CUSTOMER SVC REPR 3",
+      "count": 15,
+      "avg_pay": 55732.2,
+      "median_pay": 56994,
+      "min_pay": 41473,
+      "max_pay": 59319,
+      "std_dev": 4231.6396223371075,
+      "total_pay": 835983
+    },
+    {
+      "title": "HR GENERALIST 2",
+      "count": 15,
+      "avg_pay": 53195.13333333333,
+      "median_pay": 57728,
+      "min_pay": 12549,
+      "max_pay": 88982,
+      "std_dev": 19858.220983987685,
+      "total_pay": 797927
+    },
+    {
+      "title": "APPLICATIONS PROGM MGR 1",
+      "count": 14,
+      "avg_pay": 136480.07142857142,
+      "median_pay": 137338,
+      "min_pay": 81739,
+      "max_pay": 192533,
+      "std_dev": 26337.23377779691,
+      "total_pay": 1910721
+    },
+    {
+      "title": "RET CUSTOMER SVC REPR 1",
+      "count": 14,
+      "avg_pay": 21927.785714285714,
+      "median_pay": 15488.5,
+      "min_pay": 429,
+      "max_pay": 52015,
+      "std_dev": 17944.259687705035,
+      "total_pay": 306989
+    },
+    {
+      "title": "GEN ACCOUNTANT 4",
+      "count": 13,
+      "avg_pay": 66290.30769230769,
+      "median_pay": 72159,
+      "min_pay": 5913,
+      "max_pay": 96926,
+      "std_dev": 28505.660362015053,
+      "total_pay": 861774
+    },
+    {
+      "title": "QA RELEASE MGT ANL 3",
+      "count": 12,
+      "avg_pay": 105686.41666666667,
+      "median_pay": 112224,
+      "min_pay": 28479,
+      "max_pay": 130381,
+      "std_dev": 26305.86097069857,
+      "total_pay": 1268237
+    },
+    {
+      "title": "PROJECT POLICY ANL 4 GF",
+      "count": 12,
+      "avg_pay": 105584.83333333333,
+      "median_pay": 107961,
+      "min_pay": 82433,
+      "max_pay": 120703,
+      "std_dev": 10452.878716995725,
+      "total_pay": 1267018
+    },
+    {
+      "title": "PUBLICATIONS PROD SPEC 3",
+      "count": 12,
+      "avg_pay": 68978.08333333333,
+      "median_pay": 68164.5,
+      "min_pay": 58402,
+      "max_pay": 77836,
+      "std_dev": 5684.909182187717,
+      "total_pay": 827737
+    },
+    {
+      "title": "PRODUCT DEV PROFL 3",
+      "count": 12,
+      "avg_pay": 67578.66666666667,
+      "median_pay": 83131.5,
+      "min_pay": 3792,
+      "max_pay": 102542,
+      "std_dev": 33330.95265998592,
+      "total_pay": 810944
+    },
+    {
+      "title": "UCDC EDUCATOR - AY",
+      "count": 12,
+      "avg_pay": 14410,
+      "median_pay": 15214,
+      "min_pay": 1761,
+      "max_pay": 26961,
+      "std_dev": 7024.249200685675,
+      "total_pay": 172920
+    },
+    {
+      "title": "ORGANIZATIONAL CNSLT 4",
+      "count": 11,
+      "avg_pay": 99562.27272727272,
+      "median_pay": 112124,
+      "min_pay": 21312,
+      "max_pay": 147051,
+      "std_dev": 36768.17418784129,
+      "total_pay": 1095185
+    },
+    {
+      "title": "FINANCIAL SVC ANL 3",
+      "count": 11,
+      "avg_pay": 74711.36363636363,
+      "median_pay": 73401,
+      "min_pay": 56111,
+      "max_pay": 92871,
+      "std_dev": 9218.30677878365,
+      "total_pay": 821825
+    },
+    {
+      "title": "LEGAL SUPP SPEC 3",
+      "count": 11,
+      "avg_pay": 72916.63636363637,
+      "median_pay": 82434,
+      "min_pay": 21791,
+      "max_pay": 89626,
+      "std_dev": 19061.316802136334,
+      "total_pay": 802083
+    },
+    {
+      "title": "ADMIN AST 2",
+      "count": 11,
+      "avg_pay": 41753.545454545456,
+      "median_pay": 51934,
+      "min_pay": 3780,
+      "max_pay": 70297,
+      "std_dev": 22244.391715517606,
+      "total_pay": 459289
+    },
+    {
+      "title": "STDT 2",
+      "count": 11,
+      "avg_pay": 2233.909090909091,
+      "median_pay": 1971,
+      "min_pay": 720,
+      "max_pay": 5067,
+      "std_dev": 1385.239293705765,
+      "total_pay": 24573
+    },
+    {
+      "title": "EXEC ADVISOR MGR 2",
+      "count": 10,
+      "avg_pay": 164258.9,
+      "median_pay": 177986.5,
+      "min_pay": 64144,
+      "max_pay": 209334,
+      "std_dev": 44291.39289625017,
+      "total_pay": 1642589
+    },
+    {
+      "title": "TCHL PROJECT MGT PROFL 4",
+      "count": 10,
+      "avg_pay": 112607,
+      "median_pay": 123456.5,
+      "min_pay": 28152,
+      "max_pay": 146479,
+      "std_dev": 35039.910564954356,
+      "total_pay": 1126070
+    },
+    {
+      "title": "PROJECT POLICY ANL 5",
+      "count": 10,
+      "avg_pay": 107765.1,
+      "median_pay": 120799,
+      "min_pay": 21929,
+      "max_pay": 164733,
+      "std_dev": 39950.855531390065,
+      "total_pay": 1077651
+    },
+    {
+      "title": "FINANCIAL ANL 4",
+      "count": 10,
+      "avg_pay": 101050.9,
+      "median_pay": 103678.5,
+      "min_pay": 49286,
+      "max_pay": 141192,
+      "std_dev": 25337.487746222985,
+      "total_pay": 1010509
+    },
+    {
+      "title": "BENEFITS SUPV 2",
+      "count": 10,
+      "avg_pay": 82736.3,
+      "median_pay": 83772.5,
+      "min_pay": 71385,
+      "max_pay": 100545,
+      "std_dev": 9383.119460499263,
+      "total_pay": 827363
+    },
+    {
+      "title": "ADMIN OFCR 3",
+      "count": 10,
+      "avg_pay": 75909.9,
+      "median_pay": 80703.5,
+      "min_pay": 263,
+      "max_pay": 106321,
+      "std_dev": 26675.67032503588,
+      "total_pay": 759099
+    },
+    {
+      "title": "TECH SUPP ANL 2",
+      "count": 10,
+      "avg_pay": 69016.8,
+      "median_pay": 77988,
+      "min_pay": 19328,
+      "max_pay": 94930,
+      "std_dev": 25367.692692872166,
+      "total_pay": 690168
+    },
+    {
+      "title": "PAYROLL SUPV 2",
+      "count": 10,
+      "avg_pay": 60046.2,
+      "median_pay": 63036.5,
+      "min_pay": 25298,
+      "max_pay": 80694,
+      "std_dev": 14706.069840715429,
+      "total_pay": 600462
+    },
+    {
+      "title": "RET CUSTOMER SVC REPR 2",
+      "count": 10,
+      "avg_pay": 53607.1,
+      "median_pay": 52104,
+      "min_pay": 51654,
+      "max_pay": 59710,
+      "std_dev": 2511.5131873036225,
+      "total_pay": 536071
+    },
+    {
+      "title": "ADMIN AST 3",
+      "count": 10,
+      "avg_pay": 45565.1,
+      "median_pay": 53233,
+      "min_pay": 4011,
+      "max_pay": 70734,
+      "std_dev": 22902.40708069787,
+      "total_pay": 455651
+    },
+    {
+      "title": "EXEC ADVISOR 4",
+      "count": 9,
+      "avg_pay": 110902.44444444444,
+      "median_pay": 134793,
+      "min_pay": 5036,
+      "max_pay": 172837,
+      "std_dev": 58476.5722530753,
+      "total_pay": 998122
+    },
+    {
+      "title": "INFO SYS ANL 3",
+      "count": 9,
+      "avg_pay": 108198.66666666667,
+      "median_pay": 106813,
+      "min_pay": 96876,
+      "max_pay": 135486,
+      "std_dev": 10338.9362336966,
+      "total_pay": 973788
+    },
+    {
+      "title": "BENEFITS PRG STRAT ANL 4",
+      "count": 9,
+      "avg_pay": 98912.22222222222,
+      "median_pay": 98942,
+      "min_pay": 52381,
+      "max_pay": 120255,
+      "std_dev": 18510.402689525556,
+      "total_pay": 890210
+    },
+    {
+      "title": "PARALEGAL 4",
+      "count": 9,
+      "avg_pay": 94820.44444444444,
+      "median_pay": 99206,
+      "min_pay": 57795,
+      "max_pay": 103926,
+      "std_dev": 13841.026769163165,
+      "total_pay": 853384
+    },
+    {
+      "title": "HR GENERALIST 3",
+      "count": 9,
+      "avg_pay": 53003.666666666664,
+      "median_pay": 42075,
+      "min_pay": 31311,
+      "max_pay": 91737,
+      "std_dev": 20086.435848878493,
+      "total_pay": 477033
+    },
+    {
+      "title": "BUS SYS ANL MGR 1",
+      "count": 8,
+      "avg_pay": 132299,
+      "median_pay": 140217,
+      "min_pay": 37036,
+      "max_pay": 180000,
+      "std_dev": 39427.40194014817,
+      "total_pay": 1058392
+    },
+    {
+      "title": "DIGITAL COMM SPEC 4",
+      "count": 8,
+      "avg_pay": 92083.25,
+      "median_pay": 94478.5,
+      "min_pay": 70990,
+      "max_pay": 115690,
+      "std_dev": 13895.135099649086,
+      "total_pay": 736666
+    },
+    {
+      "title": "INSTITUTIONAL RSCH ANL 3",
+      "count": 8,
+      "avg_pay": 76201,
+      "median_pay": 87311,
+      "min_pay": 24399,
+      "max_pay": 96562,
+      "std_dev": 23313.252792135205,
+      "total_pay": 609608
+    },
+    {
+      "title": "COMM SPEC 4",
+      "count": 8,
+      "avg_pay": 74864.875,
+      "median_pay": 93537,
+      "min_pay": 13148,
+      "max_pay": 121875,
+      "std_dev": 38782.01809291743,
+      "total_pay": 598919
+    },
+    {
+      "title": "FINANCIAL SVC ANL 2",
+      "count": 8,
+      "avg_pay": 61370.75,
+      "median_pay": 64658,
+      "min_pay": 38578,
+      "max_pay": 71332,
+      "std_dev": 9373.094669718213,
+      "total_pay": 490966
+    },
+    {
+      "title": "EXEC ADVISOR MGR 3",
+      "count": 7,
+      "avg_pay": 221026.85714285713,
+      "median_pay": 222070,
+      "min_pay": 166152,
+      "max_pay": 282333,
+      "std_dev": 39946.9741368965,
+      "total_pay": 1547188
+    },
+    {
+      "title": "STRAT SOURCING MGR 2",
+      "count": 7,
+      "avg_pay": 153632.7142857143,
+      "median_pay": 157193,
+      "min_pay": 130431,
+      "max_pay": 168115,
+      "std_dev": 12042.267913055077,
+      "total_pay": 1075429
+    },
+    {
+      "title": "ADMIN MGR 1",
+      "count": 7,
+      "avg_pay": 139011.7142857143,
+      "median_pay": 137148,
+      "min_pay": 128491,
+      "max_pay": 149858,
+      "std_dev": 7827.297119956648,
+      "total_pay": 973082
+    },
+    {
+      "title": "QA RELEASE MGT ANL 4",
+      "count": 7,
+      "avg_pay": 133867.42857142858,
+      "median_pay": 141035,
+      "min_pay": 104569,
+      "max_pay": 150834,
+      "std_dev": 15527.490275150649,
+      "total_pay": 937072
+    },
+    {
+      "title": "FINANCIAL ANL 5",
+      "count": 7,
+      "avg_pay": 119163.57142857143,
+      "median_pay": 131010,
+      "min_pay": 10379,
+      "max_pay": 148761,
+      "std_dev": 45039.77950294017,
+      "total_pay": 834145
+    },
+    {
+      "title": "ENTERPRISE RISK MGT ANL 4",
+      "count": 7,
+      "avg_pay": 116218.57142857143,
+      "median_pay": 118419,
+      "min_pay": 85388,
+      "max_pay": 134044,
+      "std_dev": 14215.859663037747,
+      "total_pay": 813530
+    },
+    {
+      "title": "INV FELLOW ANL 1",
+      "count": 7,
+      "avg_pay": 86668,
+      "median_pay": 101293,
+      "min_pay": 45018,
+      "max_pay": 125544,
+      "std_dev": 26365.978473349758,
+      "total_pay": 606676
+    },
+    {
+      "title": "COMM AND NETWORK TCHL ANL 3",
+      "count": 7,
+      "avg_pay": 81955.57142857143,
+      "median_pay": 94931,
+      "min_pay": 13547,
+      "max_pay": 102372,
+      "std_dev": 28758.893048720685,
+      "total_pay": 573689
+    },
+    {
+      "title": "REGL POLICY AND INTEL PROFL 4",
+      "count": 7,
+      "avg_pay": 72232,
+      "median_pay": 102283,
+      "min_pay": 12011,
+      "max_pay": 123747,
+      "std_dev": 43735.32738775698,
+      "total_pay": 505624
+    },
+    {
+      "title": "GEN ACCOUNTANT 2",
+      "count": 7,
+      "avg_pay": 63462,
+      "median_pay": 62812,
+      "min_pay": 40558,
+      "max_pay": 91712,
+      "std_dev": 13943.231148379591,
+      "total_pay": 444234
+    },
+    {
+      "title": "RSCH ADM 3",
+      "count": 7,
+      "avg_pay": 61614.42857142857,
+      "median_pay": 68272,
+      "min_pay": 9383,
+      "max_pay": 85450,
+      "std_dev": 26076.19228807952,
+      "total_pay": 431301
+    },
+    {
+      "title": "MARKETING SPEC 4",
+      "count": 7,
+      "avg_pay": 61390.42857142857,
+      "median_pay": 94085,
+      "min_pay": 3700,
+      "max_pay": 102025,
+      "std_dev": 42857.15830475912,
+      "total_pay": 429733
+    },
+    {
+      "title": "ADMIN MGR 3",
+      "count": 6,
+      "avg_pay": 223756.66666666666,
+      "median_pay": 215373,
+      "min_pay": 185218,
+      "max_pay": 263455,
+      "std_dev": 29935.02715140836,
+      "total_pay": 1342540
+    },
+    {
+      "title": "APPLICATIONS PROGM MGR 2",
+      "count": 6,
+      "avg_pay": 195098.16666666666,
+      "median_pay": 207099.5,
+      "min_pay": 10169,
+      "max_pay": 290624,
+      "std_dev": 91360.94045673397,
+      "total_pay": 1170589
+    },
+    {
+      "title": "PROJECT POLICY ANL MGR 3",
+      "count": 6,
+      "avg_pay": 173120.83333333334,
+      "median_pay": 173520.5,
+      "min_pay": 160391,
+      "max_pay": 184490,
+      "std_dev": 7417.12809238784,
+      "total_pay": 1038725
+    },
+    {
+      "title": "ORGANIZATIONAL CNSLT 5",
+      "count": 6,
+      "avg_pay": 136627.16666666666,
+      "median_pay": 157067.5,
+      "min_pay": 92850,
+      "max_pay": 160018,
+      "std_dev": 30203.800557858427,
+      "total_pay": 819763
+    },
+    {
+      "title": "INFO SYS MGR 1",
+      "count": 6,
+      "avg_pay": 111004.16666666667,
+      "median_pay": 115209.5,
+      "min_pay": 11833,
+      "max_pay": 184632,
+      "std_dev": 58727.74810773486,
+      "total_pay": 666025
+    },
+    {
+      "title": "VENDOR REL SPEC 3",
+      "count": 6,
+      "avg_pay": 78160.33333333333,
+      "median_pay": 75861.5,
+      "min_pay": 62063,
+      "max_pay": 96544,
+      "std_dev": 13011.125184070575,
+      "total_pay": 468962
+    },
+    {
+      "title": "ACQUISITIONS EDITOR 3",
+      "count": 6,
+      "avg_pay": 72552.83333333333,
+      "median_pay": 75700,
+      "min_pay": 45565,
+      "max_pay": 89130,
+      "std_dev": 13829.458213257027,
+      "total_pay": 435317
+    },
+    {
+      "title": "CUSTOMER SVC SUPV 2",
+      "count": 6,
+      "avg_pay": 71563,
+      "median_pay": 76439.5,
+      "min_pay": 48607,
+      "max_pay": 79584,
+      "std_dev": 10640.32342866826,
+      "total_pay": 429378
+    },
+    {
+      "title": "EVENTS SPEC 3",
+      "count": 6,
+      "avg_pay": 60335.666666666664,
+      "median_pay": 74325.5,
+      "min_pay": 3796,
+      "max_pay": 81717,
+      "std_dev": 27742.195885609985,
+      "total_pay": 362014
+    },
+    {
+      "title": "FINANCIAL ANL 2",
+      "count": 6,
+      "avg_pay": 40167.166666666664,
+      "median_pay": 37832.5,
+      "min_pay": 12111,
+      "max_pay": 71854,
+      "std_dev": 22099.511950996162,
+      "total_pay": 241003
+    },
+    {
+      "title": "STDT LIFE DEV SPEC 1",
+      "count": 6,
+      "avg_pay": 19917.333333333332,
+      "median_pay": 18875,
+      "min_pay": 16453,
+      "max_pay": 23962,
+      "std_dev": 3056.4192375319776,
+      "total_pay": 119504
+    },
+    {
+      "title": "FIXED INCOME INV DIR",
+      "count": 5,
+      "avg_pay": 378313.2,
+      "median_pay": 350931,
+      "min_pay": 320807,
+      "max_pay": 461345,
+      "std_dev": 54493.25967273384,
+      "total_pay": 1891566
+    },
+    {
+      "title": "DEPUTY GEN COUNSEL",
+      "count": 5,
+      "avg_pay": 274252.2,
+      "median_pay": 277553,
+      "min_pay": 213795,
+      "max_pay": 318671,
+      "std_dev": 33891.95481172486,
+      "total_pay": 1371261
+    },
+    {
+      "title": "ADMIN MGR 4",
+      "count": 5,
+      "avg_pay": 251406.2,
+      "median_pay": 249228,
+      "min_pay": 156686,
+      "max_pay": 341929,
+      "std_dev": 58891.9081517996,
+      "total_pay": 1257031
+    },
+    {
+      "title": "INFO SYS MGR 3",
+      "count": 5,
+      "avg_pay": 184372.2,
+      "median_pay": 213180,
+      "min_pay": 55313,
+      "max_pay": 247281,
+      "std_dev": 67204.50995402019,
+      "total_pay": 921861
+    },
+    {
+      "title": "COMM MGR 2",
+      "count": 5,
+      "avg_pay": 173951.2,
+      "median_pay": 177008,
+      "min_pay": 145938,
+      "max_pay": 187640,
+      "std_dev": 15206.508993191039,
+      "total_pay": 869756
+    },
+    {
+      "title": "FINANCIAL ANL MGR 2",
+      "count": 5,
+      "avg_pay": 158733.8,
+      "median_pay": 156922,
+      "min_pay": 148639,
+      "max_pay": 171817,
+      "std_dev": 7975.543051103166,
+      "total_pay": 793669
+    },
+    {
+      "title": "COMPENSATION ANL 5",
+      "count": 5,
+      "avg_pay": 145708.6,
+      "median_pay": 150200,
+      "min_pay": 125610,
+      "max_pay": 165431,
+      "std_dev": 15273.936893937986,
+      "total_pay": 728543
+    },
+    {
+      "title": "LABOR REL REPR 4",
+      "count": 5,
+      "avg_pay": 133005.8,
+      "median_pay": 134564,
+      "min_pay": 110087,
+      "max_pay": 157900,
+      "std_dev": 15352.53002472231,
+      "total_pay": 665029
+    },
+    {
+      "title": "INFO SYS SUPV 2",
+      "count": 5,
+      "avg_pay": 125343.6,
+      "median_pay": 128026,
+      "min_pay": 118521,
+      "max_pay": 131083,
+      "std_dev": 5089.823871215978,
+      "total_pay": 626718
+    },
+    {
+      "title": "IT SCRTY ANL 5",
+      "count": 5,
+      "avg_pay": 109293.4,
+      "median_pay": 141595,
+      "min_pay": 33188,
+      "max_pay": 173143,
+      "std_dev": 57937.39078211928,
+      "total_pay": 546467
+    },
+    {
+      "title": "PROJECT POLICY ANL MGR 1",
+      "count": 5,
+      "avg_pay": 106560.6,
+      "median_pay": 117814,
+      "min_pay": 57696,
+      "max_pay": 121604,
+      "std_dev": 24557.525490977303,
+      "total_pay": 532803
+    },
+    {
+      "title": "AUDIT PROFL 4",
+      "count": 5,
+      "avg_pay": 96828,
+      "median_pay": 107508,
+      "min_pay": 28750,
+      "max_pay": 154079,
+      "std_dev": 41007.15694119747,
+      "total_pay": 484140
+    },
+    {
+      "title": "PROD CNTRL ANL 3",
+      "count": 5,
+      "avg_pay": 96006.4,
+      "median_pay": 97200,
+      "min_pay": 80882,
+      "max_pay": 102543,
+      "std_dev": 7909.126591476457,
+      "total_pay": 480032
+    },
+    {
+      "title": "HR MGR 1",
+      "count": 5,
+      "avg_pay": 95477.4,
+      "median_pay": 96098,
+      "min_pay": 13138,
+      "max_pay": 146690,
+      "std_dev": 46653.472469259985,
+      "total_pay": 477387
+    },
+    {
+      "title": "INSTITUTIONAL RSCH ANL 4",
+      "count": 5,
+      "avg_pay": 86317.2,
+      "median_pay": 89740,
+      "min_pay": 48075,
+      "max_pay": 118021,
+      "std_dev": 24112.674529383916,
+      "total_pay": 431586
+    },
+    {
+      "title": "ADMISSIONS RECRMT SPEC 2",
+      "count": 5,
+      "avg_pay": 62489.6,
+      "median_pay": 60614,
+      "min_pay": 56684,
+      "max_pay": 67465,
+      "std_dev": 4222.171507648642,
+      "total_pay": 312448
+    },
+    {
+      "title": "RECORDS ANL 2",
+      "count": 5,
+      "avg_pay": 57511.6,
+      "median_pay": 54983,
+      "min_pay": 46113,
+      "max_pay": 66538,
+      "std_dev": 7502.801679372846,
+      "total_pay": 287558
+    }
+  ]
+}

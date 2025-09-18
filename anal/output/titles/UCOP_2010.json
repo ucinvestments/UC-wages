@@ -1,0 +1,1008 @@
+{
+  "location": "UCOP",
+  "year": 2010,
+  "generated_at": "2025-09-18T15:42:08.488073796Z",
+  "unique_titles": 163,
+  "top_titles": [
+    {
+      "title": "ADMIN/COORD/OFFICER(FUNC AREA)",
+      "count": 167,
+      "avg_pay": 90074.93712574852,
+      "median_pay": 86199.96,
+      "min_pay": 4084.16,
+      "max_pay": 325627.71,
+      "std_dev": 50245.226017204885,
+      "total_pay": 15042514.500000004
+    },
+    {
+      "title": "_____ASSISTANT III",
+      "count": 147,
+      "avg_pay": 34826.65748299321,
+      "median_pay": 39903.96,
+      "min_pay": 831.38,
+      "max_pay": 56108.11,
+      "std_dev": 13879.239525687715,
+      "total_pay": 5119518.650000001
+    },
+    {
+      "title": "ANALYST, ADMINISTRATIVE",
+      "count": 110,
+      "avg_pay": 36653.08036363638,
+      "median_pay": 47999.86,
+      "min_pay": 455.28,
+      "max_pay": 67774.48,
+      "std_dev": 21160.140445113393,
+      "total_pay": 4031838.8400000012
+    },
+    {
+      "title": "DIRECTOR (FUNCTIONAL AREA)",
+      "count": 109,
+      "avg_pay": 129093.27229357799,
+      "median_pay": 125839.44,
+      "min_pay": 11040,
+      "max_pay": 527126,
+      "std_dev": 65167.51705369715,
+      "total_pay": 14071166.680000002
+    },
+    {
+      "title": "ANALYST, ADMINISTRATIVE, SR",
+      "count": 103,
+      "avg_pay": 53050.0759223301,
+      "median_pay": 60105.76,
+      "min_pay": 4348,
+      "max_pay": 89302.08,
+      "std_dev": 18457.119453756637,
+      "total_pay": 5464157.82
+    },
+    {
+      "title": "PROG. ANALYST III-UCOP",
+      "count": 74,
+      "avg_pay": 63231.79797297297,
+      "median_pay": 74392.19,
+      "min_pay": 3899.71,
+      "max_pay": 93000,
+      "std_dev": 24671.090892972563,
+      "total_pay": 4679153.05
+    },
+    {
+      "title": "ANALYST, ADMINISTRATIVE,PRIN I",
+      "count": 73,
+      "avg_pay": 60166.0201369863,
+      "median_pay": 69042.22,
+      "min_pay": 2717.5,
+      "max_pay": 90594.76,
+      "std_dev": 21117.75398080017,
+      "total_pay": 4392119.47
+    },
+    {
+      "title": "ADMIN. SPECIALIST",
+      "count": 60,
+      "avg_pay": 41192.81583333333,
+      "median_pay": 47632.119999999995,
+      "min_pay": 386.98,
+      "max_pay": 64693.2,
+      "std_dev": 15137.650494845322,
+      "total_pay": 2471568.9499999997
+    },
+    {
+      "title": "_____ASSISTANT II",
+      "count": 58,
+      "avg_pay": 27842.901724137926,
+      "median_pay": 34286.96,
+      "min_pay": 1002,
+      "max_pay": 43356,
+      "std_dev": 12413.106079675756,
+      "total_pay": 1614888.2999999998
+    },
+    {
+      "title": "MANAGER (FUNCTIONAL AREA)",
+      "count": 49,
+      "avg_pay": 89837.36591836736,
+      "median_pay": 90566.88,
+      "min_pay": 11057.9,
+      "max_pay": 162963.84,
+      "std_dev": 32906.000525012554,
+      "total_pay": 4402030.930000001
+    },
+    {
+      "title": "SPECIALIST (FUNCTIONAL AREA)",
+      "count": 42,
+      "avg_pay": 90781.97452380953,
+      "median_pay": 87566.6,
+      "min_pay": 15148.04,
+      "max_pay": 162897.96,
+      "std_dev": 33694.46641869687,
+      "total_pay": 3812842.93
+    },
+    {
+      "title": "ASSISTANT II",
+      "count": 36,
+      "avg_pay": 2343.5191666666665,
+      "median_pay": 1890.25,
+      "min_pay": 21,
+      "max_pay": 7488,
+      "std_dev": 1885.1209364821118,
+      "total_pay": 84366.68999999999
+    },
+    {
+      "title": "PR ADMINISTRATIVE ANALYST II",
+      "count": 35,
+      "avg_pay": 74771.77028571429,
+      "median_pay": 78495.64,
+      "min_pay": 5050.51,
+      "max_pay": 126181.08,
+      "std_dev": 24925.590926899033,
+      "total_pay": 2617011.96
+    },
+    {
+      "title": "PROGRAMMER ANALYST IV - UCOP",
+      "count": 30,
+      "avg_pay": 87355.34233333333,
+      "median_pay": 92615.84,
+      "min_pay": 13581.88,
+      "max_pay": 116033.93,
+      "std_dev": 21842.85162232207,
+      "total_pay": 2620660.27
+    },
+    {
+      "title": "SENIOR COUNSEL",
+      "count": 25,
+      "avg_pay": 146639.3576,
+      "median_pay": 149582.24,
+      "min_pay": 87175.88,
+      "max_pay": 174524.16,
+      "std_dev": 15754.741390963745,
+      "total_pay": 3665983.94
+    },
+    {
+      "title": "PROG. ANALYST II-UCOP",
+      "count": 21,
+      "avg_pay": 55358.9119047619,
+      "median_pay": 59879.18,
+      "min_pay": 20382.83,
+      "max_pay": 72044.08,
+      "std_dev": 14386.417770928978,
+      "total_pay": 1162537.15
+    },
+    {
+      "title": "ASSOC DIR (FUNCTIONAL AREA)",
+      "count": 20,
+      "avg_pay": 96647.66500000001,
+      "median_pay": 100235.4,
+      "min_pay": 25385.16,
+      "max_pay": 151466.8,
+      "std_dev": 30356.42431599735,
+      "total_pay": 1932953.3
+    },
+    {
+      "title": "ANALYST III",
+      "count": 20,
+      "avg_pay": 60451.681999999986,
+      "median_pay": 61245.774999999994,
+      "min_pay": 31109,
+      "max_pay": 72108.4,
+      "std_dev": 8396.127254894722,
+      "total_pay": 1209033.6399999997
+    },
+    {
+      "title": "ACCOUNTANT I",
+      "count": 19,
+      "avg_pay": 40117.96421052632,
+      "median_pay": 47124.13,
+      "min_pay": 3188.53,
+      "max_pay": 63515.04,
+      "std_dev": 17194.081379853487,
+      "total_pay": 762241.3200000001
+    },
+    {
+      "title": "EDITOR, PRIN",
+      "count": 16,
+      "avg_pay": 47579.388125,
+      "median_pay": 54729.83,
+      "min_pay": 372,
+      "max_pay": 77616.21,
+      "std_dev": 21387.71634401924,
+      "total_pay": 761270.21
+    },
+    {
+      "title": "STUDENT AFF. OFFICER III",
+      "count": 16,
+      "avg_pay": 35756.17125,
+      "median_pay": 39983.32,
+      "min_pay": 8349.15,
+      "max_pay": 54545.12,
+      "std_dev": 14649.560630096077,
+      "total_pay": 572098.74
+    },
+    {
+      "title": "IT RESOURCE MANAGER III",
+      "count": 15,
+      "avg_pay": 115779.35399999999,
+      "median_pay": 116454.2,
+      "min_pay": 90999.94,
+      "max_pay": 128764.08,
+      "std_dev": 10666.557382978383,
+      "total_pay": 1736690.3099999998
+    },
+    {
+      "title": "ASSOCIATE VICE PRESIDENT",
+      "count": 14,
+      "avg_pay": 199781.08571428573,
+      "median_pay": 224190.08,
+      "min_pay": 38244.88,
+      "max_pay": 296986.76,
+      "std_dev": 72703.80655755848,
+      "total_pay": 2796935.2
+    },
+    {
+      "title": "SECRETARY, EXECUTIVE TT OP",
+      "count": 12,
+      "avg_pay": 49013.19166666667,
+      "median_pay": 55458.97,
+      "min_pay": 9116.25,
+      "max_pay": 63871.6,
+      "std_dev": 15901.473896105686,
+      "total_pay": 588158.3
+    },
+    {
+      "title": "COMPUTER RES SPEC II - UCOP",
+      "count": 10,
+      "avg_pay": 46275.419,
+      "median_pay": 47004.815,
+      "min_pay": 38089.19,
+      "max_pay": 51370.39,
+      "std_dev": 4387.004189798431,
+      "total_pay": 462754.19
+    },
+    {
+      "title": "SYSTEMS PROGRAMMER IV",
+      "count": 9,
+      "avg_pay": 91223.15555555555,
+      "median_pay": 99574.96,
+      "min_pay": 36516.35,
+      "max_pay": 106216,
+      "std_dev": 20793.094840593443,
+      "total_pay": 821008.4
+    },
+    {
+      "title": "ACCOUNTANT III",
+      "count": 9,
+      "avg_pay": 65609.20222222223,
+      "median_pay": 63751.32,
+      "min_pay": 48047.02,
+      "max_pay": 87774.6,
+      "std_dev": 12135.096997147279,
+      "total_pay": 590482.8200000001
+    },
+    {
+      "title": "TECHNOLOGY SUPPORT ANALYST II",
+      "count": 9,
+      "avg_pay": 61139.42333333334,
+      "median_pay": 63177.26,
+      "min_pay": 39953.49,
+      "max_pay": 69754.54,
+      "std_dev": 8608.69010374336,
+      "total_pay": 550254.81
+    },
+    {
+      "title": "ARTIST, SR",
+      "count": 9,
+      "avg_pay": 48321.29111111111,
+      "median_pay": 50945.18,
+      "min_pay": 13859.74,
+      "max_pay": 66148.94,
+      "std_dev": 14446.82537420626,
+      "total_pay": 434891.62
+    },
+    {
+      "title": "CUSTOMER SERV REP I",
+      "count": 9,
+      "avg_pay": 44484.211111111115,
+      "median_pay": 43192.18,
+      "min_pay": 33815.64,
+      "max_pay": 50902.32,
+      "std_dev": 4994.031497396432,
+      "total_pay": 400357.9
+    },
+    {
+      "title": "EDITOR, SR",
+      "count": 9,
+      "avg_pay": 44334.45888888889,
+      "median_pay": 45651.76,
+      "min_pay": 23360,
+      "max_pay": 53829.04,
+      "std_dev": 8719.371693445251,
+      "total_pay": 399010.13
+    },
+    {
+      "title": "SECRETARY, LEGAL, PRIN",
+      "count": 9,
+      "avg_pay": 40703.71555555556,
+      "median_pay": 50891.62,
+      "min_pay": 4085.4,
+      "max_pay": 59598.18,
+      "std_dev": 20990.630194916397,
+      "total_pay": 366333.44
+    },
+    {
+      "title": "CLERK, SR/SECRETARY",
+      "count": 9,
+      "avg_pay": 4647.798888888889,
+      "median_pay": 809.64,
+      "min_pay": 73.81,
+      "max_pay": 31246.38,
+      "std_dev": 9566.137591375162,
+      "total_pay": 41830.19
+    },
+    {
+      "title": "ASST DIR (FUNCTIONAL AREA)",
+      "count": 8,
+      "avg_pay": 111471.36000000002,
+      "median_pay": 113586.44,
+      "min_pay": 94930.04,
+      "max_pay": 125864.32,
+      "std_dev": 9686.650820443569,
+      "total_pay": 891770.8800000001
+    },
+    {
+      "title": "SYSTEMS PROG. III",
+      "count": 8,
+      "avg_pay": 68187.99875,
+      "median_pay": 82544.91,
+      "min_pay": 11204.88,
+      "max_pay": 87093.4,
+      "std_dev": 25169.892619037153,
+      "total_pay": 545503.99
+    },
+    {
+      "title": "DEPUTY DIR (FUNCTIONAL AREA)",
+      "count": 7,
+      "avg_pay": 320879.28857142857,
+      "median_pay": 354771.04,
+      "min_pay": 134851.32,
+      "max_pay": 431960.96,
+      "std_dev": 96236.8100377383,
+      "total_pay": 2246155.02
+    },
+    {
+      "title": "PRINCIPAL COUNSEL",
+      "count": 7,
+      "avg_pay": 157128.72142857144,
+      "median_pay": 178003.12,
+      "min_pay": 63525.66,
+      "max_pay": 208947.69,
+      "std_dev": 51803.556279502234,
+      "total_pay": 1099901.05
+    },
+    {
+      "title": "SECRETARY,EXECUTIVE TT ___/OP",
+      "count": 7,
+      "avg_pay": 50405.468571428566,
+      "median_pay": 49416.64,
+      "min_pay": 48409.92,
+      "max_pay": 53677.36,
+      "std_dev": 1853.9657668239468,
+      "total_pay": 352838.27999999997
+    },
+    {
+      "title": "ACCOUNTANT II",
+      "count": 7,
+      "avg_pay": 50184.974285714285,
+      "median_pay": 48000.04,
+      "min_pay": 44808.74,
+      "max_pay": 58195.88,
+      "std_dev": 4835.560828206138,
+      "total_pay": 351294.82
+    },
+    {
+      "title": "SECRETARY, LEGAL, SR",
+      "count": 7,
+      "avg_pay": 35211.8,
+      "median_pay": 35591.58,
+      "min_pay": 26895.23,
+      "max_pay": 47365.29,
+      "std_dev": 6611.544877504587,
+      "total_pay": 246482.6
+    },
+    {
+      "title": "ASSISTANT III",
+      "count": 7,
+      "avg_pay": 3692.6071428571427,
+      "median_pay": 1280,
+      "min_pay": 480,
+      "max_pay": 16399,
+      "std_dev": 5314.9383343035115,
+      "total_pay": 25848.25
+    },
+    {
+      "title": "DIRECTOR (FUNCTL AREA)-EXEC",
+      "count": 6,
+      "avg_pay": 329828.49333333335,
+      "median_pay": 303386.105,
+      "min_pay": 184898.04,
+      "max_pay": 502672.68,
+      "std_dev": 130321.04298118214,
+      "total_pay": 1978970.96
+    },
+    {
+      "title": "IT RESOURCE MANAGER II",
+      "count": 6,
+      "avg_pay": 101853.17333333332,
+      "median_pay": 101547.28,
+      "min_pay": 93747.28,
+      "max_pay": 110601.48,
+      "std_dev": 6364.801287190529,
+      "total_pay": 611119.0399999999
+    },
+    {
+      "title": "ENGINEER, DEVELOPMENT, SR",
+      "count": 6,
+      "avg_pay": 83362.21166666666,
+      "median_pay": 92791.055,
+      "min_pay": 33767.74,
+      "max_pay": 98888.8,
+      "std_dev": 22777.426581044678,
+      "total_pay": 500173.26999999996
+    },
+    {
+      "title": "NETWORK ENGINEER I",
+      "count": 6,
+      "avg_pay": 75972.04166666667,
+      "median_pay": 75101.26000000001,
+      "min_pay": 66953.28,
+      "max_pay": 90091.5,
+      "std_dev": 7109.135348405403,
+      "total_pay": 455832.25
+    },
+    {
+      "title": "ACCOUNTANT IV",
+      "count": 6,
+      "avg_pay": 69558.5,
+      "median_pay": 69241.98,
+      "min_pay": 61576.36,
+      "max_pay": 79317.44,
+      "std_dev": 5517.195488180567,
+      "total_pay": 417351
+    },
+    {
+      "title": "ANALYST, BUDGET, SR",
+      "count": 6,
+      "avg_pay": 57201.46,
+      "median_pay": 64894.229999999996,
+      "min_pay": 18814.23,
+      "max_pay": 73279.84,
+      "std_dev": 19007.919639945696,
+      "total_pay": 343208.76
+    },
+    {
+      "title": "ANALYST II",
+      "count": 6,
+      "avg_pay": 52620.89666666667,
+      "median_pay": 51805.83500000001,
+      "min_pay": 46015.11,
+      "max_pay": 61966.64,
+      "std_dev": 5497.661285191084,
+      "total_pay": 315725.38
+    },
+    {
+      "title": "ANALYST I",
+      "count": 6,
+      "avg_pay": 21105.451666666664,
+      "median_pay": 20947.254999999997,
+      "min_pay": 1668.92,
+      "max_pay": 42533.4,
+      "std_dev": 15912.398417988845,
+      "total_pay": 126632.70999999999
+    },
+    {
+      "title": "VICE PRES (FUNCTIONAL AREA)",
+      "count": 5,
+      "avg_pay": 266761.02800000005,
+      "median_pay": 263249.32,
+      "min_pay": 206071.5,
+      "max_pay": 323582.64,
+      "std_dev": 42321.46903939059,
+      "total_pay": 1333805.1400000001
+    },
+    {
+      "title": "EXECUTIVE DIRECTOR-EXECUTIVE",
+      "count": 5,
+      "avg_pay": 152860.618,
+      "median_pay": 145722.86,
+      "min_pay": 91443.19,
+      "max_pay": 211500,
+      "std_dev": 40395.47719536849,
+      "total_pay": 764303.09
+    },
+    {
+      "title": "IT RESOURCE MANAGER I",
+      "count": 5,
+      "avg_pay": 75783.89600000001,
+      "median_pay": 76576.52,
+      "min_pay": 71486.08,
+      "max_pay": 78304.2,
+      "std_dev": 2327.106534334858,
+      "total_pay": 378919.48000000004
+    },
+    {
+      "title": "SPECIALIST, PARALEGAL, SR.",
+      "count": 5,
+      "avg_pay": 70973.576,
+      "median_pay": 71894.88,
+      "min_pay": 66733.42,
+      "max_pay": 75554.1,
+      "std_dev": 3014.3756370406163,
+      "total_pay": 354867.88
+    },
+    {
+      "title": "MANAGEMENT SERVICES OFFICER II",
+      "count": 5,
+      "avg_pay": 67607.864,
+      "median_pay": 68066.16,
+      "min_pay": 64709.44,
+      "max_pay": 69944.76,
+      "std_dev": 1774.5356865343663,
+      "total_pay": 338039.32
+    },
+    {
+      "title": "STUDENT AFF OFF IV SUPERVISOR",
+      "count": 5,
+      "avg_pay": 58156.344,
+      "median_pay": 59253.04,
+      "min_pay": 55054.36,
+      "max_pay": 59476.56,
+      "std_dev": 1715.4821670142765,
+      "total_pay": 290781.72
+    },
+    {
+      "title": "PROG. ANALYST I-UCOP",
+      "count": 5,
+      "avg_pay": 50292.012,
+      "median_pay": 52011.2,
+      "min_pay": 29411.66,
+      "max_pay": 63283.6,
+      "std_dev": 11766.163394028486,
+      "total_pay": 251460.06
+    },
+    {
+      "title": "DATA PROC PROD COORDINATO,PRIN",
+      "count": 5,
+      "avg_pay": 36985.784,
+      "median_pay": 43667.01,
+      "min_pay": 3263.1,
+      "max_pay": 48857.15,
+      "std_dev": 17012.674058042256,
+      "total_pay": 184928.92
+    },
+    {
+      "title": "POSTDOC-EMPLOYEE",
+      "count": 5,
+      "avg_pay": 18074.604,
+      "median_pay": 15843.05,
+      "min_pay": 5624.2,
+      "max_pay": 38496.51,
+      "std_dev": 10966.048945414388,
+      "total_pay": 90373.01999999999
+    },
+    {
+      "title": "DEPUTY GENERAL COUNSEL",
+      "count": 4,
+      "avg_pay": 205585.73249999998,
+      "median_pay": 231266,
+      "min_pay": 124810.85,
+      "max_pay": 235000.08,
+      "std_dev": 46699.13912435076,
+      "total_pay": 822342.9299999999
+    },
+    {
+      "title": "MANAGING COUNSEL",
+      "count": 4,
+      "avg_pay": 165980.14,
+      "median_pay": 166603.96,
+      "min_pay": 154606.44,
+      "max_pay": 176106.2,
+      "std_dev": 8503.321867341023,
+      "total_pay": 663920.56
+    },
+    {
+      "title": "COUNSEL",
+      "count": 4,
+      "avg_pay": 124822.41249999999,
+      "median_pay": 132606.78,
+      "min_pay": 86774.65,
+      "max_pay": 147301.44,
+      "std_dev": 24933.591001343324,
+      "total_pay": 499289.64999999997
+    },
+    {
+      "title": "PROGRAMMER/ANALYST IV",
+      "count": 4,
+      "avg_pay": 91477.95,
+      "median_pay": 84235.92,
+      "min_pay": 76266.56,
+      "max_pay": 121173.4,
+      "std_dev": 17474.68848627351,
+      "total_pay": 365911.8
+    },
+    {
+      "title": "ANALYST, PERSONNEL, PRIN I",
+      "count": 4,
+      "avg_pay": 72591.0725,
+      "median_pay": 70107.745,
+      "min_pay": 60934.04,
+      "max_pay": 89214.76,
+      "std_dev": 10573.997661961566,
+      "total_pay": 290364.29
+    },
+    {
+      "title": "AUDITOR IV",
+      "count": 4,
+      "avg_pay": 69782.17,
+      "median_pay": 73579.34,
+      "min_pay": 46170,
+      "max_pay": 85800,
+      "std_dev": 14591.148022232519,
+      "total_pay": 279128.68
+    },
+    {
+      "title": "PROGRAMMER/ANALYST III",
+      "count": 4,
+      "avg_pay": 66885.755,
+      "median_pay": 73764.5,
+      "min_pay": 36474.42,
+      "max_pay": 83539.6,
+      "std_dev": 18679.595148858956,
+      "total_pay": 267543.02
+    },
+    {
+      "title": "PROGRAM PROMOTION MANAGER I",
+      "count": 4,
+      "avg_pay": 57878.8675,
+      "median_pay": 54235.28,
+      "min_pay": 52560,
+      "max_pay": 70484.91,
+      "std_dev": 7342.178417913091,
+      "total_pay": 231515.47
+    },
+    {
+      "title": "PUBLICATIONS COORDINATOR, PRIN",
+      "count": 4,
+      "avg_pay": 57082.17,
+      "median_pay": 55119.94,
+      "min_pay": 52290.24,
+      "max_pay": 65798.56,
+      "std_dev": 5165.0475535758615,
+      "total_pay": 228328.68
+    },
+    {
+      "title": "ANALYST, BUDGET",
+      "count": 4,
+      "avg_pay": 56303.705,
+      "median_pay": 56301.59,
+      "min_pay": 52627,
+      "max_pay": 59984.64,
+      "std_dev": 2988.6378140341794,
+      "total_pay": 225214.82
+    },
+    {
+      "title": "MECHANICIAN, LAB, PRIN",
+      "count": 4,
+      "avg_pay": 53950.5725,
+      "median_pay": 54817.495,
+      "min_pay": 46929.32,
+      "max_pay": 59237.98,
+      "std_dev": 5202.066388894778,
+      "total_pay": 215802.29
+    },
+    {
+      "title": "ANALYST V",
+      "count": 4,
+      "avg_pay": 36412.5275,
+      "median_pay": 38192.165,
+      "min_pay": 4566,
+      "max_pay": 64699.78,
+      "std_dev": 27162.23873909271,
+      "total_pay": 145650.11
+    },
+    {
+      "title": "MAIL PROCESSOR",
+      "count": 4,
+      "avg_pay": 34534.6125,
+      "median_pay": 34135.725,
+      "min_pay": 31833,
+      "max_pay": 38034,
+      "std_dev": 2522.828933056847,
+      "total_pay": 138138.45
+    },
+    {
+      "title": "EDITOR",
+      "count": 4,
+      "avg_pay": 33363.155,
+      "median_pay": 39855.225,
+      "min_pay": 5264,
+      "max_pay": 48478.17,
+      "std_dev": 16668.934428061828,
+      "total_pay": 133452.62
+    },
+    {
+      "title": "SPECIALIST, PARALEGAL",
+      "count": 4,
+      "avg_pay": 26284.5175,
+      "median_pay": 26226.960000000003,
+      "min_pay": 9666.68,
+      "max_pay": 43017.47,
+      "std_dev": 16404.18025043674,
+      "total_pay": 105138.07
+    },
+    {
+      "title": "_____ASSISTANT I",
+      "count": 4,
+      "avg_pay": 19194.2225,
+      "median_pay": 21520.13,
+      "min_pay": 5347.02,
+      "max_pay": 28389.61,
+      "std_dev": 8533.47919019662,
+      "total_pay": 76776.89
+    },
+    {
+      "title": "JUNIOR SPECIALIST",
+      "count": 4,
+      "avg_pay": 8941.895,
+      "median_pay": 7051.34,
+      "min_pay": 3712.9,
+      "max_pay": 17952,
+      "std_dev": 5473.693957952436,
+      "total_pay": 35767.58
+    },
+    {
+      "title": "ASSISTANT IV",
+      "count": 4,
+      "avg_pay": 3886.54,
+      "median_pay": 4255.035,
+      "min_pay": 801,
+      "max_pay": 6235.09,
+      "std_dev": 1957.9509331569063,
+      "total_pay": 15546.16
+    },
+    {
+      "title": "EXECUTIVE VICE PRESIDENT",
+      "count": 3,
+      "avg_pay": 380782.32666666666,
+      "median_pay": 374222.7,
+      "min_pay": 321875,
+      "max_pay": 446249.28,
+      "std_dev": 50987.00427811081,
+      "total_pay": 1142346.98
+    },
+    {
+      "title": "ASST VP (FUNCTIONAL AREA)",
+      "count": 3,
+      "avg_pay": 127677.06000000001,
+      "median_pay": 168980,
+      "min_pay": 13643.14,
+      "max_pay": 200408.04,
+      "std_dev": 81648.56237756711,
+      "total_pay": 383031.18000000005
+    },
+    {
+      "title": "RESEARCH _____ - FISCAL YEAR",
+      "count": 3,
+      "avg_pay": 126316.86666666665,
+      "median_pay": 113410.6,
+      "min_pay": 109624,
+      "max_pay": 155916,
+      "std_dev": 20986.759404496497,
+      "total_pay": 378950.6
+    },
+    {
+      "title": "SECRETARY,EXECUTIVE,GEN COUNSE",
+      "count": 3,
+      "avg_pay": 76642.39,
+      "median_pay": 73993.04,
+      "min_pay": 64331.39,
+      "max_pay": 91602.74,
+      "std_dev": 11289.993335471907,
+      "total_pay": 229927.16999999998
+    },
+    {
+      "title": "EX ASST/SP ASST/ASST(FLT AREA)",
+      "count": 3,
+      "avg_pay": 74441.98666666668,
+      "median_pay": 91419.6,
+      "min_pay": 39065,
+      "max_pay": 92841.36,
+      "std_dev": 25022.040145766605,
+      "total_pay": 223325.96000000002
+    },
+    {
+      "title": "TECHNOLOGY SUPPORT ANALYST III",
+      "count": 3,
+      "avg_pay": 73666.44,
+      "median_pay": 72663.56,
+      "min_pay": 72647.95,
+      "max_pay": 75687.81,
+      "std_dev": 1429.3386409338646,
+      "total_pay": 220999.32
+    },
+    {
+      "title": "ARTIST, PRIN",
+      "count": 3,
+      "avg_pay": 64357.85,
+      "median_pay": 61793.28,
+      "min_pay": 59123.76,
+      "max_pay": 72156.51,
+      "std_dev": 5621.145055609219,
+      "total_pay": 193073.55
+    },
+    {
+      "title": "MANAGEMENT SERVICES OFFICER I",
+      "count": 3,
+      "avg_pay": 56795.736666666664,
+      "median_pay": 52339.2,
+      "min_pay": 48172.6,
+      "max_pay": 69875.41,
+      "std_dev": 9403.847785881175,
+      "total_pay": 170387.21
+    },
+    {
+      "title": "ANALYST, BUDGET, PRIN I",
+      "count": 3,
+      "avg_pay": 53892.083333333336,
+      "median_pay": 60479.51,
+      "min_pay": 35724.6,
+      "max_pay": 65472.14,
+      "std_dev": 13007.04108241464,
+      "total_pay": 161676.25
+    },
+    {
+      "title": "PROGRAMMER/ANALYST II",
+      "count": 3,
+      "avg_pay": 53604.03333333333,
+      "median_pay": 54720,
+      "min_pay": 48568.1,
+      "max_pay": 57524,
+      "std_dev": 3740.4164120530168,
+      "total_pay": 160812.1
+    },
+    {
+      "title": "PUBLICATIONS COORDINATOR",
+      "count": 3,
+      "avg_pay": 41168.09,
+      "median_pay": 41393.44,
+      "min_pay": 37083.95,
+      "max_pay": 45026.88,
+      "std_dev": 3246.600397657012,
+      "total_pay": 123504.26999999999
+    },
+    {
+      "title": "PUBLICATIONS COORDINATOR, SR",
+      "count": 3,
+      "avg_pay": 37608.16,
+      "median_pay": 51089.48,
+      "min_pay": 10398.44,
+      "max_pay": 51336.56,
+      "std_dev": 19240.441938625005,
+      "total_pay": 112824.48000000001
+    },
+    {
+      "title": "CUSTOMER SERV REP II",
+      "count": 3,
+      "avg_pay": 37582.65333333333,
+      "median_pay": 49919.6,
+      "min_pay": 12587.35,
+      "max_pay": 50241.01,
+      "std_dev": 17674.835551163946,
+      "total_pay": 112747.95999999999
+    },
+    {
+      "title": "STORES WORKER",
+      "count": 3,
+      "avg_pay": 26000.946666666667,
+      "median_pay": 38062.03,
+      "min_pay": 1666.16,
+      "max_pay": 38274.65,
+      "std_dev": 17207.51160395237,
+      "total_pay": 78002.84
+    },
+    {
+      "title": "RESIDENT ADVISOR",
+      "count": 3,
+      "avg_pay": 5599.986666666667,
+      "median_pay": 5814.42,
+      "min_pay": 3195.4,
+      "max_pay": 7790.14,
+      "std_dev": 1881.9130617066833,
+      "total_pay": 16799.96
+    },
+    {
+      "title": "SR. VICE PRES--DESIGNATE",
+      "count": 2,
+      "avg_pay": 571895.1799999999,
+      "median_pay": 571895.1799999999,
+      "min_pay": 386916,
+      "max_pay": 756874.36,
+      "std_dev": 184979.18,
+      "total_pay": 1143790.3599999999
+    },
+    {
+      "title": "VICE PROVOST (FUNCT AREA)-EXEC",
+      "count": 2,
+      "avg_pay": 204499.43,
+      "median_pay": 204499.43,
+      "min_pay": 180611.98,
+      "max_pay": 228386.88,
+      "std_dev": 23887.449999999997,
+      "total_pay": 408998.86
+    },
+    {
+      "title": "DEPUTY TO THE SENIOR VP",
+      "count": 2,
+      "avg_pay": 168073.965,
+      "median_pay": 168073.965,
+      "min_pay": 163489.44,
+      "max_pay": 172658.49,
+      "std_dev": 4584.524999999994,
+      "total_pay": 336147.93
+    },
+    {
+      "title": "NETWORK ENGINEER II",
+      "count": 2,
+      "avg_pay": 118347.36,
+      "median_pay": 118347.36,
+      "min_pay": 117414.72,
+      "max_pay": 119280,
+      "std_dev": 932.6399999999994,
+      "total_pay": 236694.72
+    },
+    {
+      "title": "DEPUTY TO THE VICE PRESIDENT",
+      "count": 2,
+      "avg_pay": 115453.4,
+      "median_pay": 115453.4,
+      "min_pay": 106973.44,
+      "max_pay": 123933.36,
+      "std_dev": 8479.96,
+      "total_pay": 230906.8
+    },
+    {
+      "title": "MGT AND PROF PROG (UNTITLED)",
+      "count": 2,
+      "avg_pay": 102032.44,
+      "median_pay": 102032.44,
+      "min_pay": 81566.08,
+      "max_pay": 122498.8,
+      "std_dev": 20466.36,
+      "total_pay": 204064.88
+    },
+    {
+      "title": "ACADEMIC COORD III - FISCAL YR",
+      "count": 2,
+      "avg_pay": 100577.02,
+      "median_pay": 100577.02,
+      "min_pay": 77023.32,
+      "max_pay": 124130.72,
+      "std_dev": 23553.699999999997,
+      "total_pay": 201154.04
+    },
+    {
+      "title": "PRINCIPAL ACCOUNTANT",
+      "count": 2,
+      "avg_pay": 90430.01999999999,
+      "median_pay": 90430.01999999999,
+      "min_pay": 87721.84,
+      "max_pay": 93138.2,
+      "std_dev": 2708.1800000000003,
+      "total_pay": 180860.03999999998
+    },
+    {
+      "title": "MANAGEMENT SERVS OFFICER III",
+      "count": 2,
+      "avg_pay": 81265.54000000001,
+      "median_pay": 81265.54000000001,
+      "min_pay": 81009.6,
+      "max_pay": 81521.48,
+      "std_dev": 255.93999999999505,
+      "total_pay": 162531.08000000002
+    }
+  ]
+}

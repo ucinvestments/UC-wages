@@ -1,0 +1,1008 @@
+{
+  "location": "Los Angeles",
+  "year": 2010,
+  "generated_at": "2025-09-18T15:42:07.527523593Z",
+  "unique_titles": 1057,
+  "top_titles": [
+    {
+      "title": "GRAD STDNT RES-PARTIAL FEE REM",
+      "count": 2172,
+      "avg_pay": 15579.073779926332,
+      "median_pay": 15089.26,
+      "min_pay": 30.53,
+      "max_pay": 53253.52,
+      "std_dev": 9587.39834010697,
+      "total_pay": 33837748.24999999
+    },
+    {
+      "title": "NURSE, CLINICAL II",
+      "count": 1949,
+      "avg_pay": 73772.2742585942,
+      "median_pay": 77148.75,
+      "min_pay": 50,
+      "max_pay": 196144.91,
+      "std_dev": 28243.991566758563,
+      "total_pay": 143782162.5300001
+    },
+    {
+      "title": "ASSISTANT IV",
+      "count": 1528,
+      "avg_pay": 3598.193291884817,
+      "median_pay": 2615.75,
+      "min_pay": 14.06,
+      "max_pay": 21414.29,
+      "std_dev": 3294.402321778686,
+      "total_pay": 5498039.350000001
+    },
+    {
+      "title": "POSTDOC-EMPLOYEE",
+      "count": 1340,
+      "avg_pay": 27588.774626865656,
+      "median_pay": 29132.205,
+      "min_pay": 54.77,
+      "max_pay": 80212.18,
+      "std_dev": 16959.859225685683,
+      "total_pay": 36968957.99999998
+    },
+    {
+      "title": "_____ASSISTANT II",
+      "count": 1311,
+      "avg_pay": 24243.382234935158,
+      "median_pay": 31968.87,
+      "min_pay": 20,
+      "max_pay": 49984.38,
+      "std_dev": 14611.916312467725,
+      "total_pay": 31783074.109999992
+    },
+    {
+      "title": "TEACHER-UNIV.EXT.-CONTRACT YR.",
+      "count": 1276,
+      "avg_pay": 6330.071253918493,
+      "median_pay": 3960,
+      "min_pay": 70,
+      "max_pay": 86062,
+      "std_dev": 7766.284181818362,
+      "total_pay": 8077170.919999997
+    },
+    {
+      "title": "_____ASSISTANT III",
+      "count": 1223,
+      "avg_pay": 35198.50039247752,
+      "median_pay": 38986.76,
+      "min_pay": 108,
+      "max_pay": 63624.71,
+      "std_dev": 13326.556531836126,
+      "total_pay": 43047765.98000001
+    },
+    {
+      "title": "ASSISTANT III",
+      "count": 1213,
+      "avg_pay": 2822.332143446002,
+      "median_pay": 2212.1,
+      "min_pay": 13.14,
+      "max_pay": 16018.86,
+      "std_dev": 2353.3937758301154,
+      "total_pay": 3423488.8900000006
+    },
+    {
+      "title": "CLERK",
+      "count": 1142,
+      "avg_pay": 3313.942302977233,
+      "median_pay": 2272.59,
+      "min_pay": 18.03,
+      "max_pay": 28018.94,
+      "std_dev": 3744.396191019415,
+      "total_pay": 3784522.11
+    },
+    {
+      "title": "ADMIN. SPECIALIST",
+      "count": 1085,
+      "avg_pay": 36851.34659907835,
+      "median_pay": 42096.7,
+      "min_pay": 63.32,
+      "max_pay": 89251.11,
+      "std_dev": 16830.052377125157,
+      "total_pay": 39983711.06000001
+    },
+    {
+      "title": "STUDENT AID, OUTSIDE AGENCY",
+      "count": 969,
+      "avg_pay": 1184.639752321981,
+      "median_pay": 1184,
+      "min_pay": 7.2,
+      "max_pay": 14856.28,
+      "std_dev": 922.9918485907976,
+      "total_pay": 1147915.9199999995
+    },
+    {
+      "title": "_____ASSISTANT I",
+      "count": 963,
+      "avg_pay": 7913.29545171339,
+      "median_pay": 3487.9,
+      "min_pay": 3.42,
+      "max_pay": 49794.54,
+      "std_dev": 10101.41943941475,
+      "total_pay": 7620503.519999995
+    },
+    {
+      "title": "RECREATION PROGRAM INSTRUCTOR",
+      "count": 963,
+      "avg_pay": 2396.6404776739355,
+      "median_pay": 1181.77,
+      "min_pay": 8.76,
+      "max_pay": 71928.76,
+      "std_dev": 4791.420956315431,
+      "total_pay": 2307964.78
+    },
+    {
+      "title": "TEACHING ASSISTANT - GSHIP",
+      "count": 893,
+      "avg_pay": 9385.218118701001,
+      "median_pay": 5886.3,
+      "min_pay": 87.99,
+      "max_pay": 36070.83,
+      "std_dev": 6543.671095849095,
+      "total_pay": 8380999.779999995
+    },
+    {
+      "title": "RESIDENT PHYS II-VIII/NON-REP",
+      "count": 831,
+      "avg_pay": 43973.55459687122,
+      "median_pay": 48691.12,
+      "min_pay": 1408.61,
+      "max_pay": 78151.98,
+      "std_dev": 11339.985179612164,
+      "total_pay": 36542023.86999998
+    },
+    {
+      "title": "ASSOC IN __ -ACAD YR-1/9-GSHIP",
+      "count": 811,
+      "avg_pay": 15316.62310727493,
+      "median_pay": 16773.28,
+      "min_pay": 2404.13,
+      "max_pay": 36246.6,
+      "std_dev": 6519.494945422832,
+      "total_pay": 12421781.339999968
+    },
+    {
+      "title": "CLERK, SR/SECRETARY",
+      "count": 798,
+      "avg_pay": 5311.028157894733,
+      "median_pay": 2643.215,
+      "min_pay": 11.65,
+      "max_pay": 43845.06,
+      "std_dev": 7378.595398715757,
+      "total_pay": 4238200.469999997
+    },
+    {
+      "title": "PROFESSOR - ACADEMIC YEAR",
+      "count": 751,
+      "avg_pay": 155392.8761251664,
+      "median_pay": 148093.12,
+      "min_pay": 13934.5,
+      "max_pay": 396939.94,
+      "std_dev": 52093.79818722325,
+      "total_pay": 116700049.96999997
+    },
+    {
+      "title": "ANALYST, ADMINISTRATIVE",
+      "count": 735,
+      "avg_pay": 45530.83730612245,
+      "median_pay": 49318.56,
+      "min_pay": 182,
+      "max_pay": 86307.28,
+      "std_dev": 16393.467167821454,
+      "total_pay": 33465165.419999998
+    },
+    {
+      "title": "STAFF RESEARCH ASSOC I",
+      "count": 649,
+      "avg_pay": 15916.209845916786,
+      "median_pay": 13351.96,
+      "min_pay": 38.53,
+      "max_pay": 50406.86,
+      "std_dev": 13091.216247417779,
+      "total_pay": 10329620.189999994
+    },
+    {
+      "title": "STAFF RES ASSOC II-NONEXEMPT",
+      "count": 615,
+      "avg_pay": 31896.968682926825,
+      "median_pay": 39090,
+      "min_pay": 193.62,
+      "max_pay": 63921.06,
+      "std_dev": 15933.501462044229,
+      "total_pay": 19616635.74
+    },
+    {
+      "title": "LABORATORY ASST I",
+      "count": 606,
+      "avg_pay": 5340.117557755773,
+      "median_pay": 2868.565,
+      "min_pay": 18.03,
+      "max_pay": 31245.58,
+      "std_dev": 6626.554891501677,
+      "total_pay": 3236111.239999999
+    },
+    {
+      "title": "LABORATORY HELPER",
+      "count": 575,
+      "avg_pay": 3469.1011652173925,
+      "median_pay": 2015.22,
+      "min_pay": 15.46,
+      "max_pay": 29144.57,
+      "std_dev": 4888.379632362574,
+      "total_pay": 1994733.1700000006
+    },
+    {
+      "title": "ASSISTANT II",
+      "count": 568,
+      "avg_pay": 2102.873045774647,
+      "median_pay": 1568.0149999999999,
+      "min_pay": 20,
+      "max_pay": 10654.96,
+      "std_dev": 1846.7393336336047,
+      "total_pay": 1194431.8899999994
+    },
+    {
+      "title": "CUSTODIAN, SR",
+      "count": 557,
+      "avg_pay": 23686.00064631958,
+      "median_pay": 27691.01,
+      "min_pay": 87.34,
+      "max_pay": 43758.29,
+      "std_dev": 10316.69884625444,
+      "total_pay": 13193102.360000005
+    },
+    {
+      "title": "ASSISTANT I",
+      "count": 552,
+      "avg_pay": 1829.3348550724636,
+      "median_pay": 1255.97,
+      "min_pay": 8,
+      "max_pay": 10521.45,
+      "std_dev": 1673.4196258452657,
+      "total_pay": 1009792.84
+    },
+    {
+      "title": "NURSE, CLINICAL III",
+      "count": 541,
+      "avg_pay": 97395.04133086881,
+      "median_pay": 103248.48,
+      "min_pay": 963.2,
+      "max_pay": 210735.86,
+      "std_dev": 29937.333577830916,
+      "total_pay": 52690717.36000003
+    },
+    {
+      "title": "ANALYST, ADMINISTRATIVE, SR",
+      "count": 499,
+      "avg_pay": 55446.77324649299,
+      "median_pay": 58660.96,
+      "min_pay": 216.65,
+      "max_pay": 96219.12,
+      "std_dev": 18792.82306239294,
+      "total_pay": 27667939.85
+    },
+    {
+      "title": "USHER",
+      "count": 467,
+      "avg_pay": 1228.6186295503217,
+      "median_pay": 305.91,
+      "min_pay": 43.78,
+      "max_pay": 15622.6,
+      "std_dev": 2130.9014018147195,
+      "total_pay": 573764.9000000003
+    },
+    {
+      "title": "RESIDENT ASST",
+      "count": 457,
+      "avg_pay": 2778.8581619256015,
+      "median_pay": 2068,
+      "min_pay": 0.01,
+      "max_pay": 13904.56,
+      "std_dev": 2622.698611777453,
+      "total_pay": 1269938.18
+    },
+    {
+      "title": "FOOD SERVICE WORKER",
+      "count": 447,
+      "avg_pay": 17854.67035794184,
+      "median_pay": 19104.78,
+      "min_pay": 51.75,
+      "max_pay": 47056.92,
+      "std_dev": 11396.580105813284,
+      "total_pay": 7981037.650000001
+    },
+    {
+      "title": "SPECIAL READER UCLA-GSHIP",
+      "count": 433,
+      "avg_pay": 6502.335958429563,
+      "median_pay": 4339.2,
+      "min_pay": 81.36,
+      "max_pay": 31317.78,
+      "std_dev": 6202.789906891919,
+      "total_pay": 2815511.4700000007
+    },
+    {
+      "title": "READER - GSHIP",
+      "count": 404,
+      "avg_pay": 2307.0402722772274,
+      "median_pay": 947.64,
+      "min_pay": 15.9,
+      "max_pay": 40566.23,
+      "std_dev": 4079.117832590595,
+      "total_pay": 932044.2699999999
+    },
+    {
+      "title": "TEACHING FELLOW - GSHIP",
+      "count": 389,
+      "avg_pay": 15667.853521850911,
+      "median_pay": 15057.44,
+      "min_pay": 3251.01,
+      "max_pay": 41182.77,
+      "std_dev": 7760.909565846191,
+      "total_pay": 6094795.020000004
+    },
+    {
+      "title": "MANAGER (FUNCTIONAL AREA)",
+      "count": 381,
+      "avg_pay": 102457.35635170598,
+      "median_pay": 100171,
+      "min_pay": 874.2,
+      "max_pay": 591552.02,
+      "std_dev": 46044.77710536622,
+      "total_pay": 39036252.76999998
+    },
+    {
+      "title": "PROGRAMMER/ANALYST III",
+      "count": 373,
+      "avg_pay": 63182.541313672875,
+      "median_pay": 67233.44,
+      "min_pay": 307.67,
+      "max_pay": 100921.52,
+      "std_dev": 19102.69884845427,
+      "total_pay": 23567087.90999998
+    },
+    {
+      "title": "PROGRAMMER/ANALYST II",
+      "count": 346,
+      "avg_pay": 49138.23745664741,
+      "median_pay": 52308.68,
+      "min_pay": 3296.7,
+      "max_pay": 88192.72,
+      "std_dev": 15042.384063856582,
+      "total_pay": 17001830.160000004
+    },
+    {
+      "title": "ASST RES ----- - FISCAL YEAR",
+      "count": 345,
+      "avg_pay": 55195.04965217391,
+      "median_pay": 61700.04,
+      "min_pay": 138.09,
+      "max_pay": 86495.96,
+      "std_dev": 17731.970997464425,
+      "total_pay": 19042292.13
+    },
+    {
+      "title": "STAFF RESEARCH ASSOC III",
+      "count": 328,
+      "avg_pay": 39286.01158536584,
+      "median_pay": 44785,
+      "min_pay": 127.01,
+      "max_pay": 71797.48,
+      "std_dev": 18778.061343409576,
+      "total_pay": 12885811.799999997
+    },
+    {
+      "title": "RES PHYS/SUBSPE IV-VIII/NONREP",
+      "count": 312,
+      "avg_pay": 36800.58650641021,
+      "median_pay": 29454.48,
+      "min_pay": 4783.38,
+      "max_pay": 97447.12,
+      "std_dev": 15801.217545833146,
+      "total_pay": 11481782.989999985
+    },
+    {
+      "title": "TUTOR - NON-GSHIP",
+      "count": 305,
+      "avg_pay": 2974.142622950821,
+      "median_pay": 2148.75,
+      "min_pay": 6.24,
+      "max_pay": 14002.79,
+      "std_dev": 2393.406391674264,
+      "total_pay": 907113.5000000005
+    },
+    {
+      "title": "PROFESSOR-HCOMP",
+      "count": 303,
+      "avg_pay": 312882.0349834984,
+      "median_pay": 272363.8,
+      "min_pay": 81037.68,
+      "max_pay": 1984857.89,
+      "std_dev": 199646.0835042456,
+      "total_pay": 94803256.60000001
+    },
+    {
+      "title": "LECTURER - ACADEMIC YEAR - 1/9",
+      "count": 299,
+      "avg_pay": 14036.069531772579,
+      "median_pay": 9761.16,
+      "min_pay": 1525.11,
+      "max_pay": 117053.18,
+      "std_dev": 12743.856903846374,
+      "total_pay": 4196784.790000001
+    },
+    {
+      "title": "PARTNER, CLINICAL CARE",
+      "count": 294,
+      "avg_pay": 40441.40115646259,
+      "median_pay": 40444.94,
+      "min_pay": 218.5,
+      "max_pay": 91035.93,
+      "std_dev": 12950.472754048153,
+      "total_pay": 11889771.940000001
+    },
+    {
+      "title": "DIRECTOR (FUNCTIONAL AREA)",
+      "count": 293,
+      "avg_pay": 120438.44491467571,
+      "median_pay": 118000,
+      "min_pay": 4574.17,
+      "max_pay": 308279.28,
+      "std_dev": 47309.242443283074,
+      "total_pay": 35288464.359999985
+    },
+    {
+      "title": "LABORATORY ASST II",
+      "count": 270,
+      "avg_pay": 11319.696518518516,
+      "median_pay": 6850.115,
+      "min_pay": 150,
+      "max_pay": 46170.57,
+      "std_dev": 10677.932296087438,
+      "total_pay": 3056318.0599999996
+    },
+    {
+      "title": "____ASSISTANT, HOSPITAL, III",
+      "count": 256,
+      "avg_pay": 30232.419843749987,
+      "median_pay": 39494.024999999994,
+      "min_pay": 120,
+      "max_pay": 67828.03,
+      "std_dev": 18072.200858293836,
+      "total_pay": 7739499.479999997
+    },
+    {
+      "title": "ANALYST, ADMINISTRATIVE,PRIN I",
+      "count": 246,
+      "avg_pay": 66573.81186991869,
+      "median_pay": 71717.73000000001,
+      "min_pay": 4605,
+      "max_pay": 100378.24,
+      "std_dev": 20868.118343474798,
+      "total_pay": 16377157.719999997
+    },
+    {
+      "title": "NURSE, PER DIEM",
+      "count": 239,
+      "avg_pay": 29879.42631799163,
+      "median_pay": 23150.43,
+      "min_pay": 183.6,
+      "max_pay": 146339.47,
+      "std_dev": 26617.808901328375,
+      "total_pay": 7141182.89
+    },
+    {
+      "title": "NURSE, RESOURCE, PER DIEM",
+      "count": 237,
+      "avg_pay": 70392.80223628694,
+      "median_pay": 62561.3,
+      "min_pay": 828,
+      "max_pay": 248453.56,
+      "std_dev": 46420.7264143691,
+      "total_pay": 16683094.130000005
+    },
+    {
+      "title": "STUDENT AFFAIRS OFFICER II",
+      "count": 237,
+      "avg_pay": 36373.59691983122,
+      "median_pay": 42027.04,
+      "min_pay": 96.2,
+      "max_pay": 68994.38,
+      "std_dev": 18228.581972937856,
+      "total_pay": 8620542.47
+    },
+    {
+      "title": "HS ASSISTANT CLIN PROF-HCOMP",
+      "count": 228,
+      "avg_pay": 224132.70649122802,
+      "median_pay": 194225.55,
+      "min_pay": 30000,
+      "max_pay": 775852.47,
+      "std_dev": 115884.39510059773,
+      "total_pay": 51102257.07999999
+    },
+    {
+      "title": "NURSE, ADMINISTRATIVE, I",
+      "count": 218,
+      "avg_pay": 114224.9728440367,
+      "median_pay": 115978.58,
+      "min_pay": 9932.36,
+      "max_pay": 238144.52,
+      "std_dev": 25982.307497632035,
+      "total_pay": 24901044.080000002
+    },
+    {
+      "title": "RESIDENT PHYSICIAN I/NON-REP",
+      "count": 217,
+      "avg_pay": 25005.43331797227,
+      "median_pay": 25022.88,
+      "min_pay": 1167.46,
+      "max_pay": 56871.22,
+      "std_dev": 3192.218868869704,
+      "total_pay": 5426179.029999983
+    },
+    {
+      "title": "SCIENTIST, CLINICAL LAB",
+      "count": 210,
+      "avg_pay": 86231.63561904764,
+      "median_pay": 92010.005,
+      "min_pay": 1300.37,
+      "max_pay": 148839.44,
+      "std_dev": 27721.398219575498,
+      "total_pay": 18108643.480000004
+    },
+    {
+      "title": "PROGRAMMER/ANALYST IV",
+      "count": 209,
+      "avg_pay": 84446.91234449763,
+      "median_pay": 88797.04,
+      "min_pay": 2097.8,
+      "max_pay": 123765.95,
+      "std_dev": 24836.85140221735,
+      "total_pay": 17649404.680000003
+    },
+    {
+      "title": "ANALYST, PUBLIC ADMINISTRATION",
+      "count": 203,
+      "avg_pay": 37047.04911330048,
+      "median_pay": 41766.24,
+      "min_pay": 653.06,
+      "max_pay": 99993.27,
+      "std_dev": 18571.460628433517,
+      "total_pay": 7520550.969999999
+    },
+    {
+      "title": "ASSOCIATE PROFESSOR-ACAD YR",
+      "count": 197,
+      "avg_pay": 105342.13081218276,
+      "median_pay": 98744.42,
+      "min_pay": 14166.66,
+      "max_pay": 284083.13,
+      "std_dev": 32283.347481724835,
+      "total_pay": 20752399.770000003
+    },
+    {
+      "title": "PARTNER,ADMIN CARE/CLINICAL",
+      "count": 197,
+      "avg_pay": 34911.425685279195,
+      "median_pay": 37274.23,
+      "min_pay": 1926.9,
+      "max_pay": 62566.77,
+      "std_dev": 12606.429530962203,
+      "total_pay": 6877550.860000001
+    },
+    {
+      "title": "CUSTODIAN, SENIOR, MC",
+      "count": 190,
+      "avg_pay": 30980.87536842104,
+      "median_pay": 32215.510000000002,
+      "min_pay": 107.52,
+      "max_pay": 44860.82,
+      "std_dev": 6927.98820165168,
+      "total_pay": 5886366.3199999975
+    },
+    {
+      "title": "STUDENT AFFAIRS OFFICER I",
+      "count": 177,
+      "avg_pay": 17431.22813559322,
+      "median_pay": 5726.36,
+      "min_pay": 107.52,
+      "max_pay": 60538.37,
+      "std_dev": 18304.53046768185,
+      "total_pay": 3085327.38
+    },
+    {
+      "title": "PROFESSOR-ACAD YR-BUS/ECON/ENG",
+      "count": 170,
+      "avg_pay": 230948.9826470589,
+      "median_pay": 210979.305,
+      "min_pay": 28466.66,
+      "max_pay": 532476.62,
+      "std_dev": 95092.55627038438,
+      "total_pay": 39261327.05000001
+    },
+    {
+      "title": "NURSE, VOCATIONAL, SR",
+      "count": 163,
+      "avg_pay": 45812.69441717792,
+      "median_pay": 48667.84,
+      "min_pay": 983.71,
+      "max_pay": 87706.26,
+      "std_dev": 16135.003083182977,
+      "total_pay": 7467469.19
+    },
+    {
+      "title": "ADJUNCT INSTRUCTOR - FISCAL YR",
+      "count": 163,
+      "avg_pay": 4419.885766871166,
+      "median_pay": 1650,
+      "min_pay": 100,
+      "max_pay": 64737.17,
+      "std_dev": 8768.232644267244,
+      "total_pay": 720441.3800000001
+    },
+    {
+      "title": "STUDENT AFF. OFFICER III",
+      "count": 159,
+      "avg_pay": 48428.054276729585,
+      "median_pay": 49697.28,
+      "min_pay": 195,
+      "max_pay": 96332.63,
+      "std_dev": 15418.364783783634,
+      "total_pay": 7700060.630000004
+    },
+    {
+      "title": "MANAGEMENT SERVICES OFFICER I",
+      "count": 150,
+      "avg_pay": 49955.49260000002,
+      "median_pay": 53469.119999999995,
+      "min_pay": 695.2,
+      "max_pay": 75250.4,
+      "std_dev": 13979.421872534185,
+      "total_pay": 7493323.890000002
+    },
+    {
+      "title": "PR ADMINISTRATIVE ANALYST II",
+      "count": 149,
+      "avg_pay": 81375.28697986573,
+      "median_pay": 87232.5,
+      "min_pay": 6994,
+      "max_pay": 120711.48,
+      "std_dev": 23903.565014939533,
+      "total_pay": 12124917.759999994
+    },
+    {
+      "title": "HS CLINICAL INSTRUCTOR-HCOMP",
+      "count": 147,
+      "avg_pay": 73754.88394557821,
+      "median_pay": 57999.96,
+      "min_pay": 2000,
+      "max_pay": 319953.38,
+      "std_dev": 58381.569085487245,
+      "total_pay": 10841967.939999998
+    },
+    {
+      "title": "PROFESSOR IN RESIDENCE-HCOMP",
+      "count": 146,
+      "avg_pay": 225262.32458904127,
+      "median_pay": 203779.2,
+      "min_pay": 22993.08,
+      "max_pay": 835137.51,
+      "std_dev": 132517.8106456451,
+      "total_pay": 32888299.390000023
+    },
+    {
+      "title": "TECHNICIAN, HOSPITAL LAB, II",
+      "count": 146,
+      "avg_pay": 44306.315547945225,
+      "median_pay": 49905.44,
+      "min_pay": 891.44,
+      "max_pay": 90486.13,
+      "std_dev": 18488.6178732568,
+      "total_pay": 6468722.070000003
+    },
+    {
+      "title": "ANALYST,PUBLIC ADMINISTRAT, SR",
+      "count": 141,
+      "avg_pay": 44734.45872340426,
+      "median_pay": 50244.48,
+      "min_pay": 350,
+      "max_pay": 87310.1,
+      "std_dev": 23863.72873214354,
+      "total_pay": 6307558.680000001
+    },
+    {
+      "title": "BILLER, PATIENT III",
+      "count": 141,
+      "avg_pay": 39920.93751773054,
+      "median_pay": 43206.08,
+      "min_pay": 336.77,
+      "max_pay": 57187.03,
+      "std_dev": 12047.62954954399,
+      "total_pay": 5628852.190000006
+    },
+    {
+      "title": "PROGRAMMER/ANALYST I",
+      "count": 141,
+      "avg_pay": 26748.14872340426,
+      "median_pay": 28574.11,
+      "min_pay": 764.8,
+      "max_pay": 55425.66,
+      "std_dev": 16876.749632921164,
+      "total_pay": 3771488.9700000007
+    },
+    {
+      "title": "ASSISTANT PROFESSOR-ACAD YR",
+      "count": 140,
+      "avg_pay": 88197.93192857142,
+      "median_pay": 84751.215,
+      "min_pay": 6916.67,
+      "max_pay": 214999.98,
+      "std_dev": 25952.862595304938,
+      "total_pay": 12347710.469999999
+    },
+    {
+      "title": "PARTNER, CLINICAL CARE, PD",
+      "count": 140,
+      "avg_pay": 21130.337785714284,
+      "median_pay": 18550.43,
+      "min_pay": 18.43,
+      "max_pay": 72932.29,
+      "std_dev": 16071.185165744711,
+      "total_pay": 2958247.2899999996
+    },
+    {
+      "title": "PARTNER, ADMINISTRATIVE CARE",
+      "count": 134,
+      "avg_pay": 37056.03440298506,
+      "median_pay": 37579.354999999996,
+      "min_pay": 1.35,
+      "max_pay": 67026.76,
+      "std_dev": 12164.195695277707,
+      "total_pay": 4965508.6099999985
+    },
+    {
+      "title": "FACILITIES WORKER",
+      "count": 134,
+      "avg_pay": 35701.498432835826,
+      "median_pay": 40009.16,
+      "min_pay": 4187.68,
+      "max_pay": 50979.65,
+      "std_dev": 11215.931951638142,
+      "total_pay": 4784000.790000001
+    },
+    {
+      "title": "HS ASSOCIATE CLIN PROF-HCOMP",
+      "count": 133,
+      "avg_pay": 242931.05924812032,
+      "median_pay": 230579.08,
+      "min_pay": 17533.14,
+      "max_pay": 755968.04,
+      "std_dev": 110916.97117802696,
+      "total_pay": 32309830.880000003
+    },
+    {
+      "title": "MECHANIC, FACILITIES",
+      "count": 131,
+      "avg_pay": 46359.93702290075,
+      "median_pay": 48224.79,
+      "min_pay": 96,
+      "max_pay": 67362.12,
+      "std_dev": 11979.669100000614,
+      "total_pay": 6073151.749999998
+    },
+    {
+      "title": "PROGRAM REPRESENTATIVE II",
+      "count": 129,
+      "avg_pay": 30133.63294573644,
+      "median_pay": 36473.28,
+      "min_pay": 502,
+      "max_pay": 70469.58,
+      "std_dev": 16363.753125739693,
+      "total_pay": 3887238.650000001
+    },
+    {
+      "title": "LECTURER - ACADEMIC YEAR",
+      "count": 125,
+      "avg_pay": 40448.76696,
+      "median_pay": 34788,
+      "min_pay": 4901.04,
+      "max_pay": 153495.28,
+      "std_dev": 25479.072607197748,
+      "total_pay": 5056095.87
+    },
+    {
+      "title": "ANALYST, ADMINISTRATIVE, ASST",
+      "count": 121,
+      "avg_pay": 35278.83198347108,
+      "median_pay": 37677.36,
+      "min_pay": 355.4,
+      "max_pay": 51343.92,
+      "std_dev": 12640.121401512313,
+      "total_pay": 4268738.670000001
+    },
+    {
+      "title": "ASSO PHYSICIAN DIPLOMATE",
+      "count": 118,
+      "avg_pay": 137684.16355932207,
+      "median_pay": 95267.5,
+      "min_pay": 56.82,
+      "max_pay": 443596.66,
+      "std_dev": 115449.25702704139,
+      "total_pay": 16246731.300000004
+    },
+    {
+      "title": "HS CLINICAL PROFESSOR-HCOMP",
+      "count": 115,
+      "avg_pay": 262440.34669565223,
+      "median_pay": 226901.76,
+      "min_pay": 2646.07,
+      "max_pay": 1783005,
+      "std_dev": 196238.65786779465,
+      "total_pay": 30180639.870000005
+    },
+    {
+      "title": "LIBRARY ASST I",
+      "count": 113,
+      "avg_pay": 5579.243539823008,
+      "median_pay": 4980.37,
+      "min_pay": 529.25,
+      "max_pay": 14968.24,
+      "std_dev": 3652.2650529051725,
+      "total_pay": 630454.5199999999
+    },
+    {
+      "title": "PROGRAM REPRESENTATIVE III",
+      "count": 111,
+      "avg_pay": 39299.530630630616,
+      "median_pay": 44950,
+      "min_pay": 1859.69,
+      "max_pay": 72424.77,
+      "std_dev": 16925.078401073246,
+      "total_pay": 4362247.8999999985
+    },
+    {
+      "title": "STAFF RESEARCH ASSOC II",
+      "count": 111,
+      "avg_pay": 20919.153963963967,
+      "median_pay": 14653.94,
+      "min_pay": 407.22,
+      "max_pay": 54457,
+      "std_dev": 17723.0514069878,
+      "total_pay": 2322026.0900000003
+    },
+    {
+      "title": "SPECIALIST, CLINICAL",
+      "count": 110,
+      "avg_pay": 46996.11609090909,
+      "median_pay": 46788.435,
+      "min_pay": 766.85,
+      "max_pay": 102906.42,
+      "std_dev": 26008.87631517415,
+      "total_pay": 5169572.77
+    },
+    {
+      "title": "NURSE, CLINICAL I",
+      "count": 108,
+      "avg_pay": 28498.22194444444,
+      "median_pay": 26285.405,
+      "min_pay": 1960.58,
+      "max_pay": 65568.85,
+      "std_dev": 12851.343126429356,
+      "total_pay": 3077807.9699999997
+    },
+    {
+      "title": "LIFEGUARD",
+      "count": 106,
+      "avg_pay": 3372.646981132075,
+      "median_pay": 2610.335,
+      "min_pay": 167.38,
+      "max_pay": 9138.3,
+      "std_dev": 2320.2031178212587,
+      "total_pay": 357500.57999999996
+    },
+    {
+      "title": "_____ POST DDS/NON REPRESENTED",
+      "count": 105,
+      "avg_pay": 15058.349333333346,
+      "median_pay": 10000.02,
+      "min_pay": 10000.02,
+      "max_pay": 37999.98,
+      "std_dev": 6422.318826557936,
+      "total_pay": 1581126.6800000013
+    },
+    {
+      "title": "ADDL COMP-HGH\u0026OLIVE VIEW MCS",
+      "count": 105,
+      "avg_pay": 11284.829619047618,
+      "median_pay": 8800,
+      "min_pay": 499.98,
+      "max_pay": 67500,
+      "std_dev": 10531.520981478858,
+      "total_pay": 1184907.1099999999
+    },
+    {
+      "title": "ASST ADJUNCT PROFESSOR-ACAD YR",
+      "count": 103,
+      "avg_pay": 35373.6327184466,
+      "median_pay": 29921.17,
+      "min_pay": 250,
+      "max_pay": 112328.07,
+      "std_dev": 27154.533994643312,
+      "total_pay": 3643484.1699999995
+    },
+    {
+      "title": "LECTURER-AY-CONTINUING APPT.",
+      "count": 102,
+      "avg_pay": 66984.88676470588,
+      "median_pay": 63603.01,
+      "min_pay": 11437.31,
+      "max_pay": 191800.35,
+      "std_dev": 31065.574967736324,
+      "total_pay": 6832458.449999999
+    },
+    {
+      "title": "LECTURER - FISCAL YEAR",
+      "count": 101,
+      "avg_pay": 23100.807425742572,
+      "median_pay": 9229.68,
+      "min_pay": 1036.51,
+      "max_pay": 140984.02,
+      "std_dev": 29229.453334685542,
+      "total_pay": 2333181.55
+    },
+    {
+      "title": "COMPUTING RESOURCE MANAGER II",
+      "count": 100,
+      "avg_pay": 94830.4297,
+      "median_pay": 102830.45000000001,
+      "min_pay": 5435,
+      "max_pay": 132296.72,
+      "std_dev": 25495.430078660276,
+      "total_pay": 9483042.969999999
+    },
+    {
+      "title": "LECTURER IN SUMMER SESSION",
+      "count": 100,
+      "avg_pay": 6914.126200000002,
+      "median_pay": 5603.5,
+      "min_pay": 850,
+      "max_pay": 62674.48,
+      "std_dev": 6481.894651847218,
+      "total_pay": 691412.6200000002
+    },
+    {
+      "title": "STAFF RESEARCH ASSOC IV",
+      "count": 99,
+      "avg_pay": 48769.59676767676,
+      "median_pay": 56375,
+      "min_pay": 38.31,
+      "max_pay": 77316,
+      "std_dev": 22883.059330770637,
+      "total_pay": 4828190.079999999
+    },
+    {
+      "title": "NURSE, ADMINISTRATIVE II",
+      "count": 98,
+      "avg_pay": 113119.77010204078,
+      "median_pay": 120025.195,
+      "min_pay": 2195.17,
+      "max_pay": 176687.76,
+      "std_dev": 30259.70784637659,
+      "total_pay": 11085737.469999997
+    },
+    {
+      "title": "ASSISTANT PROF IN RES-HCOMP",
+      "count": 97,
+      "avg_pay": 172217.22515463922,
+      "median_pay": 142493.36,
+      "min_pay": 14566.23,
+      "max_pay": 715115.5,
+      "std_dev": 112294.84519898733,
+      "total_pay": 16705070.840000005
+    }
+  ]
+}

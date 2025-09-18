@@ -1,0 +1,527 @@
+{
+  "location": "Riverside",
+  "year": 2018,
+  "generated_at": "2025-09-18T15:42:05.483859549Z",
+  "total_employees": 13491,
+  "total_pay": 456657086,
+  "brackets": [
+    {
+      "range": "0-25k",
+      "min_value": 0,
+      "max_value": 25000,
+      "count": 8256,
+      "percentage": 61.19635312430509,
+      "avg_pay": 6559.842296511628,
+      "median_pay": 4162,
+      "total_pay": 54158058,
+      "top_titles": [
+        {
+          "title": "STDT 1",
+          "count": 3071,
+          "avg_pay": 3771.1882123086943
+        },
+        {
+          "title": "TEACHG ASST-GSHIP",
+          "count": 873,
+          "avg_pay": 13154.966781214203
+        },
+        {
+          "title": "STDT 2",
+          "count": 768,
+          "avg_pay": 5764.490885416667
+        },
+        {
+          "title": "GSR-PARTIAL FEE REM",
+          "count": 519,
+          "avg_pay": 13203.605009633911
+        },
+        {
+          "title": "TUT-NON GSHIP",
+          "count": 364,
+          "avg_pay": 3230.747252747253
+        },
+        {
+          "title": "TEACHER-UNEX-CONTRACT YR",
+          "count": 363,
+          "avg_pay": 4494.256198347108
+        },
+        {
+          "title": "STDT ACTIVITIES APPT OFFICIAL",
+          "count": 273,
+          "avg_pay": 2251.194139194139
+        },
+        {
+          "title": "STDT AID OUTSIDE AGENCY",
+          "count": 233,
+          "avg_pay": 1654.2231759656652
+        },
+        {
+          "title": "READER-NON GSHIP",
+          "count": 124,
+          "avg_pay": 3945.733870967742
+        },
+        {
+          "title": "AMERICORP MEMBER",
+          "count": 119,
+          "avg_pay": 1946.0420168067226
+        }
+      ]
+    },
+    {
+      "range": "25k-50k",
+      "min_value": 25000,
+      "max_value": 50000,
+      "count": 1961,
+      "percentage": 14.535616336817137,
+      "avg_pay": 36100.0086690464,
+      "median_pay": 35898,
+      "total_pay": 70792117,
+      "top_titles": [
+        {
+          "title": "GSR-PARTIAL FEE REM",
+          "count": 204,
+          "avg_pay": 28243.392156862745
+        },
+        {
+          "title": "TEACHG ASST-GSHIP",
+          "count": 191,
+          "avg_pay": 27853.942408376963
+        },
+        {
+          "title": "CUSTODIAN SR",
+          "count": 155,
+          "avg_pay": 39702.690322580645
+        },
+        {
+          "title": "POSTDOC-EMPLOYEE",
+          "count": 112,
+          "avg_pay": 42291.17857142857
+        },
+        {
+          "title": "BLANK AST 3",
+          "count": 105,
+          "avg_pay": 42253.81904761905
+        },
+        {
+          "title": "BLANK AST 2",
+          "count": 77,
+          "avg_pay": 41684.4025974026
+        },
+        {
+          "title": "GSR-NO REM",
+          "count": 57,
+          "avg_pay": 27929.666666666668
+        },
+        {
+          "title": "ASSOC IN ____-AY-GSHIP",
+          "count": 54,
+          "avg_pay": 27421.12962962963
+        },
+        {
+          "title": "RESID PHYS I/NON REP",
+          "count": 32,
+          "avg_pay": 27132.4375
+        },
+        {
+          "title": "FOOD SVC WORKER SR",
+          "count": 30,
+          "avg_pay": 36210.166666666664
+        }
+      ]
+    },
+    {
+      "range": "50k-75k",
+      "min_value": 50000,
+      "max_value": 75000,
+      "count": 1343,
+      "percentage": 9.954784671262324,
+      "avg_pay": 60304.27848101266,
+      "median_pay": 59093,
+      "total_pay": 80988646,
+      "top_titles": [
+        {
+          "title": "POSTDOC-EMPLOYEE",
+          "count": 100,
+          "avg_pay": 53567.48
+        },
+        {
+          "title": "BLANK AST 3",
+          "count": 100,
+          "avg_pay": 55021.8
+        },
+        {
+          "title": "RESID PHYS II-VIII/NON REP",
+          "count": 35,
+          "avg_pay": 60732.6
+        },
+        {
+          "title": "STDT ACAD ADVISOR 3",
+          "count": 32,
+          "avg_pay": 58198.96875
+        },
+        {
+          "title": "LECT-AY",
+          "count": 31,
+          "avg_pay": 57798.51612903226
+        },
+        {
+          "title": "RESID PHYS I/NON REP",
+          "count": 28,
+          "avg_pay": 57471.32142857143
+        },
+        {
+          "title": "ADMIN OFCR 2",
+          "count": 26,
+          "avg_pay": 60660.346153846156
+        },
+        {
+          "title": "ASST PROJ SCIENTIST-FY",
+          "count": 26,
+          "avg_pay": 58249.846153846156
+        },
+        {
+          "title": "MAINT A",
+          "count": 24,
+          "avg_pay": 68281.75
+        },
+        {
+          "title": "ASST PROF-AY",
+          "count": 19,
+          "avg_pay": 62846.73684210526
+        }
+      ]
+    },
+    {
+      "range": "75k-100k",
+      "min_value": 75000,
+      "max_value": 100000,
+      "count": 767,
+      "percentage": 5.685271662589875,
+      "avg_pay": 86583.67535853977,
+      "median_pay": 86350,
+      "total_pay": 66409679,
+      "top_titles": [
+        {
+          "title": "ASST PROF-AY",
+          "count": 92,
+          "avg_pay": 87736.15217391304
+        },
+        {
+          "title": "LECT-AY-CONTINUING",
+          "count": 45,
+          "avg_pay": 83123.51111111112
+        },
+        {
+          "title": "ASSOC PROF-AY",
+          "count": 37,
+          "avg_pay": 91347.43243243243
+        },
+        {
+          "title": "MAINT B",
+          "count": 31,
+          "avg_pay": 83576.54838709677
+        },
+        {
+          "title": "FINANCIAL ANL 3",
+          "count": 22,
+          "avg_pay": 83558.72727272728
+        },
+        {
+          "title": "APPLICATIONS PROGR 3",
+          "count": 21,
+          "avg_pay": 88654.38095238095
+        },
+        {
+          "title": "ADMIN SUPV 2",
+          "count": 19,
+          "avg_pay": 86443.52631578948
+        },
+        {
+          "title": "MAINT A",
+          "count": 15,
+          "avg_pay": 83556.73333333334
+        },
+        {
+          "title": "INFO SYS ANL 3",
+          "count": 13,
+          "avg_pay": 84696.38461538461
+        },
+        {
+          "title": "SKLD CRAFTS AND TRADES SUPV 2",
+          "count": 8,
+          "avg_pay": 84019.25
+        }
+      ]
+    },
+    {
+      "range": "100k-150k",
+      "min_value": 100000,
+      "max_value": 150000,
+      "count": 692,
+      "percentage": 5.129345489585649,
+      "avg_pay": 119513.15317919075,
+      "median_pay": 116461.5,
+      "total_pay": 82703102,
+      "top_titles": [
+        {
+          "title": "ASSOC PROF-AY",
+          "count": 113,
+          "avg_pay": 116955.1592920354
+        },
+        {
+          "title": "PROF-AY",
+          "count": 63,
+          "avg_pay": 128990.88888888889
+        },
+        {
+          "title": "ASST PROF-AY",
+          "count": 58,
+          "avg_pay": 111596.72413793103
+        },
+        {
+          "title": "ASST PROF-AY-B/E/E",
+          "count": 45,
+          "avg_pay": 125308.55555555556
+        },
+        {
+          "title": "POLICE OFCR",
+          "count": 19,
+          "avg_pay": 122909.57894736843
+        },
+        {
+          "title": "ADMIN MGR 1",
+          "count": 19,
+          "avg_pay": 128478.21052631579
+        },
+        {
+          "title": "ADMIN SUPV 2",
+          "count": 14,
+          "avg_pay": 106605
+        },
+        {
+          "title": "PROF-FY",
+          "count": 11,
+          "avg_pay": 137378.45454545456
+        },
+        {
+          "title": "LIBRARIAN-CAREER STATUS",
+          "count": 11,
+          "avg_pay": 116760.36363636363
+        },
+        {
+          "title": "APPLICATIONS PROGR 4",
+          "count": 9,
+          "avg_pay": 109611.11111111111
+        }
+      ]
+    },
+    {
+      "range": "150k-200k",
+      "min_value": 150000,
+      "max_value": 200000,
+      "count": 253,
+      "percentage": 1.8753242902675857,
+      "avg_pay": 172697.57707509882,
+      "median_pay": 171600,
+      "total_pay": 43692487,
+      "top_titles": [
+        {
+          "title": "PROF-AY",
+          "count": 98,
+          "avg_pay": 172442.9387755102
+        },
+        {
+          "title": "PROF-AY-B/E/E",
+          "count": 21,
+          "avg_pay": 179106.85714285713
+        },
+        {
+          "title": "PROF-FY",
+          "count": 14,
+          "avg_pay": 171425.2142857143
+        },
+        {
+          "title": "ASST PROF-AY-B/E/E",
+          "count": 12,
+          "avg_pay": 173579.5
+        },
+        {
+          "title": "HS ASST CLIN PROF-HCOMP",
+          "count": 8,
+          "avg_pay": 184235.375
+        },
+        {
+          "title": "ASSOC PROF-AY-B/E/E",
+          "count": 8,
+          "avg_pay": 169906.375
+        },
+        {
+          "title": "ADMIN MGR 2",
+          "count": 5,
+          "avg_pay": 170800.4
+        },
+        {
+          "title": "SPECIALIST COOP EXT",
+          "count": 5,
+          "avg_pay": 173891.6
+        },
+        {
+          "title": "ASSOC PROF-AY",
+          "count": 5,
+          "avg_pay": 159284.8
+        },
+        {
+          "title": "ADMIN MGR 3",
+          "count": 4,
+          "avg_pay": 181028.5
+        }
+      ]
+    },
+    {
+      "range": "200k-300k",
+      "min_value": 200000,
+      "max_value": 300000,
+      "count": 172,
+      "percentage": 1.2749240234230228,
+      "avg_pay": 236419.03488372092,
+      "median_pay": 231101.5,
+      "total_pay": 40664074,
+      "top_titles": [
+        {
+          "title": "PROF-AY",
+          "count": 52,
+          "avg_pay": 225262.63461538462
+        },
+        {
+          "title": "PROF-AY-B/E/E",
+          "count": 35,
+          "avg_pay": 243863.2
+        },
+        {
+          "title": "HS ASST CLIN PROF-HCOMP",
+          "count": 12,
+          "avg_pay": 249955.33333333334
+        },
+        {
+          "title": "PROF-FY",
+          "count": 11,
+          "avg_pay": 224719
+        },
+        {
+          "title": "ASSOC PROF-AY-B/E/E",
+          "count": 8,
+          "avg_pay": 236422.625
+        },
+        {
+          "title": "ASST PROF-AY-B/E/E",
+          "count": 6,
+          "avg_pay": 237673.33333333334
+        },
+        {
+          "title": "HS ASSOC CLIN PROF-HCOMP",
+          "count": 4,
+          "avg_pay": 247631.5
+        },
+        {
+          "title": "DEAN",
+          "count": 4,
+          "avg_pay": 284068.75
+        },
+        {
+          "title": "DIVISIONAL DEAN",
+          "count": 3,
+          "avg_pay": 237468.33333333334
+        },
+        {
+          "title": "VICE PROVOST",
+          "count": 3,
+          "avg_pay": 252286
+        }
+      ]
+    },
+    {
+      "range": "300k-500k",
+      "min_value": 300000,
+      "max_value": 500000,
+      "count": 44,
+      "percentage": 0.32614335482914536,
+      "avg_pay": 341219.54545454547,
+      "median_pay": 327682.5,
+      "total_pay": 15013660,
+      "top_titles": [
+        {
+          "title": "PROF-AY-B/E/E",
+          "count": 12,
+          "avg_pay": 331902.5833333333
+        },
+        {
+          "title": "HS ASST CLIN PROF-HCOMP",
+          "count": 7,
+          "avg_pay": 332392.71428571426
+        },
+        {
+          "title": "PROF-AY",
+          "count": 6,
+          "avg_pay": 328701.5
+        },
+        {
+          "title": "HS ASSOC CLIN PROF-HCOMP",
+          "count": 4,
+          "avg_pay": 325315.75
+        },
+        {
+          "title": "HS CLIN PROF-HCOMP",
+          "count": 3,
+          "avg_pay": 365196.6666666667
+        },
+        {
+          "title": "PROF OF CLIN-HCOMP",
+          "count": 2,
+          "avg_pay": 409195.5
+        },
+        {
+          "title": "PROF-HCOMP",
+          "count": 2,
+          "avg_pay": 331233.5
+        },
+        {
+          "title": "DEAN",
+          "count": 2,
+          "avg_pay": 346566.5
+        },
+        {
+          "title": "EXEC VC AND PROVOST",
+          "count": 1,
+          "avg_pay": 364754
+        },
+        {
+          "title": "CHAN",
+          "count": 1,
+          "avg_pay": 420492
+        }
+      ]
+    },
+    {
+      "range": "500k-1M",
+      "min_value": 500000,
+      "max_value": 1000000,
+      "count": 3,
+      "percentage": 0.022237046920169,
+      "avg_pay": 745087.6666666666,
+      "median_pay": 812942,
+      "total_pay": 2235263,
+      "top_titles": [
+        {
+          "title": "PROF-HCOMP",
+          "count": 2,
+          "avg_pay": 683347
+        },
+        {
+          "title": "HS ASSOC CLIN PROF-HCOMP",
+          "count": 1,
+          "avg_pay": 868569
+        }
+      ]
+    }
+  ]
+}

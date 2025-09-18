@@ -1,0 +1,28 @@
+{
+  "location": "Santa Cruz",
+  "year": 2017,
+  "generated_at": "2025-09-18T15:42:03.511907087Z",
+  "employee_count": 12460,
+  "total_gross_pay": 343643446,
+  "avg_gross_pay": 27579.730818619584,
+  "median_gross_pay": 6774.5,
+  "std_dev": 41675.56861745136,
+  "min_pay": 3,
+  "max_pay": 408504,
+  "percentiles": {
+    "p25": 1880,
+    "p50": 6773,
+    "p75": 40717,
+    "p90": 82835,
+    "p95": 113536,
+    "p99": 192612.5
+  },
+  "pay_components": {
+    "total_base": 321560122,
+    "total_overtime": 1841482,
+    "total_adjustments": 20241842,
+    "avg_base": 25807.39341894061,
+    "avg_overtime": 147.79149277688603,
+    "avg_adjustments": 1624.5459069020867
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "location": "Santa Barbara",
+  "year": 2014,
+  "generated_at": "2025-09-18T15:42:03.700192586Z",
+  "employee_count": 16222,
+  "total_gross_pay": 428513464,
+  "avg_gross_pay": 26415.57539144372,
+  "median_gross_pay": 6183.5,
+  "std_dev": 41892.5823110095,
+  "min_pay": 2,
+  "max_pay": 451925,
+  "percentiles": {
+    "p25": 1612.5,
+    "p50": 6183,
+    "p75": 39777,
+    "p90": 74159,
+    "p95": 109453.5,
+    "p99": 194996.5
+  },
+  "pay_components": {
+    "total_base": 398401387,
+    "total_overtime": 2158705,
+    "total_adjustments": 27953372,
+    "avg_base": 24559.326038712858,
+    "avg_overtime": 133.07267907779558,
+    "avg_adjustments": 1723.1766736530637
+  }
+}

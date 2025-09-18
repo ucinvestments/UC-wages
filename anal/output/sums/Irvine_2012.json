@@ -1,0 +1,28 @@
+{
+  "location": "Irvine",
+  "year": 2012,
+  "generated_at": "2025-09-18T15:42:01.344844935Z",
+  "employee_count": 25009,
+  "total_gross_pay": 1012477490.4000037,
+  "avg_gross_pay": 40484.52518693285,
+  "median_gross_pay": 25056.75,
+  "std_dev": 54996.48886314237,
+  "min_pay": 1,
+  "max_pay": 955057.18,
+  "percentiles": {
+    "p25": 3925.2,
+    "p50": 25055.07,
+    "p75": 54727.41499999999,
+    "p90": 98604,
+    "p95": 129177.51999999999,
+    "p99": 256575.55
+  },
+  "pay_components": {
+    "total_base": 876250027.4800059,
+    "total_overtime": 21474329.81999997,
+    "total_adjustments": 114753133.09999965,
+    "avg_base": 35037.38763964996,
+    "avg_overtime": 858.6640737334548,
+    "avg_adjustments": 4588.4734735495085
+  }
+}

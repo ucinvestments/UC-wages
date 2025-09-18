@@ -1,0 +1,345 @@
+{
+  "location": "ASUCLA",
+  "year": 2022,
+  "generated_at": "2025-09-18T15:42:03.955135745Z",
+  "total_employees": 2969,
+  "total_pay": 22302711,
+  "brackets": [
+    {
+      "range": "0-25k",
+      "min_value": 0,
+      "max_value": 25000,
+      "count": 2761,
+      "percentage": 92.99427416638599,
+      "avg_pay": 2869.2115175660992,
+      "median_pay": 1705,
+      "total_pay": 7921893,
+      "top_titles": [
+        {
+          "title": "STDT 1",
+          "count": 1193,
+          "avg_pay": 2512.805532271584
+        },
+        {
+          "title": "STDT 2",
+          "count": 925,
+          "avg_pay": 3593.707027027027
+        },
+        {
+          "title": "STDT 4",
+          "count": 572,
+          "avg_pay": 1681.041958041958
+        },
+        {
+          "title": "STDT 3",
+          "count": 22,
+          "avg_pay": 3156.181818181818
+        },
+        {
+          "title": "CUSTODIAN SR",
+          "count": 15,
+          "avg_pay": 4733.6
+        },
+        {
+          "title": "ANL 1",
+          "count": 14,
+          "avg_pay": 16620.714285714286
+        },
+        {
+          "title": "ANL 3",
+          "count": 6,
+          "avg_pay": 10665.166666666666
+        },
+        {
+          "title": "ANL 2",
+          "count": 5,
+          "avg_pay": 9284.6
+        },
+        {
+          "title": "BLANK AST 2 SUPV",
+          "count": 4,
+          "avg_pay": 14956.25
+        },
+        {
+          "title": "ANL 5",
+          "count": 2,
+          "avg_pay": 21667.5
+        }
+      ]
+    },
+    {
+      "range": "25k-50k",
+      "min_value": 25000,
+      "max_value": 50000,
+      "count": 54,
+      "percentage": 1.8187942068036378,
+      "avg_pay": 40318.148148148146,
+      "median_pay": 43595,
+      "total_pay": 2177180,
+      "top_titles": [
+        {
+          "title": "CUSTODIAN SR",
+          "count": 10,
+          "avg_pay": 40841.5
+        },
+        {
+          "title": "ANL 2",
+          "count": 9,
+          "avg_pay": 37490
+        },
+        {
+          "title": "ANL 1",
+          "count": 9,
+          "avg_pay": 40372.333333333336
+        },
+        {
+          "title": "FOOD SVC WORKER",
+          "count": 8,
+          "avg_pay": 42009.875
+        },
+        {
+          "title": "ANL 3",
+          "count": 5,
+          "avg_pay": 40380.2
+        },
+        {
+          "title": "COOK AST",
+          "count": 2,
+          "avg_pay": 48181.5
+        },
+        {
+          "title": "COOK SR",
+          "count": 2,
+          "avg_pay": 49925
+        },
+        {
+          "title": "STDT 1",
+          "count": 2,
+          "avg_pay": 26157.5
+        },
+        {
+          "title": "BLANK AST 2 SUPV",
+          "count": 1,
+          "avg_pay": 38343
+        },
+        {
+          "title": "COOK",
+          "count": 1,
+          "avg_pay": 49489
+        }
+      ]
+    },
+    {
+      "range": "50k-75k",
+      "min_value": 50000,
+      "max_value": 75000,
+      "count": 96,
+      "percentage": 3.2334119232064666,
+      "avg_pay": 58244.833333333336,
+      "median_pay": 56710.5,
+      "total_pay": 5591504,
+      "top_titles": [
+        {
+          "title": "ANL 1",
+          "count": 17,
+          "avg_pay": 56354.35294117647
+        },
+        {
+          "title": "ANL 3",
+          "count": 17,
+          "avg_pay": 61015.882352941175
+        },
+        {
+          "title": "ANL 2",
+          "count": 15,
+          "avg_pay": 54975.13333333333
+        },
+        {
+          "title": "ANL 4",
+          "count": 9,
+          "avg_pay": 68541.33333333333
+        },
+        {
+          "title": "FOOD SVC WORKER SR",
+          "count": 9,
+          "avg_pay": 54159
+        },
+        {
+          "title": "CUSTODIAN SR",
+          "count": 8,
+          "avg_pay": 58923.375
+        },
+        {
+          "title": "FOOD SVC WORKER",
+          "count": 7,
+          "avg_pay": 52441.71428571428
+        },
+        {
+          "title": "COOK AST",
+          "count": 4,
+          "avg_pay": 53651.5
+        },
+        {
+          "title": "COOK",
+          "count": 2,
+          "avg_pay": 56957.5
+        },
+        {
+          "title": "ADMIN ANL PRN 1",
+          "count": 2,
+          "avg_pay": 69093.5
+        }
+      ]
+    },
+    {
+      "range": "75k-100k",
+      "min_value": 75000,
+      "max_value": 100000,
+      "count": 25,
+      "percentage": 0.8420343550016841,
+      "avg_pay": 85483.56,
+      "median_pay": 85972,
+      "total_pay": 2137089,
+      "top_titles": [
+        {
+          "title": "ANL 4",
+          "count": 14,
+          "avg_pay": 83634.78571428571
+        },
+        {
+          "title": "ANL 5",
+          "count": 5,
+          "avg_pay": 90833.2
+        },
+        {
+          "title": "CUSTODIAN SR",
+          "count": 1,
+          "avg_pay": 85331
+        },
+        {
+          "title": "ADMIN ANL PRN 1",
+          "count": 1,
+          "avg_pay": 76205
+        },
+        {
+          "title": "ANL 3",
+          "count": 1,
+          "avg_pay": 87522
+        },
+        {
+          "title": "PAINTER",
+          "count": 1,
+          "avg_pay": 89049
+        },
+        {
+          "title": "FAC MECH LD",
+          "count": 1,
+          "avg_pay": 77668
+        },
+        {
+          "title": "ANL 6",
+          "count": 1,
+          "avg_pay": 96261
+        }
+      ]
+    },
+    {
+      "range": "100k-150k",
+      "min_value": 100000,
+      "max_value": 150000,
+      "count": 26,
+      "percentage": 0.8757157292017514,
+      "avg_pay": 115757.03846153847,
+      "median_pay": 111679,
+      "total_pay": 3009683,
+      "top_titles": [
+        {
+          "title": "DIR",
+          "count": 17,
+          "avg_pay": 119230.05882352941
+        },
+        {
+          "title": "ANL 6",
+          "count": 4,
+          "avg_pay": 107118
+        },
+        {
+          "title": "ELECTRN",
+          "count": 1,
+          "avg_pay": 102796
+        },
+        {
+          "title": "ANL 4",
+          "count": 1,
+          "avg_pay": 103789
+        },
+        {
+          "title": "SVC ENGR",
+          "count": 1,
+          "avg_pay": 129112
+        },
+        {
+          "title": "FOOD SVC MECH",
+          "count": 1,
+          "avg_pay": 106154
+        },
+        {
+          "title": "PLUMBER",
+          "count": 1,
+          "avg_pay": 112449
+        }
+      ]
+    },
+    {
+      "range": "150k-200k",
+      "min_value": 150000,
+      "max_value": 200000,
+      "count": 3,
+      "percentage": 0.10104412260020208,
+      "avg_pay": 158662,
+      "median_pay": 156585,
+      "total_pay": 475986,
+      "top_titles": [
+        {
+          "title": "DIR",
+          "count": 3,
+          "avg_pay": 158662
+        }
+      ]
+    },
+    {
+      "range": "200k-300k",
+      "min_value": 200000,
+      "max_value": 300000,
+      "count": 3,
+      "percentage": 0.10104412260020208,
+      "avg_pay": 217869.33333333334,
+      "median_pay": 214428,
+      "total_pay": 653608,
+      "top_titles": [
+        {
+          "title": "DIR",
+          "count": 3,
+          "avg_pay": 217869.33333333334
+        }
+      ]
+    },
+    {
+      "range": "300k-500k",
+      "min_value": 300000,
+      "max_value": 500000,
+      "count": 1,
+      "percentage": 0.033681374200067365,
+      "avg_pay": 335768,
+      "median_pay": 335768,
+      "total_pay": 335768,
+      "top_titles": [
+        {
+          "title": "DIR EXEC",
+          "count": 1,
+          "avg_pay": 335768
+        }
+      ]
+    }
+  ]
+}

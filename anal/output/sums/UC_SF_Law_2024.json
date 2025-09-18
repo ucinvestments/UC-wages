@@ -1,0 +1,28 @@
+{
+  "location": "UC SF Law",
+  "year": 2024,
+  "generated_at": "2025-09-18T15:42:01.170291956Z",
+  "employee_count": 1102,
+  "total_gross_pay": 38250143,
+  "avg_gross_pay": 34709.74863883848,
+  "median_gross_pay": 4429,
+  "std_dev": 60890.91120291298,
+  "min_pay": 10,
+  "max_pay": 512600,
+  "percentiles": {
+    "p25": 1037,
+    "p50": 4429,
+    "p75": 46604,
+    "p90": 112447.5,
+    "p95": 164379,
+    "p99": 258073.5
+  },
+  "pay_components": {
+    "total_base": 35054716,
+    "total_overtime": 46032,
+    "total_adjustments": 3149407,
+    "avg_base": 31810.08711433757,
+    "avg_overtime": 41.77132486388385,
+    "avg_adjustments": 2857.9010889292194
+  }
+}
