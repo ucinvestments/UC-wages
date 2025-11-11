@@ -1,18 +1,78 @@
 import { db } from '$lib/server/db';
 import { ucWages } from '$lib/server/db/schema';
-import { sql, like, and, eq, desc } from 'drizzle-orm';
+import { sql, like, and, eq, desc, asc } from 'drizzle-orm';
 import type { PageServerLoad } from './$types';
 
 const ITEMS_PER_PAGE = 50;
+const FILTER_CACHE_TTL_MS = 1000 * 60 * 30; // 30 minutes
+const SORT_COLUMNS = {
+	name: sql`LOWER(CONCAT(${ucWages.firstname}, ' ', ${ucWages.lastname}))`,
+	jobtitle: ucWages.title,
+	location: ucWages.location,
+	year: ucWages.year,
+	grosspay: ucWages.grosspay,
+	basePay: ucWages.basepay,
+	overtimePay: ucWages.overtimepay,
+	otherPay: ucWages.adjustpay
+} as const;
+const DEFAULT_SORT_COLUMN = 'grosspay' as const;
+const DEFAULT_SORT_DIRECTION = 'desc' as const;
+
+type Filters = {
+	locations: string[];
+	years: number[];
+};
+type SortableColumn = keyof typeof SORT_COLUMNS;
+type SortDirection = 'asc' | 'desc';
+
+let filterCache: { data: Filters; expires: number } | null = null;
+
+async function getFilters(): Promise<Filters> {
+	const now = Date.now();
+	if (filterCache && filterCache.expires > now) {
+		return filterCache.data;
+	}
+
+	const [locations, years] = await Promise.all([
+		db.selectDistinct({ location: ucWages.location }).from(ucWages).orderBy(ucWages.location),
+		db.selectDistinct({ year: ucWages.year }).from(ucWages).orderBy(desc(ucWages.year))
+	]);
+
+	const data = {
+		locations: locations.map(l => l.location),
+		years: years.map(y => y.year)
+	};
+
+	filterCache = {
+		data,
+		expires: now + FILTER_CACHE_TTL_MS
+	};
+
+	return data;
+}
 
 export const load: PageServerLoad = async ({ url }) => {
 	try {
 		const searchParams = url.searchParams;
+		const filterKeys = ['name', 'job', 'location', 'year'] as const;
+		const hasFilterParam = filterKeys.some(key => searchParams.has(key));
 		const name = searchParams.get('name') || '';
 		const job = searchParams.get('job') || '';
 		const location = searchParams.get('location') || '';
-		const year = searchParams.get('year') ? parseInt(searchParams.get('year')!) : null;
+		const year = searchParams.get('year')
+			? parseInt(searchParams.get('year')!)
+			: hasFilterParam
+				? null
+				: 2024;
 		const page = Math.max(1, parseInt(searchParams.get('page') || '1'));
+		const requestedSort = searchParams.get('sort') as SortableColumn | null;
+		const requestedDirection = searchParams.get('direction') === 'asc' ? 'asc' : 'desc';
+		const sortColumn: SortableColumn =
+			requestedSort && requestedSort in SORT_COLUMNS ? requestedSort : DEFAULT_SORT_COLUMN;
+		const sortDirection: SortDirection =
+			requestedSort && requestedSort in SORT_COLUMNS ? requestedDirection : DEFAULT_SORT_DIRECTION;
+		const orderExpression = SORT_COLUMNS[sortColumn];
+		const orderByClause = sortDirection === 'asc' ? asc(orderExpression) : desc(orderExpression);
 		const offset = (page - 1) * ITEMS_PER_PAGE;
 
 		// Build search conditions
@@ -34,43 +94,34 @@ export const load: PageServerLoad = async ({ url }) => {
 			conditions.push(eq(ucWages.year, year));
 		}
 
-		// Get total count for pagination
-		const [countResult] = await db
-			.select({ count: sql<number>`count(*)::integer` })
-			.from(ucWages)
-			.where(conditions.length > 0 ? and(...conditions) : undefined);
+		const whereClause = conditions.length > 0 ? and(...conditions) : undefined;
+
+		const [countResult, results, filters] = await Promise.all([
+			db
+				.select({ count: sql<number>`count(*)::integer` })
+				.from(ucWages)
+				.where(whereClause),
+			db
+				.select({
+					name: sql<string>`CONCAT(${ucWages.firstname}, ' ', ${ucWages.lastname})`,
+					jobtitle: ucWages.title,
+					location: ucWages.location,
+					year: ucWages.year,
+					grosspay: ucWages.grosspay,
+					basePay: ucWages.basepay,
+					overtimePay: ucWages.overtimepay,
+					otherPay: ucWages.adjustpay
+				})
+				.from(ucWages)
+				.where(whereClause)
+				.orderBy(orderByClause)
+				.limit(ITEMS_PER_PAGE)
+				.offset(offset),
+			getFilters()
+		]);
 
 		const totalItems = countResult.count;
 		const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
-
-		// Get paginated results
-		const results = await db
-			.select({
-				name: sql<string>`CONCAT(${ucWages.firstname}, ' ', ${ucWages.lastname})`,
-				jobtitle: ucWages.title,
-				location: ucWages.location,
-				year: ucWages.year,
-				grosspay: ucWages.grosspay,
-				basePay: ucWages.basepay,
-				overtimePay: ucWages.overtimepay,
-				otherPay: ucWages.adjustpay
-			})
-			.from(ucWages)
-			.where(conditions.length > 0 ? and(...conditions) : undefined)
-			.orderBy(desc(ucWages.grosspay))
-			.limit(ITEMS_PER_PAGE)
-			.offset(offset);
-
-		// Get available filters for dropdowns
-		const locations = await db
-			.selectDistinct({ location: ucWages.location })
-			.from(ucWages)
-			.orderBy(ucWages.location);
-
-		const years = await db
-			.selectDistinct({ year: ucWages.year })
-			.from(ucWages)
-			.orderBy(desc(ucWages.year));
 
 		return {
 			employees: results.map(emp => ({
@@ -92,12 +143,11 @@ export const load: PageServerLoad = async ({ url }) => {
 				name,
 				job,
 				location,
-				year
+				year,
+				sort: sortColumn,
+				direction: sortDirection
 			},
-			filters: {
-				locations: locations.map(l => l.location),
-				years: years.map(y => y.year)
-			}
+			filters
 		};
 	} catch (error) {
 		console.error('Error loading employee search data:', error);
@@ -116,7 +166,9 @@ export const load: PageServerLoad = async ({ url }) => {
 				name: '',
 				job: '',
 				location: '',
-				year: null
+				year: 2024,
+				sort: DEFAULT_SORT_COLUMN,
+				direction: DEFAULT_SORT_DIRECTION
 			},
 			filters: {
 				locations: [],

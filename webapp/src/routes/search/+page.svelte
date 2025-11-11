@@ -1,21 +1,52 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
-	import { page } from '$app/stores';
-	import { onMount } from 'svelte';
-	import { navigating } from '$app/stores';
-	import type { PageData } from './$types';
+		import { goto } from '$app/navigation';
+		import { page } from '$app/stores';
+		import { navigating } from '$app/stores';
+		import Icon from '@iconify/svelte';
+		import type { PageData } from './$types';
 
 	export let data: PageData;
 
 	$: ({ employees, pagination, searchParams, filters } = data);
 	$: isLoading = !!$navigating;
 
-	let searchForm = {
-		name: searchParams?.name || '',
-		job: searchParams?.job || '',
-		location: searchParams?.location || '',
-		year: searchParams?.year?.toString() || '2024'
-	};
+		type SortableColumn =
+			| 'name'
+			| 'jobtitle'
+			| 'location'
+			| 'year'
+			| 'grosspay'
+			| 'basePay'
+			| 'overtimePay'
+			| 'otherPay';
+
+		const sortableColumns: { key: SortableColumn; label: string; numeric?: boolean }[] = [
+			{ key: 'name', label: 'Name' },
+			{ key: 'jobtitle', label: 'Job Title' },
+			{ key: 'location', label: 'Campus' },
+			{ key: 'year', label: 'Year' },
+			{ key: 'grosspay', label: 'Gross Pay', numeric: true },
+			{ key: 'basePay', label: 'Base Pay', numeric: true },
+			{ key: 'overtimePay', label: 'Overtime', numeric: true },
+			{ key: 'otherPay', label: 'Other Pay', numeric: true }
+		];
+
+		let searchForm = {
+			name: searchParams?.name || '',
+			job: searchParams?.job || '',
+			location: searchParams?.location || '',
+			year: searchParams?.year ? searchParams.year.toString() : ''
+		};
+
+		$: currentSort = (searchParams?.sort as SortableColumn) || 'grosspay';
+		$: currentDirection = (searchParams?.direction as 'asc' | 'desc') || 'desc';
+
+		function appendSortParams(params: URLSearchParams) {
+			const sort = $page.url.searchParams.get('sort');
+			const direction = $page.url.searchParams.get('direction');
+			if (sort) params.set('sort', sort);
+			if (direction) params.set('direction', direction);
+		}
 
 	function handleSearch(event: SubmitEvent) {
 		event.preventDefault();
@@ -24,7 +55,9 @@
 		if (searchForm.name.trim()) params.set('name', searchForm.name.trim());
 		if (searchForm.job.trim()) params.set('job', searchForm.job.trim());
 		if (searchForm.location) params.set('location', searchForm.location);
-		if (searchForm.year) params.set('year', searchForm.year);
+			if (searchForm.year) params.set('year', searchForm.year);
+
+			appendSortParams(params);
 
 		// Reset to page 1 for new search
 		params.set('page', '1');
@@ -33,9 +66,11 @@
 	}
 
 	function clearFilters() {
-		searchForm = { name: '', job: '', location: '', year: '' };
-		goto('/search');
-	}
+			searchForm = { name: '', job: '', location: '', year: '' };
+			const params = new URLSearchParams();
+			appendSortParams(params);
+			goto(params.toString() ? `/search?${params.toString()}` : '/search');
+		}
 
 	function goToPage(pageNum: number) {
 		const params = new URLSearchParams($page.url.searchParams);
@@ -43,26 +78,36 @@
 		goto(`/search?${params.toString()}`);
 	}
 
-	function formatCurrency(amount: number): string {
-		return new Intl.NumberFormat('en-US', {
-			style: 'currency',
-			currency: 'USD',
-			minimumFractionDigits: 0,
-			maximumFractionDigits: 0
-		}).format(amount);
-	}
+		function formatCurrency(amount: number): string {
+			return new Intl.NumberFormat('en-US', {
+				style: 'currency',
+				currency: 'USD',
+				minimumFractionDigits: 0,
+				maximumFractionDigits: 0
+			}).format(amount);
+		}
 
-	// Auto-search for 2024 data on page load if no search params
-	onMount(() => {
-		const hasSearchParams = $page.url.searchParams.toString();
-		if (!hasSearchParams) {
-			const params = new URLSearchParams();
-			params.set('year', '2024');
+		function toggleSort(column: SortableColumn) {
+			const params = new URLSearchParams($page.url.searchParams);
+			const activeColumn = params.get('sort') as SortableColumn | null;
+			const activeDirection = (params.get('direction') as 'asc' | 'desc') || 'desc';
+
+			if (activeColumn === column) {
+				params.set('direction', activeDirection === 'asc' ? 'desc' : 'asc');
+			} else {
+				params.set('sort', column);
+				params.set('direction', column === 'name' || column === 'jobtitle' || column === 'location' ? 'asc' : 'desc');
+			}
+
 			params.set('page', '1');
 			goto(`/search?${params.toString()}`);
 		}
-	});
-</script>
+
+		function ariaSort(column: SortableColumn) {
+			if (currentSort !== column) return 'none';
+			return currentDirection === 'asc' ? 'ascending' : 'descending';
+		}
+	</script>
 
 <svelte:head>
 	<title>Search UC Employees - UC Wage Explorer</title>
@@ -162,14 +207,30 @@
 					<table class="results-table">
 						<thead>
 							<tr>
-								<th>Name</th>
-								<th>Job Title</th>
-								<th>Campus</th>
-								<th>Year</th>
-								<th class="currency">Gross Pay</th>
-								<th class="currency">Base Pay</th>
-								<th class="currency">Overtime</th>
-								<th class="currency">Other Pay</th>
+								{#each sortableColumns as column (column.key)}
+									<th class={column.numeric ? 'currency' : ''} aria-sort={ariaSort(column.key)}>
+										<button
+											type="button"
+											class="sort-button"
+											onclick={() => toggleSort(column.key)}
+											aria-label={`Sort by ${column.label}`}
+										>
+											<span>{column.label}</span>
+											<span class={`sort-icon ${currentSort === column.key ? 'active' : ''}`}>
+												{#if currentSort === column.key}
+													<Icon
+														icon={currentDirection === 'asc'
+															? 'mdi:arrow-up'
+															: 'mdi:arrow-down'}
+														class="sort-arrow"
+													/>
+												{:else}
+													<Icon icon="mdi:unfold-more-horizontal" class="sort-arrow" />
+												{/if}
+											</span>
+										</button>
+									</th>
+								{/each}
 							</tr>
 						</thead>
 						<tbody>
@@ -191,45 +252,47 @@
 			</div>
 
 			<!-- Pagination -->
-			{#if pagination?.totalPages > 1}
-				<div class="pagination">
-					<div class="pagination-info">
-						Page {pagination.currentPage} of {pagination.totalPages}
-					</div>
-					<div class="pagination-controls">
-						{#if pagination?.hasPrev}
-							<button class="pagination-button" onclick={() => goToPage(1)}>
-								First
-							</button>
-							<button class="pagination-button" onclick={() => goToPage(pagination.currentPage - 1)}>
-								Previous
-							</button>
-						{/if}
+				{#if pagination?.totalPages > 1}
+					{#each ['top', 'bottom'] as position (position)}
+						<div class={`pagination ${position}`}>
+							<div class="pagination-info">
+								Page {pagination.currentPage} of {pagination.totalPages}
+							</div>
+							<div class="pagination-controls">
+								{#if pagination?.hasPrev}
+									<button class="pagination-button" onclick={() => goToPage(1)}>
+										First
+									</button>
+									<button class="pagination-button" onclick={() => goToPage(pagination.currentPage - 1)}>
+										Previous
+									</button>
+								{/if}
 
-						<!-- Page numbers -->
-						{#each Array.from({ length: Math.min(5, pagination?.totalPages || 0) }, (_, i) => {
-							const start = Math.max(1, (pagination?.currentPage || 1) - 2);
-							return start + i;
-						}).filter(p => p <= (pagination?.totalPages || 0)) as pageNum}
-							<button
-								class="pagination-button {pageNum === pagination.currentPage ? 'current' : ''}"
-								onclick={() => goToPage(pageNum)}
-							>
-								{pageNum}
-							</button>
-						{/each}
+								<!-- Page numbers -->
+								{#each Array.from({ length: Math.min(5, pagination?.totalPages || 0) }, (_, i) => {
+									const start = Math.max(1, (pagination?.currentPage || 1) - 2);
+									return start + i;
+								}).filter(p => p <= (pagination?.totalPages || 0)) as pageNum}
+									<button
+										class="pagination-button {pageNum === pagination.currentPage ? 'current' : ''}"
+										onclick={() => goToPage(pageNum)}
+									>
+										{pageNum}
+									</button>
+								{/each}
 
-						{#if pagination?.hasNext}
-							<button class="pagination-button" onclick={() => goToPage(pagination.currentPage + 1)}>
-								Next
-							</button>
-							<button class="pagination-button" onclick={() => goToPage(pagination.totalPages)}>
-								Last
-							</button>
-						{/if}
-					</div>
-				</div>
-			{/if}
+								{#if pagination?.hasNext}
+									<button class="pagination-button" onclick={() => goToPage(pagination.currentPage + 1)}>
+										Next
+									</button>
+									<button class="pagination-button" onclick={() => goToPage(pagination.totalPages)}>
+										Last
+									</button>
+								{/if}
+							</div>
+						</div>
+					{/each}
+				{/if}
 		{/if}
 		{/if}
 	</div>
@@ -393,6 +456,46 @@
 		text-align: right;
 	}
 
+	.sort-button {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.25rem;
+		width: 100%;
+		background: none;
+		border: none;
+		font: inherit;
+		color: inherit;
+		cursor: pointer;
+		padding: 0;
+	}
+
+	.sort-button:hover span:first-child {
+		color: #1d4ed8;
+	}
+
+	.results-table th.currency .sort-button {
+		justify-content: flex-end;
+	}
+
+	.sort-icon {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 1.5rem;
+		height: 1.5rem;
+		color: #94a3b8;
+		transition: color 0.2s ease;
+	}
+
+	.sort-icon.active {
+		color: #1d4ed8;
+	}
+
+	:global(.sort-arrow) {
+		font-size: 1rem;
+	}
+
 	.results-table td {
 		padding: 1rem;
 		border-bottom: 1px solid #f1f5f9;
@@ -467,6 +570,14 @@
 		border-radius: 8px;
 		padding: 1rem 2rem;
 		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+	}
+
+	.pagination.top {
+		margin-bottom: 1rem;
+	}
+
+	.pagination.bottom {
+		margin-top: 1rem;
 	}
 
 	.pagination-info {

@@ -8,12 +8,21 @@
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
 	injectAnalytics({ mode: dev ? 'development' : 'production' });
 	let { children } = $props();
+	let isMenuOpen = false;
 
 	function toggleDonationInfo() {
 		const donationInfo = document.getElementById('donationInfo');
 		if (donationInfo) {
 			donationInfo.style.display = donationInfo.style.display === 'none' ? 'block' : 'none';
 		}
+	}
+
+	function toggleMenu() {
+		isMenuOpen = !isMenuOpen;
+	}
+
+	function closeMenu() {
+		isMenuOpen = false;
 	}
 </script>
 
@@ -27,24 +36,43 @@
 			</div>
 		</a>
 
-		<div class="nav-links">
-			<a href="/" class="nav-link" class:active={$page.url.pathname === '/'}>
+		<button
+			class="menu-toggle"
+			onclick={toggleMenu}
+			aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+			aria-expanded={isMenuOpen}
+		>
+			<Icon icon={isMenuOpen ? 'mdi:close' : 'mdi:menu'} class="menu-icon" />
+		</button>
+
+		<div class={`nav-links ${isMenuOpen ? 'open' : ''}`}>
+			<a href="/" class="nav-link" class:active={$page.url.pathname === '/'} onclick={closeMenu}>
 				<Icon icon="mdi:chart-line" class="nav-icon" />
 				Explorer
 			</a>
-			<a href="/search" class="nav-link" class:active={$page.url.pathname === '/search'}>
+			<a
+				href="/search"
+				class="nav-link"
+				class:active={$page.url.pathname === '/search'}
+				onclick={closeMenu}
+			>
 				<Icon icon="mdi:account-search" class="nav-icon" />
 				Search
 			</a>
-			<a href="/about" class="nav-link" class:active={$page.url.pathname === '/about'}>
+			<a href="/about" class="nav-link" class:active={$page.url.pathname === '/about'} onclick={closeMenu}>
 				<Icon icon="mdi:information" class="nav-icon" />
 				About
 			</a>
-			<a href="/data" class="nav-link" class:active={$page.url.pathname === '/data'}>
+			<a href="/data" class="nav-link" class:active={$page.url.pathname === '/data'} onclick={closeMenu}>
 				<Icon icon="mdi:database" class="nav-icon" />
 				Data
 			</a>
-			<a href="/methodology" class="nav-link" class:active={$page.url.pathname === '/methodology'}>
+			<a
+				href="/methodology"
+				class="nav-link"
+				class:active={$page.url.pathname === '/methodology'}
+				onclick={closeMenu}
+			>
 				<Icon icon="mdi:book-open-page-variant" class="nav-icon" />
 				Methodology
 			</a>
@@ -53,6 +81,7 @@
 				target="_blank"
 				rel="noopener noreferrer"
 				class="nav-link external"
+				onclick={closeMenu}
 			>
 				<Icon icon="mdi:github" class="nav-icon" />
 				GitHub
@@ -402,27 +431,64 @@
 		text-decoration: underline;
 	}
 
-	@media (max-width: 768px) {
+	.menu-toggle {
+		display: none;
+		align-items: center;
+		justify-content: center;
+		width: 40px;
+		height: 40px;
+		border-radius: 0.75rem;
+		border: 1px solid var(--border);
+		background: white;
+		cursor: pointer;
+		transition: background 0.2s ease;
+	}
+
+	.menu-toggle:hover {
+		background: var(--bg-secondary);
+	}
+
+	:global(.menu-icon) {
+		font-size: 1.5rem;
+		color: var(--pri);
+	}
+
+	@media (max-width: 900px) {
 		.nav-container {
 			flex-direction: column;
-			gap: 1rem;
+			gap: 0.5rem;
 			padding: 1rem;
+		}
+
+		.menu-toggle {
+			display: flex;
+			align-self: flex-end;
 		}
 
 		.nav-links {
 			width: 100%;
-			justify-content: center;
+			flex-direction: column;
+			display: none;
+			padding: 0.5rem 0;
+			border-top: 1px solid var(--border);
+		}
+
+		.nav-links.open {
+			display: flex;
 		}
 
 		.nav-link {
-			padding: 0.5rem 1rem;
-			font-size: 0.875rem;
+			width: 100%;
+			justify-content: center;
+			padding: 0.75rem 1rem;
 		}
 
 		:global(.nav-icon) {
 			font-size: 1rem;
 		}
+	}
 
+	@media (max-width: 768px) {
 		.logo-text {
 			font-size: 1.125rem;
 		}
@@ -443,18 +509,6 @@
 
 		.footer-links {
 			align-items: center;
-		}
-	}
-
-	@media (max-width: 480px) {
-		.nav-links {
-			flex-direction: column;
-			width: 100%;
-		}
-
-		.nav-link {
-			width: 100%;
-			justify-content: center;
 		}
 	}
 </style>
