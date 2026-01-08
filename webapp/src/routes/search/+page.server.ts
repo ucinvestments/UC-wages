@@ -39,8 +39,8 @@ async function getFilters(): Promise<Filters> {
 	]);
 
 	const data = {
-		locations: locations.map(l => l.location),
-		years: years.map(y => y.year)
+		locations: locations.map((l) => l.location),
+		years: years.map((y) => y.year)
 	};
 
 	filterCache = {
@@ -55,7 +55,7 @@ export const load: PageServerLoad = async ({ url }) => {
 	try {
 		const searchParams = url.searchParams;
 		const filterKeys = ['name', 'job', 'location', 'year'] as const;
-		const hasFilterParam = filterKeys.some(key => searchParams.has(key));
+		const hasFilterParam = filterKeys.some((key) => searchParams.has(key));
 		const name = searchParams.get('name') || '';
 		const job = searchParams.get('job') || '';
 		const location = searchParams.get('location') || '';
@@ -124,7 +124,7 @@ export const load: PageServerLoad = async ({ url }) => {
 		const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
 
 		return {
-			employees: results.map(emp => ({
+			employees: results.map((emp) => ({
 				...emp,
 				grosspay: parseFloat(emp.grosspay.toString()),
 				basePay: parseFloat(emp.basePay.toString()),

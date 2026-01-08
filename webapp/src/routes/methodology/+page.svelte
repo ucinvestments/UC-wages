@@ -4,7 +4,10 @@
 
 <svelte:head>
 	<title>Methodology - UC Wage Explorer</title>
-	<meta name="description" content="Learn about the data collection and processing methodology used by UC Wage Explorer" />
+	<meta
+		name="description"
+		content="Learn about the data collection and processing methodology used by UC Wage Explorer"
+	/>
 </svelte:head>
 
 <div class="page-container">
@@ -24,9 +27,8 @@
 				<h3>Source Identification</h3>
 				<p>
 					Data is collected directly from the official UC Annual Wage website
-					(ucannualwage.ucop.edu), which publishes employee compensation data as
-					mandated by California state law. This ensures all data is publicly
-					available and legally accessible.
+					(ucannualwage.ucop.edu), which publishes employee compensation data as mandated by
+					California state law. This ensures all data is publicly available and legally accessible.
 				</p>
 			</div>
 
@@ -34,9 +36,9 @@
 				<div class="process-number">2</div>
 				<h3>Automated Collection</h3>
 				<p>
-					We use a high-performance Go-based scraper with concurrent workers to
-					efficiently collect data. The scraper respects rate limits and implements
-					retry logic to ensure reliable data collection without overloading the source.
+					We use a high-performance Go-based scraper with concurrent workers to efficiently collect
+					data. The scraper respects rate limits and implements retry logic to ensure reliable data
+					collection without overloading the source.
 				</p>
 			</div>
 
@@ -44,9 +46,9 @@
 				<div class="process-number">3</div>
 				<h3>Data Validation</h3>
 				<p>
-					Each data point is validated for completeness and accuracy. Records are
-					checked for required fields including employee name (anonymized where necessary),
-					title, location, year, and various pay components.
+					Each data point is validated for completeness and accuracy. Records are checked for
+					required fields including employee name (anonymized where necessary), title, location,
+					year, and various pay components.
 				</p>
 			</div>
 
@@ -54,9 +56,9 @@
 				<div class="process-number">4</div>
 				<h3>Storage & Organization</h3>
 				<p>
-					Data is stored in a structured JSON format, organized by campus location
-					and year. This hierarchical structure enables efficient querying and
-					maintains data integrity across years of historical information.
+					Data is stored in a structured JSON format, organized by campus location and year. This
+					hierarchical structure enables efficient querying and maintains data integrity across
+					years of historical information.
 				</p>
 			</div>
 		</div>
@@ -73,13 +75,20 @@
 					<ul>
 						<li><strong>Language:</strong> Go (Golang) for high performance and concurrency</li>
 						<li><strong>Worker Pool:</strong> Configurable concurrent workers (default: 3-10)</li>
-						<li><strong>Rate Limiting:</strong> Built-in delays between requests (default: 1 second)</li>
-						<li><strong>Retry Logic:</strong> Automatic retry on failures with exponential backoff</li>
-						<li><strong>Progress Tracking:</strong> Resume capability for interrupted scraping sessions</li>
+						<li>
+							<strong>Rate Limiting:</strong> Built-in delays between requests (default: 1 second)
+						</li>
+						<li>
+							<strong>Retry Logic:</strong> Automatic retry on failures with exponential backoff
+						</li>
+						<li>
+							<strong>Progress Tracking:</strong> Resume capability for interrupted scraping sessions
+						</li>
 					</ul>
 
 					<h4>API Interaction:</h4>
-					<pre><code>{`POST https://ucannualwage.ucop.edu/wage/search
+					<pre><code
+							>{`POST https://ucannualwage.ucop.edu/wage/search
 Content-Type: application/json
 
 {
@@ -88,7 +97,8 @@ Content-Type: application/json
   "rows": 100,
   "year": "2024",
   "location": "Berkeley"
-}`}</code></pre>
+}`}</code
+						></pre>
 				</div>
 			</div>
 
@@ -96,15 +106,18 @@ Content-Type: application/json
 				<h3><Icon icon="mdi:database" /> Data Structure</h3>
 				<div class="detail-content">
 					<h4>Storage Format:</h4>
-					<pre><code>{`data/
+					<pre><code
+							>{`data/
 ├── [Campus_Name]/
 │   ├── wages_2024.json
 │   ├── wages_2023.json
 │   └── ...
-└── scrape_progress.json`}</code></pre>
+└── scrape_progress.json`}</code
+						></pre>
 
 					<h4>Record Schema:</h4>
-					<pre><code>{`{
+					<pre><code
+							>{`{
   "location": "Berkeley",
   "year": 2024,
   "scraped_at": "2025-09-13T19:16:37Z",
@@ -122,7 +135,8 @@ Content-Type: application/json
       "grosspay": "155,000.00"
     }
   ]
-}`}</code></pre>
+}`}</code
+						></pre>
 				</div>
 			</div>
 
@@ -133,8 +147,12 @@ Content-Type: application/json
 					<ul>
 						<li><strong>Ingestion:</strong> JSON files are parsed and validated</li>
 						<li><strong>Transformation:</strong> Pay values converted from strings to numbers</li>
-						<li><strong>Aggregation:</strong> Calculate totals, averages, and counts by campus/year</li>
-						<li><strong>Database Storage:</strong> PostgreSQL with Drizzle ORM for efficient queries</li>
+						<li>
+							<strong>Aggregation:</strong> Calculate totals, averages, and counts by campus/year
+						</li>
+						<li>
+							<strong>Database Storage:</strong> PostgreSQL with Drizzle ORM for efficient queries
+						</li>
 						<li><strong>Caching:</strong> Aggregated results cached for performance</li>
 					</ul>
 
@@ -219,11 +237,13 @@ Content-Type: application/json
 				<p>
 					While all data displayed is publicly available per California state law, we respect
 					individual privacy. Names are anonymized in certain contexts (shown as "*****") while
-					maintaining the ability to analyze compensation trends by job title, department, and campus.
+					maintaining the ability to analyze compensation trends by job title, department, and
+					campus.
 				</p>
 				<p>
 					The UC Annual Wage website implements its own anonymization for employees earning below
-					certain thresholds or in specific categories. We preserve these anonymizations in our dataset.
+					certain thresholds or in specific categories. We preserve these anonymizations in our
+					dataset.
 				</p>
 			</div>
 		</div>
@@ -264,7 +284,9 @@ Content-Type: application/json
 			<div class="disclaimer-content">
 				<ul>
 					<li>Data reflects only base salary and standard compensation components</li>
-					<li>Does not include benefits, retirement contributions, or other non-wage compensation</li>
+					<li>
+						Does not include benefits, retirement contributions, or other non-wage compensation
+					</li>
 					<li>Mid-year hires or departures may show partial year compensation</li>
 					<li>Job titles and departments may change between years</li>
 					<li>Some records may be anonymized at the source for privacy</li>
@@ -279,7 +301,12 @@ Content-Type: application/json
 			<h3>Questions About Our Methodology?</h3>
 			<p>We're committed to transparency in our data collection and processing methods.</p>
 			<div class="cta-buttons">
-				<a href="https://github.com/ucinvestments/UC-wages" target="_blank" rel="noopener noreferrer" class="cta-button">
+				<a
+					href="https://github.com/ucinvestments/UC-wages"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="cta-button"
+				>
 					<Icon icon="mdi:github" />
 					View Source Code
 				</a>
@@ -313,7 +340,7 @@ Content-Type: application/json
 	}
 
 	.hero-section::before {
-		content: "";
+		content: '';
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -323,7 +350,7 @@ Content-Type: application/json
 	}
 
 	.page-title {
-		font-family: "Space Grotesk", sans-serif;
+		font-family: 'Space Grotesk', sans-serif;
 		font-size: 2.25rem;
 		font-weight: 700;
 		color: white;
@@ -370,7 +397,9 @@ Content-Type: application/json
 		padding: 2rem;
 		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 		position: relative;
-		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		transition:
+			transform 0.3s ease,
+			box-shadow 0.3s ease;
 	}
 
 	.process-card:hover {
@@ -449,7 +478,7 @@ Content-Type: application/json
 	}
 
 	.detail-content li::before {
-		content: "•";
+		content: '•';
 		position: absolute;
 		left: 0;
 		color: var(--founder);
@@ -545,7 +574,8 @@ Content-Type: application/json
 		text-align: center;
 	}
 
-	.privacy-card, .disclaimer-card {
+	.privacy-card,
+	.disclaimer-card {
 		background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
 		border-radius: 12px;
 		padding: 2rem;
@@ -554,13 +584,15 @@ Content-Type: application/json
 		align-items: flex-start;
 	}
 
-	.privacy-icon, .disclaimer-icon {
+	.privacy-icon,
+	.disclaimer-icon {
 		font-size: 2.5rem;
 		color: var(--founder);
 		flex-shrink: 0;
 	}
 
-	.privacy-content p, .disclaimer-content {
+	.privacy-content p,
+	.disclaimer-content {
 		color: var(--text-secondary);
 		line-height: 1.6;
 	}
@@ -582,7 +614,7 @@ Content-Type: application/json
 	}
 
 	.disclaimer-content li::before {
-		content: "•";
+		content: '•';
 		position: absolute;
 		left: 0;
 		color: var(--founder);
@@ -692,7 +724,8 @@ Content-Type: application/json
 			grid-template-columns: repeat(2, 1fr);
 		}
 
-		.privacy-card, .disclaimer-card {
+		.privacy-card,
+		.disclaimer-card {
 			flex-direction: column;
 			text-align: center;
 		}

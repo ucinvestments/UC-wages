@@ -44,7 +44,7 @@ export const GET: RequestHandler = async ({ url }) => {
 			const result = await query;
 
 			// Convert string decimals to numbers
-			const processedResult = result.map(row => ({
+			const processedResult = result.map((row) => ({
 				...row,
 				totalWages: parseFloat(row.totalWages.toString()),
 				averageWage: parseFloat(row.averageWage.toString()),
@@ -78,7 +78,7 @@ export const GET: RequestHandler = async ({ url }) => {
 			const result = await query;
 
 			// Convert decimal strings to numbers for frontend
-			const processedResult = result.map(record => ({
+			const processedResult = result.map((record) => ({
 				...record,
 				basepay: parseFloat(record.basepay?.toString() || '0'),
 				overtimepay: parseFloat(record.overtimepay?.toString() || '0'),
@@ -142,7 +142,6 @@ export const POST: RequestHandler = async ({ request }) => {
 			success: true,
 			message: `Successfully uploaded ${wageRecords.length} records for ${location} ${year}`
 		});
-
 	} catch (error) {
 		console.error('Error uploading wage data:', error);
 		return json({ error: 'Failed to upload wage data' }, { status: 500 });

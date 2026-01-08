@@ -10,7 +10,7 @@ export interface CampusTheme {
 }
 
 export const campusThemes: Record<string, CampusTheme> = {
-	'Berkeley': {
+	Berkeley: {
 		primary: '#003262', // Berkeley Blue
 		secondary: '#FDB515', // California Gold
 		accent: '#859438', // Medalist
@@ -37,7 +37,7 @@ export const campusThemes: Record<string, CampusTheme> = {
 		gradient: 'linear-gradient(135deg, #182B49 0%, #C69214 100%)',
 		name: 'UC San Diego'
 	},
-	'Davis': {
+	Davis: {
 		primary: '#022851', // Aggie Blue
 		secondary: '#FFBF00', // Aggie Gold
 		accent: '#B0D236',
@@ -46,7 +46,7 @@ export const campusThemes: Record<string, CampusTheme> = {
 		gradient: 'linear-gradient(135deg, #022851 0%, #FFBF00 100%)',
 		name: 'UC Davis'
 	},
-	'Irvine': {
+	Irvine: {
 		primary: '#0064A4', // UCI Blue
 		secondary: '#FFD200', // UCI Gold
 		accent: '#1B365D',
@@ -73,7 +73,7 @@ export const campusThemes: Record<string, CampusTheme> = {
 		gradient: 'linear-gradient(135deg, #003C6C 0%, #F29813 100%)',
 		name: 'UC Santa Cruz'
 	},
-	'Riverside': {
+	Riverside: {
 		primary: '#003DA5', // UCR Blue
 		secondary: '#FFB81C', // UCR Gold
 		accent: '#005581',
@@ -91,7 +91,7 @@ export const campusThemes: Record<string, CampusTheme> = {
 		gradient: 'linear-gradient(135deg, #052049 0%, #90BD31 100%)',
 		name: 'UCSF'
 	},
-	'Merced': {
+	Merced: {
 		primary: '#002856', // UCM Blue
 		secondary: '#FFB310', // UCM Gold
 		accent: '#8A8B8C',
@@ -100,7 +100,7 @@ export const campusThemes: Record<string, CampusTheme> = {
 		gradient: 'linear-gradient(135deg, #002856 0%, #FFB310 100%)',
 		name: 'UC Merced'
 	},
-	'UCOP': {
+	UCOP: {
 		primary: '#1B4685', // UC System Blue
 		secondary: '#DAAA00', // UC System Gold
 		accent: '#767F8B',
@@ -109,7 +109,7 @@ export const campusThemes: Record<string, CampusTheme> = {
 		gradient: 'linear-gradient(135deg, #1B4685 0%, #DAAA00 100%)',
 		name: 'UC Office of the President'
 	},
-	'ASUCLA': {
+	ASUCLA: {
 		primary: '#2774AE', // UCLA colors (ASUCLA is UCLA-affiliated)
 		secondary: '#FFD100',
 		accent: '#8BB8E8',
@@ -130,19 +130,21 @@ export const campusThemes: Record<string, CampusTheme> = {
 };
 
 export function getCampusTheme(campus: string): CampusTheme {
-	return campusThemes[campus] || {
-		primary: '#1B4685',
-		secondary: '#DAAA00',
-		accent: '#767F8B',
-		light: '#8BB8E8',
-		dark: '#0D2142',
-		gradient: 'linear-gradient(135deg, #1B4685 0%, #DAAA00 100%)',
-		name: campus
-	};
+	return (
+		campusThemes[campus] || {
+			primary: '#1B4685',
+			secondary: '#DAAA00',
+			accent: '#767F8B',
+			light: '#8BB8E8',
+			dark: '#0D2142',
+			gradient: 'linear-gradient(135deg, #1B4685 0%, #DAAA00 100%)',
+			name: campus
+		}
+	);
 }
 
 export function getCampusColorScale() {
-	const colors = Object.values(campusThemes).map(theme => theme.primary);
+	const colors = Object.values(campusThemes).map((theme) => theme.primary);
 	const campuses = Object.keys(campusThemes);
 	return { colors, campuses };
 }

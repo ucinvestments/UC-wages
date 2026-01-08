@@ -14,8 +14,8 @@
 	let isAnimating = false;
 
 	// Get unique campuses and years
-	$: campuses = [...new Set(data.map(d => d.location))].sort();
-	$: years = [...new Set(data.map(d => d.year))].sort();
+	$: campuses = [...new Set(data.map((d) => d.location))].sort();
+	$: years = [...new Set(data.map((d) => d.year))].sort();
 
 	// Initialize with all campuses selected
 	onMount(() => {
@@ -76,15 +76,19 @@
 				.append('linearGradient')
 				.attr('id', `gradient-${i}`)
 				.attr('gradientUnits', 'userSpaceOnUse')
-				.attr('x1', 0).attr('y1', height)
-				.attr('x2', 0).attr('y2', 0);
+				.attr('x1', 0)
+				.attr('y1', height)
+				.attr('x2', 0)
+				.attr('y2', 0);
 
 			const color = d3.schemeCategory10[i % 10];
-			gradient.append('stop')
+			gradient
+				.append('stop')
 				.attr('offset', '0%')
 				.attr('stop-color', color)
 				.attr('stop-opacity', 0.1);
-			gradient.append('stop')
+			gradient
+				.append('stop')
 				.attr('offset', '100%')
 				.attr('stop-color', color)
 				.attr('stop-opacity', 0.8);
@@ -106,7 +110,7 @@
 		isAnimating = metricAnimation;
 
 		// Filter data for selected campuses
-		const filteredData = data.filter(d => selectedCampuses.has(d.location));
+		const filteredData = data.filter((d) => selectedCampuses.has(d.location));
 		if (filteredData.length === 0) {
 			// Clear chart if no data
 			g.selectAll('.chart-element').remove();
@@ -120,66 +124,71 @@
 		const height = 550 - margin.top - margin.bottom;
 
 		// Scales
-		const xScale = d3.scaleLinear()
+		const xScale = d3
+			.scaleLinear()
 			.domain(d3.extent(years) as [number, number])
 			.range([0, width]);
 
 		// Create appropriate Y scale based on logarithmic setting
-		const extent = d3.extent(filteredData, d => d[metric]) as [number, number];
+		const extent = d3.extent(filteredData, (d) => d[metric]) as [number, number];
 		const yScale = isLogarithmic
-			? d3.scaleLog()
-				.domain([Math.max(1, extent[0]), extent[1]])
-				.range([height, 0])
-				.nice()
-			: d3.scaleLinear()
-				.domain(extent)
-				.range([height, 0])
-				.nice();
+			? d3
+					.scaleLog()
+					.domain([Math.max(1, extent[0]), extent[1]])
+					.range([height, 0])
+					.nice()
+			: d3.scaleLinear().domain(extent).range([height, 0]).nice();
 
 		// Enhanced color scale with better colors
-		const colorScale = d3.scaleOrdinal()
+		const colorScale = d3
+			.scaleOrdinal()
 			.domain(campuses)
 			.range([
-				'#2563eb', '#dc2626', '#059669', '#d97706', '#7c3aed',
-				'#db2777', '#0891b2', '#65a30d', '#dc2626', '#4338ca'
+				'#2563eb',
+				'#dc2626',
+				'#059669',
+				'#d97706',
+				'#7c3aed',
+				'#db2777',
+				'#0891b2',
+				'#65a30d',
+				'#dc2626',
+				'#4338ca'
 			]);
 
 		// Smooth curve line generator
 		const line = d3
 			.line<AggregatedWageData>()
-			.x(d => xScale(d.year))
-			.y(d => yScale(Math.max(1, d[metric])))
+			.x((d) => xScale(d.year))
+			.y((d) => yScale(Math.max(1, d[metric])))
 			.curve(d3.curveCatmullRom.alpha(0.5)); // Smoother curves
 
 		// Group data by campus
-		const campusData = d3.group(filteredData, d => d.location);
+		const campusData = d3.group(filteredData, (d) => d.location);
 
 		// Update or create axes with animation
 		const transitionDuration = metricAnimation ? 800 : initialAnimation ? 1200 : 300;
 
 		// X Axis
 		const xAxis = g.selectAll('.x-axis').data([null]);
-		const xAxisEnter = xAxis.enter()
+		const xAxisEnter = xAxis
+			.enter()
 			.append('g')
 			.attr('class', 'x-axis chart-element')
 			.attr('transform', `translate(0,${height})`);
 
-		xAxisEnter.merge(xAxis)
+		xAxisEnter
+			.merge(xAxis)
 			.transition()
 			.duration(transitionDuration)
-			.call(d3.axisBottom(xScale)
-				.tickFormat(d3.format('d'))
-				.tickSize(-height)
-				.tickPadding(10))
+			.call(d3.axisBottom(xScale).tickFormat(d3.format('d')).tickSize(-height).tickPadding(10))
 			.selectAll('.tick line')
 			.attr('stroke', '#e5e7eb')
 			.attr('stroke-dasharray', '2,2');
 
 		// Y Axis
 		const yAxis = g.selectAll('.y-axis').data([null]);
-		const yAxisEnter = yAxis.enter()
-			.append('g')
-			.attr('class', 'y-axis chart-element');
+		const yAxisEnter = yAxis.enter().append('g').attr('class', 'y-axis chart-element');
 
 		// Custom dollar formatting function
 		const formatDollars = (value: number) => {
@@ -195,17 +204,13 @@
 		};
 
 		// Use different formatting based on metric
-		const yAxisFormat = metric === 'employeeCount'
-			? d3.format(',')
-			: formatDollars;
+		const yAxisFormat = metric === 'employeeCount' ? d3.format(',') : formatDollars;
 
-		yAxisEnter.merge(yAxis)
+		yAxisEnter
+			.merge(yAxis)
 			.transition()
 			.duration(transitionDuration)
-			.call(d3.axisLeft(yScale)
-				.tickFormat(yAxisFormat)
-				.tickSize(-width)
-				.tickPadding(10))
+			.call(d3.axisLeft(yScale).tickFormat(yAxisFormat).tickSize(-width).tickPadding(10))
 			.selectAll('.tick line')
 			.attr('stroke', '#e5e7eb')
 			.attr('stroke-dasharray', '2,2');
@@ -216,20 +221,15 @@
 			.style('font-size', '12px')
 			.style('font-weight', '400');
 
-		g.selectAll('.x-axis path, .y-axis path')
-			.style('stroke', '#d1d5db');
+		g.selectAll('.x-axis path, .y-axis path').style('stroke', '#d1d5db');
 
 		// Draw lines with animation
-		const lines = g.selectAll('.line-path')
-			.data([...campusData.entries()], d => d[0]);
+		const lines = g.selectAll('.line-path').data([...campusData.entries()], (d) => d[0]);
 
-		lines.exit()
-			.transition()
-			.duration(300)
-			.style('opacity', 0)
-			.remove();
+		lines.exit().transition().duration(300).style('opacity', 0).remove();
 
-		const linesEnter = lines.enter()
+		const linesEnter = lines
+			.enter()
 			.append('path')
 			.attr('class', 'line-path chart-element')
 			.attr('fill', 'none')
@@ -238,16 +238,17 @@
 			.attr('stroke-linecap', 'round')
 			.style('opacity', 0);
 
-		const linesUpdate = linesEnter.merge(lines)
-			.attr('stroke', d => colorScale(d[0]))
-			.attr('d', d => line(d[1].sort((a, b) => a.year - b.year)));
+		const linesUpdate = linesEnter
+			.merge(lines)
+			.attr('stroke', (d) => colorScale(d[0]))
+			.attr('d', (d) => line(d[1].sort((a, b) => a.year - b.year)));
 
 		// Sort years for chronological animation
 		const sortedYears = [...years].sort((a, b) => a - b);
 
 		if (initialAnimation) {
 			// Smooth interpolated line drawing animation
-			linesUpdate.each(function(d, campusIndex) {
+			linesUpdate.each(function (d, campusIndex) {
 				const path = d3.select(this);
 				const campusData = d[1].sort((a, b) => a.year - b.year);
 				const totalLength = (this as SVGPathElement).getTotalLength();
@@ -262,7 +263,7 @@
 					.duration(2000)
 					.ease(d3.easeCubicInOut)
 					.attr('stroke-dashoffset', 0)
-					.on('end', function() {
+					.on('end', function () {
 						d3.select(this).attr('stroke-dasharray', 'none');
 					});
 			});
@@ -272,42 +273,42 @@
 				.transition()
 				.duration(transitionDuration)
 				.ease(d3.easeCubicInOut)
-				.attr('d', d => line(d[1].sort((a, b) => a.year - b.year)));
+				.attr('d', (d) => line(d[1].sort((a, b) => a.year - b.year)));
 		}
 
 		// Draw enhanced dots
 		const allPoints = [...campusData.entries()].flatMap(([campus, values]) =>
-			values.map(d => ({ ...d, campus }))
+			values.map((d) => ({ ...d, campus }))
 		);
 
-		const dots = g.selectAll('.data-dot')
-			.data(allPoints, d => `${d.campus}-${d.year}`);
+		const dots = g.selectAll('.data-dot').data(allPoints, (d) => `${d.campus}-${d.year}`);
 
-		dots.exit()
-			.transition()
-			.duration(300)
-			.attr('r', 0)
-			.style('opacity', 0)
-			.remove();
+		dots.exit().transition().duration(300).attr('r', 0).style('opacity', 0).remove();
 
-		const dotsEnter = dots.enter()
+		const dotsEnter = dots
+			.enter()
 			.append('circle')
 			.attr('class', 'data-dot chart-element')
 			.attr('r', 0)
 			.style('opacity', 0);
 
-		dotsEnter.merge(dots)
-			.attr('cx', d => xScale(d.year))
-			.attr('cy', d => yScale(Math.max(1, d[metric])))
-			.attr('fill', d => colorScale(d.campus))
+		dotsEnter
+			.merge(dots)
+			.attr('cx', (d) => xScale(d.year))
+			.attr('cy', (d) => yScale(Math.max(1, d[metric])))
+			.attr('fill', (d) => colorScale(d.campus))
 			.attr('stroke', 'white')
 			.attr('stroke-width', 2)
 			.style('cursor', 'pointer')
 			.transition()
-			.delay(initialAnimation ? (d, i) => {
-				const campusIndex = campuses.indexOf(d.campus);
-				return campusIndex * 300 + 1000; // Appear after lines start drawing
-			} : 0)
+			.delay(
+				initialAnimation
+					? (d, i) => {
+							const campusIndex = campuses.indexOf(d.campus);
+							return campusIndex * 300 + 1000; // Appear after lines start drawing
+						}
+					: 0
+			)
 			.duration(initialAnimation ? 1200 : transitionDuration)
 			.ease(d3.easeCubicOut)
 			.attr('r', 5)
@@ -315,24 +316,21 @@
 
 		// Add hover effects
 		g.selectAll('.data-dot')
-			.on('mouseover', function(event, d) {
-				d3.select(this)
-					.transition()
-					.duration(150)
-					.attr('r', 6)
-					.style('opacity', 1);
+			.on('mouseover', function (event, d) {
+				d3.select(this).transition().duration(150).attr('r', 6).style('opacity', 1);
 
 				// Add tooltip
-				const tooltip = g.append('g')
+				const tooltip = g
+					.append('g')
 					.attr('class', 'tooltip')
 					.attr('transform', `translate(${xScale(d.year)}, ${yScale(Math.max(1, d[metric]))})`);
 
 				// Format tooltip value properly
-				const tooltipValue = metric === 'employeeCount'
-					? d[metric].toLocaleString()
-					: formatDollars(d[metric]);
+				const tooltipValue =
+					metric === 'employeeCount' ? d[metric].toLocaleString() : formatDollars(d[metric]);
 
-				const rect = tooltip.append('rect')
+				const rect = tooltip
+					.append('rect')
 					.attr('x', -60)
 					.attr('y', -35)
 					.attr('width', 120)
@@ -340,26 +338,24 @@
 					.attr('fill', 'rgba(0,0,0,0.8)')
 					.attr('rx', 4);
 
-				tooltip.append('text')
+				tooltip
+					.append('text')
 					.attr('text-anchor', 'middle')
 					.attr('y', -15)
 					.attr('fill', 'white')
 					.style('font-size', '12px')
 					.text(tooltipValue);
 			})
-			.on('mouseout', function(event, d) {
-				d3.select(this)
-					.transition()
-					.duration(150)
-					.attr('r', 4)
-					.style('opacity', 0.9);
+			.on('mouseout', function (event, d) {
+				d3.select(this).transition().duration(150).attr('r', 4).style('opacity', 0.9);
 
 				g.select('.tooltip').remove();
 			});
 
 		// Update axis labels
 		const yLabel = g.selectAll('.y-label').data([getYAxisLabel(metric)]);
-		const yLabelEnter = yLabel.enter()
+		const yLabelEnter = yLabel
+			.enter()
 			.append('text')
 			.attr('class', 'y-label chart-element')
 			.attr('transform', 'rotate(-90)')
@@ -370,18 +366,20 @@
 			.style('font-weight', '500')
 			.style('fill', '#374151');
 
-		yLabelEnter.merge(yLabel)
+		yLabelEnter
+			.merge(yLabel)
 			.transition()
 			.duration(transitionDuration)
-			.tween('text', function(d) {
+			.tween('text', function (d) {
 				const i = d3.interpolateString(this.textContent, d);
-				return function(t) {
+				return function (t) {
 					this.textContent = i(t);
 				};
 			});
 
 		const xLabel = g.selectAll('.x-label').data(['Year']);
-		const xLabelEnter = xLabel.enter()
+		const xLabelEnter = xLabel
+			.enter()
 			.append('text')
 			.attr('class', 'x-label chart-element')
 			.attr('transform', `translate(${width / 2}, ${height + margin.bottom - 10})`)
@@ -394,28 +392,29 @@
 
 		// Enhanced legend
 		const legend = svg.selectAll('.legend').data([null]);
-		const legendEnter = legend.enter()
+		const legendEnter = legend
+			.enter()
 			.append('g')
 			.attr('class', 'legend')
 			.attr('transform', `translate(${width + margin.left + 20}, ${margin.top + 20})`);
 
-		const legendItems = legendEnter.merge(legend)
+		const legendItems = legendEnter
+			.merge(legend)
 			.selectAll('.legend-item')
 			.data([...selectedCampuses]);
 
 		legendItems.exit().remove();
 
-		const legendItemsEnter = legendItems.enter()
+		const legendItemsEnter = legendItems
+			.enter()
 			.append('g')
 			.attr('class', 'legend-item')
 			.style('cursor', 'pointer');
 
-		legendItemsEnter.append('rect')
-			.attr('width', 16)
-			.attr('height', 3)
-			.attr('rx', 1.5);
+		legendItemsEnter.append('rect').attr('width', 16).attr('height', 3).attr('rx', 1.5);
 
-		legendItemsEnter.append('text')
+		legendItemsEnter
+			.append('text')
 			.attr('x', 22)
 			.attr('y', 2)
 			.attr('dy', '0.35em')
@@ -423,15 +422,20 @@
 			.style('font-weight', '500')
 			.style('fill', '#374151');
 
-		legendItemsEnter.merge(legendItems)
+		legendItemsEnter
+			.merge(legendItems)
 			.attr('transform', (d, i) => `translate(0, ${i * 25})`)
 			.on('click', (event, d) => toggleCampus(d));
 
-		legendItemsEnter.merge(legendItems).select('rect')
-			.attr('fill', d => colorScale(d));
+		legendItemsEnter
+			.merge(legendItems)
+			.select('rect')
+			.attr('fill', (d) => colorScale(d));
 
-		legendItemsEnter.merge(legendItems).select('text')
-			.text(d => d);
+		legendItemsEnter
+			.merge(legendItems)
+			.select('text')
+			.text((d) => d);
 
 		if (metricAnimation) {
 			setTimeout(() => {
@@ -480,11 +484,7 @@
 
 		<div class="scale-selector">
 			<label class="scale-toggle">
-				<input
-					type="checkbox"
-					bind:checked={isLogarithmic}
-					on:change={toggleLogScale}
-				/>
+				<input type="checkbox" bind:checked={isLogarithmic} on:change={toggleLogScale} />
 				<span class="toggle-slider"></span>
 				Logarithmic Scale
 			</label>
@@ -516,7 +516,11 @@
 
 <style>
 	.chart-wrapper {
-		background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%);
+		background: linear-gradient(
+			135deg,
+			rgba(255, 255, 255, 0.95) 0%,
+			rgba(248, 250, 252, 0.95) 100%
+		);
 		backdrop-filter: blur(20px);
 		border-radius: 24px;
 		padding: 2.5rem;
@@ -543,8 +547,13 @@
 	}
 
 	@keyframes gradient-shift {
-		0%, 100% { background-position: 0% 50%; }
-		50% { background-position: 100% 50%; }
+		0%,
+		100% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
 	}
 
 	.controls {
@@ -596,7 +605,9 @@
 		outline: none;
 		border-color: #3b82f6;
 		background: rgba(255, 255, 255, 1);
-		box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1), 0 8px 15px -3px rgba(0, 0, 0, 0.1);
+		box-shadow:
+			0 0 0 4px rgba(59, 130, 246, 0.1),
+			0 8px 15px -3px rgba(0, 0, 0, 0.1);
 		transform: translateY(-1px);
 	}
 
@@ -615,7 +626,7 @@
 		user-select: none;
 	}
 
-	.scale-toggle input[type="checkbox"] {
+	.scale-toggle input[type='checkbox'] {
 		display: none;
 	}
 
@@ -639,12 +650,16 @@
 		background: linear-gradient(135deg, #ffffff, #f8fafc);
 		border-radius: 50%;
 		transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1);
+		box-shadow:
+			0 4px 8px rgba(0, 0, 0, 0.15),
+			0 1px 3px rgba(0, 0, 0, 0.1);
 	}
 
 	.scale-toggle input:checked + .toggle-slider {
 		background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-		box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1), 0 0 0 2px rgba(59, 130, 246, 0.2);
+		box-shadow:
+			inset 0 2px 4px rgba(0, 0, 0, 0.1),
+			0 0 0 2px rgba(59, 130, 246, 0.2);
 	}
 
 	.scale-toggle input:checked + .toggle-slider::before {

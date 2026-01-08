@@ -56,17 +56,17 @@ export function generateMockWageData(): WageRecord[] {
 function getBaseMultiplier(campus: string): number {
 	// Different campuses have different scales
 	const multipliers: Record<string, number> = {
-		'Berkeley': 2.5,
+		Berkeley: 2.5,
 		'Los Angeles': 3.0,
 		'San Diego': 2.2,
 		'San Francisco': 2.8, // Medical school inflates wages
-		'Davis': 2.0,
-		'Irvine': 1.8,
+		Davis: 2.0,
+		Irvine: 1.8,
 		'Santa Barbara': 1.5,
 		'Santa Cruz': 1.2,
-		'Riverside': 1.4,
-		'Merced': 0.8, // Newest campus
-		'UCOP': 0.5 // Administrative office
+		Riverside: 1.4,
+		Merced: 0.8, // Newest campus
+		UCOP: 0.5 // Administrative office
 	};
 
 	return multipliers[campus] || 1.0;

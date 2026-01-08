@@ -26,13 +26,15 @@
 	}
 </script>
 
-
 <nav class="navbar">
 	<div class="nav-container">
 		<a href="/" class="logo-link">
 			<div class="logo">
 				<Icon icon="mdi:currency-usd" class="logo-icon" />
-				<span class="logo-text">UC Wages</span>
+				<span class="logo-text"
+					>UC Wages
+					<small class="small-subtitle">by STEM4Palestine</small></span
+				>
 			</div>
 		</a>
 
@@ -59,11 +61,21 @@
 				<Icon icon="mdi:account-search" class="nav-icon" />
 				Search
 			</a>
-			<a href="/about" class="nav-link" class:active={$page.url.pathname === '/about'} onclick={closeMenu}>
+			<a
+				href="/about"
+				class="nav-link"
+				class:active={$page.url.pathname === '/about'}
+				onclick={closeMenu}
+			>
 				<Icon icon="mdi:information" class="nav-icon" />
 				About
 			</a>
-			<a href="/data" class="nav-link" class:active={$page.url.pathname === '/data'} onclick={closeMenu}>
+			<a
+				href="/data"
+				class="nav-link"
+				class:active={$page.url.pathname === '/data'}
+				onclick={closeMenu}
+			>
 				<Icon icon="mdi:database" class="nav-icon" />
 				Data
 			</a>
@@ -98,7 +110,7 @@
 <footer class="footer">
 	<div class="footer-content">
 		<div class="footer-section">
-			<h4 class="footer-title">UC Wage Explorer</h4>
+			<h4 class="footer-title">STEM4Palestine's UC Wage Explorer</h4>
 			<p class="footer-text">
 				Transparency in University of California employee compensation data.
 			</p>
@@ -171,7 +183,10 @@
 	</div>
 
 	<div class="footer-bottom">
-		<p>&copy; 2024 UC Wage Explorer. Educational purposes only.</p>
+		<p>
+			&copy; 2024 STEM4Palestine. Educational purposes only.<br />
+			This website is not affiliated with or authorized by the University of California.
+		</p>
 	</div>
 </footer>
 
@@ -225,6 +240,11 @@
 		font-weight: 700;
 		color: var(--pri);
 		letter-spacing: -0.01em;
+	}
+
+	.small-subtitle {
+		font-weight: 400;
+		font-size: 0.9rem;
 	}
 
 	.nav-links {

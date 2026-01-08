@@ -46,7 +46,7 @@ export const load: PageServerLoad = async () => {
 			.orderBy(titleAnalysis.location, titleAnalysis.year);
 
 		// Convert data for frontend compatibility
-		const processedSummaries = summaryData.map(row => ({
+		const processedSummaries = summaryData.map((row) => ({
 			location: row.location,
 			year: row.year,
 			employeeCount: row.employeeCount,
@@ -56,10 +56,11 @@ export const load: PageServerLoad = async () => {
 			stdDev: parseFloat(row.stdDev.toString()),
 			minWage: parseFloat(row.minPay.toString()),
 			maxWage: parseFloat(row.maxPay.toString()),
-			percentiles: typeof row.percentiles === 'string' ? JSON.parse(row.percentiles) : row.percentiles
+			percentiles:
+				typeof row.percentiles === 'string' ? JSON.parse(row.percentiles) : row.percentiles
 		}));
 
-		const processedPyramids = pyramidData.map(row => ({
+		const processedPyramids = pyramidData.map((row) => ({
 			location: row.location,
 			year: row.year,
 			totalEmployees: row.totalEmployees,
@@ -67,7 +68,7 @@ export const load: PageServerLoad = async () => {
 			brackets: typeof row.brackets === 'string' ? JSON.parse(row.brackets) : row.brackets
 		}));
 
-		const processedTitles = titleData.map(row => ({
+		const processedTitles = titleData.map((row) => ({
 			location: row.location,
 			year: row.year,
 			uniqueTitles: row.uniqueTitles,
@@ -75,15 +76,19 @@ export const load: PageServerLoad = async () => {
 		}));
 
 		// Get summary statistics from precalculated data
-		const latestYear = processedSummaries.length > 0 ? Math.max(...processedSummaries.map(d => d.year)) : new Date().getFullYear();
-		const latestData = processedSummaries.filter(d => d.year === latestYear);
+		const latestYear =
+			processedSummaries.length > 0
+				? Math.max(...processedSummaries.map((d) => d.year))
+				: new Date().getFullYear();
+		const latestData = processedSummaries.filter((d) => d.year === latestYear);
 
 		const totalEmployees = latestData.reduce((sum, d) => sum + d.employeeCount, 0);
 		const totalWages = latestData.reduce((sum, d) => sum + d.totalWages, 0);
 		const averageWage = totalEmployees > 0 ? totalWages / totalEmployees : 0;
-		const highestPaidCampus = latestData.length > 0
-			? latestData.reduce((max, d) => d.averageWage > max.averageWage ? d : max)
-			: null;
+		const highestPaidCampus =
+			latestData.length > 0
+				? latestData.reduce((max, d) => (d.averageWage > max.averageWage ? d : max))
+				: null;
 
 		return {
 			wageData: processedSummaries,
