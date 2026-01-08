@@ -100,12 +100,10 @@ export const POST: RequestHandler = async ({ request }) => {
 					.set({
 						uploadedRecords,
 						status: uploadedRecords >= wageData.records.length ? 'completed' : 'processing',
-						completedAt: uploadedRecords >= wageData.records.length ? sql`CURRENT_TIMESTAMP` : undefined
+						completedAt:
+							uploadedRecords >= wageData.records.length ? sql`CURRENT_TIMESTAMP` : undefined
 					})
-					.where(and(
-						eq(uploadProgress.location, location),
-						eq(uploadProgress.year, year)
-					));
+					.where(and(eq(uploadProgress.location, location), eq(uploadProgress.year, year)));
 			}
 
 			return json({
@@ -114,7 +112,6 @@ export const POST: RequestHandler = async ({ request }) => {
 				uploadedRecords,
 				totalRecords: wageData.records.length
 			});
-
 		} catch (parseError) {
 			// Update progress with error
 			await db
@@ -124,14 +121,10 @@ export const POST: RequestHandler = async ({ request }) => {
 					errorMessage: `JSON parse error: ${parseError}`,
 					completedAt: sql`CURRENT_TIMESTAMP`
 				})
-				.where(and(
-					eq(uploadProgress.location, location),
-					eq(uploadProgress.year, year)
-				));
+				.where(and(eq(uploadProgress.location, location), eq(uploadProgress.year, year)));
 
 			return json({ error: 'Invalid JSON file format' }, { status: 400 });
 		}
-
 	} catch (error) {
 		console.error('Error uploading file:', error);
 		return json({ error: 'Failed to upload file' }, { status: 500 });
@@ -147,17 +140,15 @@ export const GET: RequestHandler = async ({ url }) => {
 		let query = db.select().from(uploadProgress);
 
 		if (location && year) {
-			query = query.where(and(
-				eq(uploadProgress.location, location),
-				eq(uploadProgress.year, parseInt(year))
-			));
+			query = query.where(
+				and(eq(uploadProgress.location, location), eq(uploadProgress.year, parseInt(year)))
+			);
 		} else if (location) {
 			query = query.where(eq(uploadProgress.location, location));
 		}
 
 		const result = await query;
 		return json(result);
-
 	} catch (error) {
 		console.error('Error fetching upload progress:', error);
 		return json({ error: 'Failed to fetch upload progress' }, { status: 500 });

@@ -29,25 +29,25 @@
 	let adjustForInflation = false;
 
 	// Get unique campuses for filter dropdown
-	$: campuses = [...new Set(wageData.map(d => d.location))];
+	$: campuses = [...new Set(wageData.map((d) => d.location))];
 
 	// Inflation data (using US CPI, base year 2024)
 	const inflationData = {
-		2024: 1.0,      // Base year
-		2023: 1.041,    // 4.1% inflation from 2023 to 2024
-		2022: 1.122,    // 12.2% cumulative inflation from 2022 to 2024
-		2021: 1.192,    // 19.2% cumulative inflation from 2021 to 2024
-		2020: 1.217,    // 21.7% cumulative inflation from 2020 to 2024
-		2019: 1.238,    // 23.8% cumulative inflation from 2019 to 2024
-		2018: 1.265,    // 26.5% cumulative inflation from 2018 to 2024
-		2017: 1.284,    // 28.4% cumulative inflation from 2017 to 2024
-		2016: 1.298,    // 29.8% cumulative inflation from 2016 to 2024
-		2015: 1.298,    // Same as 2016 (low inflation year)
-		2014: 1.314,    // 31.4% cumulative inflation from 2014 to 2024
-		2013: 1.330,    // 33.0% cumulative inflation from 2013 to 2024
-		2012: 1.358,    // 35.8% cumulative inflation from 2012 to 2024
-		2011: 1.391,    // 39.1% cumulative inflation from 2011 to 2024
-		2010: 1.426     // 42.6% cumulative inflation from 2010 to 2024
+		2024: 1.0, // Base year
+		2023: 1.041, // 4.1% inflation from 2023 to 2024
+		2022: 1.122, // 12.2% cumulative inflation from 2022 to 2024
+		2021: 1.192, // 19.2% cumulative inflation from 2021 to 2024
+		2020: 1.217, // 21.7% cumulative inflation from 2020 to 2024
+		2019: 1.238, // 23.8% cumulative inflation from 2019 to 2024
+		2018: 1.265, // 26.5% cumulative inflation from 2018 to 2024
+		2017: 1.284, // 28.4% cumulative inflation from 2017 to 2024
+		2016: 1.298, // 29.8% cumulative inflation from 2016 to 2024
+		2015: 1.298, // Same as 2016 (low inflation year)
+		2014: 1.314, // 31.4% cumulative inflation from 2014 to 2024
+		2013: 1.33, // 33.0% cumulative inflation from 2013 to 2024
+		2012: 1.358, // 35.8% cumulative inflation from 2012 to 2024
+		2011: 1.391, // 39.1% cumulative inflation from 2011 to 2024
+		2010: 1.426 // 42.6% cumulative inflation from 2010 to 2024
 	};
 
 	// Function to adjust for inflation
@@ -58,12 +58,13 @@
 	}
 
 	// Filter data based on selected campus
-	$: basePlottedData = selectedCampus === 'All Campuses'
-		? wageData
-		: wageData.filter(d => d.location === selectedCampus);
+	$: basePlottedData =
+		selectedCampus === 'All Campuses'
+			? wageData
+			: wageData.filter((d) => d.location === selectedCampus);
 
 	// Apply inflation adjustment if enabled
-	$: filteredWageData = basePlottedData.map(d => ({
+	$: filteredWageData = basePlottedData.map((d) => ({
 		...d,
 		totalWages: adjustForInflationValue(d.totalWages, d.year),
 		averageWage: adjustForInflationValue(d.averageWage, d.year),
@@ -71,7 +72,7 @@
 	}));
 
 	// Apply inflation adjustment to pyramid data
-	$: filteredPyramidData = pyramidData.map(d => ({
+	$: filteredPyramidData = pyramidData.map((d) => ({
 		...d,
 		totalPay: adjustForInflationValue(d.totalPay, d.year)
 	}));
@@ -90,19 +91,21 @@
 		'#6366f1', // Indigo
 		'#14b8a6', // Teal
 		'#f43f5e', // Rose
-		'#a855f7'  // Violet
+		'#a855f7' // Violet
 	];
 
 	// Standardized campus color scale with consistent mapping
 	function createCampusColorScale(campuses: string[]) {
-		return d3.scaleOrdinal<string, string>()
+		return d3
+			.scaleOrdinal<string, string>()
 			.domain(campuses.sort()) // Sort to ensure consistent color assignment
 			.range(CHART_COLORS);
 	}
 
 	// Tooltip system for chart interactions
 	function createTooltip() {
-		return d3.select('body')
+		return d3
+			.select('body')
 			.append('div')
 			.style('position', 'absolute')
 			.style('padding', '12px')
@@ -142,15 +145,23 @@
 		updateCharts();
 	}
 
-	function createChartLegend(container: HTMLDivElement, campuses: string[], colorScale: any, showTotal: boolean, totalLabel: string) {
+	function createChartLegend(
+		container: HTMLDivElement,
+		campuses: string[],
+		colorScale: any,
+		showTotal: boolean,
+		totalLabel: string
+	) {
 		if (!container) return;
 
-		const legendDiv = d3.select(container)
+		const legendDiv = d3
+			.select(container)
 			.style('padding', '10px 0')
 			.style('border-bottom', '1px solid #e5e7eb')
 			.style('margin-bottom', '15px');
 
-		const legendItems = legendDiv.append('div')
+		const legendItems = legendDiv
+			.append('div')
 			.style('display', 'flex')
 			.style('flex-wrap', 'wrap')
 			.style('gap', '15px')
@@ -159,19 +170,22 @@
 
 		// Add total line item first if needed
 		if (showTotal) {
-			const totalItem = legendItems.append('div')
+			const totalItem = legendItems
+				.append('div')
 				.style('display', 'flex')
 				.style('align-items', 'center')
 				.style('gap', '6px');
 
-			totalItem.append('div')
+			totalItem
+				.append('div')
 				.style('width', '20px')
 				.style('height', '3px')
 				.style('background', '#1f2937')
 				.style('border', '2px dashed #1f2937')
 				.style('opacity', '0.7');
 
-			totalItem.append('span')
+			totalItem
+				.append('span')
 				.style('font-size', '12px')
 				.style('font-weight', '600')
 				.style('color', '#374151')
@@ -179,35 +193,40 @@
 		}
 
 		// Add campus items
-		campuses.forEach(campus => {
-			const item = legendItems.append('div')
+		campuses.forEach((campus) => {
+			const item = legendItems
+				.append('div')
 				.style('display', 'flex')
 				.style('align-items', 'center')
 				.style('gap', '6px');
 
-			item.append('div')
+			item
+				.append('div')
 				.style('width', '12px')
 				.style('height', '12px')
 				.style('background', colorScale(campus))
 				.style('border-radius', '2px');
 
-			item.append('span')
-				.style('font-size', '12px')
-				.style('color', '#374151')
-				.text(campus);
+			item.append('span').style('font-size', '12px').style('color', '#374151').text(campus);
 		});
 	}
 
-	function createPyramidLegend(container: HTMLDivElement, sortedRanges: [string, number][], colorScale: any) {
+	function createPyramidLegend(
+		container: HTMLDivElement,
+		sortedRanges: [string, number][],
+		colorScale: any
+	) {
 		if (!container) return;
 
-		const legendDiv = d3.select(container)
+		const legendDiv = d3
+			.select(container)
 			.style('padding', '10px 0')
 			.style('border-bottom', '1px solid #e5e7eb')
 			.style('margin-bottom', '15px');
 
 		// Add title
-		legendDiv.append('div')
+		legendDiv
+			.append('div')
 			.style('text-align', 'center')
 			.style('font-size', '14px')
 			.style('font-weight', 'bold')
@@ -215,7 +234,8 @@
 			.style('margin-bottom', '10px')
 			.text('Wage Ranges (Employee Count)');
 
-		const legendItems = legendDiv.append('div')
+		const legendItems = legendDiv
+			.append('div')
 			.style('display', 'flex')
 			.style('flex-wrap', 'wrap')
 			.style('gap', '12px')
@@ -224,12 +244,14 @@
 
 		// Add wage range items
 		sortedRanges.forEach(([range, count], index) => {
-			const item = legendItems.append('div')
+			const item = legendItems
+				.append('div')
 				.style('display', 'flex')
 				.style('align-items', 'center')
 				.style('gap', '6px');
 
-			item.append('div')
+			item
+				.append('div')
 				.style('width', '12px')
 				.style('height', '12px')
 				.style('background', colorScale(index))
@@ -237,7 +259,8 @@
 				.style('opacity', '0.9')
 				.style('border', '1px solid #fff');
 
-			item.append('span')
+			item
+				.append('span')
 				.style('font-size', '11px')
 				.style('color', '#374151')
 				.text(`${range}: ${(count / 1000).toFixed(0)}K`);
@@ -279,7 +302,8 @@
 		const height = 200;
 
 		// Create animated background pattern
-		const svg = d3.select(heroContainer)
+		const svg = d3
+			.select(heroContainer)
 			.append('svg')
 			.attr('width', width)
 			.attr('height', height)
@@ -289,8 +313,8 @@
 			.style('z-index', -1);
 
 		// Create flowing data points
-		const campuses = [...new Set(wageData.map(d => d.location))];
-		const points = campuses.flatMap(campus => {
+		const campuses = [...new Set(wageData.map((d) => d.location))];
+		const points = campuses.flatMap((campus) => {
 			const theme = getCampusTheme(campus);
 			return Array.from({ length: 5 }, (_, i) => ({
 				campus,
@@ -303,15 +327,16 @@
 			}));
 		});
 
-		const circles = svg.selectAll('.hero-dot')
+		const circles = svg
+			.selectAll('.hero-dot')
 			.data(points)
 			.enter()
 			.append('circle')
 			.attr('class', 'hero-dot')
-			.attr('cx', d => d.x)
-			.attr('cy', d => d.y)
+			.attr('cx', (d) => d.x)
+			.attr('cy', (d) => d.y)
 			.attr('r', 0)
-			.attr('fill', d => d.color)
+			.attr('fill', (d) => d.color)
 			.style('opacity', 0.6);
 
 		// Animate in
@@ -320,7 +345,7 @@
 			.delay((d, i) => i * 100)
 			.duration(1000)
 			.ease(d3.easeBackOut)
-			.attr('r', d => d.r);
+			.attr('r', (d) => d.r);
 
 		// Continuous floating animation
 		function animate() {
@@ -328,12 +353,12 @@
 				.transition()
 				.duration(3000)
 				.ease(d3.easeLinear)
-				.attr('cx', d => {
+				.attr('cx', (d) => {
 					d.x += d.vx;
 					if (d.x < 0 || d.x > width) d.vx *= -1;
 					return d.x;
 				})
-				.attr('cy', d => {
+				.attr('cy', (d) => {
 					d.y += d.vy;
 					if (d.y < 0 || d.y > height) d.vy *= -1;
 					return d.y;
@@ -353,18 +378,19 @@
 		// Create tooltip
 		const tooltip = createTooltip();
 
-		const svg = d3.select(totalWagesContainer)
+		const svg = d3
+			.select(totalWagesContainer)
 			.append('svg')
 			.attr('width', width)
 			.attr('height', height);
 
-		const g = svg.append('g')
-			.attr('transform', `translate(${margin.left},${margin.top})`);
+		const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
 
-		const activeCampuses = [...new Set(filteredWageData.map(d => d.location))];
-		const years = [...new Set(filteredWageData.map(d => d.year))].sort();
+		const activeCampuses = [...new Set(filteredWageData.map((d) => d.location))];
+		const years = [...new Set(filteredWageData.map((d) => d.year))].sort();
 
-		const xScale = d3.scaleLinear()
+		const xScale = d3
+			.scaleLinear()
 			.domain(d3.extent(years) as [number, number])
 			.range([0, width - margin.left - margin.right]);
 
@@ -374,32 +400,40 @@
 		// Calculate total line (sum of all campuses by year) - only if showing all campuses and toggle is on
 		let totalData = [];
 		if (showTotalLines && selectedCampus === 'All Campuses') {
-			const totalByYear = d3.rollup(filteredWageData,
-				v => d3.sum(v, d => d.totalWages),
-				d => d.year
+			const totalByYear = d3.rollup(
+				filteredWageData,
+				(v) => d3.sum(v, (d) => d.totalWages),
+				(d) => d.year
 			);
-			totalData = Array.from(totalByYear, ([year, total]) => ({ year, totalWages: total }))
-				.sort((a, b) => a.year - b.year);
+			totalData = Array.from(totalByYear, ([year, total]) => ({ year, totalWages: total })).sort(
+				(a, b) => a.year - b.year
+			);
 		}
 
 		// Include total data in y-scale domain to ensure total line is visible
-		const allWageData = [...filteredWageData.map(d => d.totalWages), ...totalData.map(d => d.totalWages)];
-		const yScale = d3.scaleLinear()
+		const allWageData = [
+			...filteredWageData.map((d) => d.totalWages),
+			...totalData.map((d) => d.totalWages)
+		];
+		const yScale = d3
+			.scaleLinear()
 			.domain(d3.extent(allWageData) as [number, number])
 			.range([height - margin.top - margin.bottom, 0]);
 
 		// Group data by campus
-		const campusData = d3.group(filteredWageData, d => d.location);
+		const campusData = d3.group(filteredWageData, (d) => d.location);
 
 		// Create line generator with correct typing
-		const line = d3.line<any>()
-			.x(d => xScale(d.year))
-			.y(d => yScale(d.totalWages))
+		const line = d3
+			.line<any>()
+			.x((d) => xScale(d.year))
+			.y((d) => yScale(d.totalWages))
 			.curve(d3.curveCatmullRom);
 
 		// Draw total line first (in background)
 		if (totalData.length > 1) {
-			const totalLine = g.append('path')
+			const totalLine = g
+				.append('path')
 				.datum(totalData)
 				.attr('fill', 'none')
 				.attr('stroke', '#1f2937')
@@ -424,7 +458,8 @@
 			const campusIndex = activeCampuses.indexOf(campus);
 
 			// Add line
-			const path = g.append('path')
+			const path = g
+				.append('path')
 				.datum(sortedValues)
 				.attr('fill', 'none')
 				.attr('stroke', colorScale(campus))
@@ -448,41 +483,35 @@
 				.enter()
 				.append('circle')
 				.attr('class', `total-dot-${campus.replace(/\s+/g, '-')}`)
-				.attr('cx', d => xScale(d.year))
-				.attr('cy', d => yScale(d.totalWages))
+				.attr('cx', (d) => xScale(d.year))
+				.attr('cy', (d) => yScale(d.totalWages))
 				.attr('r', 0)
 				.attr('fill', colorScale(campus))
 				.attr('stroke', 'white')
 				.attr('stroke-width', 2)
 				.style('cursor', 'pointer')
-				.on('mouseover', function(event, d) {
+				.on('mouseover', function (event, d) {
 					// Highlight the dot
-					d3.select(this)
-						.transition()
-						.duration(100)
-						.attr('r', 8)
-						.attr('stroke-width', 3);
+					d3.select(this).transition().duration(100).attr('r', 8).attr('stroke-width', 3);
 
 					// Show tooltip
 					tooltip
 						.style('opacity', 1)
-						.html(`
+						.html(
+							`
 							<div style="font-weight: 600; margin-bottom: 4px;">${campus}</div>
 							<div><strong>Year:</strong> ${d.year}</div>
 							<div><strong>Total Wages:</strong> ${formatCurrency(d.totalWages)}</div>
 							<div><strong>Employees:</strong> ${formatNumber(d.employeeCount)}</div>
 							<div><strong>Avg per Employee:</strong> ${formatCurrency(d.totalWages / d.employeeCount)}</div>
-						`)
-						.style('left', (event.pageX + 10) + 'px')
-						.style('top', (event.pageY - 10) + 'px');
+						`
+						)
+						.style('left', event.pageX + 10 + 'px')
+						.style('top', event.pageY - 10 + 'px');
 				})
-				.on('mouseout', function() {
+				.on('mouseout', function () {
 					// Reset dot size
-					d3.select(this)
-						.transition()
-						.duration(100)
-						.attr('r', 5)
-						.attr('stroke-width', 2);
+					d3.select(this).transition().duration(100).attr('r', 5).attr('stroke-width', 2);
 
 					// Hide tooltip
 					tooltip.style('opacity', 0);
@@ -499,11 +528,16 @@
 			.attr('transform', `translate(0,${height - margin.top - margin.bottom})`)
 			.call(d3.axisBottom(xScale).tickFormat(d3.format('d')));
 
-		g.append('g')
-			.call(d3.axisLeft(yScale).tickFormat(d => `$${(d / 1e9).toFixed(1)}B`));
+		g.append('g').call(d3.axisLeft(yScale).tickFormat((d) => `$${(d / 1e9).toFixed(1)}B`));
 
 		// Create external legend
-		createChartLegend(totalWagesLegend, activeCampuses, colorScale, totalData.length > 0, 'System Total');
+		createChartLegend(
+			totalWagesLegend,
+			activeCampuses,
+			colorScale,
+			totalData.length > 0,
+			'System Total'
+		);
 	}
 
 	function createAverageWagesChart() {
@@ -516,18 +550,19 @@
 		// Create tooltip
 		const tooltip = createTooltip();
 
-		const svg = d3.select(averageWagesContainer)
+		const svg = d3
+			.select(averageWagesContainer)
 			.append('svg')
 			.attr('width', width)
 			.attr('height', height);
 
-		const g = svg.append('g')
-			.attr('transform', `translate(${margin.left},${margin.top})`);
+		const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
 
-		const activeCampuses = [...new Set(filteredWageData.map(d => d.location))];
-		const years = [...new Set(filteredWageData.map(d => d.year))].sort();
+		const activeCampuses = [...new Set(filteredWageData.map((d) => d.location))];
+		const years = [...new Set(filteredWageData.map((d) => d.year))].sort();
 
-		const xScale = d3.scaleLinear()
+		const xScale = d3
+			.scaleLinear()
 			.domain(d3.extent(years) as [number, number])
 			.range([0, width - margin.left - margin.right]);
 
@@ -537,36 +572,44 @@
 		// Calculate total line (weighted average across all campuses) - only if showing all campuses and toggle is on
 		let totalData = [];
 		if (showTotalLines && selectedCampus === 'All Campuses') {
-			const totalByYear = d3.rollup(filteredWageData,
-				v => {
-					const totalWages = d3.sum(v, d => d.totalWages);
-					const totalEmployees = d3.sum(v, d => d.employeeCount);
+			const totalByYear = d3.rollup(
+				filteredWageData,
+				(v) => {
+					const totalWages = d3.sum(v, (d) => d.totalWages);
+					const totalEmployees = d3.sum(v, (d) => d.employeeCount);
 					return totalEmployees > 0 ? totalWages / totalEmployees : 0;
 				},
-				d => d.year
+				(d) => d.year
 			);
-			totalData = Array.from(totalByYear, ([year, averageWage]) => ({ year, averageWage }))
-				.sort((a, b) => a.year - b.year);
+			totalData = Array.from(totalByYear, ([year, averageWage]) => ({ year, averageWage })).sort(
+				(a, b) => a.year - b.year
+			);
 		}
 
 		// Include total data in y-scale domain to ensure total line is visible
-		const allAverageData = [...filteredWageData.map(d => d.averageWage), ...totalData.map(d => d.averageWage)];
-		const yScale = d3.scaleLinear()
+		const allAverageData = [
+			...filteredWageData.map((d) => d.averageWage),
+			...totalData.map((d) => d.averageWage)
+		];
+		const yScale = d3
+			.scaleLinear()
 			.domain(d3.extent(allAverageData) as [number, number])
 			.range([height - margin.top - margin.bottom, 0]);
 
 		// Group data by campus
-		const campusData = d3.group(filteredWageData, d => d.location);
+		const campusData = d3.group(filteredWageData, (d) => d.location);
 
 		// Create line generator
-		const line = d3.line<any>()
-			.x(d => xScale(d.year))
-			.y(d => yScale(d.averageWage))
+		const line = d3
+			.line<any>()
+			.x((d) => xScale(d.year))
+			.y((d) => yScale(d.averageWage))
 			.curve(d3.curveCatmullRom);
 
 		// Draw total line first (in background)
 		if (totalData.length > 1) {
-			const totalLine = g.append('path')
+			const totalLine = g
+				.append('path')
 				.datum(totalData)
 				.attr('fill', 'none')
 				.attr('stroke', '#1f2937')
@@ -591,7 +634,8 @@
 			const campusIndex = campuses.indexOf(campus);
 
 			// Add line
-			const path = g.append('path')
+			const path = g
+				.append('path')
 				.datum(sortedValues)
 				.attr('fill', 'none')
 				.attr('stroke', colorScale(campus))
@@ -615,41 +659,35 @@
 				.enter()
 				.append('circle')
 				.attr('class', `avg-dot-${campus.replace(/\s+/g, '-')}`)
-				.attr('cx', d => xScale(d.year))
-				.attr('cy', d => yScale(d.averageWage))
+				.attr('cx', (d) => xScale(d.year))
+				.attr('cy', (d) => yScale(d.averageWage))
 				.attr('r', 0)
 				.attr('fill', colorScale(campus))
 				.attr('stroke', 'white')
 				.attr('stroke-width', 2)
 				.style('cursor', 'pointer')
-				.on('mouseover', function(event, d) {
+				.on('mouseover', function (event, d) {
 					// Highlight the dot
-					d3.select(this)
-						.transition()
-						.duration(100)
-						.attr('r', 8)
-						.attr('stroke-width', 3);
+					d3.select(this).transition().duration(100).attr('r', 8).attr('stroke-width', 3);
 
 					// Show tooltip
 					tooltip
 						.style('opacity', 1)
-						.html(`
+						.html(
+							`
 							<div style="font-weight: 600; margin-bottom: 4px;">${campus}</div>
 							<div><strong>Year:</strong> ${d.year}</div>
 							<div><strong>Average Wage:</strong> ${formatCurrency(d.averageWage)}</div>
 							<div><strong>Median Wage:</strong> ${formatCurrency(d.medianWage)}</div>
 							<div><strong>Employees:</strong> ${formatNumber(d.employeeCount)}</div>
-						`)
-						.style('left', (event.pageX + 10) + 'px')
-						.style('top', (event.pageY - 10) + 'px');
+						`
+						)
+						.style('left', event.pageX + 10 + 'px')
+						.style('top', event.pageY - 10 + 'px');
 				})
-				.on('mouseout', function() {
+				.on('mouseout', function () {
 					// Reset dot size
-					d3.select(this)
-						.transition()
-						.duration(100)
-						.attr('r', 5)
-						.attr('stroke-width', 2);
+					d3.select(this).transition().duration(100).attr('r', 5).attr('stroke-width', 2);
 
 					// Hide tooltip
 					tooltip.style('opacity', 0);
@@ -666,11 +704,16 @@
 			.attr('transform', `translate(0,${height - margin.top - margin.bottom})`)
 			.call(d3.axisBottom(xScale).tickFormat(d3.format('d')));
 
-		g.append('g')
-			.call(d3.axisLeft(yScale).tickFormat(d => `$${(d / 1000).toFixed(0)}K`));
+		g.append('g').call(d3.axisLeft(yScale).tickFormat((d) => `$${(d / 1000).toFixed(0)}K`));
 
 		// Create external legend
-		createChartLegend(averageWagesLegend, activeCampuses, colorScale, showTotalLines && selectedCampus === 'All Campuses' && totalData.length > 1, 'System Average');
+		createChartLegend(
+			averageWagesLegend,
+			activeCampuses,
+			colorScale,
+			showTotalLines && selectedCampus === 'All Campuses' && totalData.length > 1,
+			'System Average'
+		);
 	}
 
 	function createEmployeeCountChart() {
@@ -683,18 +726,19 @@
 		// Create tooltip
 		const tooltip = createTooltip();
 
-		const svg = d3.select(employeeCountContainer)
+		const svg = d3
+			.select(employeeCountContainer)
 			.append('svg')
 			.attr('width', width)
 			.attr('height', height);
 
-		const g = svg.append('g')
-			.attr('transform', `translate(${margin.left},${margin.top})`);
+		const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
 
-		const activeCampuses = [...new Set(filteredWageData.map(d => d.location))];
-		const years = [...new Set(filteredWageData.map(d => d.year))].sort();
+		const activeCampuses = [...new Set(filteredWageData.map((d) => d.location))];
+		const years = [...new Set(filteredWageData.map((d) => d.year))].sort();
 
-		const xScale = d3.scaleLinear()
+		const xScale = d3
+			.scaleLinear()
 			.domain(d3.extent(years) as [number, number])
 			.range([0, width - margin.left - margin.right]);
 
@@ -704,32 +748,41 @@
 		// Calculate total line (sum of all employees by year) - only if showing all campuses and toggle is on
 		let totalData = [];
 		if (showTotalLines && selectedCampus === 'All Campuses') {
-			const totalByYear = d3.rollup(filteredWageData,
-				v => d3.sum(v, d => d.employeeCount),
-				d => d.year
+			const totalByYear = d3.rollup(
+				filteredWageData,
+				(v) => d3.sum(v, (d) => d.employeeCount),
+				(d) => d.year
 			);
-			totalData = Array.from(totalByYear, ([year, employeeCount]) => ({ year, employeeCount }))
-				.sort((a, b) => a.year - b.year);
+			totalData = Array.from(totalByYear, ([year, employeeCount]) => ({
+				year,
+				employeeCount
+			})).sort((a, b) => a.year - b.year);
 		}
 
 		// Include total data in y-scale domain to ensure total line is visible
-		const allEmployeeData = [...filteredWageData.map(d => d.employeeCount), ...totalData.map(d => d.employeeCount)];
-		const yScale = d3.scaleLinear()
+		const allEmployeeData = [
+			...filteredWageData.map((d) => d.employeeCount),
+			...totalData.map((d) => d.employeeCount)
+		];
+		const yScale = d3
+			.scaleLinear()
 			.domain(d3.extent(allEmployeeData) as [number, number])
 			.range([height - margin.top - margin.bottom, 0]);
 
 		// Group data by campus
-		const campusData = d3.group(filteredWageData, d => d.location);
+		const campusData = d3.group(filteredWageData, (d) => d.location);
 
 		// Create line generator with correct typing
-		const line = d3.line<any>()
-			.x(d => xScale(d.year))
-			.y(d => yScale(d.employeeCount))
+		const line = d3
+			.line<any>()
+			.x((d) => xScale(d.year))
+			.y((d) => yScale(d.employeeCount))
 			.curve(d3.curveCatmullRom);
 
 		// Draw total line first (in background)
 		if (totalData.length > 1) {
-			const totalLine = g.append('path')
+			const totalLine = g
+				.append('path')
 				.datum(totalData)
 				.attr('fill', 'none')
 				.attr('stroke', '#1f2937')
@@ -754,7 +807,8 @@
 			const campusIndex = activeCampuses.indexOf(campus);
 
 			// Add line
-			const path = g.append('path')
+			const path = g
+				.append('path')
 				.datum(sortedValues)
 				.attr('fill', 'none')
 				.attr('stroke', colorScale(campus))
@@ -778,41 +832,35 @@
 				.enter()
 				.append('circle')
 				.attr('class', `emp-dot-${campus.replace(/\s+/g, '-')}`)
-				.attr('cx', d => xScale(d.year))
-				.attr('cy', d => yScale(d.employeeCount))
+				.attr('cx', (d) => xScale(d.year))
+				.attr('cy', (d) => yScale(d.employeeCount))
 				.attr('r', 0)
 				.attr('fill', colorScale(campus))
 				.attr('stroke', 'white')
 				.attr('stroke-width', 2)
 				.style('cursor', 'pointer')
-				.on('mouseover', function(event, d) {
+				.on('mouseover', function (event, d) {
 					// Highlight the dot
-					d3.select(this)
-						.transition()
-						.duration(100)
-						.attr('r', 8)
-						.attr('stroke-width', 3);
+					d3.select(this).transition().duration(100).attr('r', 8).attr('stroke-width', 3);
 
 					// Show tooltip
 					tooltip
 						.style('opacity', 1)
-						.html(`
+						.html(
+							`
 							<div style="font-weight: 600; margin-bottom: 4px;">${campus}</div>
 							<div><strong>Year:</strong> ${d.year}</div>
 							<div><strong>Employee Count:</strong> ${formatNumber(d.employeeCount)}</div>
 							<div><strong>Total Wages:</strong> ${formatCurrency(d.totalWages)}</div>
 							<div><strong>Average Wage:</strong> ${formatCurrency(d.averageWage)}</div>
-						`)
-						.style('left', (event.pageX + 10) + 'px')
-						.style('top', (event.pageY - 10) + 'px');
+						`
+						)
+						.style('left', event.pageX + 10 + 'px')
+						.style('top', event.pageY - 10 + 'px');
 				})
-				.on('mouseout', function() {
+				.on('mouseout', function () {
 					// Reset dot size
-					d3.select(this)
-						.transition()
-						.duration(100)
-						.attr('r', 5)
-						.attr('stroke-width', 2);
+					d3.select(this).transition().duration(100).attr('r', 5).attr('stroke-width', 2);
 
 					// Hide tooltip
 					tooltip.style('opacity', 0);
@@ -829,11 +877,16 @@
 			.attr('transform', `translate(0,${height - margin.top - margin.bottom})`)
 			.call(d3.axisBottom(xScale).tickFormat(d3.format('d')));
 
-		g.append('g')
-			.call(d3.axisLeft(yScale).tickFormat(d => d.toLocaleString()));
+		g.append('g').call(d3.axisLeft(yScale).tickFormat((d) => d.toLocaleString()));
 
 		// Create external legend
-		createChartLegend(employeeCountLegend, activeCampuses, colorScale, showTotalLines && selectedCampus === 'All Campuses' && totalData.length > 1, 'System Total');
+		createChartLegend(
+			employeeCountLegend,
+			activeCampuses,
+			colorScale,
+			showTotalLines && selectedCampus === 'All Campuses' && totalData.length > 1,
+			'System Total'
+		);
 	}
 
 	function createWagePyramidChart() {
@@ -843,27 +896,27 @@
 		const height = 600;
 		const margin = { top: 80, right: 50, bottom: 80, left: 50 };
 
-		const svg = d3.select(wagePyramidContainer)
+		const svg = d3
+			.select(wagePyramidContainer)
 			.append('svg')
 			.attr('width', width)
 			.attr('height', height);
 
-		const g = svg.append('g')
-			.attr('transform', `translate(${width / 2},${margin.top})`);
+		const g = svg.append('g').attr('transform', `translate(${width / 2},${margin.top})`);
 
 		// Use latest year data for pyramid visualization and apply campus filtering
-		let pyramidDataForChart = filteredPyramidData.filter(d => d.year === latestYear);
+		let pyramidDataForChart = filteredPyramidData.filter((d) => d.year === latestYear);
 
 		if (selectedCampus !== 'All Campuses') {
-			pyramidDataForChart = pyramidDataForChart.filter(d => d.location === selectedCampus);
+			pyramidDataForChart = pyramidDataForChart.filter((d) => d.location === selectedCampus);
 		}
 
 		if (pyramidDataForChart.length === 0) return;
 
 		// Aggregate all brackets across filtered campuses for pyramid structure
 		const wageRanges = {};
-		pyramidDataForChart.forEach(campus => {
-			campus.brackets.forEach(bracket => {
+		pyramidDataForChart.forEach((campus) => {
+			campus.brackets.forEach((bracket) => {
 				if (!wageRanges[bracket.range]) {
 					wageRanges[bracket.range] = 0;
 				}
@@ -883,10 +936,10 @@
 		const levelHeight = pyramidHeight / sortedRanges.length;
 
 		// Color gradient from bottom to top
-		const colorScale = d3.scaleSequential()
+		const colorScale = d3
+			.scaleSequential()
 			.domain([0, sortedRanges.length - 1])
 			.interpolator(d3.interpolateViridis);
-
 
 		// Create pyramid levels
 		sortedRanges.forEach(([range, count], index) => {
@@ -895,7 +948,7 @@
 			const levelX = -levelWidth / 2;
 
 			// Create trapezoid for pyramid effect - better proportions
-			const tapering = 0.8 - (index * 0.02); // More gradual tapering
+			const tapering = 0.8 - index * 0.02; // More gradual tapering
 			const points = [
 				[levelX, levelY + levelHeight],
 				[levelX + levelWidth, levelY + levelHeight],
@@ -903,12 +956,12 @@
 				[levelX + levelWidth * (1 - tapering), levelY]
 			];
 
-			const levelGroup = g.append('g')
-				.attr('class', `pyramid-level-${index}`);
+			const levelGroup = g.append('g').attr('class', `pyramid-level-${index}`);
 
 			// Add the pyramid block
-			const block = levelGroup.append('polygon')
-				.attr('points', points.map(p => `${p[0]},${p[1]}`).join(' '))
+			const block = levelGroup
+				.append('polygon')
+				.attr('points', points.map((p) => `${p[0]},${p[1]}`).join(' '))
 				.attr('fill', colorScale(index))
 				.attr('stroke', 'white')
 				.attr('stroke-width', 2)
@@ -924,24 +977,19 @@
 				.attr('opacity', 0.85);
 
 			// Add hover effects
-			block.on('mouseover', function() {
-				d3.select(this)
-					.transition()
-					.duration(200)
-					.attr('opacity', 1)
-					.attr('stroke-width', 3);
-			})
-			.on('mouseout', function() {
-				d3.select(this)
-					.transition()
-					.duration(200)
-					.attr('opacity', 0.85)
-					.attr('stroke-width', 2);
-			});
+			block
+				.on('mouseover', function () {
+					d3.select(this).transition().duration(200).attr('opacity', 1).attr('stroke-width', 3);
+				})
+				.on('mouseout', function () {
+					d3.select(this).transition().duration(200).attr('opacity', 0.85).attr('stroke-width', 2);
+				});
 
 			// Add count labels - prevent overflow
-			if (count > maxCount * 0.03) { // Higher threshold to reduce clutter
-				levelGroup.append('text')
+			if (count > maxCount * 0.03) {
+				// Higher threshold to reduce clutter
+				levelGroup
+					.append('text')
 					.attr('x', 0)
 					.attr('y', levelY + levelHeight / 2)
 					.attr('text-anchor', 'middle')
@@ -959,12 +1007,14 @@
 			}
 
 			// Add wage range labels - only for levels with significant width
-			if (levelWidth > pyramidWidth * 0.1) { // Only show labels for levels wide enough
+			if (levelWidth > pyramidWidth * 0.1) {
+				// Only show labels for levels wide enough
 				const isRightSide = index % 2 === 0;
 				const labelX = isRightSide ? levelWidth / 2 + 15 : -(levelWidth / 2) - 15;
 				const anchor = isRightSide ? 'start' : 'end';
 
-				levelGroup.append('text')
+				levelGroup
+					.append('text')
 					.attr('x', labelX)
 					.attr('y', levelY + levelHeight / 2)
 					.attr('text-anchor', anchor)
@@ -1003,7 +1053,8 @@
 
 		// Add summary statistics at the bottom
 		const totalEmployees = Object.values(wageRanges).reduce((sum, count) => sum + count, 0);
-		svg.append('text')
+		svg
+			.append('text')
 			.attr('x', width / 2)
 			.attr('y', height - 20)
 			.attr('text-anchor', 'middle')
@@ -1016,15 +1067,16 @@
 	function createCampusGrid() {
 		if (!campusGridContainer || !filteredWageData.length) return;
 
-		const campuses = [...new Set(wageData.map(d => d.location))];
+		const campuses = [...new Set(wageData.map((d) => d.location))];
 		const cardWidth = 300;
 		const cardHeight = 200;
 
-		campuses.forEach(campus => {
-			const campusData = wageData.filter(d => d.location === campus);
+		campuses.forEach((campus) => {
+			const campusData = wageData.filter((d) => d.location === campus);
 			const theme = getCampusTheme(campus);
 
-			const card = d3.select(campusGridContainer)
+			const card = d3
+				.select(campusGridContainer)
 				.append('div')
 				.style('width', `${cardWidth}px`)
 				.style('height', `${cardHeight}px`)
@@ -1036,45 +1088,50 @@
 				.style('display', 'inline-block')
 				.style('vertical-align', 'top');
 
-			card.append('h3')
-				.text(theme.name)
-				.style('margin', '0 0 10px 0')
-				.style('font-size', '18px');
+			card.append('h3').text(theme.name).style('margin', '0 0 10px 0').style('font-size', '18px');
 
-			const latestData = campusData.find(d => d.year === latestYear);
+			const latestData = campusData.find((d) => d.year === latestYear);
 			if (latestData) {
-				card.append('p')
-					.html(`
+				card
+					.append('p')
+					.html(
+						`
 						<strong>Employees:</strong> ${latestData.employeeCount.toLocaleString()}<br>
 						<strong>Avg Wage:</strong> $${Math.round(latestData.averageWage).toLocaleString()}<br>
 						<strong>Total Wages:</strong> $${(latestData.totalWages / 1e6).toFixed(1)}M
-					`)
+					`
+					)
 					.style('font-size', '14px')
 					.style('line-height', '1.5');
 			}
 
 			// Add mini chart
-			const svg = card.append('svg')
+			const svg = card
+				.append('svg')
 				.attr('width', cardWidth - 40)
 				.attr('height', 80)
 				.style('margin-top', '10px');
 
 			if (campusData.length > 1) {
-				const years = campusData.map(d => d.year).sort();
-				const xScale = d3.scaleLinear()
+				const years = campusData.map((d) => d.year).sort();
+				const xScale = d3
+					.scaleLinear()
 					.domain(d3.extent(years) as [number, number])
 					.range([0, cardWidth - 40]);
 
-				const yScale = d3.scaleLinear()
-					.domain(d3.extent(campusData, d => d.averageWage) as [number, number])
+				const yScale = d3
+					.scaleLinear()
+					.domain(d3.extent(campusData, (d) => d.averageWage) as [number, number])
 					.range([60, 0]);
 
-				const line = d3.line<AggregatedWageData>()
-					.x(d => xScale(d.year))
-					.y(d => yScale(d.averageWage))
+				const line = d3
+					.line<AggregatedWageData>()
+					.x((d) => xScale(d.year))
+					.y((d) => yScale(d.averageWage))
 					.curve(d3.curveCatmullRom);
 
-				svg.append('path')
+				svg
+					.append('path')
 					.datum(campusData.sort((a, b) => a.year - b.year))
 					.attr('fill', 'none')
 					.attr('stroke', 'rgba(255,255,255,0.8)')
@@ -1087,14 +1144,19 @@
 
 <svelte:head>
 	<title>UC Wage Explorer - Interactive Data Visualization</title>
-	<meta name="description" content="Explore University of California employee wage data with interactive D3.js visualizations" />
+	<meta
+		name="description"
+		content="Explore University of California employee wage data with interactive D3.js visualizations"
+	/>
 </svelte:head>
 
 <!-- Hero Section -->
 <section class="hero" bind:this={heroContainer}>
 	<div class="hero-content">
 		<h1 class="hero-title">Explorer for UC Wages</h1>
-		<p class="hero-subtitle">Interactive visualization of University of California employee compensation data</p>
+		<p class="hero-subtitle">
+			Interactive visualization of University of California employee compensation data
+		</p>
 		<div class="hero-stats">
 			{#if totalEmployees > 0}
 				<div class="stat">

@@ -26,14 +26,15 @@
 	}
 </script>
 
-
 <nav class="navbar">
 	<div class="nav-container">
 		<a href="/" class="logo-link">
 			<div class="logo">
 				<Icon icon="mdi:currency-usd" class="logo-icon" />
-				<span class="logo-text">UC Wages
-				<small class="small-subtitle">by STEM4Palestine</small></span>
+				<span class="logo-text"
+					>UC Wages
+					<small class="small-subtitle">by STEM4Palestine</small></span
+				>
 			</div>
 		</a>
 
@@ -60,11 +61,21 @@
 				<Icon icon="mdi:account-search" class="nav-icon" />
 				Search
 			</a>
-			<a href="/about" class="nav-link" class:active={$page.url.pathname === '/about'} onclick={closeMenu}>
+			<a
+				href="/about"
+				class="nav-link"
+				class:active={$page.url.pathname === '/about'}
+				onclick={closeMenu}
+			>
 				<Icon icon="mdi:information" class="nav-icon" />
 				About
 			</a>
-			<a href="/data" class="nav-link" class:active={$page.url.pathname === '/data'} onclick={closeMenu}>
+			<a
+				href="/data"
+				class="nav-link"
+				class:active={$page.url.pathname === '/data'}
+				onclick={closeMenu}
+			>
 				<Icon icon="mdi:database" class="nav-icon" />
 				Data
 			</a>
@@ -172,8 +183,10 @@
 	</div>
 
 	<div class="footer-bottom">
-		<p>&copy; 2024 STEM4Palestine. Educational purposes only.<br />
-      This website is not affiliated with or authorized by the University of California.</p>
+		<p>
+			&copy; 2024 STEM4Palestine. Educational purposes only.<br />
+			This website is not affiliated with or authorized by the University of California.
+		</p>
 	</div>
 </footer>
 
@@ -229,10 +242,10 @@
 		letter-spacing: -0.01em;
 	}
 
-	 .small-subtitle {
+	.small-subtitle {
 		font-weight: 400;
 		font-size: 0.9rem;
-  	}
+	}
 
 	.nav-links {
 		display: flex;

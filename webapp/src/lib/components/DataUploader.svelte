@@ -26,12 +26,12 @@
 		groupedProgress.clear();
 
 		// Initialize all campuses
-		ucCampuses.forEach(campus => {
+		ucCampuses.forEach((campus) => {
 			groupedProgress.set(campus, []);
 		});
 
 		// Group progress by campus
-		uploadProgress.forEach(progress => {
+		uploadProgress.forEach((progress) => {
 			const campusProgress = groupedProgress.get(progress.location) || [];
 			campusProgress.push(progress);
 			groupedProgress.set(progress.location, campusProgress);
@@ -48,37 +48,45 @@
 
 	function getStatusIcon(status: string): string {
 		switch (status) {
-			case 'completed': return 'mdi:check-circle';
-			case 'processing': return 'mdi:loading';
-			case 'failed': return 'mdi:alert-circle';
-			default: return 'mdi:clock';
+			case 'completed':
+				return 'mdi:check-circle';
+			case 'processing':
+				return 'mdi:loading';
+			case 'failed':
+				return 'mdi:alert-circle';
+			default:
+				return 'mdi:clock';
 		}
 	}
 
 	function getStatusColor(status: string): string {
 		switch (status) {
-			case 'completed': return 'var(--success)';
-			case 'processing': return 'var(--founder)';
-			case 'failed': return 'var(--error)';
-			default: return 'var(--text-secondary)';
+			case 'completed':
+				return 'var(--success)';
+			case 'processing':
+				return 'var(--founder)';
+			case 'failed':
+				return 'var(--error)';
+			default:
+				return 'var(--text-secondary)';
 		}
 	}
 
 	function getCampusTheme(campus: string): { primary: string; secondary: string } {
 		// Campus-specific color themes
 		const themes: Record<string, { primary: string; secondary: string }> = {
-			'Berkeley': { primary: '#003262', secondary: '#FDB515' },
+			Berkeley: { primary: '#003262', secondary: '#FDB515' },
 			'Los Angeles': { primary: '#2774AE', secondary: '#FFD100' },
 			'San Diego': { primary: '#182B49', secondary: '#C69214' },
-			'Davis': { primary: '#002855', secondary: '#FFBF00' },
-			'Irvine': { primary: '#0064A4', secondary: '#FFD200' },
+			Davis: { primary: '#002855', secondary: '#FFBF00' },
+			Irvine: { primary: '#0064A4', secondary: '#FFD200' },
 			'Santa Barbara': { primary: '#003660', secondary: '#FEBC11' },
 			'Santa Cruz': { primary: '#003C6C', secondary: '#FDC700' },
-			'Riverside': { primary: '#003DA5', secondary: '#FFB81C' },
-			'Merced': { primary: '#002856', secondary: '#F1B82D' },
+			Riverside: { primary: '#003DA5', secondary: '#FFB81C' },
+			Merced: { primary: '#002856', secondary: '#F1B82D' },
 			'San Francisco': { primary: '#052049', secondary: '#FFC72C' },
-			'UCOP': { primary: '#003B5C', secondary: '#F7931E' },
-			'ASUCLA': { primary: '#2774AE', secondary: '#FFD100' },
+			UCOP: { primary: '#003B5C', secondary: '#F7931E' },
+			ASUCLA: { primary: '#2774AE', secondary: '#FFD100' },
 			'UC SF Law': { primary: '#052049', secondary: '#FFC72C' }
 		};
 
@@ -112,11 +120,15 @@
 		<div class="campus-grid">
 			{#each Array.from(groupedProgress.entries()) as [campus, progresses]}
 				{@const theme = getCampusTheme(campus)}
-				<div class="campus-card" style="--campus-primary: {theme.primary}; --campus-secondary: {theme.secondary};">
+				<div
+					class="campus-card"
+					style="--campus-primary: {theme.primary}; --campus-secondary: {theme.secondary};"
+				>
 					<div class="campus-header">
 						<h3>{campus}</h3>
 						<span class="record-count">
-							{progresses.length} {progresses.length === 1 ? 'year' : 'years'}
+							{progresses.length}
+							{progresses.length === 1 ? 'year' : 'years'}
 						</span>
 					</div>
 
@@ -156,7 +168,8 @@
 											<div class="progress-bar">
 												<div
 													class="progress-fill"
-													style="width: {((progress.uploadedRecords || 0) / progress.totalRecords) * 100}%"
+													style="width: {((progress.uploadedRecords || 0) / progress.totalRecords) *
+														100}%"
 												></div>
 											</div>
 											<span class="progress-text">
@@ -235,7 +248,9 @@
 		overflow: hidden;
 		box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
 		border: 1px solid var(--border);
-		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		transition:
+			transform 0.3s ease,
+			box-shadow 0.3s ease;
 	}
 
 	.campus-card:hover {

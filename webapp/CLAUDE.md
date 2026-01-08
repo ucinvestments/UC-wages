@@ -9,6 +9,7 @@ UC Wages Webapp - A SvelteKit web application for visualizing and analyzing Univ
 ## Architecture
 
 ### Tech Stack
+
 - **Frontend**: SvelteKit 2 with Svelte 5, TypeScript
 - **Styling**: TailwindCSS 4 with custom components
 - **Database**: PostgreSQL with Drizzle ORM
@@ -16,6 +17,7 @@ UC Wages Webapp - A SvelteKit web application for visualizing and analyzing Univ
 - **Build Tool**: Vite 7
 
 ### Project Structure
+
 ```
 src/
 ├── app.html                 # Main HTML template
@@ -36,6 +38,7 @@ src/
 ```
 
 ### Database Setup
+
 - Uses Neon serverless PostgreSQL
 - Configured with Drizzle ORM for type-safe database operations
 - Schema defined in `src/lib/server/db/schema.ts`
@@ -43,6 +46,7 @@ src/
 - Environment variable `DATABASE_URL` required for database connection
 
 ### API Routes
+
 - `GET/POST /api/wages` - Query and upload wage data
 - `GET/POST /api/upload` - File upload and progress tracking
 - Supports aggregated data queries for visualization
@@ -51,6 +55,7 @@ src/
 ## Commands
 
 ### Development
+
 ```bash
 npm run dev                 # Start development server
 npm run dev -- --open      # Start dev server and open browser
@@ -59,6 +64,7 @@ npm run preview            # Preview production build
 ```
 
 ### Code Quality
+
 ```bash
 npm run check              # Run svelte-check for TypeScript validation
 npm run check:watch        # Run svelte-check in watch mode
@@ -67,6 +73,7 @@ npm run lint               # Check code formatting with Prettier
 ```
 
 ### Database Operations
+
 ```bash
 npm run db:generate        # Generate database migrations
 npm run db:push            # Push schema changes to database
@@ -77,6 +84,7 @@ npm run db:studio          # Open Drizzle Studio for database management
 ## Environment Configuration
 
 Required environment variables (see `.env.example`):
+
 - `DATABASE_URL`: PostgreSQL connection string for Neon database
 
 ## Key Development Notes

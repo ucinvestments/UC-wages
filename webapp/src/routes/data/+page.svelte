@@ -5,15 +5,16 @@
 
 <svelte:head>
 	<title>Data Overview - UC Wage Explorer</title>
-	<meta name="description" content="View the status of UC wage data uploads and available datasets" />
+	<meta
+		name="description"
+		content="View the status of UC wage data uploads and available datasets"
+	/>
 </svelte:head>
 
 <div class="page-container">
 	<section class="hero-section">
 		<h1 class="page-title">Data Overview</h1>
-		<p class="hero-subtitle">
-			Comprehensive wage data from all University of California campuses
-		</p>
+		<p class="hero-subtitle">Comprehensive wage data from all University of California campuses</p>
 	</section>
 
 	<div class="data-summary">
@@ -62,8 +63,8 @@
 				<Icon icon="mdi:source-branch" class="info-icon" />
 				<h3>Data Source</h3>
 				<p>
-					All data is sourced directly from the UC Annual Wage website, which publishes
-					employee compensation information as mandated by California state law.
+					All data is sourced directly from the UC Annual Wage website, which publishes employee
+					compensation information as mandated by California state law.
 				</p>
 			</div>
 
@@ -85,8 +86,8 @@
 				<Icon icon="mdi:refresh" class="info-icon" />
 				<h3>Update Schedule</h3>
 				<p>
-					Data is updated annually when new information is released by the UC system,
-					typically in the first quarter of each year for the previous year's data.
+					Data is updated annually when new information is released by the UC system, typically in
+					the first quarter of each year for the previous year's data.
 				</p>
 			</div>
 
@@ -94,8 +95,8 @@
 				<Icon icon="mdi:shield-check" class="info-icon" />
 				<h3>Data Privacy</h3>
 				<p>
-					All displayed data is publicly available. Names may be redacted for certain
-					employees as per UC's privacy policies and state regulations.
+					All displayed data is publicly available. Names may be redacted for certain employees as
+					per UC's privacy policies and state regulations.
 				</p>
 			</div>
 		</div>
@@ -107,10 +108,15 @@
 			<div class="download-content">
 				<h3>Access Raw Data</h3>
 				<p>
-					The complete dataset is available in our GitHub repository. You can download
-					individual campus data files or clone the entire repository for analysis.
+					The complete dataset is available in our GitHub repository. You can download individual
+					campus data files or clone the entire repository for analysis.
 				</p>
-				<a href="https://github.com/ucinvestments/UC-wages/tree/main/data" target="_blank" rel="noopener noreferrer" class="download-button">
+				<a
+					href="https://github.com/ucinvestments/UC-wages/tree/main/data"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="download-button"
+				>
 					<Icon icon="mdi:github" />
 					View on GitHub
 				</a>
@@ -140,7 +146,7 @@
 	}
 
 	.hero-section::before {
-		content: "";
+		content: '';
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -150,7 +156,7 @@
 	}
 
 	.page-title {
-		font-family: "Space Grotesk", sans-serif;
+		font-family: 'Space Grotesk', sans-serif;
 		font-size: 2.25rem;
 		font-weight: 700;
 		color: white;
@@ -188,7 +194,9 @@
 		display: flex;
 		align-items: center;
 		gap: 1.5rem;
-		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		transition:
+			transform 0.3s ease,
+			box-shadow 0.3s ease;
 	}
 
 	.summary-card:hover {
@@ -246,7 +254,9 @@
 		padding: 2rem;
 		box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
 		border: 1px solid var(--border);
-		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		transition:
+			transform 0.3s ease,
+			box-shadow 0.3s ease;
 	}
 
 	.info-card:hover {
@@ -287,7 +297,7 @@
 	}
 
 	.info-card li::before {
-		content: "•";
+		content: '•';
 		position: absolute;
 		left: 0;
 		color: var(--founder);

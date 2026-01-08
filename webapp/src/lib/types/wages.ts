@@ -72,4 +72,4 @@ export const ucCampuses = [
 	'UCOP'
 ] as const;
 
-export type UCCampus = typeof ucCampuses[number];
+export type UCCampus = (typeof ucCampuses)[number];
