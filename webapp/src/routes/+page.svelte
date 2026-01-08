@@ -1093,7 +1093,7 @@
 <!-- Hero Section -->
 <section class="hero" bind:this={heroContainer}>
 	<div class="hero-content">
-		<h1 class="hero-title">UC Wage Explorer</h1>
+		<h1 class="hero-title">Explorer for UC Wages</h1>
 		<p class="hero-subtitle">Interactive visualization of University of California employee compensation data</p>
 		<div class="hero-stats">
 			{#if totalEmployees > 0}

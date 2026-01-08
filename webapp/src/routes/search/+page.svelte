@@ -117,8 +117,8 @@
 <div class="search-page">
 	<div class="container">
 		<div class="page-header">
-			<h1>Search UC Employees</h1>
-			<p>Search through University of California employee wage records</p>
+			<h1>Search Data of UC Employees</h1>
+			<p>Search through employee wage records we scraped through University of California's publicly accessible wage database. </p>
 		</div>
 
 		<!-- Search Form -->

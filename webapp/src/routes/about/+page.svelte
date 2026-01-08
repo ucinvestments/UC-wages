@@ -12,7 +12,7 @@
 
 <div class="page-container">
 	<section class="hero-section">
-		<h1 class="page-title">About UC Wage Explorer</h1>
+		<h1 class="page-title">About STEM4Pal's UC Wage Explorer</h1>
 		<p class="hero-subtitle">
 			Promoting transparency and accountability through open access to University of California
 			compensation data
@@ -27,7 +27,7 @@
 				</div>
 				<h2>Our Mission</h2>
 				<p>
-					The UC Wage Explorer provides accessible, interactive visualizations of University of
+					STEM4Palestine's UC Wage Explorer provides accessible, interactive visualizations of University of
 					California employee compensation data. We believe that transparency in public employee
 					wages fosters accountability and enables informed discussions about resource allocation in
 					higher education.
@@ -153,7 +153,7 @@
 		<h2 class="section-title">Support This Project</h2>
 		<div class="support-card">
 			<p>
-				UC Wage Explorer is a self-funded project. If you find this tool valuable, please consider
+				STEM4Palestine's UC Wage Explorer is a self-funded project. If you find this tool valuable, please consider
 				supporting its continued development and hosting costs.
 			</p>
 			<div class="support-buttons">
