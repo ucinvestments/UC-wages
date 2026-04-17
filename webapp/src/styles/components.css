@@ -134,7 +134,9 @@
 
 .input-field:focus {
   border-color: var(--founder);
-  box-shadow: 0 0 0 3px rgba(59, 126, 161, 0.1), var(--shadow-md);
+  box-shadow:
+    0 0 0 3px rgba(59, 126, 161, 0.1),
+    var(--shadow-md);
   transform: translateY(-1px);
 }
 
@@ -289,24 +291,62 @@
 }
 
 /* Utility Helpers */
-.text-primary { color: var(--text-primary); }
-.text-secondary { color: var(--text-secondary); }
-.text-white { color: white; }
-.bg-primary { background-color: var(--pri); }
-.bg-secondary { background-color: var(--bg-secondary); }
-.bg-white { background-color: white; }
+.text-primary {
+  color: var(--text-primary);
+}
+.text-secondary {
+  color: var(--text-secondary);
+}
+.text-white {
+  color: white;
+}
+.bg-primary {
+  background-color: var(--pri);
+}
+.bg-secondary {
+  background-color: var(--bg-secondary);
+}
+.bg-white {
+  background-color: white;
+}
 
-.rounded-sm { border-radius: var(--radius-sm); }
-.rounded-md { border-radius: var(--radius-md); }
-.rounded-lg { border-radius: var(--radius-lg); }
-.rounded-xl { border-radius: var(--radius-xl); }
-.rounded-2xl { border-radius: var(--radius-2xl); }
-.rounded-full { border-radius: var(--radius-full); }
+.rounded-sm {
+  border-radius: var(--radius-sm);
+}
+.rounded-md {
+  border-radius: var(--radius-md);
+}
+.rounded-lg {
+  border-radius: var(--radius-lg);
+}
+.rounded-xl {
+  border-radius: var(--radius-xl);
+}
+.rounded-2xl {
+  border-radius: var(--radius-2xl);
+}
+.rounded-full {
+  border-radius: var(--radius-full);
+}
 
-.shadow-sm { box-shadow: var(--shadow-sm); }
-.shadow-md { box-shadow: var(--shadow-md); }
-.shadow-lg { box-shadow: var(--shadow-lg); }
+.shadow-sm {
+  box-shadow: var(--shadow-sm);
+}
+.shadow-md {
+  box-shadow: var(--shadow-md);
+}
+.shadow-lg {
+  box-shadow: var(--shadow-lg);
+}
 
-.transition-all { transition: all 0.3s ease; }
-.transition-transform { transition: transform 0.3s ease; }
-.transition-colors { transition: color 0.3s ease, background-color 0.3s ease; }
+.transition-all {
+  transition: all 0.3s ease;
+}
+.transition-transform {
+  transition: transform 0.3s ease;
+}
+.transition-colors {
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease;
+}

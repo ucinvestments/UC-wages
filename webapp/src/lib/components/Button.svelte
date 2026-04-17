@@ -26,12 +26,7 @@
     {/if}
   </a>
 {:else}
-  <button
-    class="button {variant}"
-    class:disabled
-    on:click={onClick}
-    {disabled}
-  >
+  <button class="button {variant}" class:disabled on:click={onClick} {disabled}>
     {#if icon}
       <Icon {icon} class="button-icon" />
     {/if}
