@@ -10,6 +10,7 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"strconv"
 	"strings"
 	"sync"
 	"sync/atomic"
@@ -18,7 +19,7 @@ import (
 
 const (
 	apiURL      = "https://ucannualwage.ucop.edu/wage/search"
-	defaultRows = 100
+	defaultRows = 60
 	timeout     = 30 * time.Second
 )
 
@@ -29,7 +30,7 @@ var (
 		"San Francisco", "Santa Barbara", "Santa Cruz", "UCOP",
 	}
 	years = []int{
-		2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017,
+		2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017,
 		2016, 2015, 2014, 2013, 2012, 2011, 2010,
 	}
 )
@@ -43,19 +44,19 @@ type Config struct {
 }
 
 type Request struct {
-	Op       string `json:"op"`
-	Page     int    `json:"page"`
-	Rows     int    `json:"rows"`
-	Sidx     string `json:"sidx"`
-	Sord     string `json:"sord"`
-	Count    int    `json:"count"`
-	Year     string `json:"year"`
+	Op        string `json:"op"`
+	Page      int    `json:"page"`
+	Rows      int    `json:"rows"`
+	Sidx      string `json:"sidx"`
+	Sord      string `json:"sord"`
+	Count     int    `json:"count"`
+	Year      string `json:"year"`
 	Firstname string `json:"firstname"`
-	Location string `json:"location"`
-	Lastname string `json:"lastname"`
-	Title    string `json:"title"`
-	StartSal string `json:"startSal"`
-	EndSal   string `json:"endSal"`
+	Location  string `json:"location"`
+	Lastname  string `json:"lastname"`
+	Title     string `json:"title"`
+	StartSal  string `json:"startSal"`
+	EndSal    string `json:"endSal"`
 }
 
 type Response struct {
@@ -88,8 +89,8 @@ type Scraper struct {
 
 func NewScraper(cfg Config) *Scraper {
 	return &Scraper{
-		client:  &http.Client{Timeout: timeout},
-		config:  cfg,
+		client: &http.Client{Timeout: timeout},
+		config: cfg,
 	}
 }
 
@@ -131,29 +132,45 @@ func (s *Scraper) fetchPage(location string, year int, page int) (*Response, err
 
 func (s *Scraper) fetchAll(location string, year int) ([]map[string]interface{}, error) {
 	var records []map[string]interface{}
-	page := 1
+	expectedRecords := 0
 
-	for {
-		resp, err := s.fetchPage(location, year, page)
+	for page := 1; ; page++ {
+		resp, err := s.fetchPageWithRetry(location, year, page)
 		if err != nil {
 			return nil, err
 		}
-
-		if len(resp.Rows) == 0 {
-			break
+		if page == 1 {
+			expectedRecords = resp.Records
+		}
+		if resp.Records != expectedRecords || (expectedRecords > 0 && resp.Page != page) {
+			return nil, fmt.Errorf("inconsistent source response for page %d", page)
 		}
 
-		records = append(records, resp.Rows...)
-
-		if len(records) >= resp.Records {
-			break
+		for _, row := range resp.Rows {
+			if fmt.Sprint(row["id"]) != strconv.Itoa(len(records)+1) {
+				return nil, fmt.Errorf("unexpected record number on page %d", page)
+			}
+			records = append(records, row)
+		}
+		if len(records) == expectedRecords {
+			return records, nil
+		}
+		if len(resp.Rows) == 0 || len(records) > expectedRecords || page >= resp.Total {
+			return nil, fmt.Errorf("received %d of %d records", len(records), expectedRecords)
 		}
 
-		page++
 		time.Sleep(s.config.Delay)
 	}
+}
 
-	return records, nil
+func (s *Scraper) fetchPageWithRetry(location string, year, page int) (*Response, error) {
+	for attempt := 0; ; attempt++ {
+		response, err := s.fetchPage(location, year, page)
+		if err == nil || attempt == 3 {
+			return response, err
+		}
+		time.Sleep(time.Second << attempt)
+	}
 }
 
 func (s *Scraper) save(location string, year int, records []map[string]interface{}) error {
@@ -268,11 +285,11 @@ func parseList(s string, parser func(string) interface{}) []interface{} {
 
 func main() {
 	var (
-		workers   = flag.Int("workers", 5, "concurrent workers")
-		delay     = flag.Float64("delay", 1.0, "delay between requests (seconds)")
-		dataDir   = flag.String("data", "../data", "data directory")
-		locList   = flag.String("locations", "", "locations (comma-separated)")
-		yearList  = flag.String("years", "", "years (comma-separated)")
+		workers  = flag.Int("workers", 5, "concurrent workers")
+		delay    = flag.Float64("delay", 1.0, "delay between requests (seconds)")
+		dataDir  = flag.String("data", "../data", "data directory")
+		locList  = flag.String("locations", "", "locations (comma-separated)")
+		yearList = flag.String("years", "", "years (comma-separated)")
 	)
 	flag.Parse()
 
@@ -295,7 +312,7 @@ func main() {
 	if *yearList != "" {
 		yrs := parseList(*yearList, func(s string) interface{} {
 			var y int
-			if _, err := fmt.Sscanf(s, "%d", &y); err == nil && y >= 2010 && y <= 2024 {
+			if _, err := fmt.Sscanf(s, "%d", &y); err == nil && y >= 2010 && y <= years[0] {
 				return y
 			}
 			return nil

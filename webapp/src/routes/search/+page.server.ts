@@ -58,7 +58,7 @@ export const load: PageServerLoad = async ({ url }) => {
 	const name = searchParams.get('name') || '';
 	const job = searchParams.get('job') || '';
 	const location = searchParams.get('location') || '';
-	const year = searchParams.get('year')
+	let year = searchParams.get('year')
 		? parseInt(searchParams.get('year')!)
 		: hasFilterParam
 			? null
@@ -69,9 +69,12 @@ export const load: PageServerLoad = async ({ url }) => {
 	const activeSort = requestedSort && Object.hasOwn(SORT_COLUMNS, requestedSort) ? requestedSort : null;
 	const sortColumn = activeSort ?? DEFAULT_SORT_COLUMN;
 	const sortDirection = activeSort ? requestedDirection : DEFAULT_SORT_DIRECTION;
-	const submittedFilters = { name, job, location, year, sort: sortColumn, direction: sortDirection };
 
 	try {
+		const filterQuery = getFilters();
+		if (!hasFilterParam) {
+			year = (await filterQuery).years[0] ?? archiveCoverage.lastYear;
+		}
 		const orderExpression = SORT_COLUMNS[sortColumn];
 		const orderByClause = sortDirection === 'asc' ? asc(orderExpression) : desc(orderExpression);
 		const offset = (page - 1) * ITEMS_PER_PAGE;
@@ -118,7 +121,7 @@ export const load: PageServerLoad = async ({ url }) => {
 				.orderBy(orderByClause)
 				.limit(ITEMS_PER_PAGE)
 				.offset(offset),
-			getFilters()
+			filterQuery
 		]);
 
 		const totalItems = countResult[0]?.count ?? 0;
@@ -140,7 +143,7 @@ export const load: PageServerLoad = async ({ url }) => {
 				hasNext: page < totalPages,
 				hasPrev: page > 1
 			},
-			searchParams: submittedFilters,
+			searchParams: { name, job, location, year, sort: sortColumn, direction: sortDirection },
 			searchFailed: false,
 			filters
 		};
@@ -157,7 +160,7 @@ export const load: PageServerLoad = async ({ url }) => {
 				hasNext: false,
 				hasPrev: false
 			},
-			searchParams: submittedFilters,
+			searchParams: { name, job, location, year, sort: sortColumn, direction: sortDirection },
 			searchFailed: true,
 			filters: filterCache?.data ?? { locations: [], years: [] }
 		};
