@@ -34,6 +34,7 @@
 
 	// Inflation data (using US CPI, base year 2024)
 	const inflationData = {
+		2025: 313.689 / 321.943, // BLS annual U.S. CPI-U averages for 2024 and 2025
 		2024: 1.0,      // Base year
 		2023: 1.041,    // 4.1% inflation from 2023 to 2024
 		2022: 1.122,    // 12.2% cumulative inflation from 2022 to 2024
@@ -155,8 +156,10 @@
 	}
 
 	// Tooltip system for chart interactions
+	const chartTooltips: d3.Selection<HTMLDivElement, unknown, HTMLElement, any>[] = [];
+
 	function createTooltip() {
-		return d3.select('body')
+		const tooltip = d3.select('body')
 			.append('div')
 			.style('position', 'absolute')
 			.style('padding', '12px')
@@ -171,6 +174,12 @@
 			.style('opacity', 0)
 			.style('z-index', '1000')
 			.style('transition', 'opacity 0.2s ease');
+		chartTooltips.push(tooltip);
+		return tooltip;
+	}
+
+	function clearChartTooltips() {
+		for (const tooltip of chartTooltips.splice(0)) tooltip.remove();
 	}
 
 	function formatCurrency(value: number): string {
@@ -188,7 +197,25 @@
 
 	onMount(() => {
 		createHeroVisualization();
-		updateCharts(filteredWageData, systemRows, pyramidRows);
+		const widths = new Map<Element, number>();
+		const observer = new ResizeObserver(entries => {
+			let resized = false;
+			for (const { target, contentRect } of entries) {
+				const width = Math.round(contentRect.width);
+				if (widths.get(target) !== width) {
+					widths.set(target, width);
+					resized = true;
+				}
+			}
+			if (resized) updateCharts(filteredWageData, systemRows, pyramidRows);
+		});
+		for (const chart of [totalWagesContainer, averageWagesContainer, employeeCountContainer, wagePyramidContainer]) {
+			observer.observe(chart);
+		}
+		return () => {
+			observer.disconnect();
+			clearChartTooltips();
+		};
 	});
 
 	// Reactive updates when filters change
@@ -297,6 +324,7 @@
 	}
 
 	function updateCharts(wageRows: typeof wageData, totals: TrendRow[], distribution: [string, number][]) {
+		clearChartTooltips();
 		// Clear existing charts and legends
 		if (totalWagesContainer) {
 			d3.select(totalWagesContainer).selectAll('*').remove();
@@ -400,7 +428,7 @@
 
 		const width = totalWagesContainer.clientWidth;
 		const height = 400;
-		const margin = { top: 60, right: 50, bottom: 60, left: 100 };
+		const margin = { top: 60, right: width < 500 ? 18 : 50, bottom: 60, left: width < 500 ? 64 : 100 };
 
 		// Create tooltip
 		const tooltip = createTooltip();
@@ -538,7 +566,7 @@
 		// Add axes
 		g.append('g')
 			.attr('transform', `translate(0,${height - margin.top - margin.bottom})`)
-			.call(d3.axisBottom(xScale).tickFormat(d3.format('d')));
+			.call(d3.axisBottom(xScale).ticks(width < 500 ? 4 : 8).tickFormat(d3.format('d')));
 
 		g.append('g')
 			.call(d3.axisLeft<number>(yScale).tickFormat(d => `$${(d / 1e9).toFixed(1)}B`));
@@ -552,7 +580,7 @@
 
 		const width = averageWagesContainer.clientWidth;
 		const height = 400;
-		const margin = { top: 60, right: 50, bottom: 60, left: 100 };
+		const margin = { top: 60, right: width < 500 ? 18 : 50, bottom: 60, left: width < 500 ? 64 : 100 };
 
 		// Create tooltip
 		const tooltip = createTooltip();
@@ -690,7 +718,7 @@
 		// Add axes
 		g.append('g')
 			.attr('transform', `translate(0,${height - margin.top - margin.bottom})`)
-			.call(d3.axisBottom(xScale).tickFormat(d3.format('d')));
+			.call(d3.axisBottom(xScale).ticks(width < 500 ? 4 : 8).tickFormat(d3.format('d')));
 
 		g.append('g')
 			.call(d3.axisLeft<number>(yScale).tickFormat(d => `$${(d / 1000).toFixed(0)}K`));
@@ -704,7 +732,7 @@
 
 		const width = employeeCountContainer.clientWidth;
 		const height = 400;
-		const margin = { top: 80, right: 50, bottom: 60, left: 100 };
+		const margin = { top: 80, right: width < 500 ? 18 : 50, bottom: 60, left: width < 500 ? 64 : 100 };
 
 		// Create tooltip
 		const tooltip = createTooltip();
@@ -842,7 +870,7 @@
 		// Add axes
 		g.append('g')
 			.attr('transform', `translate(0,${height - margin.top - margin.bottom})`)
-			.call(d3.axisBottom(xScale).tickFormat(d3.format('d')));
+			.call(d3.axisBottom(xScale).ticks(width < 500 ? 4 : 8).tickFormat(d3.format('d')));
 
 		g.append('g')
 			.call(d3.axisLeft<number>(yScale).tickFormat(d => d.toLocaleString()));
@@ -972,6 +1000,7 @@
 
 		// Add floating animation for the entire pyramid
 		function floatAnimation() {
+			if (!svg.node()?.isConnected) return;
 			g.selectAll('polygon')
 				.transition()
 				.duration(4000)
@@ -1016,11 +1045,11 @@
 			const card = d3.select(campusGridContainer)
 				.append('div')
 				.style('width', `${cardWidth}px`)
+				.style('max-width', '100%')
 				.style('height', `${cardHeight}px`)
 				.style('background', theme.gradient)
 				.style('border-radius', '16px')
 				.style('padding', '20px')
-				.style('margin', '10px')
 				.style('color', 'white')
 				.style('display', 'inline-block')
 				.style('vertical-align', 'top');
@@ -1044,8 +1073,9 @@
 
 			// Add mini chart
 			const svg = card.append('svg')
-				.attr('width', cardWidth - 40)
+				.attr('width', '100%')
 				.attr('height', 80)
+				.attr('viewBox', `0 0 ${cardWidth - 40} 80`)
 				.style('margin-top', '10px');
 
 			if (campusData.length > 1) {
@@ -1283,9 +1313,7 @@
 		background: white;
 		border-radius: 16px;
 		box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-		padding: 2rem;
 		margin: 2rem 0;
-		min-height: 450px;
 	}
 
 	.campus-grid {
@@ -1298,6 +1326,7 @@
 
 	.chart-controls {
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: center;
 		align-items: center;
 		gap: 3rem;
@@ -1366,6 +1395,24 @@
 	}
 
 	@media (max-width: 768px) {
+		.container {
+			padding-inline: 1rem;
+		}
+
+		.chart-controls {
+			gap: 1rem;
+			padding: 1rem;
+		}
+
+		.control-group {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+
+		.control-select {
+			max-width: 100%;
+		}
+
 		.hero-title {
 			font-size: 2.5rem;
 		}
