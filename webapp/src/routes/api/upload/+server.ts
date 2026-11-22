@@ -144,18 +144,10 @@ export const GET: RequestHandler = async ({ url }) => {
 		const location = url.searchParams.get('location');
 		const year = url.searchParams.get('year');
 
-		let query = db.select().from(uploadProgress);
-
-		if (location && year) {
-			query = query.where(and(
-				eq(uploadProgress.location, location),
-				eq(uploadProgress.year, parseInt(year))
-			));
-		} else if (location) {
-			query = query.where(eq(uploadProgress.location, location));
-		}
-
-		const result = await query;
+		const where = location
+			? and(eq(uploadProgress.location, location), year ? eq(uploadProgress.year, parseInt(year)) : undefined)
+			: undefined;
+		const result = await db.select().from(uploadProgress).where(where);
 		return json(result);
 
 	} catch (error) {

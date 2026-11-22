@@ -137,7 +137,7 @@
 				.nice();
 
 		// Enhanced color scale with better colors
-		const colorScale = d3.scaleOrdinal()
+		const colorScale = d3.scaleOrdinal<string, string>()
 			.domain(campuses)
 			.range([
 				'#2563eb', '#dc2626', '#059669', '#d97706', '#7c3aed',
@@ -158,7 +158,7 @@
 		const transitionDuration = metricAnimation ? 800 : initialAnimation ? 1200 : 300;
 
 		// X Axis
-		const xAxis = g.selectAll('.x-axis').data([null]);
+		const xAxis = g.selectAll<SVGGElement, null>('.x-axis').data([null]);
 		const xAxisEnter = xAxis.enter()
 			.append('g')
 			.attr('class', 'x-axis chart-element')
@@ -176,7 +176,7 @@
 			.attr('stroke-dasharray', '2,2');
 
 		// Y Axis
-		const yAxis = g.selectAll('.y-axis').data([null]);
+		const yAxis = g.selectAll<SVGGElement, null>('.y-axis').data([null]);
 		const yAxisEnter = yAxis.enter()
 			.append('g')
 			.attr('class', 'y-axis chart-element');
@@ -202,7 +202,7 @@
 		yAxisEnter.merge(yAxis)
 			.transition()
 			.duration(transitionDuration)
-			.call(d3.axisLeft(yScale)
+			.call(d3.axisLeft<number>(yScale)
 				.tickFormat(yAxisFormat)
 				.tickSize(-width)
 				.tickPadding(10))
@@ -220,7 +220,7 @@
 			.style('stroke', '#d1d5db');
 
 		// Draw lines with animation
-		const lines = g.selectAll('.line-path')
+		const lines = g.selectAll<SVGPathElement, [string, AggregatedWageData[]]>('.line-path')
 			.data([...campusData.entries()], d => d[0]);
 
 		lines.exit()
@@ -280,7 +280,7 @@
 			values.map(d => ({ ...d, campus }))
 		);
 
-		const dots = g.selectAll('.data-dot')
+		const dots = g.selectAll<SVGCircleElement, AggregatedWageData & { campus: string }>('.data-dot')
 			.data(allPoints, d => `${d.campus}-${d.year}`);
 
 		dots.exit()
@@ -304,17 +304,14 @@
 			.attr('stroke-width', 2)
 			.style('cursor', 'pointer')
 			.transition()
-			.delay(initialAnimation ? (d, i) => {
-				const campusIndex = campuses.indexOf(d.campus);
-				return campusIndex * 300 + 1000; // Appear after lines start drawing
-			} : 0)
+			.delay(d => initialAnimation ? campuses.indexOf(d.campus) * 300 + 1000 : 0)
 			.duration(initialAnimation ? 1200 : transitionDuration)
 			.ease(d3.easeCubicOut)
 			.attr('r', 5)
 			.style('opacity', 0.95);
 
 		// Add hover effects
-		g.selectAll('.data-dot')
+		g.selectAll<SVGCircleElement, AggregatedWageData & { campus: string }>('.data-dot')
 			.on('mouseover', function(event, d) {
 				d3.select(this)
 					.transition()
@@ -358,7 +355,7 @@
 			});
 
 		// Update axis labels
-		const yLabel = g.selectAll('.y-label').data([getYAxisLabel(metric)]);
+		const yLabel = g.selectAll<SVGTextElement, string>('.y-label').data([getYAxisLabel(metric)]);
 		const yLabelEnter = yLabel.enter()
 			.append('text')
 			.attr('class', 'y-label chart-element')
@@ -374,13 +371,13 @@
 			.transition()
 			.duration(transitionDuration)
 			.tween('text', function(d) {
-				const i = d3.interpolateString(this.textContent, d);
-				return function(t) {
+				const i = d3.interpolateString(this.textContent ?? '', d);
+				return t => {
 					this.textContent = i(t);
 				};
 			});
 
-		const xLabel = g.selectAll('.x-label').data(['Year']);
+		const xLabel = g.selectAll<SVGTextElement, string>('.x-label').data(['Year']);
 		const xLabelEnter = xLabel.enter()
 			.append('text')
 			.attr('class', 'x-label chart-element')
@@ -393,14 +390,14 @@
 		xLabelEnter.merge(xLabel).text('Year');
 
 		// Enhanced legend
-		const legend = svg.selectAll('.legend').data([null]);
+		const legend = svg.selectAll<SVGGElement, null>('.legend').data([null]);
 		const legendEnter = legend.enter()
 			.append('g')
 			.attr('class', 'legend')
 			.attr('transform', `translate(${width + margin.left + 20}, ${margin.top + 20})`);
 
 		const legendItems = legendEnter.merge(legend)
-			.selectAll('.legend-item')
+			.selectAll<SVGGElement, string>('.legend-item')
 			.data([...selectedCampuses]);
 
 		legendItems.exit().remove();

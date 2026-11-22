@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import ChartDataTable from '$lib/components/ChartDataTable.svelte';
 	import * as d3 from 'd3';
 	import { campusThemes, getCampusTheme } from '$lib/utils/campusColors';
 	import type { PageData } from './$types';
@@ -7,7 +8,7 @@
 
 	export let data: PageData;
 
-	let heroContainer: HTMLDivElement;
+	let heroContainer: HTMLElement;
 	let totalWagesContainer: HTMLDivElement;
 	let averageWagesContainer: HTMLDivElement;
 	let employeeCountContainer: HTMLDivElement;
@@ -51,8 +52,8 @@
 	};
 
 	// Function to adjust for inflation
-	function adjustForInflationValue(amount: number, year: number): number {
-		if (!adjustForInflation) return amount;
+	function adjustForInflationValue(amount: number, year: number, adjust: boolean): number {
+		if (!adjust) return amount;
 		const multiplier = inflationData[year as keyof typeof inflationData] || 1;
 		return amount * multiplier;
 	}
@@ -65,16 +66,69 @@
 	// Apply inflation adjustment if enabled
 	$: filteredWageData = basePlottedData.map(d => ({
 		...d,
-		totalWages: adjustForInflationValue(d.totalWages, d.year),
-		averageWage: adjustForInflationValue(d.averageWage, d.year),
-		medianWage: adjustForInflationValue(d.medianWage, d.year)
+		totalWages: adjustForInflationValue(d.totalWages, d.year, adjustForInflation),
+		averageWage: adjustForInflationValue(d.averageWage, d.year, adjustForInflation),
+		medianWage: adjustForInflationValue(d.medianWage, d.year, adjustForInflation)
 	}));
 
-	// Apply inflation adjustment to pyramid data
-	$: filteredPyramidData = pyramidData.map(d => ({
-		...d,
-		totalPay: adjustForInflationValue(d.totalPay, d.year)
-	}));
+	type TrendRow = Pick<AggregatedWageData, 'location' | 'year' | 'totalWages' | 'averageWage' | 'employeeCount'>;
+
+	function systemTrends(rows: TrendRow[]): TrendRow[] {
+		const totals = d3.rollup(rows, (yearRows: TrendRow[]) => ({
+			totalWages: d3.sum(yearRows, (row: TrendRow) => row.totalWages),
+			employeeCount: d3.sum(yearRows, (row: TrendRow) => row.employeeCount)
+		}), (row: TrendRow) => row.year);
+
+		return Array.from(totals, ([year, { totalWages, employeeCount }]) => ({
+			location: 'System total',
+			year,
+			totalWages,
+			employeeCount,
+			averageWage: employeeCount ? totalWages / employeeCount : 0
+		})).sort((a, b) => a.year - b.year);
+	}
+
+	type BracketCount = { range: string; count: number; min_value?: number };
+
+	function distributionRows(
+		rows: { location: string; year: number; brackets: BracketCount[] }[],
+		year: number,
+		campus: string
+	): [string, number][] {
+		const ranges = new Map<string, { count: number; minimum: number }>();
+		for (const row of rows) {
+			if (row.year !== year || (campus !== 'All Campuses' && row.location !== campus)) continue;
+			for (const bracket of row.brackets) {
+				const current = ranges.get(bracket.range);
+				const lowerBound = bracket.range.match(/^([\d.]+)\s*([kM])?/i);
+				const unit = lowerBound?.[2]?.toLowerCase();
+				const minimum = bracket.min_value ??
+					Number(lowerBound?.[1] ?? 0) * (unit === 'm' ? 1_000_000 : unit === 'k' ? 1_000 : 1);
+				ranges.set(bracket.range, { count: (current?.count ?? 0) + bracket.count, minimum });
+			}
+		}
+		return Array.from(ranges)
+			.sort(([, a], [, b]) => a.minimum - b.minimum)
+			.map(([range, { count }]) => [range, count]);
+	}
+
+	$: systemRows = showTotalLines && selectedCampus === 'All Campuses' ? systemTrends(filteredWageData) : [];
+	$: pyramidRows = distributionRows(pyramidData, latestYear, selectedCampus);
+	$: trendTableRows = [...filteredWageData, ...(systemRows.length > 1 ? systemRows : [])].map(
+		(row) => [
+			row.location,
+			String(row.year),
+			preciseCurrency.format(row.totalWages),
+			preciseCurrency.format(row.averageWage),
+			'medianWage' in row && typeof row.medianWage === 'number'
+				? preciseCurrency.format(row.medianWage)
+				: '—',
+			formatNumber(row.employeeCount)
+		]
+	);
+	$: pyramidTableRows = pyramidRows.map(([range, count]) => [range, formatNumber(count)]);
+
+	const preciseCurrency = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
 
 	// Standardized diverse color palette for chart readability
 	const CHART_COLORS = [
@@ -134,13 +188,11 @@
 
 	onMount(() => {
 		createHeroVisualization();
-		updateCharts();
+		updateCharts(filteredWageData, systemRows, pyramidRows);
 	});
 
 	// Reactive updates when filters change
-	$: if (selectedCampus || showTotalLines !== undefined || adjustForInflation !== undefined) {
-		updateCharts();
-	}
+	$: updateCharts(filteredWageData, systemRows, pyramidRows);
 
 	function createChartLegend(container: HTMLDivElement, campuses: string[], colorScale: any, showTotal: boolean, totalLabel: string) {
 		if (!container) return;
@@ -213,7 +265,7 @@
 			.style('font-weight', 'bold')
 			.style('color', '#1f2937')
 			.style('margin-bottom', '10px')
-			.text('Wage Ranges (Employee Count)');
+			.text('Wage Ranges (Payroll Records)');
 
 		const legendItems = legendDiv.append('div')
 			.style('display', 'flex')
@@ -244,27 +296,27 @@
 		});
 	}
 
-	function updateCharts() {
+	function updateCharts(wageRows: typeof wageData, totals: TrendRow[], distribution: [string, number][]) {
 		// Clear existing charts and legends
 		if (totalWagesContainer) {
 			d3.select(totalWagesContainer).selectAll('*').remove();
 			d3.select(totalWagesLegend).selectAll('*').remove();
-			createTotalWagesChart();
+			createTotalWagesChart(wageRows, totals);
 		}
 		if (averageWagesContainer) {
 			d3.select(averageWagesContainer).selectAll('*').remove();
 			d3.select(averageWagesLegend).selectAll('*').remove();
-			createAverageWagesChart();
+			createAverageWagesChart(wageRows, totals);
 		}
 		if (employeeCountContainer) {
 			d3.select(employeeCountContainer).selectAll('*').remove();
 			d3.select(employeeCountLegend).selectAll('*').remove();
-			createEmployeeCountChart();
+			createEmployeeCountChart(wageRows, totals);
 		}
 		if (wagePyramidContainer) {
 			d3.select(wagePyramidContainer).selectAll('*').remove();
 			d3.select(wagePyramidLegend).selectAll('*').remove();
-			createWagePyramidChart();
+			createWagePyramidChart(distribution);
 		}
 		if (campusGridContainer) {
 			d3.select(campusGridContainer).selectAll('*').remove();
@@ -343,7 +395,7 @@
 		animate();
 	}
 
-	function createTotalWagesChart() {
+	function createTotalWagesChart(filteredWageData: typeof wageData, totalData: TrendRow[]) {
 		if (!totalWagesContainer || !filteredWageData.length) return;
 
 		const width = totalWagesContainer.clientWidth;
@@ -370,17 +422,6 @@
 
 		// Standardized campus color scheme
 		const colorScale = createCampusColorScale(activeCampuses);
-
-		// Calculate total line (sum of all campuses by year) - only if showing all campuses and toggle is on
-		let totalData = [];
-		if (showTotalLines && selectedCampus === 'All Campuses') {
-			const totalByYear = d3.rollup(filteredWageData,
-				v => d3.sum(v, d => d.totalWages),
-				d => d.year
-			);
-			totalData = Array.from(totalByYear, ([year, total]) => ({ year, totalWages: total }))
-				.sort((a, b) => a.year - b.year);
-		}
 
 		// Include total data in y-scale domain to ensure total line is visible
 		const allWageData = [...filteredWageData.map(d => d.totalWages), ...totalData.map(d => d.totalWages)];
@@ -470,8 +511,8 @@
 							<div style="font-weight: 600; margin-bottom: 4px;">${campus}</div>
 							<div><strong>Year:</strong> ${d.year}</div>
 							<div><strong>Total Wages:</strong> ${formatCurrency(d.totalWages)}</div>
-							<div><strong>Employees:</strong> ${formatNumber(d.employeeCount)}</div>
-							<div><strong>Avg per Employee:</strong> ${formatCurrency(d.totalWages / d.employeeCount)}</div>
+							<div><strong>Payroll Records:</strong> ${formatNumber(d.employeeCount)}</div>
+							<div><strong>Avg per Record:</strong> ${formatCurrency(d.totalWages / d.employeeCount)}</div>
 						`)
 						.style('left', (event.pageX + 10) + 'px')
 						.style('top', (event.pageY - 10) + 'px');
@@ -500,13 +541,13 @@
 			.call(d3.axisBottom(xScale).tickFormat(d3.format('d')));
 
 		g.append('g')
-			.call(d3.axisLeft(yScale).tickFormat(d => `$${(d / 1e9).toFixed(1)}B`));
+			.call(d3.axisLeft<number>(yScale).tickFormat(d => `$${(d / 1e9).toFixed(1)}B`));
 
 		// Create external legend
 		createChartLegend(totalWagesLegend, activeCampuses, colorScale, totalData.length > 0, 'System Total');
 	}
 
-	function createAverageWagesChart() {
+	function createAverageWagesChart(filteredWageData: typeof wageData, totalData: TrendRow[]) {
 		if (!averageWagesContainer || !filteredWageData.length) return;
 
 		const width = averageWagesContainer.clientWidth;
@@ -533,21 +574,6 @@
 
 		// Standardized campus color scheme
 		const colorScale = createCampusColorScale(activeCampuses);
-
-		// Calculate total line (weighted average across all campuses) - only if showing all campuses and toggle is on
-		let totalData = [];
-		if (showTotalLines && selectedCampus === 'All Campuses') {
-			const totalByYear = d3.rollup(filteredWageData,
-				v => {
-					const totalWages = d3.sum(v, d => d.totalWages);
-					const totalEmployees = d3.sum(v, d => d.employeeCount);
-					return totalEmployees > 0 ? totalWages / totalEmployees : 0;
-				},
-				d => d.year
-			);
-			totalData = Array.from(totalByYear, ([year, averageWage]) => ({ year, averageWage }))
-				.sort((a, b) => a.year - b.year);
-		}
 
 		// Include total data in y-scale domain to ensure total line is visible
 		const allAverageData = [...filteredWageData.map(d => d.averageWage), ...totalData.map(d => d.averageWage)];
@@ -638,7 +664,7 @@
 							<div><strong>Year:</strong> ${d.year}</div>
 							<div><strong>Average Wage:</strong> ${formatCurrency(d.averageWage)}</div>
 							<div><strong>Median Wage:</strong> ${formatCurrency(d.medianWage)}</div>
-							<div><strong>Employees:</strong> ${formatNumber(d.employeeCount)}</div>
+							<div><strong>Payroll Records:</strong> ${formatNumber(d.employeeCount)}</div>
 						`)
 						.style('left', (event.pageX + 10) + 'px')
 						.style('top', (event.pageY - 10) + 'px');
@@ -667,13 +693,13 @@
 			.call(d3.axisBottom(xScale).tickFormat(d3.format('d')));
 
 		g.append('g')
-			.call(d3.axisLeft(yScale).tickFormat(d => `$${(d / 1000).toFixed(0)}K`));
+			.call(d3.axisLeft<number>(yScale).tickFormat(d => `$${(d / 1000).toFixed(0)}K`));
 
 		// Create external legend
 		createChartLegend(averageWagesLegend, activeCampuses, colorScale, showTotalLines && selectedCampus === 'All Campuses' && totalData.length > 1, 'System Average');
 	}
 
-	function createEmployeeCountChart() {
+	function createEmployeeCountChart(filteredWageData: typeof wageData, totalData: TrendRow[]) {
 		if (!employeeCountContainer || !filteredWageData.length) return;
 
 		const width = employeeCountContainer.clientWidth;
@@ -700,17 +726,6 @@
 
 		// Standardized campus color scheme
 		const colorScale = createCampusColorScale(activeCampuses);
-
-		// Calculate total line (sum of all employees by year) - only if showing all campuses and toggle is on
-		let totalData = [];
-		if (showTotalLines && selectedCampus === 'All Campuses') {
-			const totalByYear = d3.rollup(filteredWageData,
-				v => d3.sum(v, d => d.employeeCount),
-				d => d.year
-			);
-			totalData = Array.from(totalByYear, ([year, employeeCount]) => ({ year, employeeCount }))
-				.sort((a, b) => a.year - b.year);
-		}
 
 		// Include total data in y-scale domain to ensure total line is visible
 		const allEmployeeData = [...filteredWageData.map(d => d.employeeCount), ...totalData.map(d => d.employeeCount)];
@@ -799,7 +814,7 @@
 						.html(`
 							<div style="font-weight: 600; margin-bottom: 4px;">${campus}</div>
 							<div><strong>Year:</strong> ${d.year}</div>
-							<div><strong>Employee Count:</strong> ${formatNumber(d.employeeCount)}</div>
+							<div><strong>Payroll Records:</strong> ${formatNumber(d.employeeCount)}</div>
 							<div><strong>Total Wages:</strong> ${formatCurrency(d.totalWages)}</div>
 							<div><strong>Average Wage:</strong> ${formatCurrency(d.averageWage)}</div>
 						`)
@@ -830,14 +845,14 @@
 			.call(d3.axisBottom(xScale).tickFormat(d3.format('d')));
 
 		g.append('g')
-			.call(d3.axisLeft(yScale).tickFormat(d => d.toLocaleString()));
+			.call(d3.axisLeft<number>(yScale).tickFormat(d => d.toLocaleString()));
 
 		// Create external legend
 		createChartLegend(employeeCountLegend, activeCampuses, colorScale, showTotalLines && selectedCampus === 'All Campuses' && totalData.length > 1, 'System Total');
 	}
 
-	function createWagePyramidChart() {
-		if (!wagePyramidContainer || !filteredPyramidData.length) return;
+	function createWagePyramidChart(sortedRanges: [string, number][]) {
+		if (!wagePyramidContainer || !sortedRanges.length) return;
 
 		const width = wagePyramidContainer.clientWidth;
 		const height = 600;
@@ -851,33 +866,7 @@
 		const g = svg.append('g')
 			.attr('transform', `translate(${width / 2},${margin.top})`);
 
-		// Use latest year data for pyramid visualization and apply campus filtering
-		let pyramidDataForChart = filteredPyramidData.filter(d => d.year === latestYear);
-
-		if (selectedCampus !== 'All Campuses') {
-			pyramidDataForChart = pyramidDataForChart.filter(d => d.location === selectedCampus);
-		}
-
-		if (pyramidDataForChart.length === 0) return;
-
-		// Aggregate all brackets across filtered campuses for pyramid structure
-		const wageRanges = {};
-		pyramidDataForChart.forEach(campus => {
-			campus.brackets.forEach(bracket => {
-				if (!wageRanges[bracket.range]) {
-					wageRanges[bracket.range] = 0;
-				}
-				wageRanges[bracket.range] += bracket.count;
-			});
-		});
-
-		// Sort wage ranges from low to high for pyramid structure
-		const sortedRanges = Object.entries(wageRanges).sort((a, b) => {
-			const getMin = (range) => parseInt(range.split('-')[0].replace(/[^\d]/g, ''));
-			return getMin(a[0]) - getMin(b[0]);
-		});
-
-		const maxCount = Math.max(...Object.values(wageRanges));
+		const maxCount = Math.max(...sortedRanges.map(([, count]) => count));
 		const pyramidWidth = Math.min(width - margin.left - margin.right, 500); // Limit max width
 		const pyramidHeight = height - margin.top - margin.bottom;
 		const levelHeight = pyramidHeight / sortedRanges.length;
@@ -1002,7 +991,7 @@
 		createPyramidLegend(wagePyramidLegend, sortedRanges, colorScale);
 
 		// Add summary statistics at the bottom
-		const totalEmployees = Object.values(wageRanges).reduce((sum, count) => sum + count, 0);
+		const totalEmployees = sortedRanges.reduce((sum, [, count]) => sum + count, 0);
 		svg.append('text')
 			.attr('x', width / 2)
 			.attr('y', height - 20)
@@ -1010,7 +999,7 @@
 			.style('font-size', '14px')
 			.style('font-weight', '600')
 			.style('fill', '#6b7280')
-			.text(`Total UC System Employees: ${totalEmployees.toLocaleString()}`);
+			.text(`Payroll records: ${totalEmployees.toLocaleString()}`);
 	}
 
 	function createCampusGrid() {
@@ -1045,7 +1034,7 @@
 			if (latestData) {
 				card.append('p')
 					.html(`
-						<strong>Employees:</strong> ${latestData.employeeCount.toLocaleString()}<br>
+						<strong>Payroll Records:</strong> ${latestData.employeeCount.toLocaleString()}<br>
 						<strong>Avg Wage:</strong> $${Math.round(latestData.averageWage).toLocaleString()}<br>
 						<strong>Total Wages:</strong> $${(latestData.totalWages / 1e6).toFixed(1)}M
 					`)
@@ -1099,7 +1088,7 @@
 			{#if totalEmployees > 0}
 				<div class="stat">
 					<span class="stat-value">{totalEmployees.toLocaleString()}</span>
-					<span class="stat-label">{latestYear} Total Employees</span>
+					<span class="stat-label">{latestYear} Payroll Records With Positive Gross Pay</span>
 				</div>
 				<div class="stat">
 					<span class="stat-value">${(totalWages / 1e9).toFixed(1)}B</span>
@@ -1142,6 +1131,12 @@
 				</label>
 			</div>
 		</div>
+		<ChartDataTable
+			label="View wage trends as a table"
+			caption={adjustForInflation ? 'Wage trends in 2024 dollars' : 'Wage trends in reported dollars'}
+			columns={['Reporting location', 'Year', 'Total gross pay', 'Average gross pay', 'Median gross pay', 'Positive-gross-pay records']}
+			rows={trendTableRows}
+		/>
 	</div>
 </section>
 
@@ -1166,7 +1161,7 @@
 <!-- Employee Count Section -->
 <section class="section">
 	<div class="container">
-		<h2>Employee Count by Campus</h2>
+		<h2>Positive-Gross-Pay Records by Campus</h2>
 		<div class="chart-legend" bind:this={employeeCountLegend}></div>
 		<div class="chart-container" bind:this={employeeCountContainer}></div>
 	</div>
@@ -1178,6 +1173,12 @@
 		<h2>Wage Distribution Pyramid</h2>
 		<div class="chart-legend" bind:this={wagePyramidLegend}></div>
 		<div class="chart-container" bind:this={wagePyramidContainer}></div>
+		<ChartDataTable
+			label="View wage distribution as a table"
+			caption={`Wage distribution for ${selectedCampus === 'All Campuses' ? 'all locations' : selectedCampus}, ${latestYear}`}
+			columns={['Gross pay range', 'Payroll records']}
+			rows={pyramidTableRows}
+		/>
 	</div>
 </section>
 

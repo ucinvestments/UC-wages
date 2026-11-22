@@ -40,9 +40,9 @@
 				</div>
 				<h2>Data Source</h2>
 				<p>
-					All data is sourced from the official UC Annual Wage website, which publishes compensation
-					information for UC employees as required by California state law. We aggregate and
-					visualize this public data to make it more accessible and understandable.
+					The University of California publishes annual employee earnings in its public wage
+					database. UC Wage Explorer uses those records for charts and employee search. See the
+					<a href="/data">data overview</a> for archive coverage and downloads.
 				</p>
 			</div>
 
@@ -73,9 +73,8 @@
 				</div>
 				<h2>Privacy & Ethics</h2>
 				<p>
-					We only display publicly available information. No private or sensitive data is collected
-					or displayed. This tool is designed for educational and research purposes to promote
-					transparency in public institutions.
+					Search displays names, job titles and pay as published by UC. When UC redacts a name,
+					the archive keeps that redaction.
 				</p>
 			</div>
 		</div>
@@ -176,6 +175,11 @@
 </div>
 
 <style>
+	.card p a {
+		text-decoration: underline;
+		text-underline-offset: 0.15em;
+	}
+
 	.page-container {
 		max-width: 1200px;
 		margin: 0 auto;

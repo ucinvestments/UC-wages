@@ -1,14 +1,32 @@
 <script lang="ts">
-		import { goto } from '$app/navigation';
+		import { goto, invalidateAll } from '$app/navigation';
 		import { page } from '$app/stores';
 		import { navigating } from '$app/stores';
+		import { tick } from 'svelte';
 		import Icon from '@iconify/svelte';
 		import type { PageData } from './$types';
 
 	export let data: PageData;
 
-	$: ({ employees, pagination, searchParams, filters } = data);
-	$: isLoading = !!$navigating;
+	$: ({ employees, pagination, searchParams, filters, searchFailed } = data);
+	let retrying = false;
+	let searchStatus: HTMLElement;
+	$: isLoading = !!$navigating || retrying;
+	$: locations = [...new Set([...filters.locations, searchParams.location].filter(Boolean))];
+	$: years = [...new Set([...filters.years, ...(searchParams.year ? [searchParams.year] : [])])];
+
+	async function retrySearch(event: MouseEvent) {
+		if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+		event.preventDefault();
+		retrying = true;
+		try {
+			await invalidateAll();
+		} finally {
+			retrying = false;
+			await tick();
+			searchStatus?.focus();
+		}
+	}
 
 		type SortableColumn =
 			| 'name'
@@ -25,13 +43,15 @@
 			jobtitle: string | null;
 			location: string;
 			year: number;
-			grosspay: number;
-			basePay: number;
-			overtimePay: number;
-			otherPay: number;
+			grosspay: number | null;
+			basePay: number | null;
+			overtimePay: number | null;
+			otherPay: number | null;
 		};
 
 		let selectedEmployee: Employee | null = null;
+		let employeeDialog: HTMLDialogElement;
+		let dialogTrigger: HTMLButtonElement | null = null;
 
 		const sortableColumns: { key: SortableColumn; label: string; numeric?: boolean }[] = [
 			{ key: 'name', label: 'Name' },
@@ -44,7 +64,8 @@
 			{ key: 'otherPay', label: 'Other Pay', numeric: true }
 		];
 
-		let searchForm = {
+		let searchForm: { name: string; job: string; location: string; year: string };
+		$: searchForm = {
 			name: searchParams?.name || '',
 			job: searchParams?.job || '',
 			location: searchParams?.location || '',
@@ -68,7 +89,7 @@
 		if (searchForm.name.trim()) params.set('name', searchForm.name.trim());
 		if (searchForm.job.trim()) params.set('job', searchForm.job.trim());
 		if (searchForm.location) params.set('location', searchForm.location);
-			if (searchForm.year) params.set('year', searchForm.year);
+			params.set('year', searchForm.year);
 
 			appendSortParams(params);
 
@@ -82,7 +103,7 @@
 			searchForm = { name: '', job: '', location: '', year: '' };
 			const params = new URLSearchParams();
 			appendSortParams(params);
-			goto(params.toString() ? `/search?${params.toString()}` : '/search');
+			goto(params.toString() ? `/search?${params.toString()}` : '/search', { invalidateAll: true });
 		}
 
 	function goToPage(pageNum: number) {
@@ -91,7 +112,8 @@
 		goto(`/search?${params.toString()}`);
 	}
 
-		function formatCurrency(amount: number): string {
+		function formatCurrency(amount: number | null): string {
+			if (amount === null) return 'Unavailable';
 			return new Intl.NumberFormat('en-US', {
 				style: 'currency',
 				currency: 'USD',
@@ -121,16 +143,17 @@
 			return currentDirection === 'asc' ? 'ascending' : 'descending';
 		}
 
-		function openModal(employee: Employee) {
+		async function openModal(employee: Employee, trigger: HTMLButtonElement) {
+			dialogTrigger = trigger;
 			selectedEmployee = employee;
+			await tick();
+			employeeDialog.showModal();
 		}
 
-		function closeModal() {
+		function restoreDialogFocus() {
 			selectedEmployee = null;
-		}
-
-		function handleModalKeydown(event: KeyboardEvent) {
-			if (event.key === 'Escape') closeModal();
+			dialogTrigger?.focus();
+			dialogTrigger = null;
 		}
 
 		function slugify(value: string): string {
@@ -158,19 +181,17 @@
 		}
 
 		function downloadCSV(employee: Employee) {
-			const headers = ['name', 'jobtitle', 'location', 'year', 'grosspay', 'basePay', 'overtimePay', 'otherPay'];
-			const escape = (v: string | number) => {
+			const headers = ['name', 'jobtitle', 'location', 'year', 'grosspay', 'basePay', 'overtimePay', 'otherPay'] as const;
+			const escape = (v: string | number | null) => {
 				const s = String(v ?? '');
 				return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
 			};
-			const row = headers.map(h => escape((employee as Record<string, string | number>)[h]));
+			const row = headers.map(key => escape(employee[key]));
 			const csv = `${headers.join(',')}\n${row.join(',')}\n`;
 			const filename = `${slugify(employee.name)}-${employee.year}.csv`;
 			triggerDownload(csv, filename, 'text/csv');
 		}
 	</script>
-
-	<svelte:window onkeydown={handleModalKeydown} />
 
 <svelte:head>
 	<title>Search UC Employees - UC Wage Explorer</title>
@@ -215,7 +236,7 @@
 						<label for="location">Campus</label>
 						<select id="location" bind:value={searchForm.location} class="search-select">
 							<option value="">All Campuses</option>
-							{#each filters?.locations || [] as location}
+							{#each locations as location}
 								<option value={location}>{location}</option>
 							{/each}
 						</select>
@@ -224,7 +245,7 @@
 						<label for="year">Year</label>
 						<select id="year" bind:value={searchForm.year} class="search-select">
 							<option value="">All Years</option>
-							{#each filters?.years || [] as year}
+							{#each years as year}
 								<option value={year.toString()}>{year}</option>
 							{/each}
 						</select>
@@ -244,21 +265,26 @@
 
 		<!-- Loading Indicator -->
 		{#if isLoading}
-			<div class="loading-container">
+			<div class="loading-container" role="status">
 				<div class="loading-spinner"></div>
 				<p class="loading-text">Searching employee data...</p>
+			</div>
+		{:else if searchFailed}
+			<div class="results-summary search-error" bind:this={searchStatus} tabindex="-1">
+				<p role="alert">Employee search is temporarily unavailable.</p>
+				<a class="search-button secondary" href={$page.url.pathname + $page.url.search} data-sveltekit-reload onclick={retrySearch}>Retry search</a>
 			</div>
 		{:else}
 			<!-- Results Summary -->
 			{#if pagination?.totalItems > 0}
-			<div class="results-summary">
+			<div class="results-summary" bind:this={searchStatus} tabindex="-1">
 				<p>
 					Showing {((pagination.currentPage - 1) * pagination.itemsPerPage) + 1}-{Math.min(pagination.currentPage * pagination.itemsPerPage, pagination.totalItems)}
 					of {pagination.totalItems.toLocaleString()} employees
 				</p>
 			</div>
 		{:else}
-			<div class="results-summary">
+			<div class="results-summary" bind:this={searchStatus} tabindex="-1">
 				<p>No employees found matching your criteria.</p>
 			</div>
 		{/if}
@@ -298,19 +324,15 @@
 						</thead>
 						<tbody>
 							{#each employees as employee}
-								<tr
-									class="employee-row"
-									role="button"
-									tabindex="0"
-									onclick={() => openModal(employee)}
-									onkeydown={(e) => {
-										if (e.key === 'Enter' || e.key === ' ') {
-											e.preventDefault();
-											openModal(employee);
-										}
-									}}
-								>
-									<td class="employee-name">{employee.name}</td>
+								<tr class="employee-row">
+									<td>
+										<button
+											type="button"
+											class="employee-name"
+											aria-haspopup="dialog"
+											onclick={(event) => openModal(employee, event.currentTarget)}
+										>{employee.name.trim() || 'Name unavailable'}</button>
+									</td>
 									<td class="currency gross-pay">{formatCurrency(employee.grosspay)}</td>
 									<td class="job-title">{employee.jobtitle}</td>
 									<td class="location">{employee.location}</td>
@@ -370,85 +392,70 @@
 	</div>
 </div>
 
-{#if selectedEmployee}
-	{@const employee = selectedEmployee}
-	<div
-		class="modal-backdrop"
-		role="button"
-		tabindex="0"
-		onclick={closeModal}
-		onkeydown={(e) => {
-			if (e.key === 'Enter' || e.key === ' ') {
-				e.preventDefault();
-				closeModal();
-			}
-		}}
-		aria-label="Close modal"
-	>
-		<div
-			class="modal"
-			role="dialog"
-			aria-modal="true"
-			aria-labelledby="modal-title"
-			tabindex="-1"
-			onclick={(e) => e.stopPropagation()}
-			onkeydown={(e) => e.stopPropagation()}
-		>
-			<div class="modal-header">
-				<h2 id="modal-title">{employee.name}</h2>
-				<button type="button" class="modal-close" onclick={closeModal} aria-label="Close">
-					<Icon icon="mdi:close" />
-				</button>
-			</div>
-			<div class="modal-body">
-				<dl class="modal-details">
-					<div class="modal-row">
-						<dt>Name</dt>
-						<dd>{employee.name}</dd>
-					</div>
-					<div class="modal-row">
-						<dt>Job Title</dt>
-						<dd>{employee.jobtitle}</dd>
-					</div>
-					<div class="modal-row">
-						<dt>Campus</dt>
-						<dd>{employee.location}</dd>
-					</div>
-					<div class="modal-row">
-						<dt>Year</dt>
-						<dd>{employee.year}</dd>
-					</div>
-					<div class="modal-row">
-						<dt>Gross Pay</dt>
-						<dd class="currency highlight">{formatCurrency(employee.grosspay)}</dd>
-					</div>
-					<div class="modal-row">
-						<dt>Base Pay</dt>
-						<dd class="currency">{formatCurrency(employee.basePay)}</dd>
-					</div>
-					<div class="modal-row">
-						<dt>Overtime Pay</dt>
-						<dd class="currency">{formatCurrency(employee.overtimePay)}</dd>
-					</div>
-					<div class="modal-row">
-						<dt>Other Pay</dt>
-						<dd class="currency">{formatCurrency(employee.otherPay)}</dd>
-					</div>
-				</dl>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="modal-button primary" onclick={() => downloadJSON(employee)}>
-					<Icon icon="mdi:code-json" />
-					Download JSON
-				</button>
-				<button type="button" class="modal-button primary" onclick={() => downloadCSV(employee)}>
-					<Icon icon="mdi:file-delimited" />
-					Download CSV
-				</button>
-			</div>
+<dialog
+	class="modal"
+	bind:this={employeeDialog}
+	aria-labelledby="modal-title"
+	closedby="any"
+	onclose={restoreDialogFocus}
+>
+	{#if selectedEmployee}
+		{@const employee = selectedEmployee}
+		<div class="modal-header">
+			<h2 id="modal-title">{employee.name.trim() || 'Employee details'}</h2>
+			<button type="button" class="modal-close" onclick={() => employeeDialog.close()} aria-label="Close employee details">
+				<Icon icon="mdi:close" />
+				<span>Close</span>
+			</button>
 		</div>
-	</div>
-{/if}
+		<div class="modal-body">
+			<dl class="modal-details">
+				<div class="modal-row">
+					<dt>Name</dt>
+					<dd>{employee.name}</dd>
+				</div>
+				<div class="modal-row">
+					<dt>Job Title</dt>
+					<dd>{employee.jobtitle}</dd>
+				</div>
+				<div class="modal-row">
+					<dt>Campus</dt>
+					<dd>{employee.location}</dd>
+				</div>
+				<div class="modal-row">
+					<dt>Year</dt>
+					<dd>{employee.year}</dd>
+				</div>
+				<div class="modal-row">
+					<dt>Gross Pay</dt>
+					<dd class="currency highlight">{formatCurrency(employee.grosspay)}</dd>
+				</div>
+				<div class="modal-row">
+					<dt>Base Pay</dt>
+					<dd class="currency">{formatCurrency(employee.basePay)}</dd>
+				</div>
+				<div class="modal-row">
+					<dt>Overtime Pay</dt>
+					<dd class="currency">{formatCurrency(employee.overtimePay)}</dd>
+				</div>
+				<div class="modal-row">
+					<dt>Other Pay</dt>
+					<dd class="currency">{formatCurrency(employee.otherPay)}</dd>
+				</div>
+			</dl>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="modal-button primary" onclick={() => downloadJSON(employee)}>
+				<Icon icon="mdi:code-json" />
+				Download JSON
+			</button>
+			<button type="button" class="modal-button primary" onclick={() => downloadCSV(employee)}>
+				<Icon icon="mdi:file-delimited" />
+				Download CSV
+			</button>
+		</div>
+	{/if}
+</dialog>
 
 <style>
 	.search-page {
@@ -664,22 +671,30 @@
 		font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
 	}
 
-	.employee-row {
-		cursor: pointer;
-	}
-
 	.employee-row:hover {
 		background: #f8fafc;
 	}
 
-	.employee-row:focus-visible {
+	.employee-name:focus-visible {
 		outline: 2px solid #3b82f6;
 		outline-offset: -2px;
 	}
 
 	.employee-name {
+		min-height: 24px;
+		cursor: pointer;
 		font-weight: 600;
-		color: #1f2937;
+		color: #1d4ed8;
+		text-decoration: underline;
+		text-underline-offset: 0.15em;
+	}
+
+	.search-error {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 1rem;
 	}
 
 	.job-title {
@@ -778,32 +793,31 @@
 		border-color: #3b82f6;
 	}
 
-	.modal-backdrop {
-		position: fixed;
-		inset: 0;
+	.modal::backdrop {
 		background: rgba(15, 23, 42, 0.55);
 		backdrop-filter: blur(4px);
-		-webkit-backdrop-filter: blur(4px);
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding: 1.5rem;
-		z-index: 1000;
-		animation: fadeIn 0.15s ease-out;
-		cursor: default;
 	}
 
 	.modal {
+		margin: auto;
 		background: white;
 		border-radius: 16px;
 		box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
-		width: 100%;
-		max-width: 520px;
-		max-height: 90vh;
+		width: min(520px, calc(100% - 1.5rem));
+		max-height: calc(100dvh - 1.5rem);
+		overflow: hidden;
+	}
+
+	.modal[open] {
 		display: flex;
 		flex-direction: column;
-		overflow: hidden;
 		animation: modalIn 0.2s ease-out;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.modal[open] {
+			animation: none;
+		}
 	}
 
 	.modal-header {
@@ -927,11 +941,6 @@
 		box-shadow: 0 8px 16px rgba(59, 130, 246, 0.3);
 	}
 
-	@keyframes fadeIn {
-		from { opacity: 0; }
-		to { opacity: 1; }
-	}
-
 	@keyframes modalIn {
 		from { opacity: 0; transform: translateY(10px) scale(0.98); }
 		to { opacity: 1; transform: translateY(0) scale(1); }
@@ -1021,10 +1030,6 @@
 
 		.job-title {
 			max-width: 140px;
-		}
-
-		.modal-backdrop {
-			padding: 0.75rem;
 		}
 
 		.modal-header {
