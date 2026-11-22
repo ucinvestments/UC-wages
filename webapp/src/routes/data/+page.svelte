@@ -1,18 +1,19 @@
 <script lang="ts">
 	import DataUploader from '$lib/components/DataUploader.svelte';
+	import { archiveCoverage, ucCompensationReports } from '$lib/data/archiveCoverage';
 	import Icon from '@iconify/svelte';
 </script>
 
 <svelte:head>
 	<title>Data Overview - UC Wage Explorer</title>
-	<meta name="description" content="View the status of UC wage data uploads and available datasets" />
+	<meta name="description" content="Check UC payroll archive coverage and download wage records by location and year." />
 </svelte:head>
 
 <div class="page-container">
 	<section class="hero-section">
 		<h1 class="page-title">Data Overview</h1>
 		<p class="hero-subtitle">
-			Comprehensive wage data from all University of California campuses
+			Public payroll records from {archiveCoverage.firstYear} to {archiveCoverage.lastYear}
 		</p>
 	</section>
 
@@ -20,38 +21,51 @@
 		<div class="summary-card">
 			<Icon icon="mdi:school" class="summary-icon" />
 			<div class="summary-content">
-				<span class="summary-value">13</span>
-				<span class="summary-label">UC Campuses</span>
+				<span class="summary-value">{archiveCoverage.locations}</span>
+				<span class="summary-label">Reporting Locations</span>
 			</div>
 		</div>
 
 		<div class="summary-card">
 			<Icon icon="mdi:calendar-range" class="summary-icon" />
 			<div class="summary-content">
-				<span class="summary-value">15</span>
-				<span class="summary-label">Years of Data</span>
+				<span class="summary-value">{archiveCoverage.files}</span>
+				<span class="summary-label">Location-Year Files</span>
 			</div>
 		</div>
 
 		<div class="summary-card">
 			<Icon icon="mdi:database" class="summary-icon" />
 			<div class="summary-content">
-				<span class="summary-value">2M+</span>
-				<span class="summary-label">Total Records</span>
+				<span class="summary-value">{archiveCoverage.records.toLocaleString('en-US')}</span>
+				<span class="summary-label">Archived Records</span>
 			</div>
 		</div>
 
 		<div class="summary-card">
 			<Icon icon="mdi:update" class="summary-icon" />
 			<div class="summary-content">
-				<span class="summary-value">2024</span>
-				<span class="summary-label">Latest Update</span>
+				<span class="summary-value">{archiveCoverage.lastYear}</span>
+				<span class="summary-label">Latest Archived Payroll Year</span>
 			</div>
 		</div>
 	</div>
 
-	<section class="data-section">
-		<DataUploader />
+	<section class="download-section">
+		<div class="download-card">
+			<Icon icon="mdi:download" class="download-icon" />
+			<div class="download-content">
+				<h2>Download the payroll archive</h2>
+				<p>
+					The complete dataset is available in our GitHub repository. You can download
+					individual campus data files or clone the entire repository for analysis.
+				</p>
+				<a href="https://github.com/ucinvestments/UC-wages/tree/main/data" target="_blank" rel="noopener noreferrer" class="download-button">
+					<Icon icon="mdi:github" />
+					Browse wage files on GitHub
+				</a>
+			</div>
+		</div>
 	</section>
 
 	<section class="info-section">
@@ -62,8 +76,8 @@
 				<Icon icon="mdi:source-branch" class="info-icon" />
 				<h3>Data Source</h3>
 				<p>
-					All data is sourced directly from the UC Annual Wage website, which publishes
-					employee compensation information as mandated by California state law.
+					The archive contains records from UC’s public annual wage database. Coverage varies
+					by reporting location. See the <a href="/methodology">coverage by location</a>.
 				</p>
 			</div>
 
@@ -71,7 +85,7 @@
 				<Icon icon="mdi:file-document-outline" class="info-icon" />
 				<h3>Data Fields</h3>
 				<ul>
-					<li>Employee Name (anonymized where applicable)</li>
+					<li>Employee Name (as published by UC)</li>
 					<li>Job Title</li>
 					<li>Campus Location</li>
 					<li>Base Pay</li>
@@ -83,10 +97,10 @@
 
 			<div class="info-card">
 				<Icon icon="mdi:refresh" class="info-icon" />
-				<h3>Update Schedule</h3>
+				<h3>Newer UC Releases</h3>
 				<p>
-					Data is updated annually when new information is released by the UC system,
-					typically in the first quarter of each year for the previous year's data.
+					UC reports earnings annually. Its <a href={ucCompensationReports}>compensation reports</a>
+					include the 2025 summary. The downloadable archive here runs through {archiveCoverage.lastYear}.
 				</p>
 			</div>
 
@@ -94,32 +108,24 @@
 				<Icon icon="mdi:shield-check" class="info-icon" />
 				<h3>Data Privacy</h3>
 				<p>
-					All displayed data is publicly available. Names may be redacted for certain
-					employees as per UC's privacy policies and state regulations.
+					The archive preserves name redactions from the source. Record totals count payroll
+					entries across all years, so the same person can appear more than once.
 				</p>
 			</div>
 		</div>
 	</section>
 
-	<section class="download-section">
-		<div class="download-card">
-			<Icon icon="mdi:download" class="download-icon" />
-			<div class="download-content">
-				<h3>Access Raw Data</h3>
-				<p>
-					The complete dataset is available in our GitHub repository. You can download
-					individual campus data files or clone the entire repository for analysis.
-				</p>
-				<a href="https://github.com/ucinvestments/UC-wages/tree/main/data" target="_blank" rel="noopener noreferrer" class="download-button">
-					<Icon icon="mdi:github" />
-					View on GitHub
-				</a>
-			</div>
-		</div>
+	<section class="data-section">
+		<DataUploader />
 	</section>
 </div>
 
 <style>
+	.info-card p a {
+		text-decoration: underline;
+		text-underline-offset: 0.15em;
+	}
+
 	:global(body) {
 		overflow-x: hidden;
 	}
@@ -295,7 +301,7 @@
 	}
 
 	.download-section {
-		margin-top: 4rem;
+		margin-bottom: 4rem;
 	}
 
 	.download-card {
@@ -317,7 +323,7 @@
 		flex: 1;
 	}
 
-	.download-content h3 {
+	.download-content h2 {
 		margin: 0 0 1rem 0;
 		color: var(--pri);
 		font-size: 1.5rem;

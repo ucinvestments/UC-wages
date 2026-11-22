@@ -1,3 +1,4 @@
+import { archiveCoverage } from '$lib/data/archiveCoverage';
 import { db } from '$lib/server/db';
 import { ucWages } from '$lib/server/db/schema';
 import { sql, like, and, eq, desc, asc } from 'drizzle-orm';
@@ -23,7 +24,6 @@ type Filters = {
 	years: number[];
 };
 type SortableColumn = keyof typeof SORT_COLUMNS;
-type SortDirection = 'asc' | 'desc';
 
 let filterCache: { data: Filters; expires: number } | null = null;
 
@@ -52,25 +52,26 @@ async function getFilters(): Promise<Filters> {
 }
 
 export const load: PageServerLoad = async ({ url }) => {
+	const searchParams = url.searchParams;
+	const filterKeys = ['name', 'job', 'location', 'year'] as const;
+	const hasFilterParam = filterKeys.some(key => searchParams.has(key));
+	const name = searchParams.get('name') || '';
+	const job = searchParams.get('job') || '';
+	const location = searchParams.get('location') || '';
+	const year = searchParams.get('year')
+		? parseInt(searchParams.get('year')!)
+		: hasFilterParam
+			? null
+			: archiveCoverage.lastYear;
+	const page = Math.max(1, parseInt(searchParams.get('page') || '1') || 1);
+	const requestedSort = searchParams.get('sort') as SortableColumn | null;
+	const requestedDirection = searchParams.get('direction') === 'asc' ? 'asc' : 'desc';
+	const activeSort = requestedSort && Object.hasOwn(SORT_COLUMNS, requestedSort) ? requestedSort : null;
+	const sortColumn = activeSort ?? DEFAULT_SORT_COLUMN;
+	const sortDirection = activeSort ? requestedDirection : DEFAULT_SORT_DIRECTION;
+	const submittedFilters = { name, job, location, year, sort: sortColumn, direction: sortDirection };
+
 	try {
-		const searchParams = url.searchParams;
-		const filterKeys = ['name', 'job', 'location', 'year'] as const;
-		const hasFilterParam = filterKeys.some(key => searchParams.has(key));
-		const name = searchParams.get('name') || '';
-		const job = searchParams.get('job') || '';
-		const location = searchParams.get('location') || '';
-		const year = searchParams.get('year')
-			? parseInt(searchParams.get('year')!)
-			: hasFilterParam
-				? null
-				: 2024;
-		const page = Math.max(1, parseInt(searchParams.get('page') || '1'));
-		const requestedSort = searchParams.get('sort') as SortableColumn | null;
-		const requestedDirection = searchParams.get('direction') === 'asc' ? 'asc' : 'desc';
-		const sortColumn: SortableColumn =
-			requestedSort && requestedSort in SORT_COLUMNS ? requestedSort : DEFAULT_SORT_COLUMN;
-		const sortDirection: SortDirection =
-			requestedSort && requestedSort in SORT_COLUMNS ? requestedDirection : DEFAULT_SORT_DIRECTION;
 		const orderExpression = SORT_COLUMNS[sortColumn];
 		const orderByClause = sortDirection === 'asc' ? asc(orderExpression) : desc(orderExpression);
 		const offset = (page - 1) * ITEMS_PER_PAGE;
@@ -126,10 +127,10 @@ export const load: PageServerLoad = async ({ url }) => {
 		return {
 			employees: results.map(emp => ({
 				...emp,
-				grosspay: parseFloat(emp.grosspay.toString()),
-				basePay: parseFloat(emp.basePay.toString()),
-				overtimePay: parseFloat(emp.overtimePay.toString()),
-				otherPay: parseFloat(emp.otherPay.toString())
+				grosspay: emp.grosspay === null ? null : Number(emp.grosspay),
+				basePay: emp.basePay === null ? null : Number(emp.basePay),
+				overtimePay: emp.overtimePay === null ? null : Number(emp.overtimePay),
+				otherPay: emp.otherPay === null ? null : Number(emp.otherPay)
 			})),
 			pagination: {
 				currentPage: page,
@@ -139,14 +140,8 @@ export const load: PageServerLoad = async ({ url }) => {
 				hasNext: page < totalPages,
 				hasPrev: page > 1
 			},
-			searchParams: {
-				name,
-				job,
-				location,
-				year,
-				sort: sortColumn,
-				direction: sortDirection
-			},
+			searchParams: submittedFilters,
+			searchFailed: false,
 			filters
 		};
 	} catch (error) {
@@ -162,18 +157,9 @@ export const load: PageServerLoad = async ({ url }) => {
 				hasNext: false,
 				hasPrev: false
 			},
-			searchParams: {
-				name: '',
-				job: '',
-				location: '',
-				year: 2024,
-				sort: DEFAULT_SORT_COLUMN,
-				direction: DEFAULT_SORT_DIRECTION
-			},
-			filters: {
-				locations: [],
-				years: []
-			}
+			searchParams: submittedFilters,
+			searchFailed: true,
+			filters: filterCache?.data ?? { locations: [], years: [] }
 		};
 	}
 };

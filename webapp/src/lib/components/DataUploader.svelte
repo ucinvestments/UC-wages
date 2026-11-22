@@ -85,7 +85,7 @@
 		return themes[campus] || { primary: 'var(--pri)', secondary: 'var(--sec)' };
 	}
 
-	function formatDate(date: string | undefined): string {
+	function formatDate(date: Date | string): string {
 		if (!date) return 'N/A';
 		return new Date(date).toLocaleDateString('en-US', {
 			month: 'short',
@@ -145,10 +145,10 @@
 											</div>
 										{/if}
 
-										{#if progress.uploadedAt}
+										{#if progress.completedAt}
 											<div class="detail-row">
 												<Icon icon="mdi:calendar-clock" class="detail-icon" />
-												<span>{formatDate(progress.uploadedAt)}</span>
+												<span>{formatDate(progress.completedAt)}</span>
 											</div>
 										{/if}
 

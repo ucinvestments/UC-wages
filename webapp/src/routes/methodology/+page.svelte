@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
+	import { archiveCoverage, ucCompensationReports } from '$lib/data/archiveCoverage';
 </script>
 
 <svelte:head>
@@ -11,7 +12,7 @@
 	<section class="hero-section">
 		<h1 class="page-title">Data Collection Methodology</h1>
 		<p class="hero-subtitle">
-			Transparent and systematic approach to gathering University of California wage data
+			How UC Wage Explorer collects payroll records and calculates wage summaries
 		</p>
 	</section>
 
@@ -23,10 +24,8 @@
 				<div class="process-number">1</div>
 				<h3>Source Identification</h3>
 				<p>
-					Data is collected directly from the official UC Annual Wage website
-					(ucannualwage.ucop.edu), which publishes employee compensation data as
-					mandated by California state law. This ensures all data is publicly
-					available and legally accessible.
+					The University of California publishes payroll records in the public
+					<a href="https://ucannualwage.ucop.edu/wage/">UC Annual Wage database</a>.
 				</p>
 			</div>
 
@@ -42,11 +41,10 @@
 
 			<div class="process-card">
 				<div class="process-number">3</div>
-				<h3>Data Validation</h3>
+				<h3>Preparing Pay Values</h3>
 				<p>
-					Each data point is validated for completeness and accuracy. Records are
-					checked for required fields including employee name (anonymized where necessary),
-					title, location, year, and various pay components.
+					The analysis converts pay amounts to numbers. Wage summaries count records with
+					positive gross pay and use the source’s gross pay field for totals and averages.
 				</p>
 			</div>
 
@@ -72,7 +70,7 @@
 					<h4>Core Components:</h4>
 					<ul>
 						<li><strong>Language:</strong> Go (Golang) for high performance and concurrency</li>
-						<li><strong>Worker Pool:</strong> Configurable concurrent workers (default: 3-10)</li>
+						<li><strong>Worker Pool:</strong> Configurable concurrency with five workers by default</li>
 						<li><strong>Rate Limiting:</strong> Built-in delays between requests (default: 1 second)</li>
 						<li><strong>Retry Logic:</strong> Automatic retry on failures with exponential backoff</li>
 						<li><strong>Progress Tracking:</strong> Resume capability for interrupted scraping sessions</li>
@@ -131,18 +129,17 @@ Content-Type: application/json
 				<div class="detail-content">
 					<h4>Aggregation Pipeline:</h4>
 					<ul>
-						<li><strong>Ingestion:</strong> JSON files are parsed and validated</li>
+						<li><strong>Ingestion:</strong> Payroll records are read from archived JSON files</li>
 						<li><strong>Transformation:</strong> Pay values converted from strings to numbers</li>
 						<li><strong>Aggregation:</strong> Calculate totals, averages, and counts by campus/year</li>
 						<li><strong>Database Storage:</strong> PostgreSQL with Drizzle ORM for efficient queries</li>
-						<li><strong>Caching:</strong> Aggregated results cached for performance</li>
 					</ul>
 
 					<h4>Key Metrics Calculated:</h4>
 					<ul>
 						<li>Total wages by campus and year</li>
-						<li>Average wages per employee</li>
-						<li>Employee count trends</li>
+						<li>Average gross pay per included payroll record</li>
+						<li>Counts of payroll records with positive gross pay</li>
 						<li>Pay distribution analysis</li>
 						<li>Year-over-year growth rates</li>
 					</ul>
@@ -157,8 +154,8 @@ Content-Type: application/json
 		<div class="coverage-grid">
 			<div class="coverage-card">
 				<Icon icon="mdi:school" class="coverage-icon" />
-				<h3>13 UC Locations</h3>
-				<p>Complete coverage of all UC campuses and affiliated institutions</p>
+				<h3>{archiveCoverage.locations} Reporting Locations</h3>
+				<p>All ten campuses and UCOP have files for {archiveCoverage.firstYear}–{archiveCoverage.lastYear}.</p>
 				<ul class="campus-list">
 					<li>UC Berkeley</li>
 					<li>UC Davis</li>
@@ -171,87 +168,46 @@ Content-Type: application/json
 					<li>UC Santa Barbara</li>
 					<li>UC Santa Cruz</li>
 					<li>UC Office of the President</li>
-					<li>UC SF Law</li>
-					<li>ASUCLA</li>
+					<li>UC SF Law (2024)</li>
+					<li>ASUCLA (2018–2024)</li>
 				</ul>
 			</div>
 
 			<div class="coverage-card">
 				<Icon icon="mdi:calendar-range" class="coverage-icon" />
-				<h3>15 Years of Data</h3>
-				<p>Historical data from 2010 to 2024</p>
+				<h3>Archived Payroll Records</h3>
+				<p>Each file covers one reporting location and payroll year. A person may appear in multiple files.</p>
 				<div class="stats">
 					<div class="stat">
-						<span class="stat-value">195</span>
-						<span class="stat-label">Location-Year Combinations</span>
+					<span class="stat-value">{archiveCoverage.files}</span>
+					<span class="stat-label">Location-Year Files</span>
 					</div>
 					<div class="stat">
-						<span class="stat-value">~2M+</span>
-						<span class="stat-label">Individual Records</span>
-					</div>
-					<div class="stat">
-						<span class="stat-value">100%</span>
-						<span class="stat-label">Public Data</span>
+					<span class="stat-value">{archiveCoverage.records.toLocaleString('en-US')}</span>
+					<span class="stat-label">Archived Records</span>
 					</div>
 				</div>
 			</div>
 
 			<div class="coverage-card">
 				<Icon icon="mdi:update" class="coverage-icon" />
-				<h3>Update Frequency</h3>
-				<p>Annual updates when new data becomes available</p>
-				<ul>
-					<li>Data typically released in Q1 for previous year</li>
-					<li>Automated scraping process for updates</li>
-					<li>Historical data preserved for trend analysis</li>
-					<li>Version control for data changes</li>
-				</ul>
+				<h3>Newer UC Releases</h3>
+				<p>
+					UC publishes <a href={ucCompensationReports}>annual compensation reports</a>,
+					including its 2025 summary. The <a href="/data">downloadable archive</a> runs
+					through {archiveCoverage.lastYear}.
+				</p>
 			</div>
 		</div>
 	</section>
 
 	<section class="content-section">
-		<h2 class="section-title">Privacy & Anonymization</h2>
+		<h2 class="section-title">Name Redactions</h2>
 
 		<div class="privacy-card">
 			<Icon icon="mdi:shield-lock" class="privacy-icon" />
 			<div class="privacy-content">
-				<p>
-					While all data displayed is publicly available per California state law, we respect
-					individual privacy. Names are anonymized in certain contexts (shown as "*****") while
-					maintaining the ability to analyze compensation trends by job title, department, and campus.
-				</p>
-				<p>
-					The UC Annual Wage website implements its own anonymization for employees earning below
-					certain thresholds or in specific categories. We preserve these anonymizations in our dataset.
-				</p>
-			</div>
-		</div>
-	</section>
-
-	<section class="content-section">
-		<h2 class="section-title">Data Quality Assurance</h2>
-
-		<div class="quality-grid">
-			<div class="quality-item">
-				<Icon icon="mdi:check-circle" class="quality-icon" />
-				<h4>Completeness Checks</h4>
-				<p>Verify all expected fields are present</p>
-			</div>
-			<div class="quality-item">
-				<Icon icon="mdi:calculator" class="quality-icon" />
-				<h4>Calculation Validation</h4>
-				<p>Ensure gross pay equals sum of components</p>
-			</div>
-			<div class="quality-item">
-				<Icon icon="mdi:compare" class="quality-icon" />
-				<h4>Cross-Reference</h4>
-				<p>Compare totals with official UC reports</p>
-			</div>
-			<div class="quality-item">
-				<Icon icon="mdi:alert-circle" class="quality-icon" />
-				<h4>Anomaly Detection</h4>
-				<p>Flag unusual patterns for review</p>
+				<p>The archive preserves UC’s name redactions. Those records can still contribute to wage summaries.</p>
 			</div>
 		</div>
 	</section>
@@ -263,11 +219,9 @@ Content-Type: application/json
 			<Icon icon="mdi:information-outline" class="disclaimer-icon" />
 			<div class="disclaimer-content">
 				<ul>
-					<li>Data reflects only base salary and standard compensation components</li>
-					<li>Does not include benefits, retirement contributions, or other non-wage compensation</li>
+					<li>Gross pay reflects reported payroll earnings and excludes employer benefits</li>
 					<li>Mid-year hires or departures may show partial year compensation</li>
-					<li>Job titles and departments may change between years</li>
-					<li>Some records may be anonymized at the source for privacy</li>
+					<li>Job titles may change between years</li>
 					<li>Data accuracy depends on source reporting to UC system</li>
 				</ul>
 			</div>
@@ -293,6 +247,11 @@ Content-Type: application/json
 </div>
 
 <style>
+	p a {
+		text-decoration: underline;
+		text-underline-offset: 0.15em;
+	}
+
 	:global(body) {
 		overflow-x: hidden;
 	}
@@ -565,10 +524,6 @@ Content-Type: application/json
 		line-height: 1.6;
 	}
 
-	.privacy-content p:first-child {
-		margin-bottom: 1rem;
-	}
-
 	.disclaimer-content ul {
 		list-style: none;
 		padding: 0;
@@ -587,33 +542,6 @@ Content-Type: application/json
 		left: 0;
 		color: var(--founder);
 		font-weight: bold;
-	}
-
-	.quality-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-		gap: 2rem;
-	}
-
-	.quality-item {
-		text-align: center;
-	}
-
-	.quality-icon {
-		font-size: 2.5rem;
-		color: var(--founder);
-		margin-bottom: 1rem;
-	}
-
-	.quality-item h4 {
-		color: var(--pri);
-		margin-bottom: 0.5rem;
-		font-size: 1.125rem;
-	}
-
-	.quality-item p {
-		color: var(--text-secondary);
-		font-size: 0.925rem;
 	}
 
 	.cta-card {
@@ -686,10 +614,6 @@ Content-Type: application/json
 
 		.coverage-grid {
 			grid-template-columns: 1fr;
-		}
-
-		.quality-grid {
-			grid-template-columns: repeat(2, 1fr);
 		}
 
 		.privacy-card, .disclaimer-card {

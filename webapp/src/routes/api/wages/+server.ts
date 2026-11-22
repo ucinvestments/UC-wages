@@ -12,6 +12,11 @@ export const GET: RequestHandler = async ({ url }) => {
 		const offset = parseInt(url.searchParams.get('offset') || '0');
 		const aggregated = url.searchParams.get('aggregated') === 'true';
 
+		const where = and(
+			location ? eq(ucWages.location, location) : undefined,
+			year ? eq(ucWages.year, parseInt(year)) : undefined
+		);
+
 		if (aggregated) {
 			// Return aggregated data for visualization
 			const query = db
@@ -25,21 +30,9 @@ export const GET: RequestHandler = async ({ url }) => {
 					minWage: sql<number>`MIN(${ucWages.grosspay})::numeric`
 				})
 				.from(ucWages)
+				.where(where)
 				.groupBy(ucWages.location, ucWages.year)
 				.orderBy(asc(ucWages.location), asc(ucWages.year));
-
-			// Apply filters if provided
-			let conditions = [];
-			if (location) {
-				conditions.push(eq(ucWages.location, location));
-			}
-			if (year) {
-				conditions.push(eq(ucWages.year, parseInt(year)));
-			}
-
-			if (conditions.length > 0) {
-				query.where(and(...conditions));
-			}
 
 			const result = await query;
 
@@ -55,25 +48,13 @@ export const GET: RequestHandler = async ({ url }) => {
 			return json(processedResult);
 		} else {
 			// Return individual wage records
-			let query = db
+			const query = db
 				.select()
 				.from(ucWages)
+				.where(where)
 				.limit(limit)
 				.offset(offset)
 				.orderBy(desc(ucWages.grosspay));
-
-			// Apply filters if provided
-			let conditions = [];
-			if (location) {
-				conditions.push(eq(ucWages.location, location));
-			}
-			if (year) {
-				conditions.push(eq(ucWages.year, parseInt(year)));
-			}
-
-			if (conditions.length > 0) {
-				query = query.where(and(...conditions));
-			}
 
 			const result = await query;
 
@@ -110,10 +91,10 @@ export const POST: RequestHandler = async ({ request }) => {
 			firstname: record.firstname,
 			lastname: record.lastname,
 			title: record.title,
-			basepay: record.basepay ? parseFloat(record.basepay.toString()) : 0,
-			overtimepay: record.overtimepay ? parseFloat(record.overtimepay.toString()) : 0,
-			adjustpay: record.adjustpay ? parseFloat(record.adjustpay.toString()) : 0,
-			grosspay: record.grosspay ? parseFloat(record.grosspay.toString()) : 0,
+			basepay: String(record.basepay ? parseFloat(String(record.basepay)) : 0),
+			overtimepay: String(record.overtimepay ? parseFloat(String(record.overtimepay)) : 0),
+			adjustpay: String(record.adjustpay ? parseFloat(String(record.adjustpay)) : 0),
+			grosspay: String(record.grosspay ? parseFloat(String(record.grosspay)) : 0),
 			scrapedAt: record.scraped_at ? new Date(record.scraped_at) : new Date()
 		}));
 
