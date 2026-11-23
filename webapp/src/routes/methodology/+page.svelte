@@ -168,8 +168,8 @@ Content-Type: application/json
 					<li>UC Santa Barbara</li>
 					<li>UC Santa Cruz</li>
 					<li>UC Office of the President</li>
-					<li>UC SF Law (2024)</li>
-					<li>ASUCLA (2018–2024)</li>
+					<li>UC SF Law (2024–{archiveCoverage.lastYear})</li>
+					<li>ASUCLA (2018–{archiveCoverage.lastYear})</li>
 				</ul>
 			</div>
 
@@ -191,10 +191,10 @@ Content-Type: application/json
 
 			<div class="coverage-card">
 				<Icon icon="mdi:update" class="coverage-icon" />
-				<h3>Newer UC Releases</h3>
+				<h3>Official UC Reports</h3>
 				<p>
 					UC publishes <a href={ucCompensationReports}>annual compensation reports</a>,
-					including its 2025 summary. The <a href="/data">downloadable archive</a> runs
+					including its {archiveCoverage.lastYear} summary. The <a href="/data">downloadable archive</a> runs
 					through {archiveCoverage.lastYear}.
 				</p>
 			</div>
@@ -220,6 +220,7 @@ Content-Type: application/json
 			<div class="disclaimer-content">
 				<ul>
 					<li>Gross pay reflects reported payroll earnings and excludes employer benefits</li>
+					<li>Explorer adjusts 2025 pay to 2024 dollars using the <a href="https://www.bls.gov/regions/mid-atlantic/data/consumerpriceindexannualandsemiannual_table.htm">BLS annual CPI-U averages</a></li>
 					<li>Mid-year hires or departures may show partial year compensation</li>
 					<li>Job titles may change between years</li>
 					<li>Data accuracy depends on source reporting to UC system</li>
@@ -247,7 +248,7 @@ Content-Type: application/json
 </div>
 
 <style>
-	p a {
+	p a, .disclaimer-content a {
 		text-decoration: underline;
 		text-underline-offset: 0.15em;
 	}
