@@ -232,6 +232,7 @@ func (u *Uploader) updateProgress(location string, year int, status string, tota
 		VALUES ($1, $2, $3, $4, $5, $6, $7)
 		ON CONFLICT (location, year)
 		DO UPDATE SET
+			total_records = EXCLUDED.total_records,
 			uploaded_records = EXCLUDED.uploaded_records,
 			status = EXCLUDED.status,
 			error_message = EXCLUDED.error_message,
@@ -297,10 +298,6 @@ func (u *Uploader) uploadBatch(records []WageRecord) error {
 func (u *Uploader) processFile(task Task) {
 	startTime := time.Now()
 
-	if err := u.updateProgress(task.Location, task.Year, "processing", 0, 0, ""); err != nil {
-		log.Printf("❌ Error updating progress for %s %d: %v", task.Location, task.Year, err)
-	}
-
 	log.Printf("📂 Reading file: %s", task.FilePath)
 	data, err := os.ReadFile(task.FilePath)
 	if err != nil {
@@ -324,6 +321,10 @@ func (u *Uploader) processFile(task Task) {
 	scrapedAt := u.parseScrapedAt(wageData.ScrapedAt)
 	totalRecords := len(wageData.Records)
 	uploadedRecords := 0
+	task.Location = wageData.Location
+	if err := u.updateProgress(task.Location, task.Year, "processing", totalRecords, 0, ""); err != nil {
+		log.Printf("❌ Error updating progress for %s %d: %v", task.Location, task.Year, err)
+	}
 
 	if totalRecords == 0 {
 		log.Printf("⚠️  No records found in %s", task.FilePath)

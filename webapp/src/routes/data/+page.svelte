@@ -97,10 +97,10 @@
 
 			<div class="info-card">
 				<Icon icon="mdi:refresh" class="info-icon" />
-				<h3>Newer UC Releases</h3>
+				<h3>Official UC Reports</h3>
 				<p>
 					UC reports earnings annually. Its <a href={ucCompensationReports}>compensation reports</a>
-					include the 2025 summary. The downloadable archive here runs through {archiveCoverage.lastYear}.
+					include the {archiveCoverage.lastYear} summary and earlier years.
 				</p>
 			</div>
 
